@@ -332,31 +332,127 @@ public class AccountDAOImp implements IAccountingDAO
     @Override
     public int updateExpense(Expense expense) throws SQLException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "UPDATE EXPENSES SET DATETIME = ?, SUPPLIERID = ?, MAINDESCRIPTIONID = ?," +
+            "SUBDESCRIPTIONID = ?, SUBTOTAL = ?, GST = ?, QST = ?, TOTAL = ? WHERE EXPENSEID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {            
+            pStmt.setDate(1, expense.getDateTime());
+            pStmt.setInt(2, expense.getSupplierID());
+            pStmt.setInt(3, expense.getMainDescriptionID());
+            pStmt.setInt(4, expense.getSubDescriptionID());
+            pStmt.setBigDecimal(5, expense.getSubtotal());
+            pStmt.setBigDecimal(6, expense.getGst());
+            pStmt.setBigDecimal(7, expense.getQst());
+            pStmt.setBigDecimal(8, expense.getTotal());
+            pStmt.setInt(9, expense.getExpenseID());
+            
+            records = pStmt.executeUpdate();
+            log.debug("Record updated from EXPENSES is: " + expense.toString());
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception UPDATING EXPENSES: " + ex.getMessage());
+            throw ex;
+        }   
+        return records;
     }
 
     @Override
     public int updateClient(Client client) throws SQLException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "UPDATE CLIENTS SET CLIENTNAME = ?, STREET = ?, CITY = ?, PROVINCE = ?." +
+                "POSTALCODE = ?, HOMEPHONE = ?, CELLPHONE = ?, EMAIL = ? WHERE CLIENTID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {            
+            pStmt.setString(1, client.getClientName());
+            pStmt.setString(2, client.getStreet());
+            pStmt.setString(3, client.getCity());
+            pStmt.setString(4, client.getProvince());
+            pStmt.setString(5, client.getProvince());
+            pStmt.setString(6, client.getHomePhone());
+            pStmt.setString(7, client.getCellPhone());
+            pStmt.setString(8, client.getEmail());
+            pStmt.setInt(9, client.getClientID());
+            
+            records = pStmt.executeUpdate();
+            log.debug("Record updated from CLIENTS is: " + client.toString());
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception UPDATING CLIENTS: " + ex.getMessage());
+            throw ex;
+        }   
+        return records; 
     }
 
     @Override
     public int updateSupplier(Suppliers supplier) throws SQLException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "UPDATE SUPPLIERS SET SUPPLIERNAME = ? WHERE SUPPLIERID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {            
+            pStmt.setString(1, supplier.getSupplierName());
+            pStmt.setInt(2, supplier.getSupplierID());
+            
+            records = pStmt.executeUpdate();
+            log.debug("Record updated from SUPPLIERS is: " + supplier.toString());
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception UPDATING SUPPLIERS: " + ex.getMessage());
+            throw ex;
+        }   
+        return records; 
     }
 
     @Override
     public int updateMainDescription(MainDescription mainDescription) throws SQLException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "UPDATE MAINDESCRIPTION SET MAINDESCRIPTIONNAME = ? WHERE MAINDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {            
+            pStmt.setString(1, mainDescription.getMainDescriptionName());
+            pStmt.setInt(2, mainDescription.getMainDescriptionID());
+            
+            records = pStmt.executeUpdate();
+            log.debug("Record updated from MAINDESCRIPTION is: " + mainDescription.toString());
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception UPDATING MAINDESCRIPTION: " + ex.getMessage());
+            throw ex;
+        }   
+        return records; 
     }
 
     @Override
     public int updatesubDescription(SubDescription subDescription) throws SQLException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "UPDATE SUBDESCRIPTION SET SUBDESCRIPTIONNAME = ? WHERE SUBDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {            
+            pStmt.setString(1, subDescription.getSubDescriptionName());
+            pStmt.setInt(2, subDescription.getSubDescriptionID());
+            
+            records = pStmt.executeUpdate();
+            log.debug("Record updated from SUBDESCRIPTION is: " + subDescription.toString());
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception UPDATING SUBDESCRIPTION: " + ex.getMessage());
+            throw ex;
+        }   
+        return records;
     }
 
     @Override
