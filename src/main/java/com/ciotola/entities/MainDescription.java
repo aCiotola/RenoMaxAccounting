@@ -12,18 +12,18 @@ import javafx.beans.property.StringProperty;
 public class MainDescription 
 {
     private IntegerProperty mainDescriptionID;
-    private StringProperty MainDescriptionName;
+    private StringProperty mainDescriptionName;
     
     public MainDescription()
     {
         this(-1, "");
     }
     
-    public MainDescription(final int mainDescriptionID, final String MainDescriptionName)
+    public MainDescription(final int mainDescriptionID, final String mainDescriptionName)
     {
         super();
         this.mainDescriptionID = new SimpleIntegerProperty(mainDescriptionID);
-        this.MainDescriptionName = new SimpleStringProperty(MainDescriptionName);
+        this.mainDescriptionName = new SimpleStringProperty(mainDescriptionName);
     }
     
     public int getMainDescriptionID()
@@ -43,16 +43,22 @@ public class MainDescription
     
     public String getMainDescriptionName()
     {
-        return MainDescriptionName.get();
+        return mainDescriptionName.get();
     }
     
     public StringProperty getMainDescriptionNameProperty()
     {
-        return MainDescriptionName;
+        return mainDescriptionName;
     }
     
-    public void setMainDescriptionName(final String MainDescriptionName)
+    public void setMainDescriptionName(final String mainDescriptionName)
     {
-         this.MainDescriptionName.set(MainDescriptionName);
+         this.mainDescriptionName.set(mainDescriptionName);
+    }
+    
+    @Override
+    public String toString()
+    {
+        return mainDescriptionID + " " + mainDescriptionName; 
     }
 }

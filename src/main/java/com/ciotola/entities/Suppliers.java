@@ -55,4 +55,10 @@ public class Suppliers
     {
          this.supplierName.set(supplierName);
     }
+    
+    @Override
+    public String toString()
+    {
+        return supplierID + " " + supplierName; 
+    }
 }

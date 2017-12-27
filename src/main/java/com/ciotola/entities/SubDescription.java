@@ -55,4 +55,10 @@ public class SubDescription
     {
          this.subDescriptionName.set(subDescriptionName);
     }
+    
+    @Override
+    public String toString()
+    {
+        return subDescriptionID + " " + subDescriptionName; 
+    }
 }

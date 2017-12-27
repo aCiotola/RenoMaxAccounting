@@ -66,7 +66,7 @@ public class Client
         return clientName;
     }
     
-    public void setClientNameProperty(final String clientName)
+    public void setClientName(final String clientName)
     {
          this.clientName.set(clientName);
     }

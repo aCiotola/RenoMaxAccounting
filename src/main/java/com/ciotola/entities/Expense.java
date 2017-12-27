@@ -69,7 +69,7 @@ public class Expense
         return dateTime;
     }
     
-    public void setDateTimeProperty(final Date dateTime)
+    public void setDateTime(final Date dateTime)
     {
          this.dateTime.set(dateTime);
     }
