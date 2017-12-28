@@ -551,37 +551,121 @@ public class AccountDAOImp implements IAccountingDAO
     @Override
     public int deleteExpense(int id) throws SQLException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "DELETE FROM EXPENSES WHERE EXPENSEID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            records = pStmt.executeUpdate();
+            log.debug("Records Deleted from EXPENSES: " + records + " id: " + id);
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception DELETING EXPENSES: " + ex.getMessage());
+            throw ex; 
+        }   
+        return records;
     }
 
     @Override
     public int deleteClient(int id) throws SQLException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "DELETE FROM CLIENTS WHERE CLIENTID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            records = pStmt.executeUpdate();
+            log.debug("Records Deleted from CLIENTS: " + records + " id: " + id);
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception DELETING CLIENTS: " + ex.getMessage());
+            throw ex; 
+        }   
+        return records;
     }
 
     @Override
     public int deleteSupplier(int id) throws SQLException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "DELETE FROM SUPPLIERS WHERE SUPPLIERID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            records = pStmt.executeUpdate();
+            log.debug("Records Deleted from SUPPLIERS: " + records + " id: " + id);
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception DELETING SUPPLIERS: " + ex.getMessage());
+            throw ex; 
+        }   
+        return records;
     }
 
     @Override
     public int deleteMainDescription(int id) throws SQLException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "DELETE FROM MAINDESCRIPTION WHERE MAINDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            records = pStmt.executeUpdate();
+            log.debug("Records Deleted from MAINDESCRIPTIONNAME: " + records + " id: " + id);
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception DELETING MAINDESCRIPTIONNAME: " + ex.getMessage());
+            throw ex; 
+        }   
+        return records;
     }
 
     @Override
     public int deletesubDescription(int id) throws SQLException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "DELETE FROM SUBDESCRIPTION WHERE SUBDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            records = pStmt.executeUpdate();
+            log.debug("Records Deleted from SUBDESCRIPTION: " + records + " id: " + id);
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception DELETING SUBDESCRIPTION: " + ex.getMessage());
+            throw ex; 
+        }   
+        return records;
     }
     
     @Override
     public int deleteInvoice(int id) throws SQLException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int records;
+        String query = "DELETE FROM INVOICES WHERE INVOICEID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            records = pStmt.executeUpdate();
+            log.debug("Records Deleted from INVOICES: " + records + " id: " + id);
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception DELETING INVOICES: " + ex.getMessage());
+            throw ex; 
+        }   
+        return records;
     }
     
     private Expense createExpense(ResultSet rs) throws SQLException
