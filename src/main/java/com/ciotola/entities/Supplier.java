@@ -9,17 +9,17 @@ import javafx.beans.property.StringProperty;
  *
  * @author shado
  */
-public class Suppliers
+public class Supplier
 {
     private IntegerProperty supplierID;
     private StringProperty supplierName;
     
-    public Suppliers()
+    public Supplier()
     {
         this(-1, "");
     }
     
-    public Suppliers(final int supplierID, final String supplierName)
+    public Supplier(final int supplierID, final String supplierName)
     {
         super();
         this.supplierID = new SimpleIntegerProperty(supplierID);

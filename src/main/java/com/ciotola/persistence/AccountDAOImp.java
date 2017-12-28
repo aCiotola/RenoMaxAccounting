@@ -2,10 +2,11 @@ package com.ciotola.persistence;
 
 import com.ciotola.entities.Client;
 import com.ciotola.entities.Expense;
+import com.ciotola.entities.Invoice;
 import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.PropertiesBean;
 import com.ciotola.entities.SubDescription;
-import com.ciotola.entities.Suppliers;
+import com.ciotola.entities.Supplier;
 import com.ciotola.properties.PropsManager;
 import com.mysql.jdbc.Statement;
 import java.io.IOException;
@@ -111,7 +112,7 @@ public class AccountDAOImp implements IAccountingDAO
     }
 
     @Override
-    public int addSupplier(Suppliers supplier) throws SQLException 
+    public int addSupplier(Supplier supplier) throws SQLException 
     {
         int records = -1;
         int recordNum = -1;
@@ -193,6 +194,41 @@ public class AccountDAOImp implements IAccountingDAO
         }
         return records; 
     }
+    
+    @Override
+    public int addInvoice(Invoice invoice) throws SQLException 
+    {
+        int records = -1;
+        int recordNum = -1;
+        String query = "INSERT INTO INVOICES VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+                PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
+        {
+            pStmt.setInt(1, invoice.getInvoiceNumber());
+            pStmt.setDate(2, invoice.getInvoiceDate());
+            pStmt.setInt(3, invoice.getClientID());
+            pStmt.setBigDecimal(4, invoice.getSubtotal());
+            pStmt.setBigDecimal(5, invoice.getGst());
+            pStmt.setBigDecimal(6, invoice.getQst());
+            pStmt.setBigDecimal(7, invoice.getTotal());
+            pStmt.setBoolean(8, invoice.getInvoiceSent());
+            
+            records = pStmt.executeUpdate();
+            try(ResultSet rs = pStmt.getGeneratedKeys();)
+            {
+                if(rs.next())
+                    recordNum = rs.getInt(1);
+                invoice.setInvoiceID(recordNum);
+                log.debug("New record added to INVOICES: " + invoice.toString());
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception thrown ADDING INVOICES: " + ex.getMessage());
+            throw ex;
+        }
+        return records; 
+    }
 
     @Override
     public ArrayList<Expense> findAllExpenses() throws SQLException 
@@ -249,10 +285,10 @@ public class AccountDAOImp implements IAccountingDAO
     }
     
     @Override
-    public ArrayList<Suppliers> findAllSuppliers() throws SQLException 
+    public ArrayList<Supplier> findAllSuppliers() throws SQLException 
     {
-        ArrayList<Suppliers> supplierList = new ArrayList<>();
-        Suppliers supplier;
+        ArrayList<Supplier> supplierList = new ArrayList<>();
+        Supplier supplier;
         String query = "SELECT * FROM SUPPLIERS";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
@@ -328,6 +364,33 @@ public class AccountDAOImp implements IAccountingDAO
         }    
         return subDescriptionList;
     }
+    
+    @Override
+    public ArrayList<Invoice> findAllInvoices() throws SQLException 
+    {
+        ArrayList<Invoice> invoiceList = new ArrayList<>();
+        Invoice invoice;
+        String query = "SELECT * FROM INVOICES";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                while(rs.next())
+                {                    
+                    invoice = createInvoice(rs);
+                    invoiceList.add(invoice);
+                    log.debug("Found INVOICES: " + invoice.getInvoiceNumber());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING ALL INVOICES: " + ex.getMessage());
+            throw ex; 
+        }    
+        return invoiceList;
+    }
 
     @Override
     public int updateExpense(Expense expense) throws SQLException
@@ -390,7 +453,7 @@ public class AccountDAOImp implements IAccountingDAO
     }
 
     @Override
-    public int updateSupplier(Suppliers supplier) throws SQLException
+    public int updateSupplier(Supplier supplier) throws SQLException
     {
         int records;
         String query = "UPDATE SUPPLIERS SET SUPPLIERNAME = ? WHERE SUPPLIERID = ?";
@@ -436,7 +499,7 @@ public class AccountDAOImp implements IAccountingDAO
     @Override
     public int updatesubDescription(SubDescription subDescription) throws SQLException
     {
-        int records;
+        int records; 
         String query = "UPDATE SUBDESCRIPTION SET SUBDESCRIPTIONNAME = ? WHERE SUBDESCRIPTIONID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
@@ -453,6 +516,36 @@ public class AccountDAOImp implements IAccountingDAO
             throw ex;
         }   
         return records;
+    }
+    
+    @Override
+    public int updateInvoice(Invoice invoice) throws SQLException
+    {
+        int records;
+        String query = "UPDATE INVOICES SET CLIENTNAME = ?, STREET = ?, CITY = ?, PROVINCE = ?." +
+                "POSTALCODE = ?, HOMEPHONE = ?, CELLPHONE = ?, EMAIL = ? WHERE INVOICEID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {            
+            pStmt.setInt(1, invoice.getInvoiceNumber());
+            pStmt.setDate(2, invoice.getInvoiceDate());
+            pStmt.setInt(3, invoice.getClientID());
+            pStmt.setBigDecimal(4, invoice.getSubtotal());
+            pStmt.setBigDecimal(5, invoice.getGst());
+            pStmt.setBigDecimal(6, invoice.getQst());
+            pStmt.setBigDecimal(7, invoice.getTotal());
+            pStmt.setBoolean(8, invoice.getInvoiceSent());
+            pStmt.setInt(9, invoice.getInvoiceID());
+            
+            records = pStmt.executeUpdate();
+            log.debug("Record updated from INVOICE is: " + invoice.toString());
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception UPDATING INVOICE: " + ex.getMessage());
+            throw ex;
+        }   
+        return records; 
     }
 
     @Override
@@ -481,6 +574,12 @@ public class AccountDAOImp implements IAccountingDAO
 
     @Override
     public int deletesubDescription(int id) throws SQLException 
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public int deleteInvoice(int id) throws SQLException 
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -515,9 +614,9 @@ public class AccountDAOImp implements IAccountingDAO
         return client;
     }    
     
-    private Suppliers createSupplier(ResultSet rs) throws SQLException
+    private Supplier createSupplier(ResultSet rs) throws SQLException
     {
-        Suppliers supplier = new Suppliers();
+        Supplier supplier = new Supplier();
         supplier.setSupplierID(rs.getInt("SUPPLIERID"));                    
         supplier.setSupplierName(rs.getString("SUPPLIERNAME")); 
         return supplier;
@@ -538,4 +637,19 @@ public class AccountDAOImp implements IAccountingDAO
         subDescription.setSubDescriptionName(rs.getString("SUBDESCRIPTIONNAME")); 
         return subDescription;
     }  
+    
+    private Invoice createInvoice(ResultSet rs) throws SQLException
+    {
+        Invoice invoice = new Invoice();
+        invoice.setInvoiceID(rs.getInt("INVOICEID"));                    
+        invoice.setInvoiceNumber(rs.getInt("INVOICENUMBER"));
+        invoice.setInvoiceDate(rs.getDate("INVOICEDATE"));  
+        invoice.setClientID(rs.getInt("CLIENTID"));
+        invoice.setSubtotal(rs.getBigDecimal("SUBTOTAL"));
+        invoice.setGst(rs.getBigDecimal("GST"));
+        invoice.setQst(rs.getBigDecimal("QST"));
+        invoice.setTotal(rs.getBigDecimal("TOTAL"));
+        invoice.setInvoiceSent(rs.getBoolean("INVOICESENT"));            
+        return invoice;
+    }   
 }
