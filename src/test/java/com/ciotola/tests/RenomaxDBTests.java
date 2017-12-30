@@ -1,5 +1,6 @@
 package com.ciotola.tests;
 
+import com.ciotola.entities.Client;
 import com.ciotola.entities.Expense;
 import com.ciotola.entities.PropertiesBean;
 import com.ciotola.persistence.AccountingDAOImp;
@@ -78,7 +79,35 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    @Test(timeout = 1000)
+    public void testAddClient() throws SQLException, IOException 
+    {        
+        Client client = new Client();        
+        client.setClientName("Alfonso");
+        client.setStreet("tempst");
+        client.setCity("tempcty");
+        client.setProvince("tempprov");
+        client.setPostalCode("temppost");
+        client.setHomePhone("temphome");
+        client.setCellPhone("tempcell");
+        client.setEmail("tempemail");
+        
+        int records = accountDAO.addClient(client);
+        log.info("Records created: " + records + " " + client.getClientName());
+        Client client2 = accountDAO.findClientById(client.getClientID());
+        
+        assertEquals("The records are not equal!", client, client2);
+    }
     
+    @Test(timeout = 1000, expected = NullPointerException.class)
+    public void testAddClientFail() throws SQLException, IOException  
+    {
+        Client client = null;        
+        accountDAO.addClient(client);
+        
+        // If an exception was not thrown then the test failed
+        fail("The Object that was null did not throw an exception");
+    }
     
     
     

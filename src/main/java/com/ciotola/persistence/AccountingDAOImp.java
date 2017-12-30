@@ -82,7 +82,8 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO CLIENTS VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO CLIENTS(CLIENTNAME, STREET, CITY, PROVINCE, POSTALCODE, HOMEPHONE, CELLPHONE, EMAIL) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -117,7 +118,7 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO SUPPLIERS VALUES(?)";
+        String query = "INSERT INTO SUPPLIERS(SUPPLEIRNAME) VALUES(?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -145,7 +146,7 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO MAINDESCRIPTION VALUES(?)";
+        String query = "INSERT INTO MAINDESCRIPTION(MAINDESCRIPTIONNAME) VALUES(?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -173,7 +174,7 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO SUBDESCRIPTION VALUES(?)";
+        String query = "INSERT INTO SUBDESCRIPTION(SUBDESCRIPTIONNAME) VALUES(?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -201,7 +202,8 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO INVOICES VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO INVOICES(INVOICENUMBER, INVOICEDATE, CLIENTID, SUBTOTAL, GST, QST, TOTAL, INVOICESENT) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -255,6 +257,136 @@ public class AccountingDAOImp implements IAccountingDAO
             throw ex; 
         }    
         return expense;
+    }
+    
+    @Override
+    public Client findClientById(int id) throws SQLException
+    {
+        Client client = new Client();
+        String query = "SELECT * FROM CLIENTS WHERE CLIENTID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    client = createClient(rs);                    
+                    log.debug("Found CLIENT: " + client.getClientName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING CLIENT BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return client;
+    }
+    
+    @Override
+    public Invoice findInvoiceById(int id) throws SQLException
+    {
+        Invoice Invoice = new Invoice();
+        String query = "SELECT * FROM INVOICES WHERE INVOICEID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    Invoice = createInvoice(rs);                    
+                    log.debug("Found INVOICE: " + Invoice.getInvoiceNumber());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING INVOICE BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return Invoice;
+    }
+    
+    @Override
+    public MainDescription findMainDescriptionById(int id) throws SQLException
+    {
+        MainDescription mainDescription = new MainDescription();
+        String query = "SELECT * FROM MAINDESCRIPTION WHERE MAINDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    mainDescription = createMainDescription(rs);                    
+                    log.debug("Found MAINDESCRIPTION: " + mainDescription.getMainDescriptionName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING MAINDESCRIPTION BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return mainDescription;
+    }
+    
+    @Override
+    public SubDescription findSubDescriptionById(int id) throws SQLException
+    {
+        SubDescription subDescription = new SubDescription();
+        String query = "SELECT * FROM SUBDESCRIPTION WHERE SUBDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    subDescription = createSubDescription(rs);                    
+                    log.debug("Found SUBDESCRIPTION: " + subDescription.getSubDescriptionName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING SUBDESCRIPTION BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return subDescription;
+    }
+    
+    @Override
+    public Supplier findSupplierById(int id) throws SQLException
+    {
+        Supplier supplier = new Supplier();
+        String query = "SELECT * FROM SUPPLIERS WHERE SUPPLIERID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    supplier = createSupplier(rs);                    
+                    log.debug("Found SUPPLIER: " + supplier.getSupplierName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING SUPPLIER BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return supplier;
     }
     
     @Override

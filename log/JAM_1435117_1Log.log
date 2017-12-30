@@ -74,3 +74,19 @@
 [DEBUG] 2017-12-30 14:56:30.061 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
 [INFO ] 2017-12-30 14:56:30.063 [Time-limited test] RenomaxDBTests - Records created: 1 1
 [DEBUG] 2017-12-30 14:56:30.069 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 15:54:15.873 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 15:54:15.875 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 15:54:15.881 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[ERROR] 2017-12-30 15:54:19.609 [Time-limited test] AccountingDAOImp - Exception thrown ADDING CLIENTS: Column count doesn't match value count at row 1
+[DEBUG] 2017-12-30 15:56:55.189 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 15:56:55.191 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 15:56:55.197 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 15:56:58.262 [Time-limited test] AccountingDAOImp - New record added to CLIENTS: 2 Alfonso tempst tempcty tempprov temppost temphome tempcell tempemail
+[INFO ] 2017-12-30 15:56:58.263 [Time-limited test] RenomaxDBTests - Records created: 1 Alfonso
+[DEBUG] 2017-12-30 15:56:58.329 [Time-limited test] AccountingDAOImp - Found CLIENT: Alfonso
+[DEBUG] 2017-12-30 15:58:36.709 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 15:58:36.711 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 15:58:36.718 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 15:58:40.108 [Time-limited test] AccountingDAOImp - New record added to CLIENTS: 2 Alfonso tempst tempcty tempprov temppost temphome tempcell tempemail
+[INFO ] 2017-12-30 15:58:40.109 [Time-limited test] RenomaxDBTests - Records created: 1 Alfonso
+[DEBUG] 2017-12-30 15:58:40.193 [Time-limited test] AccountingDAOImp - Found CLIENT: Alfonso
