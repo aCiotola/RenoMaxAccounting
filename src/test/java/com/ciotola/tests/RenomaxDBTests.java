@@ -69,7 +69,7 @@ public class RenomaxDBTests
     }
     
     @Test(timeout = 1000, expected = NullPointerException.class)
-    public void testCreateAppointmentRecordFail() throws SQLException, IOException  
+    public void testAddExpenseFail() throws SQLException, IOException  
     {
         Expense expense = null;        
         accountDAO.addExpense(expense);

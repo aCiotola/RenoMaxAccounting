@@ -1,5 +1,6 @@
 package com.ciotola.entities;
 
+import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -54,6 +55,37 @@ public class Supplier
     public void setSupplierName(final String supplierName)
     {
          this.supplierName.set(supplierName);
+    }
+    
+    @Override
+    public int hashCode() 
+    {
+        int hash = 7;
+        hash = 37 * hash + supplierID.get();
+        hash = 37 * hash + Objects.hashCode(this.supplierName);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Supplier other = (Supplier) obj;
+        if (supplierID.get() != other.supplierID.get()) {
+            return false;
+        }
+        if (!supplierName.get().equals(other.supplierName.get())) {
+            return false;
+        }
+        return true;
     }
     
     @Override

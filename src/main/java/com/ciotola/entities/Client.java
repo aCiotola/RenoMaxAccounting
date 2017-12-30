@@ -1,5 +1,6 @@
 package com.ciotola.entities;
 
+import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -174,6 +175,65 @@ public class Client
     public void setEmail(final String email)
     {
          this.email.set(email);
+    }
+    
+    @Override
+    public int hashCode() 
+    {
+        int hash = 7;
+        hash = 37 * hash + clientID.get();
+        hash = 37 * hash + Objects.hashCode(this.clientName);
+        hash = 37 * hash + Objects.hashCode(this.street);
+        hash = 37 * hash + Objects.hashCode(this.city);
+        hash = 37 * hash + Objects.hashCode(this.province);
+        hash = 37 * hash + Objects.hashCode(this.postalCode);
+        hash = 37 * hash + Objects.hashCode(this.homePhone);
+        hash = 37 * hash + Objects.hashCode(this.cellPhone);
+        hash = 37 * hash + Objects.hashCode(this.email);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Client other = (Client) obj;
+        if (clientID.get() != other.clientID.get()) {
+            return false;
+        }
+        if (!clientName.get().equals(other.clientName.get())) {
+            return false;
+        }
+        if (!street.get().equals(other.street.get())) {
+            return false;
+        }
+        if (!city.get().equals(other.city.get())) {
+            return false;
+        }
+        if (!province.get().equals(other.province.get())) {
+            return false;
+        }
+        if (!postalCode.get().equals(other.postalCode.get())) {
+            return false;
+        }
+         if (!homePhone.get().equals(other.homePhone.get())) {
+            return false;
+        }
+        if (!cellPhone.get().equals(other.cellPhone.get())) {
+            return false;
+        }
+         if (!email.get().equals(other.email.get())) {
+            return false;
+        }
+        return true;
     }
     
     @Override

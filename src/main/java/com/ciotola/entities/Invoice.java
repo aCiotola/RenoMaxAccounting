@@ -8,6 +8,7 @@ package com.ciotola.entities;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Objects;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
@@ -184,6 +185,65 @@ public class Invoice
     public void setInvoiceSent(final boolean invoiceSent)
     {
          this.invoiceSent.set(invoiceSent);
+    }
+    
+    @Override
+    public int hashCode() 
+    {
+        int hash = 7;
+        hash = 37 * hash + clientID.get();
+        hash = 37 * hash + invoiceNumber.get();
+        hash = 37 * hash + Objects.hashCode(this.invoiceDate);
+        hash = 37 * hash + clientID.get();
+        hash = 37 * hash + Objects.hashCode(this.subtotal);
+        hash = 37 * hash + Objects.hashCode(this.gst);
+        hash = 37 * hash + Objects.hashCode(this.qst);
+        hash = 37 * hash + Objects.hashCode(this.total);
+        hash = 37 * hash + Objects.hashCode(this.invoiceSent);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Invoice other = (Invoice) obj;
+        if (invoiceID.get() != other.invoiceID.get()) {
+            return false;
+        }
+        if (invoiceNumber.get() != other.invoiceNumber.get()) {
+            return false;
+        }
+        if (!invoiceDate.get().equals(other.invoiceDate.get())) {
+            return false;
+        }
+        if (clientID.get() != other.clientID.get()) {
+            return false;
+        }
+        if (!subtotal.get().equals(other.subtotal.get())) {
+            return false;
+        }
+        if (!gst.get().equals(other.gst.get())) {
+            return false;
+        }
+         if (!qst.get().equals(other.qst.get())) {
+            return false;
+        }
+        if (!total.get().equals(other.total.get())) {
+            return false;
+        }
+        if (invoiceSent.get() != other.invoiceSent.get()) {
+            return false;
+        }
+        return true;
     }
     
     @Override

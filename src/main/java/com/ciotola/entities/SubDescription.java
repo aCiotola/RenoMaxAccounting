@@ -1,5 +1,6 @@
 package com.ciotola.entities;
 
+import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -54,6 +55,37 @@ public class SubDescription
     public void setSubDescriptionName(final String subDescriptionName)
     {
          this.subDescriptionName.set(subDescriptionName);
+    }
+    
+    @Override
+    public int hashCode() 
+    {
+        int hash = 7;
+        hash = 37 * hash + subDescriptionID.get();
+        hash = 37 * hash + Objects.hashCode(this.subDescriptionName);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SubDescription other = (SubDescription) obj;
+        if (subDescriptionID.get() != other.subDescriptionID.get()) {
+            return false;
+        }
+        if (!subDescriptionName.get().equals(other.subDescriptionName.get())) {
+            return false;
+        }
+        return true;
     }
     
     @Override

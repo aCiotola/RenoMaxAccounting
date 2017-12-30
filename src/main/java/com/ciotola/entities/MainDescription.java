@@ -1,5 +1,6 @@
 package com.ciotola.entities;
 
+import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -54,6 +55,37 @@ public class MainDescription
     public void setMainDescriptionName(final String mainDescriptionName)
     {
          this.mainDescriptionName.set(mainDescriptionName);
+    }
+    
+    @Override
+    public int hashCode() 
+    {
+        int hash = 7;
+        hash = 37 * hash + mainDescriptionID.get();
+        hash = 37 * hash + Objects.hashCode(this.mainDescriptionName);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MainDescription other = (MainDescription) obj;
+        if (mainDescriptionID.get() != other.mainDescriptionID.get()) {
+            return false;
+        }
+        if (!mainDescriptionName.get().equals(other.mainDescriptionName.get())) {
+            return false;
+        }
+        return true;
     }
     
     @Override
