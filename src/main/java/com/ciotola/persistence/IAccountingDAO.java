@@ -24,6 +24,7 @@ public interface IAccountingDAO
     public int addInvoice(Invoice invoice) throws SQLException;
     
     //read methods
+    public Expense findExpenseById(int id) throws SQLException; 
     public ArrayList<Expense> findAllExpenses() throws SQLException;
     public ArrayList<Client> findAllClients() throws SQLException;
     public ArrayList<Supplier> findAllSuppliers() throws SQLException;

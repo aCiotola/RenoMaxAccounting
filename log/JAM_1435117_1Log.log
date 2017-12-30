@@ -1,0 +1,76 @@
+[DEBUG] 2017-12-30 12:45:00.029 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:45:04.263 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:49:11.107 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:49:12.253 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:52:11.299 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:52:13.446 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:53:07.630 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:53:07.861 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:53:54.579 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 12:53:57.268 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[ERROR] 2017-12-30 12:54:00.945 [Time-limited test] AccountingDAOImp - Exception thrown ADDING EXPENSE: Column count doesn't match value count at row 1
+[DEBUG] 2017-12-30 14:26:07.138 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:26:10.969 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[ERROR] 2017-12-30 14:26:14.183 [Time-limited test] AccountingDAOImp - Exception thrown ADDING EXPENSE: Column count doesn't match value count at row 1
+[DEBUG] 2017-12-30 14:29:19.461 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:29:23.206 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:29:26.588 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: IntegerProperty [value: 1] ObjectProperty [value: 2017-12-30] IntegerProperty [value: 1] IntegerProperty [value: 1] IntegerProperty [value: 1] ObjectProperty [value: 25.0] ObjectProperty [value: 2.0] ObjectProperty [value: 2.0] ObjectProperty [value: 29.0]
+[INFO ] 2017-12-30 14:29:26.589 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:29:26.603 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:30:56.429 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:31:00.250 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:31:03.624 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.0 2.0 2.0 29.0
+[INFO ] 2017-12-30 14:31:03.624 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:31:03.629 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:35:06.314 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:35:09.758 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:35:13.139 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.0 2.0 2.0 29.0
+[INFO ] 2017-12-30 14:35:13.140 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:35:13.144 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:36:45.258 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:36:48.795 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:36:52.100 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25 2 2 29
+[INFO ] 2017-12-30 14:36:52.101 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:36:52.107 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:39:48.606 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:39:52.064 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:39:55.195 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25 2 2 29
+[INFO ] 2017-12-30 14:39:55.195 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:39:55.201 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:42:24.837 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:42:29.406 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:42:33.668 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25 2 2 29
+[INFO ] 2017-12-30 14:42:33.669 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:42:33.675 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:43:05.165 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:43:09.338 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:43:12.989 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 14:43:12.990 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:43:12.996 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:44:08.997 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:44:12.612 [main] RenomaxDBTests - jdbc:mysql://localhost:3306/RENOMAXACCOUNTINGDB?autoReconnect=true&useSSL=false TheUser mainPassword
+[DEBUG] 2017-12-30 14:44:16.389 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.0 2.0 2.0 29.0
+[INFO ] 2017-12-30 14:44:16.390 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:44:16.395 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:44:51.341 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 14:44:51.343 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:44:51.348 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:51:52.781 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 14:51:52.783 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:51:52.789 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:52:56.038 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 14:52:56.040 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:52:56.046 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:52:56.046 [Time-limited test] Expense - EQUALS
+[DEBUG] 2017-12-30 14:54:01.067 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 14:54:01.069 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:54:01.075 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:54:01.075 [Time-limited test] Expense - EQUALS
+[DEBUG] 2017-12-30 14:54:01.075 [Time-limited test] Expense - EQUALS4
+[DEBUG] 2017-12-30 14:55:31.041 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 14:55:31.044 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:55:31.049 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2017-12-30 14:55:31.049 [Time-limited test] Expense - EQUALS
+[DEBUG] 2017-12-30 14:56:30.061 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 1 2017-12-30 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2017-12-30 14:56:30.063 [Time-limited test] RenomaxDBTests - Records created: 1 1
+[DEBUG] 2017-12-30 14:56:30.069 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1

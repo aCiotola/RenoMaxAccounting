@@ -179,7 +179,7 @@ public class Client
     @Override
     public String toString()
     {
-        return clientID + " " + clientName + " " + street + " " + city + " " + province +
-                " " + postalCode + " " + homePhone + " " + cellPhone + " " + email; 
+        return clientID.get() + " " + clientName.get() + " " + street.get() + " " + city.get() + " " + province.get() +
+                " " + postalCode.get() + " " + homePhone.get() + " " + cellPhone.get() + " " + email.get(); 
     }
 }

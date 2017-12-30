@@ -59,6 +59,6 @@ public class MainDescription
     @Override
     public String toString()
     {
-        return mainDescriptionID + " " + mainDescriptionName; 
+        return mainDescriptionID.get() + " " + mainDescriptionName.get(); 
     }
 }

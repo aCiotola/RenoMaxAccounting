@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author shado
  */
-public class AccountDAOImp implements IAccountingDAO
+public class AccountingDAOImp implements IAccountingDAO
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());   
     private final PropsManager pm = new PropsManager();
@@ -32,7 +32,7 @@ public class AccountDAOImp implements IAccountingDAO
     private String user = "";
     private String password = "";
     
-    public AccountDAOImp() throws IOException
+    public AccountingDAOImp() throws IOException
     {
         super();
         propsBean = pm.loadTextProperties();
@@ -46,7 +46,8 @@ public class AccountDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO EXPENSES VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO EXPENSES(DATETIME, SUPPLIERID, MAINDESCRIPTIONID, SUBDESCRIPTIONID, SUBTOTAL, GST, QST, TOTAL)"
+                + " VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -230,6 +231,32 @@ public class AccountDAOImp implements IAccountingDAO
         return records; 
     }
 
+    @Override
+    public Expense findExpenseById(int id) throws SQLException
+    {
+        Expense expense = new Expense();
+        String query = "SELECT * FROM EXPENSES WHERE EXPENSEID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    expense = createExpense(rs);                    
+                    log.debug("Found EXPENSE: " + expense.getExpenseID());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING EXPENSE BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return expense;
+    }
+    
     @Override
     public ArrayList<Expense> findAllExpenses() throws SQLException 
     {

@@ -59,6 +59,6 @@ public class Supplier
     @Override
     public String toString()
     {
-        return supplierID + " " + supplierName; 
+        return supplierID.get() + " " + supplierName.get(); 
     }
 }

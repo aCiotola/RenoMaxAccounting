@@ -189,7 +189,7 @@ public class Invoice
     @Override
     public String toString()
     {
-        return invoiceID + " " + invoiceNumber + " " + invoiceDate + " " + clientID + " " + 
-                subtotal + " " + gst + " " + qst + " " + total + " " + invoiceSent; 
+        return invoiceID.get() + " " + invoiceNumber.get() + " " + invoiceDate.get() + " " + clientID.get() + " " + 
+                subtotal.get() + " " + gst.get() + " " + qst.get() + " " + total.get() + " " + invoiceSent.get(); 
     }
 }

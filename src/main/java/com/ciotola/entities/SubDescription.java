@@ -59,6 +59,6 @@ public class SubDescription
     @Override
     public String toString()
     {
-        return subDescriptionID + " " + subDescriptionName; 
+        return subDescriptionID.get() + " " + subDescriptionName.get(); 
     }
 }
