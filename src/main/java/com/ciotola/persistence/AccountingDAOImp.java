@@ -118,7 +118,7 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO SUPPLIERS(SUPPLEIRNAME) VALUES(?)";
+        String query = "INSERT INTO SUPPLIERS(SUPPLIERNAME) VALUES(?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -170,7 +170,7 @@ public class AccountingDAOImp implements IAccountingDAO
     }
 
     @Override
-    public int addsubDescription(SubDescription subDescription) throws SQLException 
+    public int addSubDescription(SubDescription subDescription) throws SQLException 
     {
         int records = -1;
         int recordNum = -1;
@@ -585,7 +585,7 @@ public class AccountingDAOImp implements IAccountingDAO
     public int updateClient(Client client) throws SQLException
     {
         int records;
-        String query = "UPDATE CLIENTS SET CLIENTNAME = ?, STREET = ?, CITY = ?, PROVINCE = ?." +
+        String query = "UPDATE CLIENTS SET CLIENTNAME = ?, STREET = ?, CITY = ?, PROVINCE = ?, " +
                 "POSTALCODE = ?, HOMEPHONE = ?, CELLPHONE = ?, EMAIL = ? WHERE CLIENTID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
@@ -656,7 +656,7 @@ public class AccountingDAOImp implements IAccountingDAO
     }
 
     @Override
-    public int updatesubDescription(SubDescription subDescription) throws SQLException
+    public int updateSubDescription(SubDescription subDescription) throws SQLException
     {
         int records; 
         String query = "UPDATE SUBDESCRIPTION SET SUBDESCRIPTIONNAME = ? WHERE SUBDESCRIPTIONID = ?";
@@ -681,8 +681,8 @@ public class AccountingDAOImp implements IAccountingDAO
     public int updateInvoice(Invoice invoice) throws SQLException
     {
         int records;
-        String query = "UPDATE INVOICES SET CLIENTNAME = ?, STREET = ?, CITY = ?, PROVINCE = ?." +
-                "POSTALCODE = ?, HOMEPHONE = ?, CELLPHONE = ?, EMAIL = ? WHERE INVOICEID = ?";
+        String query = "UPDATE INVOICES SET INVOICENUMBER = ?, INVOICEDATE = ?, CLIENTID = ?, SUBTOTAL = ?," +
+                "GST = ?, QST = ?, TOTAL = ?, INVOICESENT = ? WHERE INVOICEID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
         {            
@@ -788,7 +788,7 @@ public class AccountingDAOImp implements IAccountingDAO
     }
 
     @Override
-    public int deletesubDescription(int id) throws SQLException 
+    public int deleteSubDescription(int id) throws SQLException 
     {
         int records;
         String query = "DELETE FROM SUBDESCRIPTION WHERE SUBDESCRIPTIONID = ?";

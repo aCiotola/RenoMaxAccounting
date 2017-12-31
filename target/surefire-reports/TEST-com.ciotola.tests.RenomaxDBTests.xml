@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ciotola.tests.RenomaxDBTests" time="14.78" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ciotola.tests.RenomaxDBTests" time="192.925" tests="54" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\bin"/>
@@ -60,8 +60,58 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testAddClientFail" classname="com.ciotola.tests.RenomaxDBTests" time="4.025"/>
-  <testcase name="testAddExpense" classname="com.ciotola.tests.RenomaxDBTests" time="3.791"/>
-  <testcase name="testAddClient" classname="com.ciotola.tests.RenomaxDBTests" time="3.475"/>
-  <testcase name="testAddExpenseFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.136"/>
+  <testcase name="testUpdateSupplier" classname="com.ciotola.tests.RenomaxDBTests" time="3.895"/>
+  <testcase name="testUpdateInvoice" classname="com.ciotola.tests.RenomaxDBTests" time="3.991"/>
+  <testcase name="testAddSubDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="4.158"/>
+  <testcase name="testFindSubDescriptionByID" classname="com.ciotola.tests.RenomaxDBTests" time="3.228"/>
+  <testcase name="testFindSupplierByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.529"/>
+  <testcase name="testAddInvoiceFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.354"/>
+  <testcase name="testDeleteClientFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.264"/>
+  <testcase name="testDeleteMainDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.234"/>
+  <testcase name="testUpdateSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="3.953"/>
+  <testcase name="testAddClientFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.617"/>
+  <testcase name="testUpdateClientFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.48"/>
+  <testcase name="testFindClientByID" classname="com.ciotola.tests.RenomaxDBTests" time="3.662"/>
+  <testcase name="testAddMainDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.119"/>
+  <testcase name="testAddInvoice" classname="com.ciotola.tests.RenomaxDBTests" time="3.477"/>
+  <testcase name="testDeleteSupplierFail" classname="com.ciotola.tests.RenomaxDBTests" time="4.767"/>
+  <testcase name="testUpdateExpense" classname="com.ciotola.tests.RenomaxDBTests" time="3.412"/>
+  <testcase name="testUpdateExpenseFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.082"/>
+  <testcase name="testUpdateSupplierFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.434"/>
+  <testcase name="testDeleteSupplier" classname="com.ciotola.tests.RenomaxDBTests" time="3.392"/>
+  <testcase name="testDeleteInvoice" classname="com.ciotola.tests.RenomaxDBTests" time="3.882"/>
+  <testcase name="testDeleteSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="3.793"/>
+  <testcase name="testUpdateMainDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.31"/>
+  <testcase name="testFindAllExpenses" classname="com.ciotola.tests.RenomaxDBTests" time="3.26"/>
+  <testcase name="testFindExpenseByID" classname="com.ciotola.tests.RenomaxDBTests" time="3.443"/>
+  <testcase name="testAddSupplierFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.65"/>
+  <testcase name="testUpdateClient" classname="com.ciotola.tests.RenomaxDBTests" time="3.358"/>
+  <testcase name="testFindSubDescriptionByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.006"/>
+  <testcase name="testFindExpenseByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.917"/>
+  <testcase name="testDeleteMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="3.652"/>
+  <testcase name="testFindAllSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="4.061"/>
+  <testcase name="testDeleteClient" classname="com.ciotola.tests.RenomaxDBTests" time="3.79"/>
+  <testcase name="testUpdateSubDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.494"/>
+  <testcase name="testAddExpense" classname="com.ciotola.tests.RenomaxDBTests" time="4.147"/>
+  <testcase name="testFindMainDescriptionByID" classname="com.ciotola.tests.RenomaxDBTests" time="3.479"/>
+  <testcase name="testFindAllClients" classname="com.ciotola.tests.RenomaxDBTests" time="3.343"/>
+  <testcase name="testFindAllSuppliers" classname="com.ciotola.tests.RenomaxDBTests" time="3.967"/>
+  <testcase name="testUpdateInvoiceFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.558"/>
+  <testcase name="testAddClient" classname="com.ciotola.tests.RenomaxDBTests" time="3.465"/>
+  <testcase name="testFindInvoiceByID" classname="com.ciotola.tests.RenomaxDBTests" time="3.155"/>
+  <testcase name="testDeleteExpense" classname="com.ciotola.tests.RenomaxDBTests" time="3.464"/>
+  <testcase name="testFindClientByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="4.709"/>
+  <testcase name="testDeleteExpenseFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.384"/>
+  <testcase name="testFindMainDescriptionByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.909"/>
+  <testcase name="testFindSupplierByID" classname="com.ciotola.tests.RenomaxDBTests" time="3.004"/>
+  <testcase name="testFindInvoiceByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.072"/>
+  <testcase name="testUpdateMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="3.329"/>
+  <testcase name="testAddSupplier" classname="com.ciotola.tests.RenomaxDBTests" time="4.881"/>
+  <testcase name="testDeleteInvoiceFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.275"/>
+  <testcase name="testAddSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="3.614"/>
+  <testcase name="testAddMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="3.004"/>
+  <testcase name="testDeleteSubDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.326"/>
+  <testcase name="testFindAllMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="4.197"/>
+  <testcase name="testFindAllInvoices" classname="com.ciotola.tests.RenomaxDBTests" time="3.416"/>
+  <testcase name="testAddExpenseFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.207"/>
 </testsuite>

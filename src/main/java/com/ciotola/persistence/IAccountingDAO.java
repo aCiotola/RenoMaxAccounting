@@ -20,7 +20,7 @@ public interface IAccountingDAO
     public int addClient(Client client) throws SQLException;
     public int addSupplier(Supplier supplier) throws SQLException;
     public int addMainDescription(MainDescription mainDescription) throws SQLException;
-    public int addsubDescription(SubDescription subDescription) throws SQLException;
+    public int addSubDescription(SubDescription subDescription) throws SQLException;
     public int addInvoice(Invoice invoice) throws SQLException;
     
     //read methods
@@ -42,7 +42,7 @@ public interface IAccountingDAO
     public int updateClient(Client client) throws SQLException;
     public int updateSupplier(Supplier supplier) throws SQLException;
     public int updateMainDescription(MainDescription mainDescription) throws SQLException;
-    public int updatesubDescription(SubDescription subDescription) throws SQLException;
+    public int updateSubDescription(SubDescription subDescription) throws SQLException;
     public int updateInvoice(Invoice invoice) throws SQLException;
     
     //delete methods
@@ -50,6 +50,6 @@ public interface IAccountingDAO
     public int deleteClient(int id) throws SQLException;
     public int deleteSupplier(int id) throws SQLException;
     public int deleteMainDescription(int id) throws SQLException;
-    public int deletesubDescription(int id) throws SQLException;
+    public int deleteSubDescription(int id) throws SQLException;
     public int deleteInvoice(int id) throws SQLException;
 }
