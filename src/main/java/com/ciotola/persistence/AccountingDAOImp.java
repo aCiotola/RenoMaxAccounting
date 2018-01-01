@@ -84,6 +84,7 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
+        int count = -1;
         
         String checkClient = "SELECT * FROM CLIENTS WHERE CLIENTNAME = ?";        
         String query = "INSERT INTO CLIENTS(CLIENTNAME, STREET, CITY, PROVINCE, POSTALCODE, HOMEPHONE, CELLPHONE, EMAIL) "
@@ -99,6 +100,7 @@ public class AccountingDAOImp implements IAccountingDAO
                 {                   
                     if(checkRs.getInt("CLIENTID") > 0)         
                     {   
+                        count = 1;
                         client.setClientID(checkRs.getInt("CLIENTID"));    
                         log.debug(client.getClientName() + " " + checkRs.getString("CLIENTNAME"));
                         log.debug(client.getStreet()+ " " + checkRs.getString("STREET"));
@@ -117,26 +119,26 @@ public class AccountingDAOImp implements IAccountingDAO
                             updateClient(client);    
                         }
                     }
-                    else
-                    {
-                        pStmt.setString(1, client.getClientName());
-                        pStmt.setString(2, client.getStreet());
-                        pStmt.setString(3, client.getCity());
-                        pStmt.setString(4, client.getProvince());
-                        pStmt.setString(5, client.getPostalCode());
-                        pStmt.setString(6, client.getHomePhone());
-                        pStmt.setString(7, client.getCellPhone());
-                        pStmt.setString(8, client.getEmail());
+                }
+            }
+            if(count < 0)
+            {
+                pStmt.setString(1, client.getClientName());
+                pStmt.setString(2, client.getStreet());
+                pStmt.setString(3, client.getCity());
+                pStmt.setString(4, client.getProvince());
+                pStmt.setString(5, client.getPostalCode());
+                pStmt.setString(6, client.getHomePhone());
+                pStmt.setString(7, client.getCellPhone());
+                pStmt.setString(8, client.getEmail());
 
-                        records = pStmt.executeUpdate();
-                        try(ResultSet rs = pStmt.getGeneratedKeys();)
-                        {
-                            if(rs.next())
-                                recordNum = rs.getInt(1);
-                            client.setClientID(recordNum);
-                            log.debug("New record added to CLIENTS: " + client.toString());
-                        }
-                    }
+                records = pStmt.executeUpdate();
+                try(ResultSet rs = pStmt.getGeneratedKeys();)
+                {
+                    if(rs.next())
+                        recordNum = rs.getInt(1);
+                    client.setClientID(recordNum);
+                    log.debug("New record added to CLIENTS: " + client.toString());
                 }
             }
         }

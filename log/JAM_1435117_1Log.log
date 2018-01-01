@@ -1046,3 +1046,183 @@
 [INFO ] 2018-01-01 17:38:00.961 [JavaFX Application Thread] MainAppFX - Program Begins!
 [DEBUG] 2018-01-01 17:38:01.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
 [DEBUG] 2018-01-01 17:38:01.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:42:31.249 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Ceramique Royale
+[DEBUG] 2018-01-01 17:42:31.308 [Time-limited test] AccountingDAOImp - Record updated from SUPPLIERS is: 1 newsuppliername
+[DEBUG] 2018-01-01 17:42:31.313 [Time-limited test] AccountingDAOImp - Found SUPPLIER: newsuppliername
+[INFO ] 2018-01-01 17:42:31.313 [Time-limited test] RenomaxDBTests - Supplier name should be changed: newsuppliername
+[DEBUG] 2018-01-01 17:42:36.460 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-01 17:42:36.585 [Time-limited test] AccountingDAOImp - Record updated from INVOICE is: 1 2017002 2017-12-30 1 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-01 17:42:36.591 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017002
+[INFO ] 2018-01-01 17:42:36.591 [Time-limited test] RenomaxDBTests - Invoice number should be changed: 2017002
+[DEBUG] 2018-01-01 17:42:44.691 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Tools
+[INFO ] 2018-01-01 17:42:44.692 [Time-limited test] RenomaxDBTests - 1 Tools
+[DEBUG] 2018-01-01 17:43:06.839 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Tools
+[DEBUG] 2018-01-01 17:43:06.980 [Time-limited test] AccountingDAOImp - Record updated from SUBDESCRIPTION is: 1 newsdname
+[DEBUG] 2018-01-01 17:43:06.985 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: newsdname
+[INFO ] 2018-01-01 17:43:06.985 [Time-limited test] RenomaxDBTests - Sub Description should be changed: newsdname
+[DEBUG] 2018-01-01 17:43:18.741 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[INFO ] 2018-01-01 17:43:18.742 [Time-limited test] RenomaxDBTests - 1 Doctor Miller tempst tempcty tempprov temppcode temphphone tempcphone tempemail
+[DEBUG] 2018-01-01 17:43:26.754 [Time-limited test] AccountingDAOImp - New record added to INVOICES: 2 2017001 2018-01-01 1 41.28 1.000 4.000 46.28 false
+[INFO ] 2018-01-01 17:43:26.755 [Time-limited test] RenomaxDBTests - Records created: 1 2017001
+[DEBUG] 2018-01-01 17:43:26.849 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-01 17:43:34.966 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2018-01-01 17:43:35.018 [Time-limited test] AccountingDAOImp - Record updated from EXPENSES is: 1 2017-12-31 1 1 1 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-01 17:43:35.022 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-01 17:43:35.022 [Time-limited test] RenomaxDBTests - Expense date should be changed: 2017-12-31
+[DEBUG] 2018-01-01 17:43:48.516 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Ceramique Royale
+[INFO ] 2018-01-01 17:43:48.516 [Time-limited test] RenomaxDBTests - Supplier shouldn't be null: 1 Ceramique Royale
+[DEBUG] 2018-01-01 17:43:48.628 [Time-limited test] AccountingDAOImp - Records Deleted from SUPPLIERS: 1 id: 1
+[INFO ] 2018-01-01 17:43:48.712 [Time-limited test] RenomaxDBTests - Supplier should be null: -1 
+[DEBUG] 2018-01-01 17:43:54.192 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-01 17:43:54.193 [Time-limited test] RenomaxDBTests - Invoice shouldn't be null: 1 2017001 2017-12-30 1 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-01 17:43:54.255 [Time-limited test] AccountingDAOImp - Records Deleted from INVOICES: 1 id: 1
+[INFO ] 2018-01-01 17:43:54.356 [Time-limited test] RenomaxDBTests - Invoice should be null: -1 -1 2018-01-01 -1 0 0 0 0 false
+[DEBUG] 2018-01-01 17:43:58.838 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Tools
+[INFO ] 2018-01-01 17:43:58.838 [Time-limited test] RenomaxDBTests - Sub Description shouldn't be null: 1 Tools
+[DEBUG] 2018-01-01 17:43:58.927 [Time-limited test] AccountingDAOImp - Records Deleted from SUBDESCRIPTION: 1 id: 1
+[INFO ] 2018-01-01 17:43:58.998 [Time-limited test] RenomaxDBTests - Sub Description should be null: -1 
+[DEBUG] 2018-01-01 17:44:07.193 [Time-limited test] AccountingDAOImp - Found EXPENSES: 26.99
+[INFO ] 2018-01-01 17:44:07.193 [Time-limited test] RenomaxDBTests - Expense list size: 1
+[DEBUG] 2018-01-01 17:44:12.318 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-01 17:44:12.318 [Time-limited test] RenomaxDBTests - 1 2017-12-30 1 1 1 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-01 17:44:20.633 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[DEBUG] 2018-01-01 17:44:20.670 [Time-limited test] AccountingDAOImp - Record updated from CLIENTS is: 1 Doctor Miller tempst tempcty tempprov temppcode temphphone tempcphone newtempemail
+[DEBUG] 2018-01-01 17:44:20.675 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[INFO ] 2018-01-01 17:44:20.676 [Time-limited test] RenomaxDBTests - Client email should be changed: newtempemail
+[DEBUG] 2018-01-01 17:44:34.228 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Material
+[INFO ] 2018-01-01 17:44:34.228 [Time-limited test] RenomaxDBTests - Main Description shouldn't be null: 1 Material
+[DEBUG] 2018-01-01 17:44:34.315 [Time-limited test] AccountingDAOImp - Records Deleted from MAINDESCRIPTIONNAME: 1 id: 1
+[INFO ] 2018-01-01 17:44:34.494 [Time-limited test] RenomaxDBTests - Main Description should be null: -1 
+[DEBUG] 2018-01-01 17:44:39.542 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Tools
+[INFO ] 2018-01-01 17:44:39.542 [Time-limited test] RenomaxDBTests - Sub Description list size: 1
+[DEBUG] 2018-01-01 17:44:43.521 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[INFO ] 2018-01-01 17:44:43.521 [Time-limited test] RenomaxDBTests - Client shouldn't be null: 1 Doctor Miller tempst tempcty tempprov temppcode temphphone tempcphone tempemail
+[DEBUG] 2018-01-01 17:44:43.583 [Time-limited test] AccountingDAOImp - Records Deleted from CLIENTS: 1 id: 1
+[INFO ] 2018-01-01 17:44:43.726 [Time-limited test] RenomaxDBTests - Client should be null: -1        
+[DEBUG] 2018-01-01 17:44:52.286 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 2 2018-01-01 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2018-01-01 17:44:52.286 [Time-limited test] RenomaxDBTests - Records created: 1 2
+[DEBUG] 2018-01-01 17:44:52.539 [Time-limited test] AccountingDAOImp - Found EXPENSE: 2
+[DEBUG] 2018-01-01 17:44:57.725 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Material
+[INFO ] 2018-01-01 17:44:57.725 [Time-limited test] RenomaxDBTests - 1 Material
+[DEBUG] 2018-01-01 17:45:02.577 [Time-limited test] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[INFO ] 2018-01-01 17:45:02.577 [Time-limited test] RenomaxDBTests - Client list size: 1
+[DEBUG] 2018-01-01 17:45:07.077 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ceramique Royale
+[INFO ] 2018-01-01 17:45:07.077 [Time-limited test] RenomaxDBTests - Supplier list size: 1
+[INFO ] 2018-01-01 17:45:15.704 [Time-limited test] RenomaxDBTests - Records created: -1 Alfonso
+[DEBUG] 2018-01-01 17:45:20.147 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-01 17:45:20.147 [Time-limited test] RenomaxDBTests - 1 2017001 2017-12-30 1 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-01 17:45:25.082 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-01 17:45:25.082 [Time-limited test] RenomaxDBTests - Expense shouldn't be null: 1 2017-12-30 1 1 1 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-01 17:45:25.136 [Time-limited test] AccountingDAOImp - Records Deleted from EXPENSES: 1 id: 1
+[INFO ] 2018-01-01 17:45:25.270 [Time-limited test] RenomaxDBTests - Expense should be null: -1 2018-01-01 -1 -1 -1 0 0 0 0
+[DEBUG] 2018-01-01 17:45:42.152 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Ceramique Royale
+[INFO ] 2018-01-01 17:45:42.153 [Time-limited test] RenomaxDBTests - 1 Ceramique Royale
+[DEBUG] 2018-01-01 17:45:50.663 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Material
+[DEBUG] 2018-01-01 17:45:50.709 [Time-limited test] AccountingDAOImp - Record updated from MAINDESCRIPTION is: 1 newmdname
+[DEBUG] 2018-01-01 17:45:50.713 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: newmdname
+[INFO ] 2018-01-01 17:45:50.713 [Time-limited test] RenomaxDBTests - Main Description should be changed: newmdname
+[DEBUG] 2018-01-01 17:45:55.202 [Time-limited test] AccountingDAOImp - New record added to SUPPLIERS: 2 Reno-Depot
+[INFO ] 2018-01-01 17:45:55.203 [Time-limited test] RenomaxDBTests - Records created: 1 Reno-Depot
+[DEBUG] 2018-01-01 17:45:55.287 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Reno-Depot
+[DEBUG] 2018-01-01 17:46:02.771 [Time-limited test] AccountingDAOImp - New record added to SUBDESCRIPTION: 2 Restaurant
+[INFO ] 2018-01-01 17:46:02.771 [Time-limited test] RenomaxDBTests - Records created: 1 Restaurant
+[DEBUG] 2018-01-01 17:46:02.872 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Restaurant
+[DEBUG] 2018-01-01 17:46:07.093 [Time-limited test] AccountingDAOImp - New record added to MAINDESCRIPTION: 2 Auto-Maintenance
+[INFO ] 2018-01-01 17:46:07.094 [Time-limited test] RenomaxDBTests - Records created: 1 Auto-Maintenance
+[DEBUG] 2018-01-01 17:46:07.165 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto-Maintenance
+[DEBUG] 2018-01-01 17:46:15.770 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Material
+[INFO ] 2018-01-01 17:46:15.770 [Time-limited test] RenomaxDBTests - Main Description list size: 1
+[DEBUG] 2018-01-01 17:46:19.906 [Time-limited test] AccountingDAOImp - Found INVOICES: 2017001
+[INFO ] 2018-01-01 17:46:19.906 [Time-limited test] RenomaxDBTests - Invoice list size: 1
+[DEBUG] 2018-01-01 17:59:04.958 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Ceramique Royale
+[DEBUG] 2018-01-01 17:59:05.100 [Time-limited test] AccountingDAOImp - Record updated from SUPPLIERS is: 1 newsuppliername
+[DEBUG] 2018-01-01 17:59:05.105 [Time-limited test] AccountingDAOImp - Found SUPPLIER: newsuppliername
+[INFO ] 2018-01-01 17:59:05.106 [Time-limited test] RenomaxDBTests - Supplier name should be changed: newsuppliername
+[DEBUG] 2018-01-01 17:59:09.438 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-01 17:59:09.491 [Time-limited test] AccountingDAOImp - Record updated from INVOICE is: 1 2017002 2017-12-30 1 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-01 17:59:09.497 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017002
+[INFO ] 2018-01-01 17:59:09.497 [Time-limited test] RenomaxDBTests - Invoice number should be changed: 2017002
+[DEBUG] 2018-01-01 17:59:19.491 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Tools
+[INFO ] 2018-01-01 17:59:19.492 [Time-limited test] RenomaxDBTests - 1 Tools
+[DEBUG] 2018-01-01 17:59:41.037 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Tools
+[DEBUG] 2018-01-01 17:59:41.108 [Time-limited test] AccountingDAOImp - Record updated from SUBDESCRIPTION is: 1 newsdname
+[DEBUG] 2018-01-01 17:59:41.112 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: newsdname
+[INFO ] 2018-01-01 17:59:41.112 [Time-limited test] RenomaxDBTests - Sub Description should be changed: newsdname
+[DEBUG] 2018-01-01 17:59:54.933 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[INFO ] 2018-01-01 17:59:54.934 [Time-limited test] RenomaxDBTests - 1 Doctor Miller tempst tempcty tempprov temppcode temphphone tempcphone tempemail
+[DEBUG] 2018-01-01 18:00:03.555 [Time-limited test] AccountingDAOImp - New record added to INVOICES: 2 2017001 2018-01-01 1 41.28 1.000 4.000 46.28 false
+[INFO ] 2018-01-01 18:00:03.556 [Time-limited test] RenomaxDBTests - Records created: 1 2017001
+[DEBUG] 2018-01-01 18:00:03.639 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-01 18:00:12.514 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2018-01-01 18:00:12.557 [Time-limited test] AccountingDAOImp - Record updated from EXPENSES is: 1 2017-12-31 1 1 1 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-01 18:00:12.561 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-01 18:00:12.562 [Time-limited test] RenomaxDBTests - Expense date should be changed: 2017-12-31
+[DEBUG] 2018-01-01 18:00:23.639 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Ceramique Royale
+[INFO ] 2018-01-01 18:00:23.640 [Time-limited test] RenomaxDBTests - Supplier shouldn't be null: 1 Ceramique Royale
+[DEBUG] 2018-01-01 18:00:23.710 [Time-limited test] AccountingDAOImp - Records Deleted from SUPPLIERS: 1 id: 1
+[INFO ] 2018-01-01 18:00:23.793 [Time-limited test] RenomaxDBTests - Supplier should be null: -1 
+[DEBUG] 2018-01-01 18:00:28.232 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-01 18:00:28.232 [Time-limited test] RenomaxDBTests - Invoice shouldn't be null: 1 2017001 2017-12-30 1 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-01 18:00:28.311 [Time-limited test] AccountingDAOImp - Records Deleted from INVOICES: 1 id: 1
+[INFO ] 2018-01-01 18:00:28.438 [Time-limited test] RenomaxDBTests - Invoice should be null: -1 -1 2018-01-01 -1 0 0 0 0 false
+[DEBUG] 2018-01-01 18:00:33.219 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Tools
+[INFO ] 2018-01-01 18:00:33.220 [Time-limited test] RenomaxDBTests - Sub Description shouldn't be null: 1 Tools
+[DEBUG] 2018-01-01 18:00:33.296 [Time-limited test] AccountingDAOImp - Records Deleted from SUBDESCRIPTION: 1 id: 1
+[INFO ] 2018-01-01 18:00:33.422 [Time-limited test] RenomaxDBTests - Sub Description should be null: -1 
+[DEBUG] 2018-01-01 18:00:41.416 [Time-limited test] AccountingDAOImp - Found EXPENSES: 26.99
+[INFO ] 2018-01-01 18:00:41.417 [Time-limited test] RenomaxDBTests - Expense list size: 1
+[DEBUG] 2018-01-01 18:00:45.388 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-01 18:00:45.389 [Time-limited test] RenomaxDBTests - 1 2017-12-30 1 1 1 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-01 18:00:53.556 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[DEBUG] 2018-01-01 18:00:53.652 [Time-limited test] AccountingDAOImp - Record updated from CLIENTS is: 1 Doctor Miller tempst tempcty tempprov temppcode temphphone tempcphone newtempemail
+[DEBUG] 2018-01-01 18:00:53.656 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[INFO ] 2018-01-01 18:00:53.656 [Time-limited test] RenomaxDBTests - Client email should be changed: newtempemail
+[DEBUG] 2018-01-01 18:01:05.893 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Material
+[INFO ] 2018-01-01 18:01:05.894 [Time-limited test] RenomaxDBTests - Main Description shouldn't be null: 1 Material
+[DEBUG] 2018-01-01 18:01:05.963 [Time-limited test] AccountingDAOImp - Records Deleted from MAINDESCRIPTIONNAME: 1 id: 1
+[INFO ] 2018-01-01 18:01:06.047 [Time-limited test] RenomaxDBTests - Main Description should be null: -1 
+[DEBUG] 2018-01-01 18:01:10.619 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Tools
+[INFO ] 2018-01-01 18:01:10.619 [Time-limited test] RenomaxDBTests - Sub Description list size: 1
+[DEBUG] 2018-01-01 18:01:14.773 [Time-limited test] AccountingDAOImp - Found CLIENT: Doctor Miller
+[INFO ] 2018-01-01 18:01:14.774 [Time-limited test] RenomaxDBTests - Client shouldn't be null: 1 Doctor Miller tempst tempcty tempprov temppcode temphphone tempcphone tempemail
+[DEBUG] 2018-01-01 18:01:14.841 [Time-limited test] AccountingDAOImp - Records Deleted from CLIENTS: 1 id: 1
+[INFO ] 2018-01-01 18:01:14.972 [Time-limited test] RenomaxDBTests - Client should be null: -1        
+[DEBUG] 2018-01-01 18:01:24.543 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 2 2018-01-01 1 1 1 25.00 2.000 2.000 29.00
+[INFO ] 2018-01-01 18:01:24.544 [Time-limited test] RenomaxDBTests - Records created: 1 2
+[DEBUG] 2018-01-01 18:01:24.702 [Time-limited test] AccountingDAOImp - Found EXPENSE: 2
+[DEBUG] 2018-01-01 18:01:29.182 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Material
+[INFO ] 2018-01-01 18:01:29.182 [Time-limited test] RenomaxDBTests - 1 Material
+[DEBUG] 2018-01-01 18:01:33.849 [Time-limited test] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[INFO ] 2018-01-01 18:01:33.850 [Time-limited test] RenomaxDBTests - Client list size: 1
+[DEBUG] 2018-01-01 18:01:37.850 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ceramique Royale
+[INFO ] 2018-01-01 18:01:37.851 [Time-limited test] RenomaxDBTests - Supplier list size: 1
+[DEBUG] 2018-01-01 18:01:46.782 [Time-limited test] AccountingDAOImp - New record added to CLIENTS: 2 Alfonso tempst tempcty tempprov temppost temphome tempcell tempemail
+[INFO ] 2018-01-01 18:01:46.782 [Time-limited test] RenomaxDBTests - Records created: 1 Alfonso
+[DEBUG] 2018-01-01 18:01:46.866 [Time-limited test] AccountingDAOImp - Found CLIENT: Alfonso
+[DEBUG] 2018-01-01 18:01:50.887 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-01 18:01:50.888 [Time-limited test] RenomaxDBTests - 1 2017001 2017-12-30 1 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-01 18:01:55.830 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-01 18:01:55.831 [Time-limited test] RenomaxDBTests - Expense shouldn't be null: 1 2017-12-30 1 1 1 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-01 18:01:55.926 [Time-limited test] AccountingDAOImp - Records Deleted from EXPENSES: 1 id: 1
+[INFO ] 2018-01-01 18:01:56.043 [Time-limited test] RenomaxDBTests - Expense should be null: -1 2018-01-01 -1 -1 -1 0 0 0 0
+[DEBUG] 2018-01-01 18:02:12.525 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Ceramique Royale
+[INFO ] 2018-01-01 18:02:12.526 [Time-limited test] RenomaxDBTests - 1 Ceramique Royale
+[DEBUG] 2018-01-01 18:02:20.611 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Material
+[DEBUG] 2018-01-01 18:02:20.691 [Time-limited test] AccountingDAOImp - Record updated from MAINDESCRIPTION is: 1 newmdname
+[DEBUG] 2018-01-01 18:02:20.694 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: newmdname
+[INFO ] 2018-01-01 18:02:20.694 [Time-limited test] RenomaxDBTests - Main Description should be changed: newmdname
+[DEBUG] 2018-01-01 18:02:23.925 [Time-limited test] AccountingDAOImp - New record added to SUPPLIERS: 2 Reno-Depot
+[INFO ] 2018-01-01 18:02:23.925 [Time-limited test] RenomaxDBTests - Records created: 1 Reno-Depot
+[DEBUG] 2018-01-01 18:02:23.992 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Reno-Depot
+[DEBUG] 2018-01-01 18:02:31.560 [Time-limited test] AccountingDAOImp - New record added to SUBDESCRIPTION: 2 Restaurant
+[INFO ] 2018-01-01 18:02:31.561 [Time-limited test] RenomaxDBTests - Records created: 1 Restaurant
+[DEBUG] 2018-01-01 18:02:31.652 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Restaurant
+[DEBUG] 2018-01-01 18:02:35.286 [Time-limited test] AccountingDAOImp - New record added to MAINDESCRIPTION: 2 Auto-Maintenance
+[INFO ] 2018-01-01 18:02:35.287 [Time-limited test] RenomaxDBTests - Records created: 1 Auto-Maintenance
+[DEBUG] 2018-01-01 18:02:35.412 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto-Maintenance
+[DEBUG] 2018-01-01 18:02:42.609 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Material
+[INFO ] 2018-01-01 18:02:42.610 [Time-limited test] RenomaxDBTests - Main Description list size: 1
+[DEBUG] 2018-01-01 18:02:47.103 [Time-limited test] AccountingDAOImp - Found INVOICES: 2017001
+[INFO ] 2018-01-01 18:02:47.104 [Time-limited test] RenomaxDBTests - Invoice list size: 1
+[INFO ] 2018-01-01 18:02:53.946 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 18:02:54.437 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
