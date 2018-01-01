@@ -77,7 +77,7 @@ public class Client
         return street.get();
     }
     
-    public StringProperty getStreetIDProperty()
+    public StringProperty getStreetProperty()
     {
         return street;
     }

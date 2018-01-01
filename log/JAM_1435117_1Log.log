@@ -859,3 +859,190 @@
 [INFO ] 2017-12-30 19:26:58.952 [Time-limited test] RenomaxDBTests - Main Description list size: 1
 [DEBUG] 2017-12-30 19:27:02.368 [Time-limited test] AccountingDAOImp - Found INVOICES: 2017001
 [INFO ] 2017-12-30 19:27:02.368 [Time-limited test] RenomaxDBTests - Invoice list size: 1
+[INFO ] 2018-01-01 14:32:30.071 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 14:45:20.177 [JavaFX Application Thread] AccountingDAOImp - New record added to CLIENTS: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Quebec H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 14:45:20.178 [JavaFX Application Thread] ClientFXMLController - Client created!
+[INFO ] 2018-01-01 15:35:06.073 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 15:35:06.594 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 15:35:06.594 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 15:37:08.442 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 15:37:08.904 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 15:37:08.904 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 15:38:23.196 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 15:38:23.690 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 15:38:23.691 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 15:39:02.795 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 15:39:03.231 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 15:39:03.232 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:02:26.904 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:02:27.614 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:02:27.615 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:18:25.789 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:18:26.275 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:18:26.275 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:20:17.733 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:20:18.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:20:18.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:22:27.798 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:22:28.292 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:22:28.293 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:34:30.865 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:34:31.320 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:34:31.321 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:43:30.810 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:43:31.275 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:43:31.275 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:44:19.247 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:44:19.724 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:44:19.724 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:44:29.239 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: -1 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Nova Scotia H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:44:29.240 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:44:29.247 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:44:29.247 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:49:33.391 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:49:33.872 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:49:33.872 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:49:49.006 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: -1 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Nova Scotia H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:49:49.006 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:49:49.013 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:49:49.013 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:51:01.028 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:51:01.488 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:51:01.488 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:51:14.721 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: -1 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Nova Scotia H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:51:14.722 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:51:14.728 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:51:14.728 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:52:23.021 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:52:23.493 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:52:23.493 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:52:31.911 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: -1 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Nova Scotia H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:52:31.912 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:52:31.918 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:52:31.918 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:57:27.518 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:57:28.194 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:57:28.194 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:57:46.747 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Nova Scotia H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:57:46.748 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:57:46.755 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:57:46.755 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:58:38.326 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:58:38.851 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:58:38.852 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:58:44.542 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Quebec Nova Scotia 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:58:44.543 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:58:44.550 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:58:44.550 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:58:56.786 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Nova Scotia Quebec 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:58:56.787 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:58:56.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:58:56.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 16:59:33.301 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 16:59:33.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:59:33.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 16:59:59.557 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Quebec H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 16:59:59.557 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 16:59:59.565 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 16:59:59.565 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:07:07.592 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:07:08.182 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:07:08.182 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:07:47.241 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:07:47.722 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:07:47.722 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:09:04.837 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:09:05.344 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:09:05.344 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:16:12.787 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:16:13.333 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:16:13.334 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:16:22.430 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Quebec H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:16:22.431 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:16:22.437 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:16:22.437 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:16:27.589 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Quebec H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:16:27.590 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:16:27.596 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:16:27.596 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:16:28.331 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Quebec H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:16:28.331 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:16:28.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:16:28.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:22:34.632 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:22:35.182 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:22:35.183 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:22:59.236 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:22:59.242 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:22:59.242 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:23:01.260 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:23:01.266 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:23:01.267 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:23:07.265 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:23:07.270 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:23:07.271 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:27:14.530 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:27:15.014 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:27:15.015 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:27:31.488 [JavaFX Application Thread] AccountingDAOImp - Dr. Steven Krychmen Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:27:31.488 [JavaFX Application Thread] AccountingDAOImp - 315 Bl. Brunswick 315 Bl. Brunswick
+[DEBUG] 2018-01-01 17:27:31.489 [JavaFX Application Thread] AccountingDAOImp - pointe-Claire pointe-Claire
+[DEBUG] 2018-01-01 17:27:31.489 [JavaFX Application Thread] AccountingDAOImp - Quebec Quebec
+[DEBUG] 2018-01-01 17:27:31.489 [JavaFX Application Thread] AccountingDAOImp - H9R-5M7 H9R-5M7
+[DEBUG] 2018-01-01 17:27:31.489 [JavaFX Application Thread] AccountingDAOImp - 514-486-6383 514-486-6383
+[DEBUG] 2018-01-01 17:27:31.489 [JavaFX Application Thread] AccountingDAOImp - 514-262-1171 514-262-1171
+[DEBUG] 2018-01-01 17:27:31.489 [JavaFX Application Thread] AccountingDAOImp - skrychmen@hotmail.com skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:27:31.490 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:27:31.497 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:27:31.497 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:28:00.029 [JavaFX Application Thread] AccountingDAOImp - Dr. Steven Krychmen Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:28:00.029 [JavaFX Application Thread] AccountingDAOImp - 315 Bl. Brunswick 315 Bl. Brunswick
+[DEBUG] 2018-01-01 17:28:00.030 [JavaFX Application Thread] AccountingDAOImp - pointe-Claire pointe-Claire
+[DEBUG] 2018-01-01 17:28:00.030 [JavaFX Application Thread] AccountingDAOImp - Nova Scotia Quebec
+[DEBUG] 2018-01-01 17:28:00.030 [JavaFX Application Thread] AccountingDAOImp - H9R-5M7 H9R-5M7
+[DEBUG] 2018-01-01 17:28:00.030 [JavaFX Application Thread] AccountingDAOImp - 514-486-6383 514-486-6383
+[DEBUG] 2018-01-01 17:28:00.030 [JavaFX Application Thread] AccountingDAOImp - 514-262-1171 514-262-1171
+[DEBUG] 2018-01-01 17:28:00.030 [JavaFX Application Thread] AccountingDAOImp - skrychmen@hotmail.com skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:28:00.030 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:28:00.035 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:28:00.036 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:29:56.503 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:29:56.986 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:29:56.986 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:30:13.854 [JavaFX Application Thread] AccountingDAOImp - Dr. Steven Krychmen Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:30:13.854 [JavaFX Application Thread] AccountingDAOImp - 315 Bl. Brunswick 315 Bl. Brunswick
+[DEBUG] 2018-01-01 17:30:13.854 [JavaFX Application Thread] AccountingDAOImp - pointe-Claire pointe-Claire
+[DEBUG] 2018-01-01 17:30:13.854 [JavaFX Application Thread] AccountingDAOImp - Nova Scotia Quebec
+[DEBUG] 2018-01-01 17:30:13.854 [JavaFX Application Thread] AccountingDAOImp - H9R-5M7 H9R-5M7
+[DEBUG] 2018-01-01 17:30:13.854 [JavaFX Application Thread] AccountingDAOImp - 514-486-6383 514-486-6383
+[DEBUG] 2018-01-01 17:30:13.855 [JavaFX Application Thread] AccountingDAOImp - 514-262-1171 514-262-1171
+[DEBUG] 2018-01-01 17:30:13.855 [JavaFX Application Thread] AccountingDAOImp - skrychmen@hotmail.com skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:30:13.957 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Nova Scotia H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:30:13.957 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:30:13.964 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:30:13.964 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:30:23.468 [JavaFX Application Thread] AccountingDAOImp - Dr. Steven Krychmen Dr. Steven Krychmen
+[DEBUG] 2018-01-01 17:30:23.468 [JavaFX Application Thread] AccountingDAOImp - 315 Bl. Brunswick 315 Bl. Brunswick
+[DEBUG] 2018-01-01 17:30:23.468 [JavaFX Application Thread] AccountingDAOImp - pointe-Claire pointe-Claire
+[DEBUG] 2018-01-01 17:30:23.468 [JavaFX Application Thread] AccountingDAOImp - Quebec Nova Scotia
+[DEBUG] 2018-01-01 17:30:23.468 [JavaFX Application Thread] AccountingDAOImp - H9R-5M7 H9R-5M7
+[DEBUG] 2018-01-01 17:30:23.468 [JavaFX Application Thread] AccountingDAOImp - 514-486-6383 514-486-6383
+[DEBUG] 2018-01-01 17:30:23.468 [JavaFX Application Thread] AccountingDAOImp - 514-262-1171 514-262-1171
+[DEBUG] 2018-01-01 17:30:23.469 [JavaFX Application Thread] AccountingDAOImp - skrychmen@hotmail.com skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:30:23.517 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Dr. Steven Krychmen 315 Bl. Brunswick pointe-Claire Quebec H9R-5M7 514-486-6383 514-262-1171 skrychmen@hotmail.com
+[DEBUG] 2018-01-01 17:30:23.518 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-01 17:30:23.525 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:30:23.525 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:32:13.019 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:32:13.617 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:32:13.617 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:33:15.895 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-01 17:33:44.289 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:33:44.801 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:33:44.801 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:35:51.793 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:35:52.268 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:35:52.268 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[INFO ] 2018-01-01 17:38:00.961 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-01 17:38:01.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-01 17:38:01.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen

@@ -13,6 +13,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- class that has the main method -->
+        <mainClass>com.ciotola.renomaxaccounting.MainAppFX</mainClass>
     </properties>
 
     <dependencies>
@@ -132,7 +133,7 @@
                     NetBeans-Run Maven-Goals and set the property skipTests
                     to true or false -->
                     <!-- <skipTests>false</skipTests> -->
-                    <skipTests>false</skipTests>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>

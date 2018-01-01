@@ -16,6 +16,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,27 +84,60 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
+        
+        String checkClient = "SELECT * FROM CLIENTS WHERE CLIENTNAME = ?";        
         String query = "INSERT INTO CLIENTS(CLIENTNAME, STREET, CITY, PROVINCE, POSTALCODE, HOMEPHONE, CELLPHONE, EMAIL) "
                 + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
+                PreparedStatement checkPStmt = connection.prepareStatement(checkClient);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
-            pStmt.setString(1, client.getClientName());
-            pStmt.setString(2, client.getStreet());
-            pStmt.setString(3, client.getCity());
-            pStmt.setString(4, client.getProvince());
-            pStmt.setString(5, client.getPostalCode());
-            pStmt.setString(6, client.getHomePhone());
-            pStmt.setString(7, client.getCellPhone());
-            pStmt.setString(8, client.getEmail());
-            
-            records = pStmt.executeUpdate();
-            try(ResultSet rs = pStmt.getGeneratedKeys();)
+            checkPStmt.setString(1, client.getClientName());
+            try(ResultSet checkRs = checkPStmt.executeQuery();)
             {
-                if(rs.next())
-                    recordNum = rs.getInt(1);
-                client.setClientID(recordNum);
-                log.debug("New record added to CLIENTS: " + client.toString());
+                if(checkRs.next())
+                {                   
+                    if(checkRs.getInt("CLIENTID") > 0)         
+                    {   
+                        client.setClientID(checkRs.getInt("CLIENTID"));    
+                        log.debug(client.getClientName() + " " + checkRs.getString("CLIENTNAME"));
+                        log.debug(client.getStreet()+ " " + checkRs.getString("STREET"));
+                        log.debug(client.getCity()+ " " + checkRs.getString("CITY"));
+                        log.debug(client.getProvince()+ " " + checkRs.getString("PROVINCE"));
+                        log.debug(client.getPostalCode()+ " " + checkRs.getString("POSTALCODE"));
+                        log.debug(client.getHomePhone()+ " " + checkRs.getString("HOMEPHONE"));
+                        log.debug(client.getCellPhone()+ " " + checkRs.getString("CELLPHONE"));
+                        log.debug(client.getEmail()+ " " + checkRs.getString("EMAIL"));                        
+                        
+                        if(!client.getClientName().equals(checkRs.getString("CLIENTNAME")) || !client.getStreet().equals(checkRs.getString("STREET")) ||
+                                !client.getCity().equals(checkRs.getString("CITY")) || !client.getProvince().equals(checkRs.getString("PROVINCE")) ||
+                                !client.getPostalCode().equals(checkRs.getString("POSTALCODE")) || !client.getHomePhone().equals(checkRs.getString("HOMEPHONE")) ||
+                                !client.getCellPhone().equals(checkRs.getString("CELLPHONE")) || !client.getEmail().equals(checkRs.getString("EMAIL")))
+                        {
+                            updateClient(client);    
+                        }
+                    }
+                    else
+                    {
+                        pStmt.setString(1, client.getClientName());
+                        pStmt.setString(2, client.getStreet());
+                        pStmt.setString(3, client.getCity());
+                        pStmt.setString(4, client.getProvince());
+                        pStmt.setString(5, client.getPostalCode());
+                        pStmt.setString(6, client.getHomePhone());
+                        pStmt.setString(7, client.getCellPhone());
+                        pStmt.setString(8, client.getEmail());
+
+                        records = pStmt.executeUpdate();
+                        try(ResultSet rs = pStmt.getGeneratedKeys();)
+                        {
+                            if(rs.next())
+                                recordNum = rs.getInt(1);
+                            client.setClientID(recordNum);
+                            log.debug("New record added to CLIENTS: " + client.toString());
+                        }
+                    }
+                }
             }
         }
         catch(SQLException ex)
@@ -390,9 +425,9 @@ public class AccountingDAOImp implements IAccountingDAO
     }
     
     @Override
-    public ArrayList<Expense> findAllExpenses() throws SQLException 
+    public ObservableList<Expense> findAllExpenses() throws SQLException 
     {
-        ArrayList<Expense> expenseList = new ArrayList<>();
+        ObservableList<Expense> expenseList = FXCollections.observableArrayList();
         Expense expense;
         String query = "SELECT * FROM EXPENSES";
         try(Connection connection = DriverManager.getConnection(url, user, password);
@@ -417,9 +452,9 @@ public class AccountingDAOImp implements IAccountingDAO
     }
 
     @Override
-    public ArrayList<Client> findAllClients() throws SQLException
+    public ObservableList<Client> findAllClients() throws SQLException
     {
-        ArrayList<Client> clientList = new ArrayList<>();
+        ObservableList<Client> clientList = FXCollections.observableArrayList();
         Client client;
         String query = "SELECT * FROM CLIENTS";
         try(Connection connection = DriverManager.getConnection(url, user, password);
@@ -444,9 +479,9 @@ public class AccountingDAOImp implements IAccountingDAO
     }
     
     @Override
-    public ArrayList<Supplier> findAllSuppliers() throws SQLException 
+    public ObservableList<Supplier> findAllSuppliers() throws SQLException 
     {
-        ArrayList<Supplier> supplierList = new ArrayList<>();
+        ObservableList<Supplier> supplierList = FXCollections.observableArrayList();
         Supplier supplier;
         String query = "SELECT * FROM SUPPLIERS";
         try(Connection connection = DriverManager.getConnection(url, user, password);
@@ -471,9 +506,9 @@ public class AccountingDAOImp implements IAccountingDAO
     }
 
     @Override
-    public ArrayList<MainDescription> findAllMainDescriptions() throws SQLException 
+    public ObservableList<MainDescription> findAllMainDescriptions() throws SQLException 
     {
-        ArrayList<MainDescription> mainDescriptionList = new ArrayList<>();
+        ObservableList<MainDescription> mainDescriptionList = FXCollections.observableArrayList();
         MainDescription mainDescription;
         String query = "SELECT * FROM MAINDESCRIPTION";
         try(Connection connection = DriverManager.getConnection(url, user, password);
@@ -498,9 +533,9 @@ public class AccountingDAOImp implements IAccountingDAO
     }
 
     @Override
-    public ArrayList<SubDescription> findAllSubDescriptions() throws SQLException
+    public ObservableList<SubDescription> findAllSubDescriptions() throws SQLException
     {
-        ArrayList<SubDescription> subDescriptionList = new ArrayList<>();
+        ObservableList<SubDescription> subDescriptionList = FXCollections.observableArrayList();
         SubDescription subDescription;
         String query = "SELECT * FROM SUBDESCRIPTION";
         try(Connection connection = DriverManager.getConnection(url, user, password);
@@ -525,9 +560,9 @@ public class AccountingDAOImp implements IAccountingDAO
     }
     
     @Override
-    public ArrayList<Invoice> findAllInvoices() throws SQLException 
+    public ObservableList<Invoice> findAllInvoices() throws SQLException 
     {
-        ArrayList<Invoice> invoiceList = new ArrayList<>();
+        ObservableList<Invoice> invoiceList = FXCollections.observableArrayList();
         Invoice invoice;
         String query = "SELECT * FROM INVOICES";
         try(Connection connection = DriverManager.getConnection(url, user, password);
@@ -594,7 +629,7 @@ public class AccountingDAOImp implements IAccountingDAO
             pStmt.setString(2, client.getStreet());
             pStmt.setString(3, client.getCity());
             pStmt.setString(4, client.getProvince());
-            pStmt.setString(5, client.getProvince());
+            pStmt.setString(5, client.getPostalCode());
             pStmt.setString(6, client.getHomePhone());
             pStmt.setString(7, client.getCellPhone());
             pStmt.setString(8, client.getEmail());

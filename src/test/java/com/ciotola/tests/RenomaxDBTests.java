@@ -331,7 +331,7 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindAllExpenses() throws SQLException, IOException  
     {
-        ArrayList<Expense> expenseList = accountDAO.findAllExpenses();
+        ObservableList<Expense> expenseList = accountDAO.findAllExpenses();
         log.info("Expense list size: " + expenseList.size());
         
         assertEquals("Expenses found: ", 1, expenseList.size());
@@ -340,7 +340,7 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindAllClients() throws SQLException, IOException  
     {
-        ArrayList<Client> clientList = accountDAO.findAllClients();
+        ObservableList<Client> clientList = accountDAO.findAllClients();
         log.info("Client list size: " + clientList.size());
         
         assertEquals("Clients found: ", 1, clientList.size());
@@ -349,7 +349,7 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindAllSuppliers() throws SQLException, IOException  
     {
-        ArrayList<Supplier> supplierList = accountDAO.findAllSuppliers();
+        ObservableList<Supplier> supplierList = accountDAO.findAllSuppliers();
         log.info("Supplier list size: " + supplierList.size());
         
         assertEquals("Suppliers found: ", 1, supplierList.size());
@@ -358,7 +358,7 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindAllMainDescription() throws SQLException, IOException  
     {
-        ArrayList<MainDescription> mainDescriptionList = accountDAO.findAllMainDescriptions();
+        ObservableList<MainDescription> mainDescriptionList = accountDAO.findAllMainDescriptions();
         log.info("Main Description list size: " + mainDescriptionList.size());
         
         assertEquals("Main Descriptions found: ", 1, mainDescriptionList.size());
@@ -367,7 +367,7 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindAllSubDescription() throws SQLException, IOException  
     {
-        ArrayList<SubDescription> subDescriptionList = accountDAO.findAllSubDescriptions();
+        ObservableList<SubDescription> subDescriptionList = accountDAO.findAllSubDescriptions();
         log.info("Sub Description list size: " + subDescriptionList.size());
         
         assertEquals("Sub Descriptions found: ", 1, subDescriptionList.size());
@@ -376,7 +376,7 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindAllInvoices() throws SQLException, IOException  
     {
-        ArrayList<Invoice> invoiceList = accountDAO.findAllInvoices();
+        ObservableList<Invoice> invoiceList = accountDAO.findAllInvoices();
         log.info("Invoice list size: " + invoiceList.size());
         
         assertEquals("Invoices found: ", 1, invoiceList.size());
