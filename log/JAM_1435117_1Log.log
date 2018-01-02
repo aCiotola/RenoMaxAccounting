@@ -1236,3 +1236,10 @@
 [INFO ] 2018-01-02 12:23:15.261 [JavaFX Application Thread] MainAppFX - Program Begins!
 [INFO ] 2018-01-02 12:26:36.459 [JavaFX Application Thread] MainAppFX - Program Begins!
 [DEBUG] 2018-01-02 12:27:12.829 [JavaFX Application Thread] MainFXMLController - Program Terminated!
+[INFO ] 2018-01-02 12:49:04.701 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 13:06:42.782 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 13:08:00.751 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 13:09:35.154 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 13:10:45.982 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-02 13:11:30.621 [JavaFX Application Thread] AccountingDAOImp - New record added to MAINDESCRIPTION: 2 description form test
+[DEBUG] 2018-01-02 13:11:30.622 [JavaFX Application Thread] MainDescriptionFormFXMLController - Main Description created!

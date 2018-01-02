@@ -47,23 +47,47 @@ public class MainFXMLController
     }
 
     @FXML
-    void onMenuAddExpense(ActionEvent event) {
-
+    void onMenuAddExpense(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ExpenseFormFXML.fxml"));
+        Parent parent = (BorderPane) loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Add a new Expense");
+        stage.setScene(new Scene(parent));  
+        stage.show(); 
     }
 
     @FXML
-    void onMenuAddInvoice(ActionEvent event) {
-
+    void onMenuAddInvoice(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/InvoiceFormFXML.fxml"));
+        Parent parent = (BorderPane) loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Add a new Invoice");
+        stage.setScene(new Scene(parent));  
+        stage.show(); 
     }
 
     @FXML
-    void onMenuAddMainDescription(ActionEvent event) {
-
+    void onMenuAddMainDescription(ActionEvent event) throws IOException 
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainDescriptionFormFXML.fxml"));
+        Parent parent = (BorderPane) loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Add a new Main Description");
+        stage.setScene(new Scene(parent));  
+        stage.show(); 
     }
 
     @FXML
-    void onMenuAddSubDescription(ActionEvent event) {
-
+    void onMenuAddSubDescription(ActionEvent event) throws IOException 
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SubDescriptionFormFXML.fxml"));
+        Parent parent = (BorderPane) loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Add a new Sub Description");
+        stage.setScene(new Scene(parent));  
+        stage.show(); 
     }
 
     @FXML
