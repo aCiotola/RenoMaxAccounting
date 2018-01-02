@@ -1,7 +1,6 @@
 package com.ciotola.renomaxaccounting;
 
 import com.ciotola.controller.ClientFXMLController;
-import com.ciotola.controller.MainFXMLController;
 import com.ciotola.entities.Client;
 import com.ciotola.persistence.AccountingDAOImp;
 import com.ciotola.persistence.IAccountingDAO;
@@ -25,13 +24,11 @@ public class MainAppFX extends Application
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private Stage primaryStage;
     
-    private final Client client;
     private final IAccountingDAO accountDAO;
     
     public MainAppFX() throws IOException
     {
         super();
-        client = new Client();
         accountDAO = new AccountingDAOImp();
     }
     
@@ -54,10 +51,10 @@ public class MainAppFX extends Application
         Parent parent = (BorderPane)loader.load();
         Scene scene = new Scene(parent);
         
-        //MainFXMLController controller = loader.getController();
-        
-        //controller.setClientDAOData(client, accountDAO);
-        //controller.displayTable();
+//        ClientFXMLController controller = loader.getController();
+//        
+//        controller.setClientDAOData(accountDAO);
+//        controller.displayTable();
         
         primaryStage.setScene(scene);
     }

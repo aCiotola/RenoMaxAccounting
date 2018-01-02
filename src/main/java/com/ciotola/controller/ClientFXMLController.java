@@ -1,19 +1,16 @@
 package com.ciotola.controller;
 
 import com.ciotola.entities.Client;
-import com.ciotola.persistence.AccountingDAOImp;
 import com.ciotola.persistence.IAccountingDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.util.converter.NumberStringConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +18,6 @@ public class ClientFXMLController
 {    
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IAccountingDAO accountDAO;
-    private Client client;
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -162,9 +158,8 @@ public class ClientFXMLController
         clientTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showClientDetails(newValue));
     }
     
-    public void setClientDAOData(Client client, IAccountingDAO accountDAO)
+    public void setClientDAOData(IAccountingDAO accountDAO)
     {
-        this.client = client;
         this.accountDAO = accountDAO;
     }
     

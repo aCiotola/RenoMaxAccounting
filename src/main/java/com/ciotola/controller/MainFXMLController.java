@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -39,7 +38,7 @@ public class MainFXMLController
     @FXML
     void onMenuAddClient(ActionEvent event) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ClientForm.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ClientFormFXML.fxml"));
         Parent parent = (BorderPane) loader.load();
         Stage stage = new Stage();
         stage.setTitle("Add a new Client");
@@ -68,8 +67,14 @@ public class MainFXMLController
     }
 
     @FXML
-    void onMenuAddSupplier(ActionEvent event) {
-
+    void onMenuAddSupplier(ActionEvent event) throws IOException 
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SupplierFormFXML.fxml"));
+        Parent parent = (BorderPane) loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Add a new Supplier");
+        stage.setScene(new Scene(parent));  
+        stage.show();    
     }
 
     @FXML
