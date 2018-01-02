@@ -1226,3 +1226,8 @@
 [INFO ] 2018-01-01 18:02:47.104 [Time-limited test] RenomaxDBTests - Invoice list size: 1
 [INFO ] 2018-01-01 18:02:53.946 [JavaFX Application Thread] MainAppFX - Program Begins!
 [DEBUG] 2018-01-01 18:02:54.437 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[INFO ] 2018-01-02 11:42:59.353 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 11:43:54.181 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 11:45:13.997 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 11:53:19.037 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 11:54:33.834 [JavaFX Application Thread] MainAppFX - Program Begins!

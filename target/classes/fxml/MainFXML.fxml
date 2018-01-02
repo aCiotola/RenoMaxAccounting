@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.MainFXMLController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuSave" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuSaveAs" text="Save As" />
+              <MenuItem mnemonicParsing="false" onAction="#onMenuClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="View">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuViewClients" text="Clients" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuViewMainDescription" text="Main Description" />
+              <MenuItem mnemonicParsing="false" onAction="#onMenuViewSubDescription" text="Sub Description" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuViewSuppliers" text="Suppliers" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Add">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddClient" text="Client" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddExpense" text="Expense" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddInvoice" text="Invoice" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddMainDescription" text="Main Description" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddSubDescription" text="Sub Description" />
+                <MenuItem mnemonicParsing="false" onAction="#onMenuAddSupplier" text="Supplier" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Search">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuSearchClient" text="Client" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuSearchMainDescription" text="Main Description" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuSearchSubDescription" text="Sub Description" />
+                <MenuItem mnemonicParsing="false" onAction="#onMenuSearchSupplier" text="Supplier" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

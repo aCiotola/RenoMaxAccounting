@@ -1,6 +1,7 @@
 package com.ciotola.renomaxaccounting;
 
 import com.ciotola.controller.ClientFXMLController;
+import com.ciotola.controller.MainFXMLController;
 import com.ciotola.entities.Client;
 import com.ciotola.persistence.AccountingDAOImp;
 import com.ciotola.persistence.IAccountingDAO;
@@ -48,15 +49,15 @@ public class MainAppFX extends Application
     private void configureStage() throws IOException, SQLException
     {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainAppFX.class.getResource("/fxml/ClientFXML.fxml"));
+        loader.setLocation(MainAppFX.class.getResource("/fxml/MainFXML.fxml"));
         
         Parent parent = (BorderPane)loader.load();
         Scene scene = new Scene(parent);
         
-        ClientFXMLController controller = loader.getController();
+        //MainFXMLController controller = loader.getController();
         
-        controller.setClientDAOData(client, accountDAO);
-        controller.displayTable();
+        //controller.setClientDAOData(client, accountDAO);
+        //controller.displayTable();
         
         primaryStage.setScene(scene);
     }
