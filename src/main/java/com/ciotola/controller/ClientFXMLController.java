@@ -79,6 +79,9 @@ public class ClientFXMLController
     @FXML // fx:id="emailField"
     private TextField emailField; // Value injected by FXMLLoader
     
+    @FXML // fx:id="seachClientField"
+    private TextField seachClientField; // Value injected by FXMLLoader
+    
     @FXML
     void onSaveClient(ActionEvent event) throws SQLException 
     {
@@ -117,6 +120,35 @@ public class ClientFXMLController
         hPhoneField.setText("");
         cPhoneField.setText("");
         emailField.setText("");
+    }
+    
+    @FXML
+    void onSeachClient(ActionEvent event) throws SQLException 
+    {
+        onClearClient(new ActionEvent());
+        if(!seachClientField.getText().equals(""))
+        {                   
+            log.debug("Search Client!");            
+            clientTable.setItems(accountDAO.findClientLikeName(seachClientField.getText()));
+        }
+        else        
+            displayTable();
+    }
+    
+    @FXML
+    void onDeleteClient(ActionEvent event) throws SQLException 
+    {
+        if(!clientNameField.getText().equals(""))
+        {            
+            Client client = accountDAO.findClientByName(clientNameField.getText());            
+            onClearClient(new ActionEvent());
+            accountDAO.deleteClient(client.getClientID());
+            
+            log.debug("Client deleted!");            
+            displayTable();
+        }
+        else        
+            clientNameField.setText("Please select a client that you wish to delete!");
     }
     
     public ClientFXMLController()

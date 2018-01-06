@@ -458,7 +458,7 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         ObservableList<Client> clientList = FXCollections.observableArrayList();
         Client client;
-        String query = "SELECT * FROM CLIENTS";
+        String query = "SELECT * FROM CLIENTS ORDER BY CLIENTNAME ASC";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
         {
@@ -586,6 +586,60 @@ public class AccountingDAOImp implements IAccountingDAO
             throw ex; 
         }    
         return invoiceList;
+    }
+    
+    @Override
+    public ObservableList<Client> findClientLikeName(String name) throws SQLException
+    {
+        ObservableList<Client> clientList = FXCollections.observableArrayList();
+        Client client;
+        String query = "SELECT * FROM CLIENTS WHERE CLIENTNAME LIKE ? ORDER BY CLIENTNAME ASC";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setString(1, "%" + name + "%");
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                while(rs.next())
+                {                    
+                    client = createClient(rs);
+                    clientList.add(client);
+                    log.debug("Found CLIENTS: " + client.getClientName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING CLIENT LIKE NAME: " + ex.getMessage());
+            throw ex; 
+        }    
+        return clientList;
+    }
+    
+    @Override
+    public Client findClientByName(String name) throws SQLException
+    {
+        Client client = new Client();
+        String query = "SELECT * FROM CLIENTS WHERE CLIENTNAME = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setString(1, name);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if(rs.next())
+                {                    
+                    client = createClient(rs);
+                    log.debug("Found CLIENT: " + client.getClientName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING CLIENT BY NAME: " + ex.getMessage());
+            throw ex; 
+        }    
+        return client;
     }
 
     @Override

@@ -53,6 +53,7 @@ public class RenomaxDBTests
         url = this.url.replace("\\", "");
         user = propsBean.getdbUserName();
         password = propsBean.getDbPassword();
+        accountDAO = new AccountingDAOImp();
     }
     
     @Test(timeout = 1000)
@@ -93,7 +94,7 @@ public class RenomaxDBTests
         client.setStreet("tempst");
         client.setCity("tempcty");
         client.setProvince("tempprov");
-        client.setPostalCode("temppost");
+        client.setPostalCode("tmp-pst");
         client.setHomePhone("temphome");
         client.setCellPhone("tempcell");
         client.setEmail("tempemail");
@@ -236,10 +237,10 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindClientByID() throws SQLException, IOException  
     {
-        Client client = accountDAO.findClientById(1);
+        Client client = accountDAO.findClientById(20);
         log.info(client.toString());
         
-        assertEquals("Client found: ", "Doctor Miller", client.getClientName());
+        assertEquals("Client found: ", "Dr. Miller Richard", client.getClientName());
     }
 
     @Test(timeout = 1000, expected = NullPointerException.class)
@@ -274,10 +275,10 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindMainDescriptionByID() throws SQLException, IOException  
     {
-        MainDescription mainDescription = accountDAO.findMainDescriptionById(1);
+        MainDescription mainDescription = accountDAO.findMainDescriptionById(5);
         log.info(mainDescription.toString());
         
-        assertEquals("Main Description found: ", "Material", mainDescription.getMainDescriptionName());
+        assertEquals("Main Description found: ", "Gas", mainDescription.getMainDescriptionName());
     }
 
     @Test(timeout = 1000, expected = NullPointerException.class)
@@ -293,10 +294,10 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindSubDescriptionByID() throws SQLException, IOException  
     {
-        SubDescription subDescription = accountDAO.findSubDescriptionById(1);
+        SubDescription subDescription = accountDAO.findSubDescriptionById(2);
         log.info(subDescription.toString());
         
-        assertEquals("Sub Description found: ", "Tools", subDescription.getSubDescriptionName());
+        assertEquals("Sub Description found: ", "Electricity", subDescription.getSubDescriptionName());
     }
 
     @Test(timeout = 1000, expected = NullPointerException.class)
@@ -312,10 +313,10 @@ public class RenomaxDBTests
     @Test(timeout = 1000)
     public void testFindSupplierByID() throws SQLException, IOException  
     {
-        Supplier supplier = accountDAO.findSupplierById(1);
+        Supplier supplier = accountDAO.findSupplierById(33);
         log.info(supplier.toString());
         
-        assertEquals("Supplier found: ", "Ceramique Royale", supplier.getSupplierName());
+        assertEquals("Supplier found: ", "Shell", supplier.getSupplierName());
     }
 
     @Test(timeout = 1000, expected = NullPointerException.class)
@@ -343,7 +344,7 @@ public class RenomaxDBTests
         ObservableList<Client> clientList = accountDAO.findAllClients();
         log.info("Client list size: " + clientList.size());
         
-        assertEquals("Clients found: ", 1, clientList.size());
+        assertEquals("Clients found: ", 60, clientList.size());
     }
     
     @Test(timeout = 1000)
@@ -352,7 +353,7 @@ public class RenomaxDBTests
         ObservableList<Supplier> supplierList = accountDAO.findAllSuppliers();
         log.info("Supplier list size: " + supplierList.size());
         
-        assertEquals("Suppliers found: ", 1, supplierList.size());
+        assertEquals("Suppliers found: ", 39, supplierList.size());
     }
     
     @Test(timeout = 1000)
@@ -361,7 +362,7 @@ public class RenomaxDBTests
         ObservableList<MainDescription> mainDescriptionList = accountDAO.findAllMainDescriptions();
         log.info("Main Description list size: " + mainDescriptionList.size());
         
-        assertEquals("Main Descriptions found: ", 1, mainDescriptionList.size());
+        assertEquals("Main Descriptions found: ", 10, mainDescriptionList.size());
     }
     
     @Test(timeout = 1000)
@@ -370,7 +371,7 @@ public class RenomaxDBTests
         ObservableList<SubDescription> subDescriptionList = accountDAO.findAllSubDescriptions();
         log.info("Sub Description list size: " + subDescriptionList.size());
         
-        assertEquals("Sub Descriptions found: ", 1, subDescriptionList.size());
+        assertEquals("Sub Descriptions found: ", 5, subDescriptionList.size());
     }
     
     @Test(timeout = 1000)
@@ -651,12 +652,6 @@ public class RenomaxDBTests
         // If an exception was not thrown then the test failed
         fail("The Object that was null did not throw an exception");
     }
-    
-    @Before
-    public void createVariables() throws IOException
-    {
-        accountDAO = new AccountingDAOImp();
-    }
 
     /**
      * This routine recreates the database before every test. This makes sure
@@ -669,6 +664,7 @@ public class RenomaxDBTests
     @Before
     public void seedDatabase()
     {
+        log.debug("Start seed!");
         final String seedDataScript = loadAsString("RenomaxAccountingDBTables.sql");
         try (Connection connection = DriverManager.getConnection(url, user, password)) 
         {

@@ -138,6 +138,12 @@
             </TextField>
             <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
               <buttons>
+                  <TextField fx:id="seachClientField" />
+                  <Button maxWidth="90.0" mnemonicParsing="false" onAction="#onSeachClient" text="Search">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
                   <Button mnemonicParsing="false" onAction="#onSaveClient" prefHeight="63.0" prefWidth="194.0" text="Save Client">
                      <padding>
                         <Insets bottom="5.0" left="40.0" right="40.0" top="5.0" />
@@ -151,9 +157,14 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
+                  <Button mnemonicParsing="false" onAction="#onDeleteClient" text="Delete Client">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
               </buttons>
                <GridPane.margin>
-                  <Insets right="300.0" top="20.0" />
+                  <Insets right="55.0" top="20.0" />
                </GridPane.margin>
                <opaqueInsets>
                   <Insets />

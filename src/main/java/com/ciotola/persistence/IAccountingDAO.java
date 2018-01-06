@@ -7,7 +7,6 @@ import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.SubDescription;
 import com.ciotola.entities.Supplier;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import javafx.collections.ObservableList;
 
 /**
@@ -37,6 +36,8 @@ public interface IAccountingDAO
     public ObservableList<MainDescription> findAllMainDescriptions() throws SQLException;
     public ObservableList<SubDescription> findAllSubDescriptions() throws SQLException;
     public ObservableList<Invoice> findAllInvoices() throws SQLException;
+    public ObservableList<Client> findClientLikeName(String name) throws SQLException;
+    public Client findClientByName(String name) throws SQLException;
     
     //update methods
     public int updateExpense(Expense expense) throws SQLException;
