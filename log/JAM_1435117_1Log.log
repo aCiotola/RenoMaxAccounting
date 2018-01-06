@@ -1248,3 +1248,49 @@
 [DEBUG] 2018-01-02 13:26:24.737 [JavaFX Application Thread] SubDescriptionFormFXMLController - Sub Description created!
 [INFO ] 2018-01-02 14:00:50.615 [JavaFX Application Thread] MainAppFX - Program Begins!
 [INFO ] 2018-01-02 14:02:14.702 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 14:13:49.730 [JavaFX Application Thread] MainAppFX - Program Begins!
+[INFO ] 2018-01-02 14:15:08.920 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-02 14:15:09.383 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-02 14:15:33.430 [JavaFX Application Thread] AccountingDAOImp - New record added to CLIENTS: 2 Alfonse       
+[DEBUG] 2018-01-02 14:15:33.430 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-02 14:15:33.598 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-02 14:15:33.598 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alfonse
+[DEBUG] 2018-01-02 14:15:46.709 [JavaFX Application Thread] AccountingDAOImp - Doctor Miller Doctor Miller
+[DEBUG] 2018-01-02 14:15:46.709 [JavaFX Application Thread] AccountingDAOImp - tempst tempst
+[DEBUG] 2018-01-02 14:15:46.710 [JavaFX Application Thread] AccountingDAOImp - tempcty tempcty
+[DEBUG] 2018-01-02 14:15:46.710 [JavaFX Application Thread] AccountingDAOImp - tempprov tempprov
+[DEBUG] 2018-01-02 14:15:46.710 [JavaFX Application Thread] AccountingDAOImp - H12FER temppcode
+[DEBUG] 2018-01-02 14:15:46.710 [JavaFX Application Thread] AccountingDAOImp - temphphone temphphone
+[DEBUG] 2018-01-02 14:15:46.710 [JavaFX Application Thread] AccountingDAOImp - tempcphone tempcphone
+[DEBUG] 2018-01-02 14:15:46.710 [JavaFX Application Thread] AccountingDAOImp - tempemail tempemail
+[DEBUG] 2018-01-02 14:15:46.765 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 1 Doctor Miller tempst tempcty tempprov H12FER temphphone tempcphone tempemail
+[DEBUG] 2018-01-02 14:15:46.766 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-02 14:15:46.772 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-02 14:15:46.772 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alfonse
+[DEBUG] 2018-01-02 14:15:56.407 [JavaFX Application Thread] AccountingDAOImp - Alfonse Alfonse
+[DEBUG] 2018-01-02 14:15:56.407 [JavaFX Application Thread] AccountingDAOImp -  
+[DEBUG] 2018-01-02 14:15:56.407 [JavaFX Application Thread] AccountingDAOImp - fwefe 
+[DEBUG] 2018-01-02 14:15:56.407 [JavaFX Application Thread] AccountingDAOImp -  
+[DEBUG] 2018-01-02 14:15:56.407 [JavaFX Application Thread] AccountingDAOImp -  
+[DEBUG] 2018-01-02 14:15:56.407 [JavaFX Application Thread] AccountingDAOImp -  
+[DEBUG] 2018-01-02 14:15:56.407 [JavaFX Application Thread] AccountingDAOImp -  
+[DEBUG] 2018-01-02 14:15:56.408 [JavaFX Application Thread] AccountingDAOImp -  
+[DEBUG] 2018-01-02 14:15:56.642 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Alfonse  fwefe     
+[DEBUG] 2018-01-02 14:15:56.643 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-02 14:15:56.648 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-02 14:15:56.649 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alfonse
+[INFO ] 2018-01-04 11:13:33.166 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-04 11:13:34.188 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-04 11:13:34.189 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alfonse
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - Doctor Miller Doctor Miller
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - tempst tempst
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - tempcty tempcty
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - rrgwrgwreg tempprov
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - H12FER H12FER
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - temphphone temphphone
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - tempcphone tempcphone
+[DEBUG] 2018-01-04 11:13:55.882 [JavaFX Application Thread] AccountingDAOImp - tempemail tempemail
+[DEBUG] 2018-01-04 11:13:56.030 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 1 Doctor Miller tempst tempcty rrgwrgwreg H12FER temphphone tempcphone tempemail
+[DEBUG] 2018-01-04 11:13:56.031 [JavaFX Application Thread] ClientFXMLController - Client created!
+[DEBUG] 2018-01-04 11:13:56.038 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Doctor Miller
+[DEBUG] 2018-01-04 11:13:56.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alfonse

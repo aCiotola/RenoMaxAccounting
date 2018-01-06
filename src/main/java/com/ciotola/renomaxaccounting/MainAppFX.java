@@ -40,23 +40,45 @@ public class MainAppFX extends Application
         this.primaryStage.setTitle("RenoMax Accounting 2018");
         
         configureStage();
+        //showClients();
+        
         primaryStage.show();
     }
     
     private void configureStage() throws IOException, SQLException
     {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainAppFX.class.getResource("/fxml/MainFXML.fxml"));
+        loader.setLocation(MainAppFX.class.getResource("/fxml/ClientFXML.fxml"));
         
         Parent parent = (BorderPane)loader.load();
         Scene scene = new Scene(parent);
         
-//        ClientFXMLController controller = loader.getController();
-//        
-//        controller.setClientDAOData(accountDAO);
-//        controller.displayTable();
+        ClientFXMLController controller = loader.getController();
+       
+        controller.setClientDAOData(accountDAO);
+        controller.displayTable();
         
         primaryStage.setScene(scene);
+    }
+    
+    public void showClients() 
+    {
+        try
+        {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainAppFX.class.getResource("/fxml/ClientFXML.fxml"));
+            Parent parent = (BorderPane) loader.load();
+
+            // Give the controller access to the main app.
+            ClientFXMLController controller = loader.getController();
+            //controller.setMainApp(this);
+
+        }
+        catch (IOException e) 
+        {
+            log.debug("Exception showing Clients!");
+        }
     }
     
     public static void main(String[] args)
