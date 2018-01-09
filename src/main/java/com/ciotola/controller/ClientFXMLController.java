@@ -1,6 +1,7 @@
 package com.ciotola.controller;
 
 import com.ciotola.entities.Client;
+import com.ciotola.persistence.AccountingDAOImp;
 import com.ciotola.persistence.IAccountingDAO;
 import java.io.IOException;
 import java.net.URL;
@@ -157,7 +158,7 @@ public class ClientFXMLController
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
-    void initialize() throws IOException 
+    void initialize() throws IOException, SQLException 
     {
         assert clientNumberColumn != null : "fx:id=\"clientNumberColumn\" was not injected: check your FXML file 'MainFXML.fxml'.";
         assert clientNameColumn != null : "fx:id=\"clientNameColumn\" was not injected: check your FXML file 'MainFXML.fxml'.";
@@ -176,6 +177,9 @@ public class ClientFXMLController
         assert hPhoneField != null : "fx:id=\"hPhoneField\" was not injected: check your FXML file 'MainFXML.fxml'.";
         assert cPhoneField != null : "fx:id=\"cPhoneField\" was not injected: check your FXML file 'MainFXML.fxml'.";
         assert emailField != null : "fx:id=\"emailField\" was not injected: check your FXML file 'MainFXML.fxml'.";
+        
+        accountDAO = new AccountingDAOImp();
+        displayTable();
 
         clientNumberColumn.setCellValueFactory(cellData -> cellData.getValue().getClientIDProperty().asObject());
         clientNameColumn.setCellValueFactory(cellData -> cellData.getValue().getClientNameProperty());
@@ -188,11 +192,6 @@ public class ClientFXMLController
         emailColumn.setCellValueFactory(cellData -> cellData.getValue().getEmailProperty());      
         
         clientTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showClientDetails(newValue));
-    }
-    
-    public void setClientDAOData(IAccountingDAO accountDAO)
-    {
-        this.accountDAO = accountDAO;
     }
     
     public void displayTable() throws SQLException

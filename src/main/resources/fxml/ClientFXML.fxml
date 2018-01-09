@@ -177,9 +177,9 @@
       </GridPane>
    </top>
    <bottom>
-      <TableView fx:id="clientTable" fixedCellSize="0.0" prefHeight="454.0" prefWidth="984.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="clientTable" fixedCellSize="0.0" prefHeight="400.0" prefWidth="984.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="clientNumberColumn" editable="false" prefWidth="94.0" text="Client Number" />
+          <TableColumn fx:id="clientNumberColumn" editable="false" maxWidth="2000.0" prefWidth="94.0" text="Client #" />
           <TableColumn fx:id="clientNameColumn" editable="false" prefWidth="134.0" text="Client Name" />
             <TableColumn fx:id="streetColumn" editable="false" prefWidth="75.0" text="Street" />
             <TableColumn fx:id="cityColumn" editable="false" prefWidth="75.0" text="City" />
@@ -193,7 +193,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <BorderPane.margin>
-            <Insets bottom="20.0" left="20.0" right="20.0" />
+            <Insets bottom="70.0" left="20.0" right="20.0" />
          </BorderPane.margin>
       </TableView>
    </bottom>

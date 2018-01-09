@@ -8,6 +8,8 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,9 +22,9 @@ public class Expense
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IntegerProperty expenseID;
     private ObjectProperty<Date> dateTime;
-    private IntegerProperty supplierID;
-    private IntegerProperty mainDescriptionID;
-    private IntegerProperty subDescriptionID;
+    private StringProperty supplier;
+    private StringProperty mainDescription;
+    private StringProperty subDescription;
     private ObjectProperty<BigDecimal> subtotal;
     private ObjectProperty<BigDecimal> gst;
     private ObjectProperty<BigDecimal> qst;
@@ -30,18 +32,18 @@ public class Expense
     
     public Expense()
     {
-        this(-1, Date.valueOf(LocalDate.now()), -1, -1, -1, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
+        this(-1, Date.valueOf(LocalDate.now()), "", "", "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
     }
     
-    public Expense(final int expenseID, final Date dateTime, final int supplierID, final int mainDescriptionID, 
-            final int subDescriptionID, final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total)
+    public Expense(final int expenseID, final Date dateTime, final String supplier, final String mainDescription, 
+            final String subDescription, final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total)
     {
         super();
         this.expenseID = new SimpleIntegerProperty(expenseID);
         this.dateTime = new SimpleObjectProperty(dateTime);
-        this.supplierID = new SimpleIntegerProperty(supplierID);
-        this.mainDescriptionID = new SimpleIntegerProperty(mainDescriptionID);
-        this.subDescriptionID = new SimpleIntegerProperty(subDescriptionID);
+        this.supplier = new SimpleStringProperty(supplier);
+        this.mainDescription = new SimpleStringProperty(mainDescription);
+        this.subDescription = new SimpleStringProperty(subDescription);
         this.subtotal = new SimpleObjectProperty(subtotal);
         this.gst = new SimpleObjectProperty(gst);
         this.qst = new SimpleObjectProperty(qst);
@@ -78,49 +80,49 @@ public class Expense
          this.dateTime.set(dateTime);
     }
     
-    public int getSupplierID()
+    public String getSupplier()
     {
-        return supplierID.get();
+        return supplier.get();
     }
     
-    public IntegerProperty getSupplierIDProperty()
+    public StringProperty getSupplierProperty()
     {
-        return supplierID;
+        return supplier;
     }
     
-    public void setSupplierID(final int supplierID)
+    public void setSupplier(final String supplier)
     {
-         this.supplierID.set(supplierID);
+         this.supplier.set(supplier);
     }
     
-    public int getMainDescriptionID()
+    public String getMainDescription()
     {
-        return mainDescriptionID.get();
+        return mainDescription.get();
     }
     
-    public IntegerProperty getMainDescriptionIDProperty()
+    public StringProperty getMainDescriptionProperty()
     {
-        return mainDescriptionID;
+        return mainDescription;
     }
     
-    public void setMainDescriptionID(final int mainDescriptionID)
+    public void setMainDescription(final String mainDescription)
     {
-         this.mainDescriptionID.set(mainDescriptionID);
+         this.mainDescription.set(mainDescription);
     }
     
-    public int getSubDescriptionID()
+    public String getSubDescription()
     {
-        return subDescriptionID.get();
+        return subDescription.get();
     }
     
-    public IntegerProperty getSubDescriptionIDProperty()
+    public StringProperty getSubDescriptionProperty()
     {
-        return subDescriptionID;
+        return subDescription;
     }
     
-    public void setSubDescriptionID(final int subDescriptionID)
+    public void setSubDescription(final String subDescription)
     {
-         this.subDescriptionID.set(subDescriptionID);
+         this.subDescription.set(subDescription);
     }
     
     public BigDecimal getSubtotal()
@@ -189,9 +191,9 @@ public class Expense
         int hash = 7;
         hash = 37 * hash + expenseID.get();
         hash = 37 * hash + Objects.hashCode(this.dateTime);
-        hash = 37 * hash + supplierID.get();
-        hash = 37 * hash + mainDescriptionID.get();
-        hash = 37 * hash + subDescriptionID.get();
+        hash = 37 * hash + Objects.hashCode(this.supplier);
+        hash = 37 * hash + Objects.hashCode(this.mainDescription);
+        hash = 37 * hash + Objects.hashCode(this.subDescription);
         hash = 37 * hash + Objects.hashCode(this.subtotal);
         hash = 37 * hash + Objects.hashCode(this.gst);
         hash = 37 * hash + Objects.hashCode(this.qst);
@@ -218,13 +220,13 @@ public class Expense
         if (!dateTime.get().equals(other.dateTime.get())) {
             return false;
         }
-        if (supplierID.get() != other.supplierID.get()) {
+        if (!supplier.get().equals(other.supplier.get())) {
             return false;
         }
-        if (mainDescriptionID.get() != other.mainDescriptionID.get()) {
+        if (!mainDescription.get().equals(other.mainDescription.get())) {
             return false;
         }
-        if (subDescriptionID.get() != other.subDescriptionID.get()) {
+        if (!subDescription.get().equals(other.subDescription.get())) {
             return false;
         }
         if (!subtotal.get().equals(other.subtotal.get())) {
@@ -245,7 +247,7 @@ public class Expense
     @Override
     public String toString()
     {
-        return expenseID.get() + " " + dateTime.get() + " " + supplierID.get() + " " + mainDescriptionID.get() + " " + subDescriptionID.get() +
+        return expenseID.get() + " " + dateTime.get() + " " + supplier.get() + " " + mainDescription.get() + " " + subDescription.get() +
                 " " + subtotal.get() + " " + gst.get() + " " + qst.get() + " " + total.get(); 
     }
 }

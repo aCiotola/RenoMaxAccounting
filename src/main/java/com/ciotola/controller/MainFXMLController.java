@@ -119,26 +119,6 @@ public class MainFXMLController
     }
 
     @FXML
-    void onMenuSearchClient(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onMenuSearchMainDescription(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onMenuSearchSubDescription(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onMenuSearchSupplier(ActionEvent event) {
-
-    }
-
-    @FXML
     void onMenuViewClients(ActionEvent event) {
 
     }

@@ -21,7 +21,6 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -61,9 +60,9 @@ public class RenomaxDBTests
     {        
         Expense expense = new Expense();        
         expense.setDateTime(Date.valueOf(LocalDate.now()));
-        expense.setSupplierID(1);
-        expense.setMainDescriptionID(1);
-        expense.setSubDescriptionID(1);
+        expense.setSupplier("Walmart");
+        expense.setMainDescription("Materials");
+        expense.setSubDescription("");
         expense.setSubtotal(new BigDecimal("25.00"));
         expense.setGst(new BigDecimal("2.000"));
         expense.setQst(new BigDecimal("2.000"));
@@ -191,7 +190,7 @@ public class RenomaxDBTests
         Invoice invoice = new Invoice();        
         invoice.setInvoiceNumber(2017001);
         invoice.setInvoiceDate(Date.valueOf(LocalDate.now()));
-        invoice.setClientID(1);
+        invoice.setClient("Doctor Miller");
         invoice.setSubtotal(new BigDecimal("41.28"));
         invoice.setGst(new BigDecimal("1.000"));
         invoice.setQst(new BigDecimal("4.000"));

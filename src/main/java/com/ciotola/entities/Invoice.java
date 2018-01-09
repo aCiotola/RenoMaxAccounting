@@ -15,6 +15,8 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -25,7 +27,7 @@ public class Invoice
     private IntegerProperty invoiceID;
     private IntegerProperty invoiceNumber;
     private ObjectProperty<Date> invoiceDate;
-    private IntegerProperty clientID;
+    private StringProperty client;
     private ObjectProperty<BigDecimal> subtotal;
     private ObjectProperty<BigDecimal> gst;
     private ObjectProperty<BigDecimal> qst;
@@ -34,17 +36,17 @@ public class Invoice
     
     public Invoice()
     {
-        this(-1, -1, Date.valueOf(LocalDate.now()), -1, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, false);
+        this(-1, -1, Date.valueOf(LocalDate.now()), "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, false);
     }
     
-    public Invoice(final int invoiceID, final int invoiceNumber, final Date invoiceDate, final int clientID,
+    public Invoice(final int invoiceID, final int invoiceNumber, final Date invoiceDate, final String client,
             final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total, final boolean invoiceSent)
     {
         super();
         this.invoiceID = new SimpleIntegerProperty(invoiceID);
         this.invoiceNumber = new SimpleIntegerProperty(invoiceNumber);
         this.invoiceDate = new SimpleObjectProperty(invoiceDate);
-        this.clientID = new SimpleIntegerProperty(clientID);
+        this.client = new SimpleStringProperty(client);
         this.subtotal = new SimpleObjectProperty(subtotal);
         this.gst = new SimpleObjectProperty(gst);
         this.qst = new SimpleObjectProperty(qst);
@@ -97,19 +99,19 @@ public class Invoice
          this.invoiceDate.set(invoiceDate);
     }
     
-    public int getClientID()
+    public String getClient()
     {
-        return clientID.get();
+        return client.get();
     }
     
-    public IntegerProperty getClientIDProperty()
+    public StringProperty getClientProperty()
     {
-        return clientID;
+        return client;
     }
     
-    public void setClientID(final int clientID)
+    public void setClient(final String client)
     {
-         this.clientID.set(clientID);
+         this.client.set(client);
     }
     
     public BigDecimal getSubtotal()
@@ -191,10 +193,10 @@ public class Invoice
     public int hashCode() 
     {
         int hash = 7;
-        hash = 37 * hash + clientID.get();
+        hash = 37 * hash + invoiceID.get();
         hash = 37 * hash + invoiceNumber.get();
         hash = 37 * hash + Objects.hashCode(this.invoiceDate);
-        hash = 37 * hash + clientID.get();
+        hash = 37 * hash + Objects.hashCode(this.client);
         hash = 37 * hash + Objects.hashCode(this.subtotal);
         hash = 37 * hash + Objects.hashCode(this.gst);
         hash = 37 * hash + Objects.hashCode(this.qst);
@@ -225,7 +227,7 @@ public class Invoice
         if (!invoiceDate.get().equals(other.invoiceDate.get())) {
             return false;
         }
-        if (clientID.get() != other.clientID.get()) {
+        if (!client.get().equals(other.client.get())) {
             return false;
         }
         if (!subtotal.get().equals(other.subtotal.get())) {
@@ -249,7 +251,7 @@ public class Invoice
     @Override
     public String toString()
     {
-        return invoiceID.get() + " " + invoiceNumber.get() + " " + invoiceDate.get() + " " + clientID.get() + " " + 
+        return invoiceID.get() + " " + invoiceNumber.get() + " " + invoiceDate.get() + " " + client.get() + " " + 
                 subtotal.get() + " " + gst.get() + " " + qst.get() + " " + total.get() + " " + invoiceSent.get(); 
     }
 }

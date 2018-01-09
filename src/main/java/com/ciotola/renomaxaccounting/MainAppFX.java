@@ -1,6 +1,7 @@
 package com.ciotola.renomaxaccounting;
 
 import com.ciotola.controller.ClientFXMLController;
+import com.ciotola.controller.MainFXMLController;
 import com.ciotola.entities.Client;
 import com.ciotola.persistence.AccountingDAOImp;
 import com.ciotola.persistence.IAccountingDAO;
@@ -38,47 +39,21 @@ public class MainAppFX extends Application
         log.info("Program Begins!");
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("RenoMax Accounting 2018");
+        this.primaryStage.resizableProperty().setValue(false);
         
-        configureStage();
-        //showClients();
-        
+        configureStage();        
         primaryStage.show();
     }
     
     private void configureStage() throws IOException, SQLException
     {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainAppFX.class.getResource("/fxml/ClientFXML.fxml"));
+        loader.setLocation(MainAppFX.class.getResource("/fxml/MainFXML.fxml"));
         
         Parent parent = (BorderPane)loader.load();
         Scene scene = new Scene(parent);
         
-        ClientFXMLController controller = loader.getController();
-       
-        controller.setClientDAOData(accountDAO);
-        controller.displayTable();
-        
         primaryStage.setScene(scene);
-    }
-    
-    public void showClients() 
-    {
-        try
-        {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainAppFX.class.getResource("/fxml/ClientFXML.fxml"));
-            Parent parent = (BorderPane) loader.load();
-
-            // Give the controller access to the main app.
-            ClientFXMLController controller = loader.getController();
-            //controller.setMainApp(this);
-
-        }
-        catch (IOException e) 
-        {
-            log.debug("Exception showing Clients!");
-        }
     }
     
     public static void main(String[] args)

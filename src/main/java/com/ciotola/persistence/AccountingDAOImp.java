@@ -15,7 +15,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.slf4j.Logger;
@@ -48,15 +47,15 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO EXPENSES(DATETIME, SUPPLIERID, MAINDESCRIPTIONID, SUBDESCRIPTIONID, SUBTOTAL, GST, QST, TOTAL)"
+        String query = "INSERT INTO EXPENSES(DATETIME, SUPPLIER, MAINDESCRIPTION, SUBDESCRIPTION, SUBTOTAL, GST, QST, TOTAL)"
                 + " VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
             pStmt.setDate(1, expense.getDateTime());
-            pStmt.setInt(2, expense.getSupplierID());
-            pStmt.setInt(3, expense.getMainDescriptionID());
-            pStmt.setInt(4, expense.getSubDescriptionID());
+            pStmt.setString(2, expense.getSupplier());
+            pStmt.setString(3, expense.getMainDescription());
+            pStmt.setString(4, expense.getSubDescription());
             pStmt.setBigDecimal(5, expense.getSubtotal());
             pStmt.setBigDecimal(6, expense.getGst());
             pStmt.setBigDecimal(7, expense.getQst());
@@ -239,14 +238,14 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO INVOICES(INVOICENUMBER, INVOICEDATE, CLIENTID, SUBTOTAL, GST, QST, TOTAL, INVOICESENT) "
+        String query = "INSERT INTO INVOICES(INVOICENUMBER, INVOICEDATE, CLIENT, SUBTOTAL, GST, QST, TOTAL, INVOICESENT) "
                 + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
             pStmt.setInt(1, invoice.getInvoiceNumber());
             pStmt.setDate(2, invoice.getInvoiceDate());
-            pStmt.setInt(3, invoice.getClientID());
+            pStmt.setString(3, invoice.getClient());
             pStmt.setBigDecimal(4, invoice.getSubtotal());
             pStmt.setBigDecimal(5, invoice.getGst());
             pStmt.setBigDecimal(6, invoice.getQst());
@@ -646,15 +645,15 @@ public class AccountingDAOImp implements IAccountingDAO
     public int updateExpense(Expense expense) throws SQLException
     {
         int records;
-        String query = "UPDATE EXPENSES SET DATETIME = ?, SUPPLIERID = ?, MAINDESCRIPTIONID = ?," +
-            "SUBDESCRIPTIONID = ?, SUBTOTAL = ?, GST = ?, QST = ?, TOTAL = ? WHERE EXPENSEID = ?";
+        String query = "UPDATE EXPENSES SET DATETIME = ?, SUPPLIER = ?, MAINDESCRIPTION = ?," +
+            "SUBDESCRIPTION = ?, SUBTOTAL = ?, GST = ?, QST = ?, TOTAL = ? WHERE EXPENSEID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
         {            
             pStmt.setDate(1, expense.getDateTime());
-            pStmt.setInt(2, expense.getSupplierID());
-            pStmt.setInt(3, expense.getMainDescriptionID());
-            pStmt.setInt(4, expense.getSubDescriptionID());
+            pStmt.setString(2, expense.getSupplier());
+            pStmt.setString(3, expense.getMainDescription());
+            pStmt.setString(4, expense.getSubDescription());
             pStmt.setBigDecimal(5, expense.getSubtotal());
             pStmt.setBigDecimal(6, expense.getGst());
             pStmt.setBigDecimal(7, expense.getQst());
@@ -772,14 +771,14 @@ public class AccountingDAOImp implements IAccountingDAO
     public int updateInvoice(Invoice invoice) throws SQLException
     {
         int records;
-        String query = "UPDATE INVOICES SET INVOICENUMBER = ?, INVOICEDATE = ?, CLIENTID = ?, SUBTOTAL = ?," +
+        String query = "UPDATE INVOICES SET INVOICENUMBER = ?, INVOICEDATE = ?, CLIENT = ?, SUBTOTAL = ?," +
                 "GST = ?, QST = ?, TOTAL = ?, INVOICESENT = ? WHERE INVOICEID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
         {            
             pStmt.setInt(1, invoice.getInvoiceNumber());
             pStmt.setDate(2, invoice.getInvoiceDate());
-            pStmt.setInt(3, invoice.getClientID());
+            pStmt.setString(3, invoice.getClient());
             pStmt.setBigDecimal(4, invoice.getSubtotal());
             pStmt.setBigDecimal(5, invoice.getGst());
             pStmt.setBigDecimal(6, invoice.getQst());
@@ -923,9 +922,9 @@ public class AccountingDAOImp implements IAccountingDAO
         Expense expense = new Expense();
         expense.setExpenseID(rs.getInt("EXPENSEID"));                    
         expense.setDateTime(rs.getDate("DATETIME"));
-        expense.setSupplierID(rs.getInt("SUPPLIERID"));
-        expense.setMainDescriptionID(rs.getInt("MAINDESCRIPTIONID"));
-        expense.setSubDescriptionID(rs.getInt("SUBDESCRIPTIONID"));
+        expense.setSupplier(rs.getString("SUPPLIER"));
+        expense.setMainDescription(rs.getString("MAINDESCRIPTION"));
+        expense.setSubDescription(rs.getString("SUBDESCRIPTION"));
         expense.setSubtotal(rs.getBigDecimal("SUBTOTAL"));
         expense.setGst(rs.getBigDecimal("GST"));
         expense.setQst(rs.getBigDecimal("QST"));        
@@ -978,7 +977,7 @@ public class AccountingDAOImp implements IAccountingDAO
         invoice.setInvoiceID(rs.getInt("INVOICEID"));                    
         invoice.setInvoiceNumber(rs.getInt("INVOICENUMBER"));
         invoice.setInvoiceDate(rs.getDate("INVOICEDATE"));  
-        invoice.setClientID(rs.getInt("CLIENTID"));
+        invoice.setClient(rs.getString("CLIENT"));
         invoice.setSubtotal(rs.getBigDecimal("SUBTOTAL"));
         invoice.setGst(rs.getBigDecimal("GST"));
         invoice.setQst(rs.getBigDecimal("QST"));

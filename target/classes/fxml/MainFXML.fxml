@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.MainFXMLController">
@@ -34,14 +37,6 @@
                 <MenuItem mnemonicParsing="false" onAction="#onMenuAddSupplier" text="Supplier" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Search">
-              <items>
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuSearchClient" text="Client" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuSearchMainDescription" text="Main Description" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuSearchSubDescription" text="Sub Description" />
-                <MenuItem mnemonicParsing="false" onAction="#onMenuSearchSupplier" text="Supplier" />
-              </items>
-            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
@@ -50,4 +45,19 @@
         </menus>
       </MenuBar>
    </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="expenseTab" closable="false" text="Expenses">
+              <fx:include fx:id="eTab" source="ExpenseFXML.fxml" />
+          </Tab>
+          <Tab fx:id="invoiceTab" closable="false" text="Invoices">
+               <fx:include fx:id="iTab" source="InvoiceFormFXML.fxml" />
+          </Tab>
+            <Tab fx:id="clientTab" closable="false" text="Clients">
+              <fx:include fx:id="cTab" source="ClientFXML.fxml" />
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
 </BorderPane>
