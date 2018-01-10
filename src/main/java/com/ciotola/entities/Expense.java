@@ -21,6 +21,7 @@ public class Expense
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IntegerProperty expenseID;
+    private IntegerProperty expenseNumber;
     private ObjectProperty<Date> dateTime;
     private StringProperty supplier;
     private StringProperty mainDescription;
@@ -32,14 +33,15 @@ public class Expense
     
     public Expense()
     {
-        this(-1, Date.valueOf(LocalDate.now()), "", "", "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
+        this(-1, -1, Date.valueOf(LocalDate.now()), "", "", "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
     }
     
-    public Expense(final int expenseID, final Date dateTime, final String supplier, final String mainDescription, 
+    public Expense(final int expenseID, final int expenseNumber, final Date dateTime, final String supplier, final String mainDescription, 
             final String subDescription, final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total)
     {
         super();
         this.expenseID = new SimpleIntegerProperty(expenseID);
+        this.expenseNumber = new SimpleIntegerProperty(expenseNumber);
         this.dateTime = new SimpleObjectProperty(dateTime);
         this.supplier = new SimpleStringProperty(supplier);
         this.mainDescription = new SimpleStringProperty(mainDescription);
@@ -63,6 +65,21 @@ public class Expense
     public void setExpenseID(final int expenseID)
     {
          this.expenseID.set(expenseID);
+    }
+    
+    public int getExpenseNumber()
+    {
+        return expenseNumber.get();
+    }
+    
+    public IntegerProperty getExpenseNumberProperty()
+    {
+        return expenseNumber;
+    }
+    
+    public void setExpenseNumber(final int expenseNumber)
+    {
+         this.expenseNumber.set(expenseNumber);
     }
 
     public Date getDateTime()
@@ -190,6 +207,7 @@ public class Expense
     {
         int hash = 7;
         hash = 37 * hash + expenseID.get();
+        hash = 37 * hash + expenseNumber.get();
         hash = 37 * hash + Objects.hashCode(this.dateTime);
         hash = 37 * hash + Objects.hashCode(this.supplier);
         hash = 37 * hash + Objects.hashCode(this.mainDescription);
@@ -215,6 +233,9 @@ public class Expense
         }
         final Expense other = (Expense) obj;
         if (expenseID.get() != other.expenseID.get()) {
+            return false;
+        }
+        if (expenseNumber.get() != other.expenseNumber.get()) {
             return false;
         }
         if (!dateTime.get().equals(other.dateTime.get())) {
@@ -247,7 +268,8 @@ public class Expense
     @Override
     public String toString()
     {
-        return expenseID.get() + " " + dateTime.get() + " " + supplier.get() + " " + mainDescription.get() + " " + subDescription.get() +
-                " " + subtotal.get() + " " + gst.get() + " " + qst.get() + " " + total.get(); 
+        return expenseID.get() + " " + expenseNumber.get() + " " + dateTime.get() + " " + supplier.get() + " " + 
+                mainDescription.get() + " " + subDescription.get() + " " + subtotal.get() + " " + gst.get() 
+                + " " + qst.get() + " " + total.get(); 
     }
 }

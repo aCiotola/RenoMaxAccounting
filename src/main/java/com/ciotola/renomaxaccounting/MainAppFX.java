@@ -1,8 +1,5 @@
 package com.ciotola.renomaxaccounting;
 
-import com.ciotola.controller.ClientFXMLController;
-import com.ciotola.controller.MainFXMLController;
-import com.ciotola.entities.Client;
 import com.ciotola.persistence.AccountingDAOImp;
 import com.ciotola.persistence.IAccountingDAO;
 import java.io.IOException;

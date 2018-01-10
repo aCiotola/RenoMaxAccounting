@@ -19,24 +19,6 @@
               <MenuItem mnemonicParsing="false" onAction="#onMenuClose" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="View">
-            <items>
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuViewClients" text="Clients" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuViewMainDescription" text="Main Description" />
-              <MenuItem mnemonicParsing="false" onAction="#onMenuViewSubDescription" text="Sub Description" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuViewSuppliers" text="Suppliers" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Add">
-              <items>
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddClient" text="Client" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddExpense" text="Expense" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddInvoice" text="Invoice" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddMainDescription" text="Main Description" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuAddSubDescription" text="Sub Description" />
-                <MenuItem mnemonicParsing="false" onAction="#onMenuAddSupplier" text="Supplier" />
-              </items>
-            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
@@ -56,6 +38,15 @@
           </Tab>
             <Tab fx:id="clientTab" closable="false" text="Clients">
               <fx:include fx:id="cTab" source="ClientFXML.fxml" />
+            </Tab>
+            <Tab fx:id="supplierTab" closable="false" text="Suppliers">
+              <fx:include fx:id="sTab" source="SupplierFXML.fxml" />
+            </Tab>
+            <Tab fx:id="mDescriptionTab" closable="false" text="Main Descriptions">
+              <fx:include fx:id="mdTab" source="MainDescriptionFormFXML.fxml" />
+            </Tab>
+            <Tab fx:id="sDescrptionTab" closable="false" text="Sub Descriptions">
+              <fx:include fx:id="sdTab" source="SubDescriptionFormFXML.fxml" />
             </Tab>
         </tabs>
       </TabPane>

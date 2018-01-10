@@ -56,9 +56,31 @@ public class RenomaxDBTests
     }
     
     @Test(timeout = 1000)
+    public void testAddSameExpense() throws SQLException, IOException 
+    {        
+        Expense expense = new Expense();   
+        expense.setExpenseNumber(2017001);
+        expense.setDateTime(Date.valueOf(LocalDate.now()));
+        expense.setSupplier("Walmart");
+        expense.setMainDescription("Materials");
+        expense.setSubDescription("");
+        expense.setSubtotal(new BigDecimal("25.00"));
+        expense.setGst(new BigDecimal("2.000"));
+        expense.setQst(new BigDecimal("2.000"));
+        expense.setTotal(new BigDecimal("29.00"));
+        
+        int records = accountDAO.addExpense(expense);
+        log.info("Records created: " + records + " " + expense.getExpenseID());
+        Expense expense2 = accountDAO.findExpenseById(expense.getExpenseID());
+        
+        assertEquals("The records are not equal!", expense, expense2);
+    }
+    
+    @Test(timeout = 1000)
     public void testAddExpense() throws SQLException, IOException 
     {        
-        Expense expense = new Expense();        
+        Expense expense = new Expense();   
+        expense.setExpenseNumber(2017002);
         expense.setDateTime(Date.valueOf(LocalDate.now()));
         expense.setSupplier("Walmart");
         expense.setMainDescription("Materials");
@@ -78,7 +100,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddExpenseFail() throws SQLException, IOException  
     {
-        Expense expense = null;        
+        Expense expense = null;     
+        log.info("Expected Exception: Null Expense");
         accountDAO.addExpense(expense);
         
         // If an exception was not thrown then the test failed
@@ -108,7 +131,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddClientFail() throws SQLException, IOException  
     {
-        Client client = null;        
+        Client client = null;   
+        log.info("Expected Exception: Null Client");
         accountDAO.addClient(client);
         
         // If an exception was not thrown then the test failed
@@ -131,7 +155,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddSupplierFail() throws SQLException, IOException  
     {
-        Supplier supplier = null;        
+        Supplier supplier = null;      
+        log.info("Expected Exception: Null Supplier");
         accountDAO.addSupplier(supplier);
         
         // If an exception was not thrown then the test failed
@@ -154,7 +179,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddMainDescriptionFail() throws SQLException, IOException  
     {
-        MainDescription mainDescription = null;        
+        MainDescription mainDescription = null;      
+        log.info("Expected Exception: Null Main Description");
         accountDAO.addMainDescription(mainDescription);
         
         // If an exception was not thrown then the test failed
@@ -177,7 +203,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddSubDescriptionFail() throws SQLException, IOException  
     {
-        SubDescription subDescription = null;        
+        SubDescription subDescription = null;      
+        log.info("Expected Exception: Null Sub Description");
         accountDAO.addSubDescription(subDescription);
         
         // If an exception was not thrown then the test failed
@@ -207,7 +234,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddInvoiceFail() throws SQLException, IOException  
     {
-        Invoice invoice = null;        
+        Invoice invoice = null;  
+        log.info("Expected Exception: Null Invoice");
         accountDAO.addInvoice(invoice);
         
         // If an exception was not thrown then the test failed
@@ -227,6 +255,7 @@ public class RenomaxDBTests
     public void testFindExpenseByIDFail() throws SQLException, IOException  
     {
         Expense expense = null;
+        log.info("Expected Exception: Null Expense");
         expense = accountDAO.findExpenseById(expense.getExpenseID());     
         
         // If an exception was not thrown then the test failed
@@ -246,6 +275,7 @@ public class RenomaxDBTests
     public void testFindClientByIDFail() throws SQLException, IOException  
     {
         Client client = null;
+        log.info("Expected Exception: Null Client");
         client = accountDAO.findClientById(client.getClientID());     
         
         // If an exception was not thrown then the test failed
@@ -265,6 +295,7 @@ public class RenomaxDBTests
     public void testFindInvoiceByIDFail() throws SQLException, IOException  
     {
         Invoice invoice = null;
+        log.info("Expected Exception: Null Invoice");
         invoice = accountDAO.findInvoiceById(invoice.getInvoiceID());     
         
         // If an exception was not thrown then the test failed
@@ -284,6 +315,7 @@ public class RenomaxDBTests
     public void testFindMainDescriptionByIDFail() throws SQLException, IOException  
     {
         MainDescription mainDescription = null;
+        log.info("Expected Exception: Null Main Description");
         mainDescription = accountDAO.findMainDescriptionById(mainDescription.getMainDescriptionID());     
         
         // If an exception was not thrown then the test failed
@@ -303,6 +335,7 @@ public class RenomaxDBTests
     public void testFindSubDescriptionByIDFail() throws SQLException, IOException  
     {
         SubDescription subDescription = null;
+        log.info("Expected Exception: Null Sub Description");
         subDescription = accountDAO.findSubDescriptionById(subDescription.getSubDescriptionID());     
         
         // If an exception was not thrown then the test failed
@@ -322,6 +355,7 @@ public class RenomaxDBTests
     public void testFindSupplierByIDFail() throws SQLException, IOException  
     {
         Supplier supplier = null;
+        log.info("Expected Exception: Null Supplier");
         supplier = accountDAO.findSupplierById(supplier.getSupplierID());     
         
         // If an exception was not thrown then the test failed
@@ -399,6 +433,7 @@ public class RenomaxDBTests
     public void testUpdateExpenseFail() throws SQLException, IOException  
     {
         Expense expense = null;        
+        log.info("Expected Exception: Null Expense");
         int records = accountDAO.updateExpense(expense);
         
         // If an exception was not thrown then the test failed
@@ -422,6 +457,7 @@ public class RenomaxDBTests
     public void testUpdateClientFail() throws SQLException, IOException  
     {
         Client client = null;        
+        log.info("Expected Exception: Null Client");
         int records = accountDAO.updateClient(client);
         
         // If an exception was not thrown then the test failed
@@ -444,7 +480,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateSupplierFail() throws SQLException, IOException  
     {
-        Supplier supplier = null;        
+        Supplier supplier = null;      
+        log.info("Expected Exception: Null Supplier");
         int records = accountDAO.updateSupplier(supplier);
         
         // If an exception was not thrown then the test failed
@@ -467,7 +504,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateMainDescriptionFail() throws SQLException, IOException  
     {
-        MainDescription mainDescription = null;        
+        MainDescription mainDescription = null; 
+        log.info("Expected Exception: Null Main Description");
         int records = accountDAO.updateMainDescription(mainDescription);
         
         // If an exception was not thrown then the test failed
@@ -490,7 +528,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateSubDescriptionFail() throws SQLException, IOException  
     {
-        SubDescription subDescription = null;        
+        SubDescription subDescription = null;      
+        log.info("Expected Exception: Null Sub Description");
         int records = accountDAO.updateSubDescription(subDescription);
         
         // If an exception was not thrown then the test failed
@@ -514,6 +553,7 @@ public class RenomaxDBTests
     public void testUpdateInvoiceFail() throws SQLException, IOException  
     {
         Invoice invoice = null;        
+        log.info("Expected Exception: Null Invoice");
         int records = accountDAO.updateInvoice(invoice);
         
         // If an exception was not thrown then the test failed
@@ -535,7 +575,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteExpenseFail() throws SQLException, IOException  
     {
-        Expense expense = null;        
+        Expense expense = null;   
+        log.info("Expected Exception: Null Expense");
         int records = accountDAO.deleteExpense(expense.getExpenseID());
         
         // If an exception was not thrown then the test failed
@@ -558,6 +599,7 @@ public class RenomaxDBTests
     public void testDeleteClientFail() throws SQLException, IOException  
     {
         Client client = null;        
+        log.info("Expected Exception: Null Client");
         int records = accountDAO.deleteClient(client.getClientID());
         
         // If an exception was not thrown then the test failed
@@ -579,7 +621,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteSupplierFail() throws SQLException, IOException  
     {
-        Supplier supplier = null;        
+        Supplier supplier = null;    
+        log.info("Expected Exception: Null Supplier");
         int records = accountDAO.deleteSupplier(supplier.getSupplierID());
         
         // If an exception was not thrown then the test failed
@@ -601,7 +644,8 @@ public class RenomaxDBTests
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteMainDescriptionFail() throws SQLException, IOException  
     {
-        MainDescription supplier = null;        
+        MainDescription supplier = null;      
+        log.info("Expected Exception: Null Main Description");
         int records = accountDAO.deleteMainDescription(supplier.getMainDescriptionID());
         
         // If an exception was not thrown then the test failed
@@ -624,6 +668,7 @@ public class RenomaxDBTests
     public void testDeleteSubDescriptionFail() throws SQLException, IOException  
     {
         SubDescription subDescription = null;        
+        log.info("Expected Exception: Null Sub Description");
         int records = accountDAO.deleteSubDescription(subDescription.getSubDescriptionID());
         
         // If an exception was not thrown then the test failed
@@ -646,6 +691,7 @@ public class RenomaxDBTests
     public void testDeleteInvoiceFail() throws SQLException, IOException  
     {
         Invoice invoice = null;        
+        log.info("Expected Exception: Null Invoice");
         int records = accountDAO.deleteInvoice(invoice.getInvoiceID());
         
         // If an exception was not thrown then the test failed

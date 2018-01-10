@@ -37,7 +37,12 @@ public interface IAccountingDAO
     public ObservableList<SubDescription> findAllSubDescriptions() throws SQLException;
     public ObservableList<Invoice> findAllInvoices() throws SQLException;
     public ObservableList<Client> findClientLikeName(String name) throws SQLException;
+    public Expense findExpenseByNumber(int expenseNum) throws SQLException;
     public Client findClientByName(String name) throws SQLException;
+    public Supplier findSupplierByName(String name) throws SQLException;
+    public MainDescription findMainDescriptionByName(String name) throws SQLException;
+    public SubDescription findSubDescriptionByName(String name) throws SQLException;
+    
     
     //update methods
     public int updateExpense(Expense expense) throws SQLException;

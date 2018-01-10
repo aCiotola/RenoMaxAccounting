@@ -21,8 +21,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
- * @author shado
+ * DAO implementation class which contains the methods required to interact with the database.
+ * Gets database information from the properties file.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/10
+ * 
  */
 public class AccountingDAOImp implements IAccountingDAO
 {
@@ -33,6 +37,12 @@ public class AccountingDAOImp implements IAccountingDAO
     private String user = "";
     private String password = "";
     
+    /**
+     * No parameter constructor which gets the database information from the
+     * properties bean and sets the database variables.
+     * 
+     * @throws IOException 
+     */
     public AccountingDAOImp() throws IOException
     {
         super();
@@ -42,32 +52,70 @@ public class AccountingDAOImp implements IAccountingDAO
         password = propsBean.getDbPassword();
     }
     
+    /**
+     * Method which will insert the expense data into the Expense Table.
+     * Will check if the expense being added already exists.
+     * 
+     * @param expense
+     * @return number of records added.
+     * @throws SQLException 
+     */
     @Override
     public int addExpense(Expense expense) throws SQLException 
     {
+        int count = -1;
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO EXPENSES(DATETIME, SUPPLIER, MAINDESCRIPTION, SUBDESCRIPTION, SUBTOTAL, GST, QST, TOTAL)"
-                + " VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        String checkExpense = "SELECT * FROM EXPENSES WHERE EXPENSENUMBER = ?";        
+        String query = "INSERT INTO EXPENSES(EXPENSENUMBER, DATETIME, SUPPLIER, MAINDESCRIPTION, SUBDESCRIPTION, SUBTOTAL, GST, QST, TOTAL)"
+                + " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
+                PreparedStatement checkPStmt = connection.prepareStatement(checkExpense);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
-            pStmt.setDate(1, expense.getDateTime());
-            pStmt.setString(2, expense.getSupplier());
-            pStmt.setString(3, expense.getMainDescription());
-            pStmt.setString(4, expense.getSubDescription());
-            pStmt.setBigDecimal(5, expense.getSubtotal());
-            pStmt.setBigDecimal(6, expense.getGst());
-            pStmt.setBigDecimal(7, expense.getQst());
-            pStmt.setBigDecimal(8, expense.getTotal());
-            
-            records = pStmt.executeUpdate();
-            try(ResultSet rs = pStmt.getGeneratedKeys();)
+            checkPStmt.setInt(1, expense.getExpenseNumber());
+            try(ResultSet checkRs = checkPStmt.executeQuery();)
             {
-                if(rs.next())
-                    recordNum = rs.getInt(1);
-                expense.setExpenseID(recordNum);
-                log.debug("New record added to EXPENSES: " + expense.toString());
+                if(checkRs.next())
+                {       
+                        count = 1;
+                        expense.setExpenseID(checkRs.getInt("EXPENSEID"));                        
+                        
+                        if(!expense.getDateTime().equals(checkRs.getDate("DATETIME")) || 
+                                !expense.getSupplier().equals(checkRs.getString("SUPPLIER")) || 
+                                !expense.getMainDescription().equals(checkRs.getString("MAINDESCRIPTION")) || 
+                                !expense.getSubDescription().equals(checkRs.getString("SUBDESCRIPTION")) || 
+                                !expense.getSubtotal().equals(checkRs.getBigDecimal("SUBTOTAL")) || 
+                                !expense.getGst().equals(checkRs.getBigDecimal("GST")) || 
+                                !expense.getQst().equals(checkRs.getBigDecimal("QST")) || 
+                                !expense.getTotal().equals(checkRs.getBigDecimal("TOTAL")))
+                        {
+                            updateExpense(expense);    
+                        }
+                    }
+                
+            }
+            if(count < 0)
+            {
+                pStmt.setInt(1, getLastExpenseNumber());
+                pStmt.setDate(2, expense.getDateTime());
+                pStmt.setString(3, expense.getSupplier());
+                pStmt.setString(4, expense.getMainDescription());
+                pStmt.setString(5, expense.getSubDescription());
+                pStmt.setBigDecimal(6, expense.getSubtotal());
+                pStmt.setBigDecimal(7, expense.getGst());
+                pStmt.setBigDecimal(8, expense.getQst());
+                pStmt.setBigDecimal(9, expense.getTotal());
+
+                records = pStmt.executeUpdate();
+                try(ResultSet rs = pStmt.getGeneratedKeys();)
+                {
+                    if(rs.next())
+                        recordNum = rs.getInt(1);
+                    expense.setExpenseID(recordNum);
+                    log.debug("New record added to EXPENSES: " + expense.toString());
+                }
             }
         }
         catch(SQLException ex)
@@ -100,15 +148,7 @@ public class AccountingDAOImp implements IAccountingDAO
                     if(checkRs.getInt("CLIENTID") > 0)         
                     {   
                         count = 1;
-                        client.setClientID(checkRs.getInt("CLIENTID"));    
-                        log.debug(client.getClientName() + " " + checkRs.getString("CLIENTNAME"));
-                        log.debug(client.getStreet()+ " " + checkRs.getString("STREET"));
-                        log.debug(client.getCity()+ " " + checkRs.getString("CITY"));
-                        log.debug(client.getProvince()+ " " + checkRs.getString("PROVINCE"));
-                        log.debug(client.getPostalCode()+ " " + checkRs.getString("POSTALCODE"));
-                        log.debug(client.getHomePhone()+ " " + checkRs.getString("HOMEPHONE"));
-                        log.debug(client.getCellPhone()+ " " + checkRs.getString("CELLPHONE"));
-                        log.debug(client.getEmail()+ " " + checkRs.getString("EMAIL"));                        
+                        client.setClientID(checkRs.getInt("CLIENTID"));                        
                         
                         if(!client.getClientName().equals(checkRs.getString("CLIENTNAME")) || !client.getStreet().equals(checkRs.getString("STREET")) ||
                                 !client.getCity().equals(checkRs.getString("CITY")) || !client.getProvince().equals(checkRs.getString("PROVINCE")) ||
@@ -152,21 +192,41 @@ public class AccountingDAOImp implements IAccountingDAO
     @Override
     public int addSupplier(Supplier supplier) throws SQLException 
     {
+        int count = -1;
         int records = -1;
         int recordNum = -1;
+        
+        String checkSupplier = "SELECT * FROM SUPPLIERS WHERE SUPPLIERNAME = ?";  
         String query = "INSERT INTO SUPPLIERS(SUPPLIERNAME) VALUES(?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
+                PreparedStatement checkPStmt = connection.prepareStatement(checkSupplier);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
-            pStmt.setString(1, supplier.getSupplierName());
-            
-            records = pStmt.executeUpdate();
-            try(ResultSet rs = pStmt.getGeneratedKeys();)
+            checkPStmt.setString(1, supplier.getSupplierName());
+            try(ResultSet checkRs = checkPStmt.executeQuery();)
             {
-                if(rs.next())
-                    recordNum = rs.getInt(1);
-                supplier.setSupplierID(recordNum);
-                log.debug("New record added to SUPPLIERS: " + supplier.toString());
+                if(checkRs.next())
+                {         
+                    count = 1;
+                    supplier.setSupplierID(checkRs.getInt("SUPPLIERID"));                 
+                        
+                    if(!supplier.getSupplierName().equals(checkRs.getString("SUPPLIERNAME")))
+                        updateSupplier(supplier);    
+                    
+                }
+            }
+            if(count < 0)
+            {
+                pStmt.setString(1, supplier.getSupplierName());
+
+                records = pStmt.executeUpdate();
+                try(ResultSet rs = pStmt.getGeneratedKeys();)
+                {
+                    if(rs.next())
+                        recordNum = rs.getInt(1);
+                    supplier.setSupplierID(recordNum);
+                    log.debug("New record added to SUPPLIERS: " + supplier.toString());
+                }
             }
         }
         catch(SQLException ex)
@@ -640,25 +700,130 @@ public class AccountingDAOImp implements IAccountingDAO
         }    
         return client;
     }
+    
+    @Override
+    public Supplier findSupplierByName(String name) throws SQLException
+    {
+        Supplier supplier = new Supplier();
+        String query = "SELECT * FROM SUPPLIERS WHERE SUPPLIERNAME = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setString(1, name);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if(rs.next())
+                {                    
+                    supplier = createSupplier(rs);
+                    log.debug("Found SUPPLIER: " + supplier.getSupplierName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING SUPPLIER BY NAME: " + ex.getMessage());
+            throw ex; 
+        }    
+        return supplier;
+    }
+    
+    @Override
+    public MainDescription findMainDescriptionByName(String name) throws SQLException
+    {
+        MainDescription mainDescription = new MainDescription();
+        String query = "SELECT * FROM MAINDESCRIPTION WHERE MAINDESCRIPTIONNAME = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setString(1, name);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if(rs.next())
+                {                    
+                    mainDescription = createMainDescription(rs);
+                    log.debug("Found MAIN DESCRIPTION: " + mainDescription.getMainDescriptionName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING MAIN DESCRIPTION BY NAME: " + ex.getMessage());
+            throw ex; 
+        }    
+        return mainDescription;
+    }
+    
+    @Override
+    public SubDescription findSubDescriptionByName(String name) throws SQLException
+    {
+        SubDescription subDescription = new SubDescription();
+        String query = "SELECT * FROM SUBDESCRIPTION WHERE SUBDESCRIPTIONNAME = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setString(1, name);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if(rs.next())
+                {                    
+                    subDescription = createSubDescription(rs);
+                    log.debug("Found SUB DESCRIPTION: " + subDescription.getSubDescriptionName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING SUB DESCRIPTION BY NAME: " + ex.getMessage());
+            throw ex; 
+        }    
+        return subDescription;
+    }
+    
+    @Override
+    public Expense findExpenseByNumber(int expenseNumber) throws SQLException
+    {
+        Expense expense = new Expense();
+        String query = "SELECT * FROM EXPENSES WHERE EXPENSENUMBER = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, expenseNumber);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if(rs.next())
+                {                    
+                    expense = createExpense(rs);
+                    log.debug("Found EXPENSE: " + expense.getTotal());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING EXCPENSE BY NUMBER: " + ex.getMessage());
+            throw ex; 
+        }    
+        return expense;
+    }
 
     @Override
     public int updateExpense(Expense expense) throws SQLException
     {
         int records;
-        String query = "UPDATE EXPENSES SET DATETIME = ?, SUPPLIER = ?, MAINDESCRIPTION = ?," +
+        String query = "UPDATE EXPENSES SET EXPENSENUMBER = ?, DATETIME = ?, SUPPLIER = ?, MAINDESCRIPTION = ?," +
             "SUBDESCRIPTION = ?, SUBTOTAL = ?, GST = ?, QST = ?, TOTAL = ? WHERE EXPENSEID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
         {            
-            pStmt.setDate(1, expense.getDateTime());
-            pStmt.setString(2, expense.getSupplier());
-            pStmt.setString(3, expense.getMainDescription());
-            pStmt.setString(4, expense.getSubDescription());
-            pStmt.setBigDecimal(5, expense.getSubtotal());
-            pStmt.setBigDecimal(6, expense.getGst());
-            pStmt.setBigDecimal(7, expense.getQst());
-            pStmt.setBigDecimal(8, expense.getTotal());
-            pStmt.setInt(9, expense.getExpenseID());
+            pStmt.setInt(1, expense.getExpenseNumber());
+            pStmt.setDate(2, expense.getDateTime());
+            pStmt.setString(3, expense.getSupplier());
+            pStmt.setString(4, expense.getMainDescription());
+            pStmt.setString(5, expense.getSubDescription());
+            pStmt.setBigDecimal(6, expense.getSubtotal());
+            pStmt.setBigDecimal(7, expense.getGst());
+            pStmt.setBigDecimal(8, expense.getQst());
+            pStmt.setBigDecimal(9, expense.getTotal());
+            pStmt.setInt(10, expense.getExpenseID());
             
             records = pStmt.executeUpdate();
             log.debug("Record updated from EXPENSES is: " + expense.toString());
@@ -920,7 +1085,8 @@ public class AccountingDAOImp implements IAccountingDAO
     private Expense createExpense(ResultSet rs) throws SQLException
     {
         Expense expense = new Expense();
-        expense.setExpenseID(rs.getInt("EXPENSEID"));                    
+        expense.setExpenseID(rs.getInt("EXPENSEID"));     
+        expense.setExpenseNumber(rs.getInt("EXPENSENUMBER"));         
         expense.setDateTime(rs.getDate("DATETIME"));
         expense.setSupplier(rs.getString("SUPPLIER"));
         expense.setMainDescription(rs.getString("MAINDESCRIPTION"));
@@ -985,4 +1151,28 @@ public class AccountingDAOImp implements IAccountingDAO
         invoice.setInvoiceSent(rs.getBoolean("INVOICESENT"));            
         return invoice;
     }   
+    
+    private int getLastExpenseNumber() throws SQLException
+    {
+        int expenseNumber = 0;
+        String query = "SELECT MAX(EXPENSENUMBER) as MAX_ENUMBER FROM EXPENSES";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    expenseNumber = rs.getInt("MAX_ENUMBER");
+                    log.debug("Found EXPENSE NUMBER: " + expenseNumber);
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING EXPENSE NUMBER: " + ex.getMessage());
+            throw ex; 
+        }    
+        return expenseNumber + 1;
+    }
 }
