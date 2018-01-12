@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -133,7 +134,15 @@
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="9">
+            <CheckBox contentDisplay="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="454.0" text="No Tax" underline="true" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </CheckBox>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
               <buttons>
                 <Button mnemonicParsing="false" onAction="#onSaveExpense" text="Save Expense">
                      <font>

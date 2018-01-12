@@ -19,6 +19,7 @@ public class SupplierFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IAccountingDAO accountDAO;
+    private String sdName = "";
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -59,14 +60,17 @@ public class SupplierFXMLController
     {
         if(!supplierNameField.getText().equals(""))
         {            
-            Supplier supplier = new Supplier();     
+            Supplier supplier = accountDAO.findSupplierByName(sdName);
             supplier.setSupplierName(supplierNameField.getText());
-            accountDAO.addSupplier(supplier);
             
-            log.debug("Supplier created!");
+            if(supplier.getSupplierID() != -1)            
+                accountDAO.updateSupplier(supplier);            
+            else
+                 accountDAO.addSupplier(supplier);
             
-            supplierNameField.setText("");
-            
+            log.debug("Supplier created!");            
+            supplierNameField.setText("");     
+            sdName = "";
             displayTable();
         }
         else        
@@ -101,7 +105,10 @@ public class SupplierFXMLController
     
     private void showSupplierDetails(Supplier supplier) 
     {
-        if(supplier != null)        
+        if(supplier != null)    
+        {
             supplierNameField.setText(supplier.getSupplierName());
+            sdName = supplierNameField.getText();
+        }
     }
 }

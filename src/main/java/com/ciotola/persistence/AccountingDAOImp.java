@@ -192,42 +192,24 @@ public class AccountingDAOImp implements IAccountingDAO
     @Override
     public int addSupplier(Supplier supplier) throws SQLException 
     {
-        int count = -1;
         int records = -1;
         int recordNum = -1;
         
-        String checkSupplier = "SELECT * FROM SUPPLIERS WHERE SUPPLIERNAME = ?";  
+        log.debug(supplier.getSupplierID() + "OKAY");
         String query = "INSERT INTO SUPPLIERS(SUPPLIERNAME) VALUES(?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
-                PreparedStatement checkPStmt = connection.prepareStatement(checkSupplier);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
-            checkPStmt.setString(1, supplier.getSupplierName());
-            try(ResultSet checkRs = checkPStmt.executeQuery();)
-            {
-                if(checkRs.next())
-                {         
-                    count = 1;
-                    supplier.setSupplierID(checkRs.getInt("SUPPLIERID"));                 
-                        
-                    if(!supplier.getSupplierName().equals(checkRs.getString("SUPPLIERNAME")))
-                        updateSupplier(supplier);    
-                    
-                }
-            }
-            if(count < 0)
-            {
-                pStmt.setString(1, supplier.getSupplierName());
+            pStmt.setString(1, supplier.getSupplierName());
 
-                records = pStmt.executeUpdate();
-                try(ResultSet rs = pStmt.getGeneratedKeys();)
-                {
-                    if(rs.next())
-                        recordNum = rs.getInt(1);
-                    supplier.setSupplierID(recordNum);
-                    log.debug("New record added to SUPPLIERS: " + supplier.toString());
-                }
-            }
+            records = pStmt.executeUpdate();
+            try(ResultSet rs = pStmt.getGeneratedKeys();)
+            {
+                if(rs.next())
+                    recordNum = rs.getInt(1);
+                supplier.setSupplierID(recordNum);
+                log.debug("New record added to SUPPLIERS: " + supplier.toString());
+            }            
         }
         catch(SQLException ex)
         {
