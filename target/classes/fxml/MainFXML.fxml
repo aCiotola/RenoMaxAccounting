@@ -43,10 +43,10 @@
               <fx:include fx:id="sTab" source="SupplierFXML.fxml" />
             </Tab>
             <Tab fx:id="mDescriptionTab" closable="false" text="Main Descriptions">
-              <fx:include fx:id="mdTab" source="MainDescriptionFormFXML.fxml" />
+              <fx:include fx:id="mdTab" source="MainDescriptionFXML.fxml" />
             </Tab>
             <Tab fx:id="sDescrptionTab" closable="false" text="Sub Descriptions">
-              <fx:include fx:id="sdTab" source="SubDescriptionFormFXML.fxml" />
+              <fx:include fx:id="sdTab" source="SubDescriptionFXML.fxml" />
             </Tab>
         </tabs>
       </TabPane>
