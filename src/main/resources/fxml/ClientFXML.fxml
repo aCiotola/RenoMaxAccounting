@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.ClientFXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.ClientFXMLController">
    <top>
       <GridPane prefHeight="260.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -177,7 +177,7 @@
       </GridPane>
    </top>
    <bottom>
-      <TableView fx:id="clientTable" fixedCellSize="0.0" prefHeight="400.0" prefWidth="984.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="clientTable" fixedCellSize="0.0" prefHeight="532.0" prefWidth="984.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="clientNumberColumn" editable="false" maxWidth="2000.0" prefWidth="94.0" text="Client #" />
           <TableColumn fx:id="clientNameColumn" editable="false" prefWidth="134.0" text="Client Name" />

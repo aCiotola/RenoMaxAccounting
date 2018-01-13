@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.MainDescriptionFXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.MainDescriptionFXMLController">
    <top>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -62,7 +62,7 @@
       </GridPane>
    </top>
    <bottom>
-      <TableView fx:id="mdTable" prefHeight="605.0" prefWidth="984.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="mdTable" prefHeight="738.0" prefWidth="984.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="mdNumColumn" editable="false" maxWidth="650.0" prefWidth="75.0" text="Main Description #" />
           <TableColumn fx:id="mdNameColumn" editable="false" prefWidth="75.0" text="Main Description" />

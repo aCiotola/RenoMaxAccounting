@@ -56,31 +56,10 @@ public class RenomaxDBTests
     }
     
     @Test(timeout = 1000)
-    public void testAddSameExpense() throws SQLException, IOException 
-    {        
-        Expense expense = new Expense();   
-        expense.setExpenseNumber(2017001);
-        expense.setDateTime(Date.valueOf(LocalDate.now()));
-        expense.setSupplier("Walmart");
-        expense.setMainDescription("Materials");
-        expense.setSubDescription("");
-        expense.setSubtotal(new BigDecimal("25.00"));
-        expense.setGst(new BigDecimal("2.000"));
-        expense.setQst(new BigDecimal("2.000"));
-        expense.setTotal(new BigDecimal("29.00"));
-        
-        int records = accountDAO.addExpense(expense);
-        log.info("Records created: " + records + " " + expense.getExpenseID());
-        Expense expense2 = accountDAO.findExpenseById(expense.getExpenseID());
-        
-        assertEquals("The records are not equal!", expense, expense2);
-    }
-    
-    @Test(timeout = 1000)
     public void testAddExpense() throws SQLException, IOException 
     {        
         Expense expense = new Expense();   
-        expense.setExpenseNumber(2017002);
+        expense.setExpenseNumber(2);
         expense.setDateTime(Date.valueOf(LocalDate.now()));
         expense.setSupplier("Walmart");
         expense.setMainDescription("Materials");
@@ -143,7 +122,7 @@ public class RenomaxDBTests
     public void testAddSupplier() throws SQLException, IOException 
     {        
         Supplier supplier = new Supplier();        
-        supplier.setSupplierName("Reno-Depot");
+        supplier.setSupplierName("Reno Depot");
         
         int records = accountDAO.addSupplier(supplier);
         log.info("Records created: " + records + " " + supplier.getSupplierName());

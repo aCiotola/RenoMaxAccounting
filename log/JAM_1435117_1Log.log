@@ -14397,3 +14397,929 @@
 [DEBUG] 2018-01-13 12:05:02.322 [main] RenomaxDBTests - Start seed!
 [DEBUG] 2018-01-13 12:05:04.535 [main] RenomaxDBTests - Start seed!
 [DEBUG] 2018-01-13 12:05:06.322 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:07:42.111 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:07:46.091 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Adaptel
+[DEBUG] 2018-01-13 12:07:46.168 [Time-limited test] AccountingDAOImp - Record updated from SUPPLIERS is: 1 newsuppliername
+[DEBUG] 2018-01-13 12:07:46.175 [Time-limited test] AccountingDAOImp - Found SUPPLIER: newsuppliername
+[INFO ] 2018-01-13 12:07:46.175 [Time-limited test] RenomaxDBTests - Supplier name should be changed: newsuppliername
+[DEBUG] 2018-01-13 12:07:46.178 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:07:51.384 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-13 12:07:51.453 [Time-limited test] AccountingDAOImp - Record updated from INVOICE is: 1 2017002 2017-12-30 Argento Alfonso 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-13 12:07:51.459 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017002
+[INFO ] 2018-01-13 12:07:51.459 [Time-limited test] RenomaxDBTests - Invoice number should be changed: 2017002
+[DEBUG] 2018-01-13 12:07:51.460 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:07:55.788 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:07:55.793 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:07:59.411 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Electricity
+[INFO ] 2018-01-13 12:07:59.412 [Time-limited test] RenomaxDBTests - 2 Electricity
+[DEBUG] 2018-01-13 12:07:59.414 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:03.899 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:08:03.901 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:08.049 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:08:08.054 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:11.718 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:08:11.720 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:16.285 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:08:16.288 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:08:20.658 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Drill
+[DEBUG] 2018-01-13 12:08:20.737 [Time-limited test] AccountingDAOImp - Record updated from SUBDESCRIPTION is: 1 newsdname
+[DEBUG] 2018-01-13 12:08:20.741 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: newsdname
+[INFO ] 2018-01-13 12:08:20.741 [Time-limited test] RenomaxDBTests - Sub Description should be changed: newsdname
+[DEBUG] 2018-01-13 12:08:20.742 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:25.688 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:08:25.692 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:30.239 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:08:30.245 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:08:34.845 [Time-limited test] AccountingDAOImp - Found CLIENT: Dr. Miller Richard
+[INFO ] 2018-01-13 12:08:34.846 [Time-limited test] RenomaxDBTests - 20 Dr. Miller Richard 476 ch. Grande-cote Rosemere Quebec J7A-1L8   
+[DEBUG] 2018-01-13 12:08:34.848 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:39.417 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:08:39.421 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:08:44.201 [Time-limited test] AccountingDAOImp - New record added to INVOICES: 2 2017001 2018-01-13 Doctor Miller 41.28 1.000 4.000 46.28 false
+[INFO ] 2018-01-13 12:08:44.202 [Time-limited test] RenomaxDBTests - Records created: 1 2017001
+[DEBUG] 2018-01-13 12:08:44.369 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-13 12:08:44.370 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:49.036 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:08:49.038 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:08:53.217 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2018-01-13 12:08:53.270 [Time-limited test] AccountingDAOImp - Record updated from EXPENSES is: 1 1 2017-12-31 Costco Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:08:53.275 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-13 12:08:53.275 [Time-limited test] RenomaxDBTests - Expense date should be changed: 2017-12-31
+[DEBUG] 2018-01-13 12:08:53.276 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:08:57.456 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:08:57.460 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:09:03.331 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:09:03.336 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:07.861 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Adaptel
+[INFO ] 2018-01-13 12:09:07.862 [Time-limited test] RenomaxDBTests - Supplier shouldn't be null: 1 Adaptel
+[DEBUG] 2018-01-13 12:09:08.015 [Time-limited test] AccountingDAOImp - Records Deleted from SUPPLIERS: 1 id: 1
+[INFO ] 2018-01-13 12:09:08.019 [Time-limited test] RenomaxDBTests - Supplier should be null: -1 
+[DEBUG] 2018-01-13 12:09:08.020 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:12.671 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-13 12:09:12.671 [Time-limited test] RenomaxDBTests - Invoice shouldn't be null: 1 2017001 2017-12-30 Argento Alfonso 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-13 12:09:12.734 [Time-limited test] AccountingDAOImp - Records Deleted from INVOICES: 1 id: 1
+[INFO ] 2018-01-13 12:09:12.827 [Time-limited test] RenomaxDBTests - Invoice should be null: -1 -1 2018-01-13  0 0 0 0 false
+[DEBUG] 2018-01-13 12:09:12.828 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:17.839 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Drill
+[INFO ] 2018-01-13 12:09:17.839 [Time-limited test] RenomaxDBTests - Sub Description shouldn't be null: 1 Drill
+[DEBUG] 2018-01-13 12:09:17.877 [Time-limited test] AccountingDAOImp - Records Deleted from SUBDESCRIPTION: 1 id: 1
+[INFO ] 2018-01-13 12:09:17.881 [Time-limited test] RenomaxDBTests - Sub Description should be null: -1 
+[DEBUG] 2018-01-13 12:09:17.882 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:09:23.162 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:09:23.167 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:27.822 [Time-limited test] AccountingDAOImp - Found EXPENSES: 26.99
+[INFO ] 2018-01-13 12:09:27.822 [Time-limited test] RenomaxDBTests - Expense list size: 1
+[DEBUG] 2018-01-13 12:09:27.823 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:32.560 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-13 12:09:32.560 [Time-limited test] RenomaxDBTests - 1 1 2017-12-30 Costco Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:09:32.561 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:09:36.908 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:09:36.912 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:42.354 [Time-limited test] AccountingDAOImp - Found CLIENT: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 12:09:42.400 [Time-limited test] AccountingDAOImp - Record updated from CLIENTS is: 1 9174 - 5281 Quebec inc  6360 Beaubien Montreal Quebec H1M-3G8   newtempemail
+[DEBUG] 2018-01-13 12:09:42.404 [Time-limited test] AccountingDAOImp - Found CLIENT: 9174 - 5281 Quebec inc 
+[INFO ] 2018-01-13 12:09:42.404 [Time-limited test] RenomaxDBTests - Client email should be changed: newtempemail
+[DEBUG] 2018-01-13 12:09:42.405 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:09:46.784 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:09:46.786 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:09:50.478 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:09:50.479 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:54.341 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto Loan
+[INFO ] 2018-01-13 12:09:54.342 [Time-limited test] RenomaxDBTests - Main Description shouldn't be null: 1 Auto Loan
+[DEBUG] 2018-01-13 12:09:54.400 [Time-limited test] AccountingDAOImp - Records Deleted from MAINDESCRIPTIONNAME: 1 id: 1
+[INFO ] 2018-01-13 12:09:54.404 [Time-limited test] RenomaxDBTests - Main Description should be null: -1 
+[DEBUG] 2018-01-13 12:09:54.405 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:09:58.783 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 12:09:58.784 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 12:09:58.784 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 12:09:58.784 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 12:09:58.784 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[INFO ] 2018-01-13 12:09:58.784 [Time-limited test] RenomaxDBTests - Sub Description list size: 5
+[DEBUG] 2018-01-13 12:09:58.785 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:03.418 [Time-limited test] AccountingDAOImp - Found CLIENT: 9174 - 5281 Quebec inc 
+[INFO ] 2018-01-13 12:10:03.419 [Time-limited test] RenomaxDBTests - Client shouldn't be null: 1 9174 - 5281 Quebec inc  6360 Beaubien Montreal Quebec H1M-3G8   
+[DEBUG] 2018-01-13 12:10:03.456 [Time-limited test] AccountingDAOImp - Records Deleted from CLIENTS: 1 id: 1
+[INFO ] 2018-01-13 12:10:03.460 [Time-limited test] RenomaxDBTests - Client should be null: -1        
+[DEBUG] 2018-01-13 12:10:03.461 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:10:07.266 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:10:07.270 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:11.306 [Time-limited test] AccountingDAOImp - Found EXPENSE NUMBER: 1
+[DEBUG] 2018-01-13 12:10:11.357 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 2 2017002 2018-01-13 Walmart Materials  25.00 2.000 2.000 29.00
+[INFO ] 2018-01-13 12:10:11.357 [Time-limited test] RenomaxDBTests - Records created: 1 2
+[DEBUG] 2018-01-13 12:10:11.434 [Time-limited test] AccountingDAOImp - Found EXPENSE: 2
+[DEBUG] 2018-01-13 12:10:11.438 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:16.347 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Gas
+[INFO ] 2018-01-13 12:10:16.347 [Time-limited test] RenomaxDBTests - 5 Gas
+[DEBUG] 2018-01-13 12:10:16.348 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 12:10:20.476 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 12:10:20.477 [Time-limited test] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 12:10:20.478 [Time-limited test] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 12:10:20.478 [Time-limited test] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 12:10:20.478 [Time-limited test] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 12:10:20.479 [Time-limited test] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 12:10:20.480 [Time-limited test] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 12:10:20.481 [Time-limited test] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 12:10:20.482 [Time-limited test] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 12:10:20.483 [Time-limited test] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 12:10:20.483 [Time-limited test] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 12:10:20.483 [Time-limited test] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[INFO ] 2018-01-13 12:10:20.483 [Time-limited test] RenomaxDBTests - Client list size: 60
+[DEBUG] 2018-01-13 12:10:20.484 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:24.282 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Addisson
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Bell Canada
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ceramic Royal
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 12:10:24.283 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 12:10:24.284 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 12:10:24.285 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 12:10:24.286 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 12:10:24.286 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 12:10:24.286 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 12:10:24.286 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 12:10:24.286 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 12:10:24.286 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 12:10:24.286 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[INFO ] 2018-01-13 12:10:24.286 [Time-limited test] RenomaxDBTests - Supplier list size: 39
+[DEBUG] 2018-01-13 12:10:24.287 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:10:28.647 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:10:28.652 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:33.414 [Time-limited test] AccountingDAOImp - New record added to CLIENTS: 61 Alfonso tempst tempcty tempprov tmp-pst temphome tempcell tempemail
+[INFO ] 2018-01-13 12:10:33.414 [Time-limited test] RenomaxDBTests - Records created: 1 Alfonso
+[DEBUG] 2018-01-13 12:10:33.417 [Time-limited test] AccountingDAOImp - Found CLIENT: Alfonso
+[DEBUG] 2018-01-13 12:10:33.419 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:36.803 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-13 12:10:36.803 [Time-limited test] RenomaxDBTests - 1 2017001 2017-12-30 Argento Alfonso 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-13 12:10:36.804 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:10:41.454 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-13 12:10:41.454 [Time-limited test] RenomaxDBTests - Expense shouldn't be null: 1 1 2017-12-30 Costco Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:10:41.508 [Time-limited test] AccountingDAOImp - Records Deleted from EXPENSES: 1 id: 1
+[INFO ] 2018-01-13 12:10:41.576 [Time-limited test] RenomaxDBTests - Expense should be null: -1 -1 2018-01-13    0 0 0 0
+[DEBUG] 2018-01-13 12:10:41.577 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:10:46.913 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:10:46.914 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:10:52.633 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:10:52.634 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:10:56.906 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:10:56.909 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:11:01.386 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Shell
+[INFO ] 2018-01-13 12:11:01.387 [Time-limited test] RenomaxDBTests - 33 Shell
+[DEBUG] 2018-01-13 12:11:01.388 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:11:05.951 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:11:05.952 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:11:10.755 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto Loan
+[DEBUG] 2018-01-13 12:11:10.793 [Time-limited test] AccountingDAOImp - Record updated from MAINDESCRIPTION is: 1 newmdname
+[DEBUG] 2018-01-13 12:11:10.797 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: newmdname
+[INFO ] 2018-01-13 12:11:10.797 [Time-limited test] RenomaxDBTests - Main Description should be changed: newmdname
+[DEBUG] 2018-01-13 12:11:10.798 [main] RenomaxDBTests - Start seed!
+[ERROR] 2018-01-13 12:11:14.484 [Time-limited test] AccountingDAOImp - Exception thrown ADDING SUPPLIERS: Duplicate entry 'Reno-Depot' for key 'SUPPLIERNAME'
+[DEBUG] 2018-01-13 12:11:14.485 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:11:18.563 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:11:18.564 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:11:22.630 [Time-limited test] AccountingDAOImp - New record added to SUBDESCRIPTION: 6 Restaurant
+[INFO ] 2018-01-13 12:11:22.630 [Time-limited test] RenomaxDBTests - Records created: 1 Restaurant
+[DEBUG] 2018-01-13 12:11:22.634 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Restaurant
+[DEBUG] 2018-01-13 12:11:22.635 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:11:26.948 [Time-limited test] AccountingDAOImp - New record added to MAINDESCRIPTION: 11 Auto-Maintenance
+[INFO ] 2018-01-13 12:11:26.949 [Time-limited test] RenomaxDBTests - Records created: 1 Auto-Maintenance
+[DEBUG] 2018-01-13 12:11:26.953 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto-Maintenance
+[DEBUG] 2018-01-13 12:11:26.954 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:11:30.116 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:11:30.117 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:11:34.262 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 12:11:34.262 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Maintenance
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Costco
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Material
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 12:11:34.263 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Various
+[INFO ] 2018-01-13 12:11:34.263 [Time-limited test] RenomaxDBTests - Main Description list size: 10
+[DEBUG] 2018-01-13 12:11:34.265 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:11:38.281 [Time-limited test] AccountingDAOImp - Found INVOICES: 2017001
+[INFO ] 2018-01-13 12:11:38.281 [Time-limited test] RenomaxDBTests - Invoice list size: 1
+[DEBUG] 2018-01-13 12:11:38.282 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:11:42.152 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:11:42.159 [Time-limited test] AccountingDAOImp - Found EXPENSE NUMBER: 1
+[DEBUG] 2018-01-13 12:11:42.161 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:11:46.369 [Time-limited test] AccountingDAOImp - Found EXPENSE NUMBER: 1
+[DEBUG] 2018-01-13 12:11:46.420 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 2 2017001 2018-01-13 Walmart Materials  25.00 2.000 2.000 29.00
+[INFO ] 2018-01-13 12:11:46.420 [Time-limited test] RenomaxDBTests - Records created: 1 2
+[DEBUG] 2018-01-13 12:11:46.527 [Time-limited test] AccountingDAOImp - Found EXPENSE: 2
+[DEBUG] 2018-01-13 12:18:34.829 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:18:39.816 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Adaptel
+[DEBUG] 2018-01-13 12:18:39.876 [Time-limited test] AccountingDAOImp - Record updated from SUPPLIERS is: 1 newsuppliername
+[DEBUG] 2018-01-13 12:18:39.881 [Time-limited test] AccountingDAOImp - Found SUPPLIER: newsuppliername
+[INFO ] 2018-01-13 12:18:39.881 [Time-limited test] RenomaxDBTests - Supplier name should be changed: newsuppliername
+[DEBUG] 2018-01-13 12:18:39.883 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:18:43.887 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-13 12:18:43.994 [Time-limited test] AccountingDAOImp - Record updated from INVOICE is: 1 2017002 2017-12-30 Argento Alfonso 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-13 12:18:44.000 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017002
+[INFO ] 2018-01-13 12:18:44.000 [Time-limited test] RenomaxDBTests - Invoice number should be changed: 2017002
+[DEBUG] 2018-01-13 12:18:44.002 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:18:49.354 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:18:49.360 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:18:53.352 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Electricity
+[INFO ] 2018-01-13 12:18:53.353 [Time-limited test] RenomaxDBTests - 2 Electricity
+[DEBUG] 2018-01-13 12:18:53.354 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:18:57.289 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:18:57.291 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:02.432 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:19:02.437 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:07.284 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:19:07.286 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:11.143 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:19:11.145 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:19:15.448 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Drill
+[DEBUG] 2018-01-13 12:19:15.502 [Time-limited test] AccountingDAOImp - Record updated from SUBDESCRIPTION is: 1 newsdname
+[DEBUG] 2018-01-13 12:19:15.506 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: newsdname
+[INFO ] 2018-01-13 12:19:15.507 [Time-limited test] RenomaxDBTests - Sub Description should be changed: newsdname
+[DEBUG] 2018-01-13 12:19:15.508 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:19.971 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:19:19.975 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:24.655 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:19:24.660 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:19:28.727 [Time-limited test] AccountingDAOImp - Found CLIENT: Dr. Miller Richard
+[INFO ] 2018-01-13 12:19:28.728 [Time-limited test] RenomaxDBTests - 20 Dr. Miller Richard 476 ch. Grande-cote Rosemere Quebec J7A-1L8   
+[DEBUG] 2018-01-13 12:19:28.729 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:33.283 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:19:33.287 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:19:37.359 [Time-limited test] AccountingDAOImp - New record added to INVOICES: 2 2017001 2018-01-13 Doctor Miller 41.28 1.000 4.000 46.28 false
+[INFO ] 2018-01-13 12:19:37.359 [Time-limited test] RenomaxDBTests - Records created: 1 2017001
+[DEBUG] 2018-01-13 12:19:37.443 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[DEBUG] 2018-01-13 12:19:37.444 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:41.544 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:19:41.546 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:19:45.133 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[DEBUG] 2018-01-13 12:19:45.219 [Time-limited test] AccountingDAOImp - Record updated from EXPENSES is: 1 1 2017-12-31 Costco Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:19:45.224 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-13 12:19:45.224 [Time-limited test] RenomaxDBTests - Expense date should be changed: 2017-12-31
+[DEBUG] 2018-01-13 12:19:45.225 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:48.945 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:19:48.949 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:19:52.572 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:19:52.576 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:19:58.510 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Adaptel
+[INFO ] 2018-01-13 12:19:58.510 [Time-limited test] RenomaxDBTests - Supplier shouldn't be null: 1 Adaptel
+[DEBUG] 2018-01-13 12:19:58.556 [Time-limited test] AccountingDAOImp - Records Deleted from SUPPLIERS: 1 id: 1
+[INFO ] 2018-01-13 12:19:58.560 [Time-limited test] RenomaxDBTests - Supplier should be null: -1 
+[DEBUG] 2018-01-13 12:19:58.561 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:02.311 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-13 12:20:02.312 [Time-limited test] RenomaxDBTests - Invoice shouldn't be null: 1 2017001 2017-12-30 Argento Alfonso 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-13 12:20:02.366 [Time-limited test] AccountingDAOImp - Records Deleted from INVOICES: 1 id: 1
+[INFO ] 2018-01-13 12:20:02.433 [Time-limited test] RenomaxDBTests - Invoice should be null: -1 -1 2018-01-13  0 0 0 0 false
+[DEBUG] 2018-01-13 12:20:02.434 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:06.962 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Drill
+[INFO ] 2018-01-13 12:20:06.963 [Time-limited test] RenomaxDBTests - Sub Description shouldn't be null: 1 Drill
+[DEBUG] 2018-01-13 12:20:07.030 [Time-limited test] AccountingDAOImp - Records Deleted from SUBDESCRIPTION: 1 id: 1
+[INFO ] 2018-01-13 12:20:07.034 [Time-limited test] RenomaxDBTests - Sub Description should be null: -1 
+[DEBUG] 2018-01-13 12:20:07.035 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:20:10.802 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:20:10.806 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:14.670 [Time-limited test] AccountingDAOImp - Found EXPENSES: 26.99
+[INFO ] 2018-01-13 12:20:14.671 [Time-limited test] RenomaxDBTests - Expense list size: 1
+[DEBUG] 2018-01-13 12:20:14.672 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:18.550 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-13 12:20:18.550 [Time-limited test] RenomaxDBTests - 1 1 2017-12-30 Costco Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:20:18.551 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:20:22.697 [Time-limited test] RenomaxDBTests - Expected Exception: Null Supplier
+[DEBUG] 2018-01-13 12:20:22.701 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:26.502 [Time-limited test] AccountingDAOImp - Found CLIENT: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 12:20:26.556 [Time-limited test] AccountingDAOImp - Record updated from CLIENTS is: 1 9174 - 5281 Quebec inc  6360 Beaubien Montreal Quebec H1M-3G8   newtempemail
+[DEBUG] 2018-01-13 12:20:26.559 [Time-limited test] AccountingDAOImp - Found CLIENT: 9174 - 5281 Quebec inc 
+[INFO ] 2018-01-13 12:20:26.559 [Time-limited test] RenomaxDBTests - Client email should be changed: newtempemail
+[DEBUG] 2018-01-13 12:20:26.561 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:20:31.158 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:20:31.159 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:20:34.775 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:20:34.777 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:39.180 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto Loan
+[INFO ] 2018-01-13 12:20:39.180 [Time-limited test] RenomaxDBTests - Main Description shouldn't be null: 1 Auto Loan
+[DEBUG] 2018-01-13 12:20:39.234 [Time-limited test] AccountingDAOImp - Records Deleted from MAINDESCRIPTIONNAME: 1 id: 1
+[INFO ] 2018-01-13 12:20:39.238 [Time-limited test] RenomaxDBTests - Main Description should be null: -1 
+[DEBUG] 2018-01-13 12:20:39.240 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:43.648 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 12:20:43.648 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 12:20:43.648 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 12:20:43.648 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 12:20:43.649 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[INFO ] 2018-01-13 12:20:43.649 [Time-limited test] RenomaxDBTests - Sub Description list size: 5
+[DEBUG] 2018-01-13 12:20:43.650 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:48.536 [Time-limited test] AccountingDAOImp - Found CLIENT: 9174 - 5281 Quebec inc 
+[INFO ] 2018-01-13 12:20:48.537 [Time-limited test] RenomaxDBTests - Client shouldn't be null: 1 9174 - 5281 Quebec inc  6360 Beaubien Montreal Quebec H1M-3G8   
+[DEBUG] 2018-01-13 12:20:48.596 [Time-limited test] AccountingDAOImp - Records Deleted from CLIENTS: 1 id: 1
+[INFO ] 2018-01-13 12:20:48.599 [Time-limited test] RenomaxDBTests - Client should be null: -1        
+[DEBUG] 2018-01-13 12:20:48.600 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:20:52.521 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:20:52.526 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:20:57.178 [Time-limited test] AccountingDAOImp - Found EXPENSE NUMBER: 1
+[DEBUG] 2018-01-13 12:20:57.239 [Time-limited test] AccountingDAOImp - New record added to EXPENSES: 2 2 2018-01-13 Walmart Materials  25.00 2.000 2.000 29.00
+[INFO ] 2018-01-13 12:20:57.239 [Time-limited test] RenomaxDBTests - Records created: 1 2
+[DEBUG] 2018-01-13 12:20:57.373 [Time-limited test] AccountingDAOImp - Found EXPENSE: 2
+[DEBUG] 2018-01-13 12:20:57.375 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:02.194 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Gas
+[INFO ] 2018-01-13 12:21:02.194 [Time-limited test] RenomaxDBTests - 5 Gas
+[DEBUG] 2018-01-13 12:21:02.196 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:06.854 [Time-limited test] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 12:21:06.854 [Time-limited test] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 12:21:06.854 [Time-limited test] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 12:21:06.854 [Time-limited test] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 12:21:06.854 [Time-limited test] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 12:21:06.855 [Time-limited test] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 12:21:06.855 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 12:21:06.855 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 12:21:06.855 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 12:21:06.855 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 12:21:06.855 [Time-limited test] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 12:21:06.855 [Time-limited test] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 12:21:06.856 [Time-limited test] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 12:21:06.856 [Time-limited test] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 12:21:06.856 [Time-limited test] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 12:21:06.856 [Time-limited test] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 12:21:06.857 [Time-limited test] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 12:21:06.858 [Time-limited test] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 12:21:06.859 [Time-limited test] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 12:21:06.860 [Time-limited test] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 12:21:06.861 [Time-limited test] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 12:21:06.861 [Time-limited test] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 12:21:06.861 [Time-limited test] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 12:21:06.861 [Time-limited test] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 12:21:06.861 [Time-limited test] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 12:21:06.861 [Time-limited test] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[INFO ] 2018-01-13 12:21:06.861 [Time-limited test] RenomaxDBTests - Client list size: 60
+[DEBUG] 2018-01-13 12:21:06.863 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Addisson
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Bell Canada
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 12:21:10.473 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ceramic Royal
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 12:21:10.474 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 12:21:10.475 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 12:21:10.476 [Time-limited test] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[INFO ] 2018-01-13 12:21:10.477 [Time-limited test] RenomaxDBTests - Supplier list size: 39
+[DEBUG] 2018-01-13 12:21:10.478 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:21:14.670 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:21:14.674 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:19.079 [Time-limited test] AccountingDAOImp - New record added to CLIENTS: 61 Alfonso tempst tempcty tempprov tmp-pst temphome tempcell tempemail
+[INFO ] 2018-01-13 12:21:19.079 [Time-limited test] RenomaxDBTests - Records created: 1 Alfonso
+[DEBUG] 2018-01-13 12:21:19.083 [Time-limited test] AccountingDAOImp - Found CLIENT: Alfonso
+[DEBUG] 2018-01-13 12:21:19.084 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:23.185 [Time-limited test] AccountingDAOImp - Found INVOICE: 2017001
+[INFO ] 2018-01-13 12:21:23.186 [Time-limited test] RenomaxDBTests - 1 2017001 2017-12-30 Argento Alfonso 23.99 1.000 2.000 26.99 false
+[DEBUG] 2018-01-13 12:21:23.187 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:27.074 [Time-limited test] AccountingDAOImp - Found EXPENSE: 1
+[INFO ] 2018-01-13 12:21:27.075 [Time-limited test] RenomaxDBTests - Expense shouldn't be null: 1 1 2017-12-30 Costco Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:21:27.164 [Time-limited test] AccountingDAOImp - Records Deleted from EXPENSES: 1 id: 1
+[INFO ] 2018-01-13 12:21:27.265 [Time-limited test] RenomaxDBTests - Expense should be null: -1 -1 2018-01-13    0 0 0 0
+[DEBUG] 2018-01-13 12:21:27.267 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:21:31.399 [Time-limited test] RenomaxDBTests - Expected Exception: Null Client
+[DEBUG] 2018-01-13 12:21:31.401 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:21:35.009 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:21:35.010 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:21:40.040 [Time-limited test] RenomaxDBTests - Expected Exception: Null Main Description
+[DEBUG] 2018-01-13 12:21:40.042 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:43.882 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Shell
+[INFO ] 2018-01-13 12:21:43.882 [Time-limited test] RenomaxDBTests - 33 Shell
+[DEBUG] 2018-01-13 12:21:43.883 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:21:48.079 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:21:48.081 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:52.342 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto Loan
+[DEBUG] 2018-01-13 12:21:52.380 [Time-limited test] AccountingDAOImp - Record updated from MAINDESCRIPTION is: 1 newmdname
+[DEBUG] 2018-01-13 12:21:52.384 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: newmdname
+[INFO ] 2018-01-13 12:21:52.384 [Time-limited test] RenomaxDBTests - Main Description should be changed: newmdname
+[DEBUG] 2018-01-13 12:21:52.385 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:21:56.906 [Time-limited test] AccountingDAOImp - New record added to SUPPLIERS: 40 Reno Depot
+[INFO ] 2018-01-13 12:21:56.907 [Time-limited test] RenomaxDBTests - Records created: 1 Reno Depot
+[DEBUG] 2018-01-13 12:21:56.910 [Time-limited test] AccountingDAOImp - Found SUPPLIER: Reno Depot
+[DEBUG] 2018-01-13 12:21:56.911 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:22:00.891 [Time-limited test] RenomaxDBTests - Expected Exception: Null Invoice
+[DEBUG] 2018-01-13 12:22:00.892 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:22:04.717 [Time-limited test] AccountingDAOImp - New record added to SUBDESCRIPTION: 6 Restaurant
+[INFO ] 2018-01-13 12:22:04.717 [Time-limited test] RenomaxDBTests - Records created: 1 Restaurant
+[DEBUG] 2018-01-13 12:22:04.720 [Time-limited test] AccountingDAOImp - Found SUBDESCRIPTION: Restaurant
+[DEBUG] 2018-01-13 12:22:04.722 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:22:09.160 [Time-limited test] AccountingDAOImp - New record added to MAINDESCRIPTION: 11 Auto-Maintenance
+[INFO ] 2018-01-13 12:22:09.160 [Time-limited test] RenomaxDBTests - Records created: 1 Auto-Maintenance
+[DEBUG] 2018-01-13 12:22:09.164 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTION: Auto-Maintenance
+[DEBUG] 2018-01-13 12:22:09.165 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:22:13.144 [Time-limited test] RenomaxDBTests - Expected Exception: Null Sub Description
+[DEBUG] 2018-01-13 12:22:13.146 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:22:18.466 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 12:22:18.466 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Maintenance
+[DEBUG] 2018-01-13 12:22:18.466 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 12:22:18.467 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Costco
+[DEBUG] 2018-01-13 12:22:18.467 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 12:22:18.467 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Material
+[DEBUG] 2018-01-13 12:22:18.467 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 12:22:18.467 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 12:22:18.467 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 12:22:18.467 [Time-limited test] AccountingDAOImp - Found MAINDESCRIPTIONS: Various
+[INFO ] 2018-01-13 12:22:18.467 [Time-limited test] RenomaxDBTests - Main Description list size: 10
+[DEBUG] 2018-01-13 12:22:18.468 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:22:22.300 [Time-limited test] AccountingDAOImp - Found INVOICES: 2017001
+[INFO ] 2018-01-13 12:22:22.301 [Time-limited test] RenomaxDBTests - Invoice list size: 1
+[DEBUG] 2018-01-13 12:22:22.302 [main] RenomaxDBTests - Start seed!
+[INFO ] 2018-01-13 12:22:26.165 [Time-limited test] RenomaxDBTests - Expected Exception: Null Expense
+[DEBUG] 2018-01-13 12:22:26.171 [Time-limited test] AccountingDAOImp - Found EXPENSE NUMBER: 1
+[INFO ] 2018-01-13 12:22:28.534 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 12:22:28.972 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 26.99
+[DEBUG] 2018-01-13 12:22:29.037 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc�
+[DEBUG] 2018-01-13 12:22:29.037 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 12:22:29.037 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 12:22:29.037 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 12:22:29.038 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 12:22:29.038 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 12:22:29.038 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 12:22:29.038 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 12:22:29.038 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 12:22:29.038 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 12:22:29.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 12:22:29.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 12:22:29.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 12:22:29.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 12:22:29.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 12:22:29.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 12:22:29.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 12:22:29.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 12:22:29.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 12:22:29.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 12:22:29.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 12:22:29.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 12:22:29.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 12:22:29.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 12:22:29.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 12:22:29.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 12:22:29.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 12:22:29.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 12:22:29.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 12:22:29.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 12:22:29.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 12:22:29.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 12:22:29.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 12:22:29.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 12:22:29.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 12:22:29.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 12:22:29.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 12:22:29.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 12:22:29.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 12:22:29.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 12:22:29.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 12:22:29.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 12:22:29.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 12:22:29.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 12:22:29.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 12:22:29.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 12:22:29.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 12:22:29.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 12:22:29.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 12:22:29.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 12:22:29.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 12:22:29.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 12:22:29.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 12:22:29.046 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 12:22:29.046 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 12:22:29.046 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 12:22:29.046 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 12:22:29.046 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 12:22:29.047 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 12:22:29.047 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 12:22:29.069 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 12:22:29.069 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addisson
+[DEBUG] 2018-01-13 12:22:29.069 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 12:22:29.071 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bell Canada
+[DEBUG] 2018-01-13 12:22:29.071 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic Royal
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 12:22:29.072 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 12:22:29.073 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 12:22:29.074 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 12:22:29.075 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 12:22:29.075 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 12:22:29.075 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 12:22:29.075 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 12:22:29.091 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 12:22:29.091 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Maintenance
+[DEBUG] 2018-01-13 12:22:29.091 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 12:22:29.091 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Costco
+[DEBUG] 2018-01-13 12:22:29.091 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 12:22:29.091 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Material
+[DEBUG] 2018-01-13 12:22:29.091 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 12:22:29.092 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 12:22:29.092 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 12:22:29.092 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Various
+[DEBUG] 2018-01-13 12:22:29.105 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 12:22:29.106 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 12:22:29.106 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 12:22:29.106 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 12:22:29.106 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 12:25:49.917 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSE: 26.99
+[DEBUG] 2018-01-13 12:25:50.137 [JavaFX Application Thread] AccountingDAOImp - Record updated from EXPENSES is: 1 1 2017-12-30 Costc Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:25:50.137 [JavaFX Application Thread] ExpenseFXMLController - Expense created!
+[DEBUG] 2018-01-13 12:25:50.146 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 26.99
+[DEBUG] 2018-01-13 12:25:54.409 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSE: 26.99
+[DEBUG] 2018-01-13 12:25:54.497 [JavaFX Application Thread] AccountingDAOImp - Record updated from EXPENSES is: 1 1 2017-12-30 Costco Material Plumbing 23.99 1.000 2.000 26.99
+[DEBUG] 2018-01-13 12:25:54.497 [JavaFX Application Thread] ExpenseFXMLController - Expense created!
+[DEBUG] 2018-01-13 12:25:54.503 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 26.99
+[DEBUG] 2018-01-13 12:26:13.886 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSE NUMBER: 1
+[DEBUG] 2018-01-13 12:26:13.967 [JavaFX Application Thread] AccountingDAOImp - New record added to EXPENSES: 2 -1 2017-12-19 Walmart Clothes  269 0 0 269
+[DEBUG] 2018-01-13 12:26:13.967 [JavaFX Application Thread] ExpenseFXMLController - Expense created!
+[DEBUG] 2018-01-13 12:26:13.972 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 26.99
+[DEBUG] 2018-01-13 12:26:13.972 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 269.00
+[INFO ] 2018-01-13 12:28:47.780 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 12:28:48.253 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 26.99
+[DEBUG] 2018-01-13 12:28:48.253 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 269.00
+[DEBUG] 2018-01-13 12:28:48.329 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc�
+[DEBUG] 2018-01-13 12:28:48.329 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 12:28:48.329 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 12:28:48.330 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 12:28:48.330 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 12:28:48.330 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 12:28:48.330 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 12:28:48.330 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 12:28:48.330 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 12:28:48.331 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 12:28:48.331 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 12:28:48.331 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 12:28:48.331 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 12:28:48.331 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 12:28:48.331 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 12:28:48.332 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 12:28:48.332 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 12:28:48.332 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 12:28:48.332 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 12:28:48.332 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 12:28:48.333 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 12:28:48.333 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 12:28:48.333 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 12:28:48.333 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 12:28:48.333 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 12:28:48.333 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 12:28:48.334 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 12:28:48.334 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 12:28:48.334 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 12:28:48.334 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 12:28:48.334 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 12:28:48.334 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 12:28:48.335 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 12:28:48.335 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 12:28:48.335 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 12:28:48.335 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 12:28:48.335 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 12:28:48.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 12:28:48.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 12:28:48.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 12:28:48.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 12:28:48.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 12:28:48.336 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 12:28:48.337 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 12:28:48.337 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 12:28:48.337 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 12:28:48.337 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 12:28:48.337 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 12:28:48.338 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 12:28:48.338 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 12:28:48.338 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 12:28:48.338 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 12:28:48.338 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 12:28:48.339 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 12:28:48.339 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 12:28:48.339 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 12:28:48.339 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 12:28:48.339 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 12:28:48.340 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 12:28:48.340 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 12:28:48.362 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addisson
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bell Canada
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic Royal
+[DEBUG] 2018-01-13 12:28:48.364 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 12:28:48.365 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 12:28:48.366 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 12:28:48.367 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 12:28:48.368 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 12:28:48.382 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 12:28:48.382 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Maintenance
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Costco
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Material
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 12:28:48.383 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Various
+[DEBUG] 2018-01-13 12:28:48.396 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 12:28:48.396 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 12:28:48.396 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 12:28:48.396 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 12:28:48.396 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[INFO ] 2018-01-13 12:31:50.160 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 12:31:50.748 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 26.99
+[DEBUG] 2018-01-13 12:31:50.749 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 269.00
+[DEBUG] 2018-01-13 12:31:50.842 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc�
+[DEBUG] 2018-01-13 12:31:50.842 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 12:31:50.842 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 12:31:50.842 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 12:31:50.843 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 12:31:50.843 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 12:31:50.843 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 12:31:50.843 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 12:31:50.843 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 12:31:50.844 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 12:31:50.844 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 12:31:50.844 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 12:31:50.844 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 12:31:50.845 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 12:31:50.846 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 12:31:50.846 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 12:31:50.846 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 12:31:50.846 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 12:31:50.846 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 12:31:50.847 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 12:31:50.847 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 12:31:50.847 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 12:31:50.847 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 12:31:50.848 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 12:31:50.848 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 12:31:50.848 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 12:31:50.848 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 12:31:50.849 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 12:31:50.849 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 12:31:50.849 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 12:31:50.849 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 12:31:50.850 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 12:31:50.850 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 12:31:50.850 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 12:31:50.850 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 12:31:50.850 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 12:31:50.850 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 12:31:50.851 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 12:31:50.851 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 12:31:50.851 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 12:31:50.851 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 12:31:50.851 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 12:31:50.852 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 12:31:50.852 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 12:31:50.852 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 12:31:50.852 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 12:31:50.853 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 12:31:50.853 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 12:31:50.853 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 12:31:50.853 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 12:31:50.853 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 12:31:50.853 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 12:31:50.854 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 12:31:50.854 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 12:31:50.854 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 12:31:50.854 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 12:31:50.854 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 12:31:50.855 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 12:31:50.855 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 12:31:50.855 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 12:31:50.880 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 12:31:50.883 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addisson
+[DEBUG] 2018-01-13 12:31:50.883 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 12:31:50.883 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bell Canada
+[DEBUG] 2018-01-13 12:31:50.883 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 12:31:50.883 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic Royal
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 12:31:50.884 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 12:31:50.885 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 12:31:50.886 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 12:31:50.887 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 12:31:50.887 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 12:31:50.887 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 12:31:50.887 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 12:31:50.887 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 12:31:50.887 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 12:31:50.887 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 12:31:50.908 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 12:31:50.908 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Maintenance
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Costco
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Material
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 12:31:50.909 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Various
+[DEBUG] 2018-01-13 12:31:50.930 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 12:31:50.931 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 12:31:50.931 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 12:31:50.931 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 12:31:50.931 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
