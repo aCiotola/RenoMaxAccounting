@@ -19,6 +19,7 @@ public class MainDescriptionFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IAccountingDAO accountDAO;
+    private String mdName = "";
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -59,14 +60,17 @@ public class MainDescriptionFXMLController
     {
         if(!mdField.getText().equals(""))
         {            
-            MainDescription mainDescription = new MainDescription();     
+            MainDescription mainDescription = accountDAO.findMainDescriptionByName(mdName);     
             mainDescription.setMainDescriptionName(mdField.getText());
-            accountDAO.addMainDescription(mainDescription);
             
-            log.debug("Main Description created!");
+            if(mainDescription.getMainDescriptionID() != -1)
+                accountDAO.updateMainDescription(mainDescription);
+            else
+                accountDAO.addMainDescription(mainDescription);
             
+            log.debug("Main Description created/updated!");            
             mdField.setText("");
-            
+            mdName = "";
             displayTable();
         }
         else        
@@ -101,7 +105,10 @@ public class MainDescriptionFXMLController
     
     private void showMainDescriptionDetails(MainDescription md) 
     {
-        if(md != null)        
+        if(md != null) 
+        {
             mdField.setText(md.getMainDescriptionName());
+            mdName = md.getMainDescriptionName();
+        }
     }
 }

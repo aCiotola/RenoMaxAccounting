@@ -118,33 +118,32 @@ public class ExpenseFXMLController
     @FXML
     void onSaveExpense(ActionEvent event) throws SQLException 
     {
-        if(!expenseMDField.getText().equals("") && !expenseSTField.getText().equals("") && 
+        if(!expenseMDField.getText().equals("") && !expenseSTField.getText().equals("") && !expenseSupplierField.getText().equals("") &&
                 !expenseTotalField.getText().equals("") && expenseDateField.getValue() != null)
         {             
-            Expense expense = new Expense();   
-            
+            Expense expense = new Expense();            
             if(!expenseNumberField.getText().equals(""))
-                expense.setExpenseNumber(Integer.parseInt(expenseNumberField.getText()));
-                
+                expense = accountDAO.findExpenseByNumber(Integer.parseInt(expenseNumberField.getText()));                         
+            
             expense.setDateTime(Date.valueOf(expenseDateField.getValue()));
             expense.setSupplier(expenseSupplierField.getText());
             expense.setMainDescription(expenseMDField.getText());
             expense.setSubDescription(expenseSDField.getText());
-            expense.setSubtotal(new BigDecimal(expenseSTField.getText()));
-            
+            expense.setSubtotal(new BigDecimal(expenseSTField.getText()));            
             if(!expenseGSTField.getText().equals("") && !expenseQSTField.getText().equals(""))
             {
                 expense.setGst(new BigDecimal(expenseGSTField.getText()));
                 expense.setQst(new BigDecimal(expenseQSTField.getText()));
-            }
-            
+            }            
             expense.setTotal(new BigDecimal(expenseTotalField.getText()));
-            accountDAO.addExpense(expense);
             
-            log.debug("Expense created!");
+            if(expense.getExpenseID() != -1)            
+                accountDAO.updateExpense(expense);            
+            else
+                accountDAO.addExpense(expense);
             
-            onClearExpense(new ActionEvent());
-            
+            log.debug("Expense created!");            
+            onClearExpense(new ActionEvent());            
             displayTable();
         }
         else        

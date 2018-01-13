@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ciotola.tests.RenomaxDBTests" time="116.74" tests="55" errors="55" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\bin"/>
+    <property name="java.vm.version" value="25.144-b01"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\shado\OneDrive\Documents\NetBeansProjects\RenomaxAccounting"/>
+    <property name="java.runtime.version" value="1.8.0_144-b01"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_144\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\shado\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.2\java\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\shado\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Microsoft\Web Platform Installer\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\HashiCorp\Vagrant\bin;C:\Users\shado\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\shado"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="shado"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans 8.2\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_144\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_144"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans 8.2\java\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="testUpdateSupplier" classname="com.ciotola.tests.RenomaxDBTests" time="3.339">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:12.410 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateInvoice" classname="com.ciotola.tests.RenomaxDBTests" time="2.181">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:15.745 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddSubDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.808">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:17.928 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindSubDescriptionByID" classname="com.ciotola.tests.RenomaxDBTests" time="1.928">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:19.736 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindSupplierByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.388">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:21.665 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddInvoiceFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.708">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:24.054 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteClientFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.901">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:25.762 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteMainDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.867">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:27.663 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="2.108">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:29.531 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddClientFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.342">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:31.639 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateClientFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.284">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:32.981 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindClientByID" classname="com.ciotola.tests.RenomaxDBTests" time="2.125">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:35.265 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddMainDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.658">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:37.391 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddInvoice" classname="com.ciotola.tests.RenomaxDBTests" time="1.909">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:39.049 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteSupplierFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.699">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:40.959 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateExpense" classname="com.ciotola.tests.RenomaxDBTests" time="1.45">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:43.660 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateExpenseFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.592">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:45.109 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateSupplierFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.083">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:46.701 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteSupplier" classname="com.ciotola.tests.RenomaxDBTests" time="1.825">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:48.785 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteInvoice" classname="com.ciotola.tests.RenomaxDBTests" time="1.976">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:50.610 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="2.441">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:52.587 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateMainDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.9">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:55.028 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllExpenses" classname="com.ciotola.tests.RenomaxDBTests" time="2.058">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:56.929 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindExpenseByID" classname="com.ciotola.tests.RenomaxDBTests" time="2.408">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:03:58.988 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddSupplierFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.999">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:01.397 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateClient" classname="com.ciotola.tests.RenomaxDBTests" time="2.899">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:03.397 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindSubDescriptionByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.222">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:06.297 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindExpenseByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.695">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:08.520 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="1.749">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:10.216 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="2.15">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:11.966 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteClient" classname="com.ciotola.tests.RenomaxDBTests" time="2.124">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:14.117 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateSubDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.632">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:16.242 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddExpense" classname="com.ciotola.tests.RenomaxDBTests" time="2.301">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:18.875 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindMainDescriptionByID" classname="com.ciotola.tests.RenomaxDBTests" time="2.242">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:21.177 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllClients" classname="com.ciotola.tests.RenomaxDBTests" time="1.907">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:23.420 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllSuppliers" classname="com.ciotola.tests.RenomaxDBTests" time="2.126">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:25.327 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateInvoiceFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.548">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:27.454 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddClient" classname="com.ciotola.tests.RenomaxDBTests" time="2.122">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:30.002 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindInvoiceByID" classname="com.ciotola.tests.RenomaxDBTests" time="2.055">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:32.124 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteExpense" classname="com.ciotola.tests.RenomaxDBTests" time="1.925">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:34.180 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindClientByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.042">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:36.106 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteExpenseFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.19">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:38.149 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindMainDescriptionByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.108">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:40.340 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindSupplierByID" classname="com.ciotola.tests.RenomaxDBTests" time="2">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:42.449 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindInvoiceByIDFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.425">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:44.450 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="2.025">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:46.875 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddSupplier" classname="com.ciotola.tests.RenomaxDBTests" time="2.083">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:48.901 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteInvoiceFail" classname="com.ciotola.tests.RenomaxDBTests" time="3.067">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:50.985 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddSubDescription" classname="com.ciotola.tests.RenomaxDBTests" time="1.8">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:54.052 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="1.934">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:55.852 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteSubDescriptionFail" classname="com.ciotola.tests.RenomaxDBTests" time="2.132">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:57.787 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllMainDescription" classname="com.ciotola.tests.RenomaxDBTests" time="2.402">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:04:59.920 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllInvoices" classname="com.ciotola.tests.RenomaxDBTests" time="2.212">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:05:02.322 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddExpenseFail" classname="com.ciotola.tests.RenomaxDBTests" time="1.786">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:05:04.535 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+  <testcase name="testAddSameExpense" classname="com.ciotola.tests.RenomaxDBTests" time="2.417">
+    <error message="Failed seeding database" type="java.lang.RuntimeException">java.lang.RuntimeException: Failed seeding database
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:724)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
+	at com.ciotola.tests.RenomaxDBTests.seedDatabase(RenomaxDBTests.java:719)
+</error>
+    <system-out><![CDATA[[DEBUG] 2018-01-13 12:05:06.322 [main] RenomaxDBTests - Start seed!
+]]></system-out>
+  </testcase>
+</testsuite>

@@ -19,6 +19,7 @@ public class ClientFXMLController
 {    
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IAccountingDAO accountDAO;
+    private String clientName = "";
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -88,7 +89,8 @@ public class ClientFXMLController
     {
         if(!clientNameField.getText().equals(""))
         {            
-            Client client = new Client();     
+            Client client = accountDAO.findClientByName(clientName);
+            client.setClientName(clientNameField.getText());
             client.setClientName(clientNameField.getText());
             client.setStreet(streetField.getText());
             client.setCity(cityField.getText());
@@ -97,12 +99,15 @@ public class ClientFXMLController
             client.setHomePhone(hPhoneField.getText());
             client.setCellPhone(cPhoneField.getText());
             client.setEmail(emailField.getText());
-            accountDAO.addClient(client);
             
-            log.debug("Client created!");
+            if(client.getClientID() != -1)
+                accountDAO.updateClient(client);
+            else
+                accountDAO.addClient(client);
             
-            onClearClient(new ActionEvent());
-            
+            log.debug("Client created/updated!");            
+            onClearClient(new ActionEvent());       
+            clientName = "";
             displayTable();
         }
         else        
@@ -145,7 +150,7 @@ public class ClientFXMLController
             onClearClient(new ActionEvent());
             accountDAO.deleteClient(client.getClientID());
             
-            log.debug("Client deleted!");            
+            log.debug("Client deleted!");                
             displayTable();
         }
         else        
@@ -211,6 +216,8 @@ public class ClientFXMLController
             hPhoneField.setText(client.getHomePhone());
             cPhoneField.setText(client.getCellPhone());
             emailField.setText(client.getEmail());
+            
+            clientName = client.getClientName();
         }
     }
 }

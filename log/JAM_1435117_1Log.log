@@ -13145,3 +13145,1255 @@
 [DEBUG] 2018-01-12 11:13:36.240 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
 [DEBUG] 2018-01-12 11:13:36.240 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
 [DEBUG] 2018-01-12 11:13:36.240 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[INFO ] 2018-01-13 11:04:41.403 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 11:04:41.882 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:04:41.882 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:04:41.883 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:04:41.883 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:04:41.884 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:04:41.884 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:04:41.957 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:04:41.957 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:04:41.957 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:04:41.958 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:04:41.959 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:04:41.959 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:04:41.959 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:04:41.959 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:04:41.959 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:04:41.960 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:04:41.960 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:04:41.960 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:04:41.960 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:04:41.960 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:04:41.960 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:04:41.960 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:04:41.961 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:04:41.961 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:04:41.961 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:04:41.961 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:04:41.961 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:04:41.961 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:04:41.961 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:04:41.962 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:04:41.962 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:04:41.962 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:04:41.962 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:04:41.962 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:04:41.962 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:04:41.962 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:04:41.963 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:04:41.963 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:04:41.963 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:04:41.963 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:04:41.963 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:04:41.964 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:04:41.964 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:04:41.964 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:04:41.964 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:04:41.964 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:04:41.965 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:04:41.965 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:04:41.965 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:04:41.965 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:04:41.965 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:04:41.966 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:04:41.966 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:04:41.966 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:04:41.966 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:04:41.967 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:04:41.967 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:04:41.967 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:04:41.967 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:04:41.985 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 11:04:41.985 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addison
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:04:41.986 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:04:41.987 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:04:41.988 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:04:41.989 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:04:41.990 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:04:41.990 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:04:41.990 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 11:04:42.003 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:04:42.003 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:04:42.003 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:04:42.004 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:04:42.004 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:04:42.004 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:04:42.004 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:04:42.024 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:04:42.024 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:04:42.024 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:04:42.024 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:04:42.025 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:05:20.942 [JavaFX Application Thread] AccountingDAOImp - Found CLIENT: Alessi Caterina
+[DEBUG] 2018-01-13 11:05:21.033 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Alessi Caterina 7164 12 Av. Montreal Quebec H2A-2Y3 514-721-7862  
+[DEBUG] 2018-01-13 11:05:21.033 [JavaFX Application Thread] ClientFXMLController - Client created/updated!
+[DEBUG] 2018-01-13 11:05:21.039 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:05:21.040 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:05:21.041 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:05:21.042 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:05:21.043 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:05:21.044 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:05:21.045 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:05:28.549 [JavaFX Application Thread] AccountingDAOImp - Found CLIENT: Alessi Caterina
+[DEBUG] 2018-01-13 11:05:28.659 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Alessi Caterina 7164 12 Av. Montreal Quebec H2A-2Y3 514-721-7861  
+[DEBUG] 2018-01-13 11:05:28.659 [JavaFX Application Thread] ClientFXMLController - Client created/updated!
+[DEBUG] 2018-01-13 11:05:28.665 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:05:28.665 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:05:28.665 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:05:28.665 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:05:28.666 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:05:28.667 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:05:28.668 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:05:28.669 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:05:28.670 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:05:28.671 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:05:28.671 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[INFO ] 2018-01-13 11:08:19.115 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 11:08:19.585 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:08:19.585 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:08:19.586 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:08:19.586 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:08:19.586 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:08:19.586 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:08:19.649 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:08:19.649 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:08:19.650 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:08:19.650 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:08:19.650 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:08:19.650 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:08:19.650 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:08:19.651 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:08:19.651 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:08:19.651 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:08:19.651 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:08:19.651 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:08:19.652 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:08:19.652 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:08:19.652 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:08:19.652 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:08:19.652 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:08:19.653 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:08:19.653 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:08:19.653 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:08:19.653 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:08:19.653 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:08:19.654 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:08:19.654 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:08:19.654 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:08:19.654 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:08:19.655 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:08:19.655 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:08:19.655 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:08:19.655 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:08:19.656 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:08:19.656 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:08:19.656 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:08:19.656 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:08:19.657 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:08:19.657 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:08:19.657 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:08:19.657 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:08:19.657 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:08:19.658 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:08:19.658 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:08:19.658 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:08:19.659 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:08:19.659 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:08:19.660 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:08:19.660 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:08:19.660 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:08:19.660 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:08:19.661 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:08:19.661 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:08:19.661 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:08:19.661 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:08:19.662 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:08:19.662 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:08:19.662 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:08:19.662 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:08:19.662 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:08:19.663 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:08:19.663 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:08:19.663 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:08:19.684 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 11:08:19.684 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addison
+[DEBUG] 2018-01-13 11:08:19.684 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:08:19.685 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:08:19.685 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:08:19.685 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:08:19.685 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:08:19.685 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:08:19.685 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:08:19.685 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:08:19.686 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:08:19.687 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:08:19.688 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:08:19.689 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:08:19.689 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:08:19.689 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:08:19.689 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 11:08:19.709 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:08:19.709 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:08:19.709 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:08:19.710 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:08:19.710 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:08:19.710 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:08:19.710 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:08:19.730 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:08:19.731 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:08:19.731 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:08:19.731 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:08:19.731 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:08:38.405 [JavaFX Application Thread] AccountingDAOImp - New record added to CLIENTS: 61 Alessi Caterin 7164 12 Av. Montreal Quebec H2A-2Y3 514-721-7861  
+[DEBUG] 2018-01-13 11:08:38.405 [JavaFX Application Thread] ClientFXMLController - Client created/updated!
+[DEBUG] 2018-01-13 11:08:38.413 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:08:38.413 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterin
+[DEBUG] 2018-01-13 11:08:38.413 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:08:38.413 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:08:38.413 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:08:38.413 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:08:38.413 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:08:38.414 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:08:38.415 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:08:38.415 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:08:38.415 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:08:38.415 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:08:38.415 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:08:38.415 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:08:38.415 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:08:38.416 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:08:38.417 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:08:38.418 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:08:38.419 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:08:38.419 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:08:38.419 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:08:38.419 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:08:38.419 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:08:38.419 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:08:38.419 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:08:38.420 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:08:38.420 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:08:50.507 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIER: Addison
+[DEBUG] 2018-01-13 11:08:50.582 [JavaFX Application Thread] AccountingDAOImp - Record updated from SUPPLIERS is: 40 Addiso
+[DEBUG] 2018-01-13 11:08:50.582 [JavaFX Application Thread] SupplierFXMLController - Supplier created/updated!
+[DEBUG] 2018-01-13 11:08:50.587 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adaptel
+[DEBUG] 2018-01-13 11:08:50.587 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addiso
+[DEBUG] 2018-01-13 11:08:50.587 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:08:50.587 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:08:50.587 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:08:50.587 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:08:50.588 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:08:50.589 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:08:50.590 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 11:08:58.566 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIER: Adaptel
+[DEBUG] 2018-01-13 11:08:58.633 [JavaFX Application Thread] AccountingDAOImp - Record updated from SUPPLIERS is: 1 Adapte
+[DEBUG] 2018-01-13 11:08:58.634 [JavaFX Application Thread] SupplierFXMLController - Supplier created/updated!
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adapte
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addiso
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:08:58.638 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:08:58.639 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:08:58.640 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:08:58.640 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:08:58.640 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:08:58.640 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:08:58.640 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:08:58.640 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:08:58.640 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:08:58.641 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:08:58.641 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:08:58.641 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:08:58.641 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:08:58.641 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 11:09:07.378 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIER: Addiso
+[DEBUG] 2018-01-13 11:09:07.452 [JavaFX Application Thread] AccountingDAOImp - Record updated from SUPPLIERS is: 40 Addis
+[DEBUG] 2018-01-13 11:09:07.452 [JavaFX Application Thread] SupplierFXMLController - Supplier created/updated!
+[DEBUG] 2018-01-13 11:09:07.456 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adapte
+[DEBUG] 2018-01-13 11:09:07.456 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addis
+[DEBUG] 2018-01-13 11:09:07.456 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:09:07.456 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:09:07.457 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:09:07.458 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[INFO ] 2018-01-13 11:09:39.371 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 11:09:39.859 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:09:39.860 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:09:39.860 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:09:39.860 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:09:39.861 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:09:39.861 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:09:39.929 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:09:39.929 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterin
+[DEBUG] 2018-01-13 11:09:39.930 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:09:39.930 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:09:39.930 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:09:39.930 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:09:39.930 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:09:39.930 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:09:39.930 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:09:39.931 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:09:39.931 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:09:39.931 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:09:39.931 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:09:39.931 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:09:39.932 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:09:39.932 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:09:39.932 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:09:39.932 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:09:39.932 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:09:39.932 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:09:39.933 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:09:39.933 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:09:39.933 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:09:39.933 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:09:39.933 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:09:39.934 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:09:39.934 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:09:39.934 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:09:39.934 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:09:39.934 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:09:39.934 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:09:39.935 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:09:39.935 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:09:39.935 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:09:39.935 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:09:39.935 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:09:39.935 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:09:39.935 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:09:39.936 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:09:39.936 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:09:39.936 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:09:39.936 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:09:39.936 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:09:39.936 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:09:39.937 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:09:39.937 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:09:39.937 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:09:39.937 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:09:39.937 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:09:39.937 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:09:39.938 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:09:39.938 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:09:39.938 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:09:39.938 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:09:39.939 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:09:39.939 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:09:39.939 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:09:39.939 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:09:39.939 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:09:39.940 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:09:39.940 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:09:39.957 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adapte
+[DEBUG] 2018-01-13 11:09:39.957 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addis
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:09:39.958 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:09:39.959 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:09:39.960 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:09:39.961 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 11:09:39.976 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:09:39.976 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:09:39.977 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:09:39.977 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:09:39.977 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:09:39.977 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:09:39.977 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:09:39.993 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:09:39.994 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:09:39.994 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:09:39.994 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:09:39.994 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:09:44.679 [JavaFX Application Thread] AccountingDAOImp - Found CLIENT: Alessi Caterin
+[DEBUG] 2018-01-13 11:09:44.784 [JavaFX Application Thread] AccountingDAOImp - Records Deleted from CLIENTS: 1 id: 61
+[DEBUG] 2018-01-13 11:09:44.784 [JavaFX Application Thread] ClientFXMLController - Client deleted!
+[DEBUG] 2018-01-13 11:09:44.789 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:09:44.789 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:09:44.789 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:09:44.790 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:09:44.791 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:09:44.792 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:09:44.793 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:09:44.794 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:09:44.794 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:09:44.794 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:09:44.794 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:09:44.794 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:09:44.794 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:09:44.794 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:09:47.978 [JavaFX Application Thread] AccountingDAOImp - Found CLIENT: Alessi Caterina
+[DEBUG] 2018-01-13 11:09:48.076 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Alessi Caterin 7164 12 Av. Montreal Quebec H2A-2Y3 514-721-7861  
+[DEBUG] 2018-01-13 11:09:48.077 [JavaFX Application Thread] ClientFXMLController - Client created/updated!
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterin
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:09:48.082 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:09:48.083 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:09:48.084 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:09:48.085 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:09:48.086 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:09:51.271 [JavaFX Application Thread] AccountingDAOImp - Found CLIENT: Alessi Caterin
+[DEBUG] 2018-01-13 11:09:51.402 [JavaFX Application Thread] AccountingDAOImp - Record updated from CLIENTS is: 2 Alessi Caterina 7164 12 Av. Montreal Quebec H2A-2Y3 514-721-7861  
+[DEBUG] 2018-01-13 11:09:51.403 [JavaFX Application Thread] ClientFXMLController - Client created/updated!
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:09:51.408 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:09:51.409 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:09:51.410 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:09:51.411 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:09:51.412 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[INFO ] 2018-01-13 11:26:36.915 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 11:26:37.379 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:26:37.379 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:26:37.379 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:26:37.380 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:26:37.380 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:26:37.380 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:26:37.442 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:26:37.442 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:26:37.442 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:26:37.442 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:26:37.443 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:26:37.443 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:26:37.443 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:26:37.443 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:26:37.443 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:26:37.444 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:26:37.444 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:26:37.444 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:26:37.444 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:26:37.444 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:26:37.444 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:26:37.445 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:26:37.445 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:26:37.445 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:26:37.445 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:26:37.445 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:26:37.446 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:26:37.446 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:26:37.446 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:26:37.446 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:26:37.446 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:26:37.446 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:26:37.447 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:26:37.447 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:26:37.447 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:26:37.447 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:26:37.447 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:26:37.447 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:26:37.448 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:26:37.448 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:26:37.448 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:26:37.448 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:26:37.448 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:26:37.449 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:26:37.449 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:26:37.449 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:26:37.449 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:26:37.449 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:26:37.449 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:26:37.449 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:26:37.450 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:26:37.451 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:26:37.451 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:26:37.451 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:26:37.451 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:26:37.451 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:26:37.451 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:26:37.452 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:26:37.452 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:26:37.468 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adapte
+[DEBUG] 2018-01-13 11:26:37.468 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addis
+[DEBUG] 2018-01-13 11:26:37.469 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:26:37.469 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:26:37.469 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:26:37.469 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:26:37.469 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:26:37.469 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:26:37.469 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:26:37.470 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:26:37.471 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:26:37.472 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 11:26:37.486 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:26:37.486 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:26:37.486 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:26:37.486 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:26:37.487 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:26:37.487 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:26:37.487 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:26:37.508 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:26:37.508 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:26:37.508 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:26:37.509 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:26:37.509 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:27:23.327 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSE: 25.00
+[DEBUG] 2018-01-13 11:27:23.448 [JavaFX Application Thread] AccountingDAOImp - Record updated from EXPENSES is: 2 2017002 2017-10-31 Reno-Depo Materials  25.00 0.000 0.000 25.00
+[DEBUG] 2018-01-13 11:27:23.448 [JavaFX Application Thread] ExpenseFXMLController - Expense created!
+[DEBUG] 2018-01-13 11:27:23.456 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:27:23.456 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:23.456 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:23.456 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:23.457 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:23.457 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:27:43.591 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSE NUMBER: 2017006
+[DEBUG] 2018-01-13 11:27:43.644 [JavaFX Application Thread] AccountingDAOImp - New record added to EXPENSES: 7 -1 2016-09-19 Canadian Tire Material  25 0 0 25
+[DEBUG] 2018-01-13 11:27:43.645 [JavaFX Application Thread] ExpenseFXMLController - Expense created!
+[DEBUG] 2018-01-13 11:27:43.650 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:27:43.650 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:43.650 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:43.651 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:43.651 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:43.651 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:27:43.651 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:52.029 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSE: 25.00
+[DEBUG] 2018-01-13 11:27:52.129 [JavaFX Application Thread] AccountingDAOImp - Record updated from EXPENSES is: 7 2017007 2016-09-19 Canadian Tire Material  25.50 0.000 0.000 25.50
+[DEBUG] 2018-01-13 11:27:52.129 [JavaFX Application Thread] ExpenseFXMLController - Expense created!
+[DEBUG] 2018-01-13 11:27:52.134 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:27:52.134 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:52.134 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:52.134 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:52.135 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:27:52.135 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:27:52.135 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.50
+[INFO ] 2018-01-13 11:37:13.699 [JavaFX Application Thread] MainAppFX - Program Begins!
+[DEBUG] 2018-01-13 11:37:14.206 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 29.00
+[DEBUG] 2018-01-13 11:37:14.207 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:37:14.207 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:37:14.207 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:37:14.207 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.00
+[DEBUG] 2018-01-13 11:37:14.208 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 1500.00
+[DEBUG] 2018-01-13 11:37:14.208 [JavaFX Application Thread] AccountingDAOImp - Found EXPENSES: 25.50
+[DEBUG] 2018-01-13 11:37:14.280 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: 9174 - 5281 Quebec inc 
+[DEBUG] 2018-01-13 11:37:14.280 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Alessi Caterina
+[DEBUG] 2018-01-13 11:37:14.280 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Argento Alfonso
+[DEBUG] 2018-01-13 11:37:14.281 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance AXA
+[DEBUG] 2018-01-13 11:37:14.281 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Assurance des'Jardin
+[DEBUG] 2018-01-13 11:37:14.281 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Barroso Teresa
+[DEBUG] 2018-01-13 11:37:14.281 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bellinfante Gino & Michelle
+[DEBUG] 2018-01-13 11:37:14.281 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bertrand Johnny
+[DEBUG] 2018-01-13 11:37:14.282 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bielsky Tom
+[DEBUG] 2018-01-13 11:37:14.282 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bruno Marcella
+[DEBUG] 2018-01-13 11:37:14.282 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Bucaro Salvatore
+[DEBUG] 2018-01-13 11:37:14.282 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Caruso Giovannina
+[DEBUG] 2018-01-13 11:37:14.282 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Ciaralli Alfiere
+[DEBUG] 2018-01-13 11:37:14.283 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Clemente Adriele
+[DEBUG] 2018-01-13 11:37:14.283 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: D'Ambrosio Carmela
+[DEBUG] 2018-01-13 11:37:14.283 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Davino Carmela
+[DEBUG] 2018-01-13 11:37:14.283 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Delia Antonio
+[DEBUG] 2018-01-13 11:37:14.284 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Di Manno Dominic
+[DEBUG] 2018-01-13 11:37:14.284 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Diagne Bibata
+[DEBUG] 2018-01-13 11:37:14.284 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Miller Richard
+[DEBUG] 2018-01-13 11:37:14.285 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Dr. Steven Krychmen
+[DEBUG] 2018-01-13 11:37:14.285 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Furneri Giuseppe
+[DEBUG] 2018-01-13 11:37:14.285 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Gilletz Jordan
+[DEBUG] 2018-01-13 11:37:14.285 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Group Lessard
+[DEBUG] 2018-01-13 11:37:14.286 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Herman Michael
+[DEBUG] 2018-01-13 11:37:14.286 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iacobacci Mario
+[DEBUG] 2018-01-13 11:37:14.286 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Intact Assurance
+[DEBUG] 2018-01-13 11:37:14.286 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Iorio Michel
+[DEBUG] 2018-01-13 11:37:14.286 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Isernia Vincenzo
+[DEBUG] 2018-01-13 11:37:14.286 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jean Luc & Isolia
+[DEBUG] 2018-01-13 11:37:14.287 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Jones Bryan
+[DEBUG] 2018-01-13 11:37:14.287 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Josie Greco Muro
+[DEBUG] 2018-01-13 11:37:14.287 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Kearney Robert
+[DEBUG] 2018-01-13 11:37:14.287 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lapolla M. Pierfelice C.
+[DEBUG] 2018-01-13 11:37:14.287 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lavallee Richard
+[DEBUG] 2018-01-13 11:37:14.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Lhuillier Gisele
+[DEBUG] 2018-01-13 11:37:14.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Maluorni Franco
+[DEBUG] 2018-01-13 11:37:14.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Marussi Johnny
+[DEBUG] 2018-01-13 11:37:14.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Miller Richard
+[DEBUG] 2018-01-13 11:37:14.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Needleman Lisa & Wein T.
+[DEBUG] 2018-01-13 11:37:14.288 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Nicolazzo Giovannina
+[DEBUG] 2018-01-13 11:37:14.289 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Panameno Margarita
+[DEBUG] 2018-01-13 11:37:14.289 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Pascale Anna
+[DEBUG] 2018-01-13 11:37:14.289 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perrone Flora Paterno A.
+[DEBUG] 2018-01-13 11:37:14.289 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Perry Shak
+[DEBUG] 2018-01-13 11:37:14.289 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Petrocco Marcello
+[DEBUG] 2018-01-13 11:37:14.289 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Piccolo Francesco
+[DEBUG] 2018-01-13 11:37:14.289 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renda Giuseppe
+[DEBUG] 2018-01-13 11:37:14.290 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Renovations Ma Maison ML Inc.
+[DEBUG] 2018-01-13 11:37:14.290 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riendeau Lise
+[DEBUG] 2018-01-13 11:37:14.290 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Riverin Jean-Pierre
+[DEBUG] 2018-01-13 11:37:14.290 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Roy Daniel
+[DEBUG] 2018-01-13 11:37:14.290 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Graziella & Enzo Anoja
+[DEBUG] 2018-01-13 11:37:14.290 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Santilli Renato
+[DEBUG] 2018-01-13 11:37:14.291 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Savard Robert
+[DEBUG] 2018-01-13 11:37:14.291 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Sorrini C. & Perras C.
+[DEBUG] 2018-01-13 11:37:14.291 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Spector Aaron & Esther
+[DEBUG] 2018-01-13 11:37:14.291 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Syndicat d'alternative II
+[DEBUG] 2018-01-13 11:37:14.291 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: Treville Jean & Rose
+[DEBUG] 2018-01-13 11:37:14.292 [JavaFX Application Thread] AccountingDAOImp - Found CLIENTS: TSB Consultants
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Adapte
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Addis
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: ANDRE VIGER
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bel
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: BMR
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Bureau en Gros
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Canada Trust
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ceramic-Royal
+[DEBUG] 2018-01-13 11:37:14.308 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Christian Automobile
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Corporate Express
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Costco
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Docteur du Pare-Brise
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Enreprise Loc. D'auto
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Esso
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Fido
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Future Shop
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Home Depot
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ikea
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Lambert
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Makita
+[DEBUG] 2018-01-13 11:37:14.309 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mc Donalds
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Mondial
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Nordex
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Patrick Morin
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pave Luxe
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Pavigres
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Peinture Micca
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Petro-Canada
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Plomberie Lambert
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Probec
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Reno-Depot
+[DEBUG] 2018-01-13 11:37:14.310 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Rona l'entrepot
+[DEBUG] 2018-01-13 11:37:14.311 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Shell
+[DEBUG] 2018-01-13 11:37:14.311 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Simplex
+[DEBUG] 2018-01-13 11:37:14.311 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: TD Canada Trust
+[DEBUG] 2018-01-13 11:37:14.311 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Ultramar
+[DEBUG] 2018-01-13 11:37:14.311 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Various
+[DEBUG] 2018-01-13 11:37:14.311 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Volkswagen
+[DEBUG] 2018-01-13 11:37:14.311 [JavaFX Application Thread] AccountingDAOImp - Found SUPPLIERS: Wolseley Canada Inc.
+[DEBUG] 2018-01-13 11:37:14.328 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:37:14.329 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:37:14.329 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:37:14.329 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:37:14.329 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:37:14.329 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:37:14.329 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:37:14.346 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:37:14.346 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:37:14.346 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:37:14.346 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:37:14.346 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:37:23.575 [JavaFX Application Thread] AccountingDAOImp - Found MAIN DESCRIPTION: Ceramic
+[DEBUG] 2018-01-13 11:37:23.631 [JavaFX Application Thread] AccountingDAOImp - Record updated from MAINDESCRIPTION is: 3 Ceramic
+[DEBUG] 2018-01-13 11:37:23.632 [JavaFX Application Thread] MainDescriptionFXMLController - Main Description created/updated!
+[DEBUG] 2018-01-13 11:37:23.637 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:37:23.637 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:37:23.637 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:37:23.637 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:37:23.637 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:37:23.637 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:37:23.637 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:37:26.545 [JavaFX Application Thread] AccountingDAOImp - Found MAIN DESCRIPTION: Ceramic
+[DEBUG] 2018-01-13 11:37:26.615 [JavaFX Application Thread] AccountingDAOImp - Record updated from MAINDESCRIPTION is: 3 Cerami
+[DEBUG] 2018-01-13 11:37:26.615 [JavaFX Application Thread] MainDescriptionFXMLController - Main Description created/updated!
+[DEBUG] 2018-01-13 11:37:26.621 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:37:26.621 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Cerami
+[DEBUG] 2018-01-13 11:37:26.621 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:37:26.621 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:37:26.621 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:37:26.621 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:37:26.621 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:37:31.041 [JavaFX Application Thread] AccountingDAOImp - New record added to MAINDESCRIPTION: 12 Ceramic
+[DEBUG] 2018-01-13 11:37:31.041 [JavaFX Application Thread] MainDescriptionFXMLController - Main Description created/updated!
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Cerami
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:37:31.046 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:37:33.255 [JavaFX Application Thread] AccountingDAOImp - Found MAIN DESCRIPTION: Cerami
+[DEBUG] 2018-01-13 11:37:33.441 [JavaFX Application Thread] AccountingDAOImp - Records Deleted from MAINDESCRIPTIONNAME: 1 id: 3
+[DEBUG] 2018-01-13 11:37:33.442 [JavaFX Application Thread] MainDescriptionFXMLController - Main Description deleted!
+[DEBUG] 2018-01-13 11:37:33.445 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Auto Loan
+[DEBUG] 2018-01-13 11:37:33.446 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Ceramic
+[DEBUG] 2018-01-13 11:37:33.446 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Gas
+[DEBUG] 2018-01-13 11:37:33.446 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: no
+[DEBUG] 2018-01-13 11:37:33.446 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Phone
+[DEBUG] 2018-01-13 11:37:33.446 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Restaurant
+[DEBUG] 2018-01-13 11:37:33.446 [JavaFX Application Thread] AccountingDAOImp - Found MAINDESCRIPTIONS: Tools
+[DEBUG] 2018-01-13 11:37:39.061 [JavaFX Application Thread] AccountingDAOImp - Found SUB DESCRIPTION: Paint
+[DEBUG] 2018-01-13 11:37:39.126 [JavaFX Application Thread] AccountingDAOImp - Record updated from SUBDESCRIPTION is: 3 Paint
+[DEBUG] 2018-01-13 11:37:39.126 [JavaFX Application Thread] SubDescriptionFXMLController - Sub Description created/updated!
+[DEBUG] 2018-01-13 11:37:39.130 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:37:39.131 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:37:39.131 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:37:39.131 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:37:39.131 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:37:41.291 [JavaFX Application Thread] AccountingDAOImp - Found SUB DESCRIPTION: Paint
+[DEBUG] 2018-01-13 11:37:41.360 [JavaFX Application Thread] AccountingDAOImp - Record updated from SUBDESCRIPTION is: 3 Pain
+[DEBUG] 2018-01-13 11:37:41.360 [JavaFX Application Thread] SubDescriptionFXMLController - Sub Description created/updated!
+[DEBUG] 2018-01-13 11:37:41.364 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:37:41.364 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:37:41.364 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Pain
+[DEBUG] 2018-01-13 11:37:41.364 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:37:41.364 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:37:45.235 [JavaFX Application Thread] AccountingDAOImp - New record added to SUBDESCRIPTION: 13 Paint
+[DEBUG] 2018-01-13 11:37:45.236 [JavaFX Application Thread] SubDescriptionFXMLController - Sub Description created/updated!
+[DEBUG] 2018-01-13 11:37:45.240 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:37:45.240 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:37:45.240 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Pain
+[DEBUG] 2018-01-13 11:37:45.240 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:37:45.240 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:37:45.240 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 11:37:46.433 [JavaFX Application Thread] AccountingDAOImp - Found SUB DESCRIPTION: Pain
+[DEBUG] 2018-01-13 11:37:46.477 [JavaFX Application Thread] AccountingDAOImp - Records Deleted from SUBDESCRIPTION: 1 id: 3
+[DEBUG] 2018-01-13 11:37:46.478 [JavaFX Application Thread] SubDescriptionFXMLController - Sub Description deleted!
+[DEBUG] 2018-01-13 11:37:46.481 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Drill
+[DEBUG] 2018-01-13 11:37:46.481 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Electricity
+[DEBUG] 2018-01-13 11:37:46.482 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Paint
+[DEBUG] 2018-01-13 11:37:46.482 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Plumbing
+[DEBUG] 2018-01-13 11:37:46.482 [JavaFX Application Thread] AccountingDAOImp - Found SUBDESCRIPTIONS: Saw
+[DEBUG] 2018-01-13 12:03:12.410 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:15.745 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:17.928 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:19.736 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:21.665 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:24.054 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:25.762 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:27.663 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:29.531 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:31.639 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:32.981 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:35.265 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:37.391 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:39.049 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:40.959 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:43.660 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:45.109 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:46.701 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:48.785 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:50.610 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:52.587 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:55.028 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:56.929 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:03:58.988 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:01.397 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:03.397 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:06.297 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:08.520 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:10.216 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:11.966 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:14.117 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:16.242 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:18.875 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:21.177 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:23.420 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:25.327 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:27.454 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:30.002 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:32.124 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:34.180 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:36.106 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:38.149 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:40.340 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:42.449 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:44.450 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:46.875 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:48.901 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:50.985 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:54.052 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:55.852 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:57.787 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:04:59.920 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:05:02.322 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:05:04.535 [main] RenomaxDBTests - Start seed!
+[DEBUG] 2018-01-13 12:05:06.322 [main] RenomaxDBTests - Start seed!

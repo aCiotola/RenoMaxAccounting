@@ -19,6 +19,7 @@ public class SubDescriptionFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IAccountingDAO accountDAO;
+    private String sdName = "";
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -59,14 +60,17 @@ public class SubDescriptionFXMLController
     {
         if(!sdNameField.getText().equals(""))
         {            
-            SubDescription subDescription = new SubDescription();     
+            SubDescription subDescription = accountDAO.findSubDescriptionByName(sdName);
             subDescription.setSubDescriptionName(sdNameField.getText());
-            accountDAO.addSubDescription(subDescription);
             
-            log.debug("Sub Description created!");
+            if(subDescription.getSubDescriptionID() != -1)
+                accountDAO.updateSubDescription(subDescription);
+            else
+                accountDAO.addSubDescription(subDescription);
             
-            sdNameField.setText("");
-            
+            log.debug("Sub Description created/updated!");            
+            sdNameField.setText("");     
+            sdName = "";
             displayTable();
         }
         else        
@@ -102,6 +106,9 @@ public class SubDescriptionFXMLController
     private void showSubDescriptionDetails(SubDescription sd) 
     {
         if(sd != null)        
+        {
             sdNameField.setText(sd.getSubDescriptionName());
+            sdName = sd.getSubDescriptionName();
+        }
     }
 }

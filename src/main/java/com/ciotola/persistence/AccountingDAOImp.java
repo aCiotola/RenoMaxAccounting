@@ -53,8 +53,7 @@ public class AccountingDAOImp implements IAccountingDAO
     }
     
     /**
-     * Method which will insert the expense data into the Expense Table.
-     * Will check if the expense being added already exists.
+     * Method which will insert the expense data into the Expenses Table.
      * 
      * @param expense
      * @return number of records added.
@@ -63,60 +62,32 @@ public class AccountingDAOImp implements IAccountingDAO
     @Override
     public int addExpense(Expense expense) throws SQLException 
     {
-        int count = -1;
         int records = -1;
         int recordNum = -1;
-        
-        String checkExpense = "SELECT * FROM EXPENSES WHERE EXPENSENUMBER = ?";        
+          
         String query = "INSERT INTO EXPENSES(EXPENSENUMBER, DATETIME, SUPPLIER, MAINDESCRIPTION, SUBDESCRIPTION, SUBTOTAL, GST, QST, TOTAL)"
                 + " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
-                PreparedStatement checkPStmt = connection.prepareStatement(checkExpense);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
-        {
-            checkPStmt.setInt(1, expense.getExpenseNumber());
-            try(ResultSet checkRs = checkPStmt.executeQuery();)
-            {
-                if(checkRs.next())
-                {       
-                        count = 1;
-                        expense.setExpenseID(checkRs.getInt("EXPENSEID"));                        
-                        
-                        if(!expense.getDateTime().equals(checkRs.getDate("DATETIME")) || 
-                                !expense.getSupplier().equals(checkRs.getString("SUPPLIER")) || 
-                                !expense.getMainDescription().equals(checkRs.getString("MAINDESCRIPTION")) || 
-                                !expense.getSubDescription().equals(checkRs.getString("SUBDESCRIPTION")) || 
-                                !expense.getSubtotal().equals(checkRs.getBigDecimal("SUBTOTAL")) || 
-                                !expense.getGst().equals(checkRs.getBigDecimal("GST")) || 
-                                !expense.getQst().equals(checkRs.getBigDecimal("QST")) || 
-                                !expense.getTotal().equals(checkRs.getBigDecimal("TOTAL")))
-                        {
-                            updateExpense(expense);    
-                        }
-                    }
-                
-            }
-            if(count < 0)
-            {
-                pStmt.setInt(1, getLastExpenseNumber());
-                pStmt.setDate(2, expense.getDateTime());
-                pStmt.setString(3, expense.getSupplier());
-                pStmt.setString(4, expense.getMainDescription());
-                pStmt.setString(5, expense.getSubDescription());
-                pStmt.setBigDecimal(6, expense.getSubtotal());
-                pStmt.setBigDecimal(7, expense.getGst());
-                pStmt.setBigDecimal(8, expense.getQst());
-                pStmt.setBigDecimal(9, expense.getTotal());
+        {            
+            pStmt.setInt(1, getLastExpenseNumber());
+            pStmt.setDate(2, expense.getDateTime());
+            pStmt.setString(3, expense.getSupplier());
+            pStmt.setString(4, expense.getMainDescription());
+            pStmt.setString(5, expense.getSubDescription());
+            pStmt.setBigDecimal(6, expense.getSubtotal());
+            pStmt.setBigDecimal(7, expense.getGst());
+            pStmt.setBigDecimal(8, expense.getQst());
+            pStmt.setBigDecimal(9, expense.getTotal());
 
-                records = pStmt.executeUpdate();
-                try(ResultSet rs = pStmt.getGeneratedKeys();)
-                {
-                    if(rs.next())
-                        recordNum = rs.getInt(1);
-                    expense.setExpenseID(recordNum);
-                    log.debug("New record added to EXPENSES: " + expense.toString());
-                }
-            }
+            records = pStmt.executeUpdate();
+            try(ResultSet rs = pStmt.getGeneratedKeys();)
+            {
+                if(rs.next())
+                    recordNum = rs.getInt(1);
+                expense.setExpenseID(recordNum);
+                log.debug("New record added to EXPENSES: " + expense.toString());
+            }            
         }
         catch(SQLException ex)
         {
@@ -126,60 +97,42 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;        
     }
 
+    /**
+     * Method which will insert the client data into the Clients Table.
+     * 
+     * @param client
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int addClient(Client client) throws SQLException
     {
         int records = -1;
         int recordNum = -1;
-        int count = -1;
         
-        String checkClient = "SELECT * FROM CLIENTS WHERE CLIENTNAME = ?";        
         String query = "INSERT INTO CLIENTS(CLIENTNAME, STREET, CITY, PROVINCE, POSTALCODE, HOMEPHONE, CELLPHONE, EMAIL) "
                 + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
-                PreparedStatement checkPStmt = connection.prepareStatement(checkClient);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
-            checkPStmt.setString(1, client.getClientName());
-            try(ResultSet checkRs = checkPStmt.executeQuery();)
-            {
-                if(checkRs.next())
-                {                   
-                    if(checkRs.getInt("CLIENTID") > 0)         
-                    {   
-                        count = 1;
-                        client.setClientID(checkRs.getInt("CLIENTID"));                        
-                        
-                        if(!client.getClientName().equals(checkRs.getString("CLIENTNAME")) || !client.getStreet().equals(checkRs.getString("STREET")) ||
-                                !client.getCity().equals(checkRs.getString("CITY")) || !client.getProvince().equals(checkRs.getString("PROVINCE")) ||
-                                !client.getPostalCode().equals(checkRs.getString("POSTALCODE")) || !client.getHomePhone().equals(checkRs.getString("HOMEPHONE")) ||
-                                !client.getCellPhone().equals(checkRs.getString("CELLPHONE")) || !client.getEmail().equals(checkRs.getString("EMAIL")))
-                        {
-                            updateClient(client);    
-                        }
-                    }
-                }
-            }
-            if(count < 0)
-            {
-                pStmt.setString(1, client.getClientName());
-                pStmt.setString(2, client.getStreet());
-                pStmt.setString(3, client.getCity());
-                pStmt.setString(4, client.getProvince());
-                pStmt.setString(5, client.getPostalCode());
-                pStmt.setString(6, client.getHomePhone());
-                pStmt.setString(7, client.getCellPhone());
-                pStmt.setString(8, client.getEmail());
+            
+            pStmt.setString(1, client.getClientName());
+            pStmt.setString(2, client.getStreet());
+            pStmt.setString(3, client.getCity());
+            pStmt.setString(4, client.getProvince());
+            pStmt.setString(5, client.getPostalCode());
+            pStmt.setString(6, client.getHomePhone());
+            pStmt.setString(7, client.getCellPhone());
+            pStmt.setString(8, client.getEmail());
 
-                records = pStmt.executeUpdate();
-                try(ResultSet rs = pStmt.getGeneratedKeys();)
-                {
-                    if(rs.next())
-                        recordNum = rs.getInt(1);
-                    client.setClientID(recordNum);
-                    log.debug("New record added to CLIENTS: " + client.toString());
-                }
-            }
+            records = pStmt.executeUpdate();
+            try(ResultSet rs = pStmt.getGeneratedKeys();)
+            {
+                if(rs.next())
+                    recordNum = rs.getInt(1);
+                client.setClientID(recordNum);
+                log.debug("New record added to CLIENTS: " + client.toString());
+            }            
         }
         catch(SQLException ex)
         {
@@ -189,13 +142,19 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will insert the Supplier data into the Suppliers Table.
+     * 
+     * @param supplier
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int addSupplier(Supplier supplier) throws SQLException 
     {
         int records = -1;
         int recordNum = -1;
         
-        log.debug(supplier.getSupplierID() + "OKAY");
         String query = "INSERT INTO SUPPLIERS(SUPPLIERNAME) VALUES(?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
@@ -219,6 +178,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will insert the Main Description data into the Main Descriptions Table.
+     * 
+     * @param mainDescription
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int addMainDescription(MainDescription mainDescription) throws SQLException 
     {
@@ -247,6 +213,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will insert the Sub Description data into the Sub Descriptions Table.
+     * 
+     * @param subDescription
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int addSubDescription(SubDescription subDescription) throws SQLException 
     {
@@ -275,6 +248,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
     
+    /**
+     * Method which will insert the Invoice data into the Invoices Table.
+     * 
+     * @param invoice
+     * @return
+     * @throws SQLException 
+     */    
     @Override
     public int addInvoice(Invoice invoice) throws SQLException 
     {
@@ -311,6 +291,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will Search the Expenses table for a record with a certain expenseID.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public Expense findExpenseById(int id) throws SQLException
     {
@@ -337,6 +324,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return expense;
     }
     
+    /**
+     * Method which will Search the Clients table for a record with a certain clientID.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public Client findClientById(int id) throws SQLException
     {
@@ -363,6 +357,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return client;
     }
     
+    /**
+     * Method which will Search the Invoices table for a record with a certain invoiceID.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public Invoice findInvoiceById(int id) throws SQLException
     {
@@ -389,6 +390,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return Invoice;
     }
     
+    /**
+     * Method which will Search the Main Descriptions table for a record with a certain mainDescriptionID.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public MainDescription findMainDescriptionById(int id) throws SQLException
     {
@@ -415,6 +423,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return mainDescription;
     }
     
+    /**
+     * Method which will Search the Sub Descriptions table for a record with a certain subDescriptionID.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public SubDescription findSubDescriptionById(int id) throws SQLException
     {
@@ -441,6 +456,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return subDescription;
     }
     
+    /**
+     * Method which will Search the Suppliers table for a record with a certain supplierID.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public Supplier findSupplierById(int id) throws SQLException
     {
@@ -467,6 +489,12 @@ public class AccountingDAOImp implements IAccountingDAO
         return supplier;
     }
     
+    /**
+     * Method which will return an ObservableList containing every record in the Expenses table.
+     * 
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<Expense> findAllExpenses() throws SQLException 
     {
@@ -494,6 +522,12 @@ public class AccountingDAOImp implements IAccountingDAO
         return expenseList;
     }
 
+    /**
+     * Method which will return an ObservableList containing every record in the Clients table.
+     * 
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<Client> findAllClients() throws SQLException
     {
@@ -521,6 +555,12 @@ public class AccountingDAOImp implements IAccountingDAO
         return clientList;
     }
     
+    /**
+     * Method which will return an ObservableList containing every record in the Suppliers table.
+     * 
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<Supplier> findAllSuppliers() throws SQLException 
     {
@@ -548,6 +588,12 @@ public class AccountingDAOImp implements IAccountingDAO
         return supplierList;
     }
 
+    /**
+     * Method which will return an ObservableList containing every record in the Main Descriptions table.
+     * 
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<MainDescription> findAllMainDescriptions() throws SQLException 
     {
@@ -575,6 +621,12 @@ public class AccountingDAOImp implements IAccountingDAO
         return mainDescriptionList;
     }
 
+    /**
+     * Method which will return an ObservableList containing every record in the Sub Descriptions table.
+     * 
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<SubDescription> findAllSubDescriptions() throws SQLException
     {
@@ -602,6 +654,12 @@ public class AccountingDAOImp implements IAccountingDAO
         return subDescriptionList;
     }
     
+    /**
+     * Method which will return an ObservableList containing every record in the Invoices table.
+     * 
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<Invoice> findAllInvoices() throws SQLException 
     {
@@ -629,6 +687,14 @@ public class AccountingDAOImp implements IAccountingDAO
         return invoiceList;
     }
     
+    /**
+     * Method which will return an ObservableList containing every record in the Clients table
+     * which has a similar name to the given name.
+     * 
+     * @param name
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<Client> findClientLikeName(String name) throws SQLException
     {
@@ -657,6 +723,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return clientList;
     }
     
+    /**
+     * Method which will return the record which contains the given name.
+     * 
+     * @param name
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public Client findClientByName(String name) throws SQLException
     {
@@ -683,6 +756,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return client;
     }
     
+    /**
+     * Method which will return the record which contains the given name.
+     * 
+     * @param name
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public Supplier findSupplierByName(String name) throws SQLException
     {
@@ -709,6 +789,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return supplier;
     }
     
+    /**
+     * Method which will return the record which contains the given name.
+     * 
+     * @param name
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public MainDescription findMainDescriptionByName(String name) throws SQLException
     {
@@ -735,6 +822,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return mainDescription;
     }
     
+    /**
+     * Method which will return the record which contains the given name.
+     * 
+     * @param name
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public SubDescription findSubDescriptionByName(String name) throws SQLException
     {
@@ -761,6 +855,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return subDescription;
     }
     
+    /**
+     * Method which will return the record which contains the given expense number.
+     * 
+     * @param expenseNumber
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public Expense findExpenseByNumber(int expenseNumber) throws SQLException
     {
@@ -787,6 +888,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return expense;
     }
 
+    /**
+     * Method which will update a record in the Expenses table.
+     * 
+     * @param expense
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int updateExpense(Expense expense) throws SQLException
     {
@@ -818,6 +926,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
 
+    /**
+     * Method which will update a record in the Clients table.
+     * 
+     * @param client
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int updateClient(Client client) throws SQLException
     {
@@ -848,6 +963,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will update a record in the Suppliers table.
+     * 
+     * @param supplier
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int updateSupplier(Supplier supplier) throws SQLException
     {
@@ -870,6 +992,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will update a record in the Main Descriptions table.
+     * 
+     * @param mainDescription
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int updateMainDescription(MainDescription mainDescription) throws SQLException 
     {
@@ -892,6 +1021,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will update a record in the Sub Descriptions table.
+     * 
+     * @param subDescription
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int updateSubDescription(SubDescription subDescription) throws SQLException
     {
@@ -914,6 +1050,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
     
+    /**
+     * Method which will update a record in the Invoices table.
+     * 
+     * @param invoice
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int updateInvoice(Invoice invoice) throws SQLException
     {
@@ -944,6 +1087,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records; 
     }
 
+    /**
+     * Method which will delete a record in the Expenses table.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int deleteExpense(int id) throws SQLException 
     {
@@ -964,6 +1114,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
 
+    /**
+     * Method which will delete a record in the Clients table.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int deleteClient(int id) throws SQLException
     {
@@ -984,6 +1141,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
 
+    /**
+     * Method which will delete a record in the Suppliers table.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int deleteSupplier(int id) throws SQLException
     {
@@ -1004,6 +1168,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
 
+    /**
+     * Method which will delete a record in the Main Descriptions table.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int deleteMainDescription(int id) throws SQLException 
     {
@@ -1024,6 +1195,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
 
+    /**
+     * Method which will delete a record in the Sub Descriptions table.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int deleteSubDescription(int id) throws SQLException 
     {
@@ -1044,6 +1222,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
     
+    /**
+     * Method which will delete a record in the Invoices table.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
     @Override
     public int deleteInvoice(int id) throws SQLException 
     {
@@ -1064,6 +1249,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return records;
     }
     
+    /**
+     * Method which will take data from the ResultSet and create an Expense object.
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private Expense createExpense(ResultSet rs) throws SQLException
     {
         Expense expense = new Expense();
@@ -1080,6 +1272,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return expense;
     }
     
+    /**
+     * Method which will take data from the ResultSet and create a Client object.
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private Client createClient(ResultSet rs) throws SQLException
     {
         Client client = new Client();
@@ -1095,6 +1294,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return client;
     }    
     
+    /**
+     * Method which will take data from the ResultSet and create a Supplier object.
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private Supplier createSupplier(ResultSet rs) throws SQLException
     {
         Supplier supplier = new Supplier();
@@ -1103,6 +1309,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return supplier;
     }  
     
+    /**
+     * Method which will take data from the ResultSet and create a MainDescription object.
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private MainDescription createMainDescription(ResultSet rs) throws SQLException
     {
         MainDescription mainDescription = new MainDescription();
@@ -1111,6 +1324,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return mainDescription;
     }  
     
+    /**
+     * Method which will take data from the ResultSet and create a SubDescription object.
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private SubDescription createSubDescription(ResultSet rs) throws SQLException
     {
         SubDescription subDescription = new SubDescription();
@@ -1119,6 +1339,13 @@ public class AccountingDAOImp implements IAccountingDAO
         return subDescription;
     }  
     
+    /**
+     * Method which will take data from the ResultSet and create a Invoice object.
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private Invoice createInvoice(ResultSet rs) throws SQLException
     {
         Invoice invoice = new Invoice();
@@ -1134,6 +1361,12 @@ public class AccountingDAOImp implements IAccountingDAO
         return invoice;
     }   
     
+    /**
+     * Method which will increment the expense number when a new expense is created.
+     * 
+     * @return
+     * @throws SQLException 
+     */
     private int getLastExpenseNumber() throws SQLException
     {
         int expenseNumber = 0;

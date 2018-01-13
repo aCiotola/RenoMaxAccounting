@@ -68,7 +68,7 @@ public class SupplierFXMLController
             else
                  accountDAO.addSupplier(supplier);
             
-            log.debug("Supplier created!");            
+            log.debug("Supplier created/updated!");            
             supplierNameField.setText("");     
             sdName = "";
             displayTable();
@@ -108,7 +108,7 @@ public class SupplierFXMLController
         if(supplier != null)    
         {
             supplierNameField.setText(supplier.getSupplierName());
-            sdName = supplierNameField.getText();
+            sdName = supplier.getSupplierName();
         }
     }
 }
