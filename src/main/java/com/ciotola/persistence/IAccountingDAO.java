@@ -10,8 +10,11 @@ import java.sql.SQLException;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * DAO Interface which contains the methods required to interact with the database.
+ * 
  * @author Alessandro Ciotola
+ * @version 2018/01/13
+ * 
  */
 public interface IAccountingDAO 
 {

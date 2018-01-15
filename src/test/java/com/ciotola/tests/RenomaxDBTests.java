@@ -32,8 +32,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author shado
+ * JUNIT test for the DAO class.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/15
+ * 
  */
 public class RenomaxDBTests 
 {    
@@ -45,6 +48,11 @@ public class RenomaxDBTests
     PropsManager pm = new PropsManager();
     PropertiesBean propsBean;
 
+    /**
+     * No parameter constructor which initializes the DAO object and database credentials.
+     * 
+     * @throws IOException 
+     */
     public RenomaxDBTests() throws IOException 
     {
         propsBean = pm.loadTextProperties();
@@ -55,6 +63,12 @@ public class RenomaxDBTests
         accountDAO = new AccountingDAOImp();
     }
     
+    /**
+     * JUnit test to check if the expense has been added.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testAddExpense() throws SQLException, IOException 
     {        
@@ -76,6 +90,12 @@ public class RenomaxDBTests
         assertEquals("The records are not equal!", expense, expense2);
     }
     
+    /**
+     * JUnit test to check if the expense throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddExpenseFail() throws SQLException, IOException  
     {
@@ -87,6 +107,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the client has been added.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testAddClient() throws SQLException, IOException 
     {        
@@ -107,6 +133,12 @@ public class RenomaxDBTests
         assertEquals("The records are not equal!", client, client2);
     }
     
+    /**
+     * JUnit test to check if the client throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddClientFail() throws SQLException, IOException  
     {
@@ -118,6 +150,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the supplier has been added.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testAddSupplier() throws SQLException, IOException 
     {        
@@ -131,6 +169,12 @@ public class RenomaxDBTests
         assertEquals("The records are not equal!", supplier, supplier2);
     }
     
+    /**
+     * JUnit test to check if the supplier throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddSupplierFail() throws SQLException, IOException  
     {
@@ -142,6 +186,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the Main Description has been added.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testAddMainDescription() throws SQLException, IOException 
     {        
@@ -155,6 +205,12 @@ public class RenomaxDBTests
         assertEquals("The records are not equal!", mainDescription, mainDescription2);
     }
     
+    /**
+     * JUnit test to check if the Main Description throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddMainDescriptionFail() throws SQLException, IOException  
     {
@@ -165,6 +221,12 @@ public class RenomaxDBTests
         // If an exception was not thrown then the test failed
         fail("The Object that was null did not throw an exception");
     }
+    /**
+     * JUnit test to check if the Sub Description has been added.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     
     @Test(timeout = 1000)
     public void testAddSubDescription() throws SQLException, IOException 
@@ -179,6 +241,12 @@ public class RenomaxDBTests
         assertEquals("The records are not equal!", subDescription, subDescription2);
     }
     
+    /**
+     * JUnit test to check if the Sub Description throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddSubDescriptionFail() throws SQLException, IOException  
     {
@@ -190,6 +258,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the invoice has been added.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testAddInvoice() throws SQLException, IOException 
     {        
@@ -210,6 +284,12 @@ public class RenomaxDBTests
         assertEquals("The records are not equal!", invoice, invoice2);
     }
     
+    /**
+     * JUnit test to check if the invoice throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testAddInvoiceFail() throws SQLException, IOException  
     {
@@ -221,6 +301,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the ID can be found in the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindExpenseByID() throws SQLException, IOException  
     {
@@ -230,6 +316,12 @@ public class RenomaxDBTests
         assertEquals("Expense found: ", new BigDecimal("26.99"), expense.getTotal());
     }
 
+    /**
+     * JUnit test to check if the ID throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testFindExpenseByIDFail() throws SQLException, IOException  
     {
@@ -241,6 +333,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the ID can be found in the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindClientByID() throws SQLException, IOException  
     {
@@ -250,6 +348,12 @@ public class RenomaxDBTests
         assertEquals("Client found: ", "Dr. Miller Richard", client.getClientName());
     }
 
+    /**
+     * JUnit test to check if the ID throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testFindClientByIDFail() throws SQLException, IOException  
     {
@@ -261,6 +365,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the ID can be found in the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindInvoiceByID() throws SQLException, IOException  
     {
@@ -270,6 +380,12 @@ public class RenomaxDBTests
         assertEquals("Invoice found: ", new BigDecimal("26.99"), invoice.getTotal());
     }
 
+    /**
+     * JUnit test to check if the ID throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testFindInvoiceByIDFail() throws SQLException, IOException  
     {
@@ -281,6 +397,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the ID can be found in the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindMainDescriptionByID() throws SQLException, IOException  
     {
@@ -290,6 +412,12 @@ public class RenomaxDBTests
         assertEquals("Main Description found: ", "Gas", mainDescription.getMainDescriptionName());
     }
 
+    /**
+     * JUnit test to check if the ID throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testFindMainDescriptionByIDFail() throws SQLException, IOException  
     {
@@ -301,6 +429,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the ID can be found in the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindSubDescriptionByID() throws SQLException, IOException  
     {
@@ -310,6 +444,12 @@ public class RenomaxDBTests
         assertEquals("Sub Description found: ", "Electricity", subDescription.getSubDescriptionName());
     }
 
+    /**
+     * JUnit test to check if the ID throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testFindSubDescriptionByIDFail() throws SQLException, IOException  
     {
@@ -321,6 +461,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the ID can be found in the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindSupplierByID() throws SQLException, IOException  
     {
@@ -330,6 +476,12 @@ public class RenomaxDBTests
         assertEquals("Supplier found: ", "Shell", supplier.getSupplierName());
     }
 
+    /**
+     * JUnit test to check if the ID throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testFindSupplierByIDFail() throws SQLException, IOException  
     {
@@ -341,6 +493,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if all expenses are returned from the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindAllExpenses() throws SQLException, IOException  
     {
@@ -350,6 +508,12 @@ public class RenomaxDBTests
         assertEquals("Expenses found: ", 1, expenseList.size());
     }
     
+    /**
+     * JUnit test to check if all clients are returned from the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindAllClients() throws SQLException, IOException  
     {
@@ -359,6 +523,12 @@ public class RenomaxDBTests
         assertEquals("Clients found: ", 60, clientList.size());
     }
     
+    /**
+     * JUnit test to check if all suppliers are returned from the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindAllSuppliers() throws SQLException, IOException  
     {
@@ -368,6 +538,12 @@ public class RenomaxDBTests
         assertEquals("Suppliers found: ", 39, supplierList.size());
     }
     
+    /**
+     * JUnit test to check if all main description are returned from the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindAllMainDescription() throws SQLException, IOException  
     {
@@ -377,6 +553,12 @@ public class RenomaxDBTests
         assertEquals("Main Descriptions found: ", 10, mainDescriptionList.size());
     }
     
+    /**
+     * JUnit test to check if all sub descriptions are returned from the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindAllSubDescription() throws SQLException, IOException  
     {
@@ -386,6 +568,12 @@ public class RenomaxDBTests
         assertEquals("Sub Descriptions found: ", 5, subDescriptionList.size());
     }
     
+    /**
+     * JUnit test to check if all invoices are returned from the database.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testFindAllInvoices() throws SQLException, IOException  
     {
@@ -395,6 +583,12 @@ public class RenomaxDBTests
         assertEquals("Invoices found: ", 1, invoiceList.size());
     }
     
+    /**
+     * JUnit test to check if the record has been updated.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testUpdateExpense() throws SQLException, IOException  
     {      
@@ -408,6 +602,12 @@ public class RenomaxDBTests
         assertEquals("Expense date has been updated", "2017-12-31", expense.getDateTime().toString());
     }
   
+    /**
+     * JUnit test to check if the record that must be updated throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateExpenseFail() throws SQLException, IOException  
     {
@@ -419,6 +619,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record has been updated.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testUpdateClient() throws SQLException, IOException  
     {      
@@ -432,6 +638,12 @@ public class RenomaxDBTests
         assertEquals("Client email has been updated", "newtempemail", client.getEmail());
     }
   
+    /**
+     * JUnit test to check if the record that must be updated throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateClientFail() throws SQLException, IOException  
     {
@@ -443,6 +655,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record has been updated.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testUpdateSupplier() throws SQLException, IOException  
     {      
@@ -456,6 +674,12 @@ public class RenomaxDBTests
         assertEquals("Supplier name has been updated", "newsuppliername", supplier.getSupplierName());
     }
   
+    /**
+     * JUnit test to check if the record that must be updated throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateSupplierFail() throws SQLException, IOException  
     {
@@ -467,6 +691,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record has been updated.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testUpdateMainDescription() throws SQLException, IOException  
     {      
@@ -480,6 +710,12 @@ public class RenomaxDBTests
         assertEquals("Main Description has been updated", "newmdname", mainDescription.getMainDescriptionName());
     }
   
+    /**
+     * JUnit test to check if the record that must be updated throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateMainDescriptionFail() throws SQLException, IOException  
     {
@@ -491,6 +727,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record has been updated.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testUpdateSubDescription() throws SQLException, IOException  
     {      
@@ -504,6 +746,12 @@ public class RenomaxDBTests
         assertEquals("Sub Description has been updated", "newsdname", subDescription.getSubDescriptionName());
     }
   
+    /**
+     * JUnit test to check if the record that must be updated throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateSubDescriptionFail() throws SQLException, IOException  
     {
@@ -515,6 +763,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record has been updated.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testUpdateInvoice() throws SQLException, IOException  
     {      
@@ -528,6 +782,12 @@ public class RenomaxDBTests
         assertEquals("Invoice number has been updated", 2017002, invoice.getInvoiceNumber());
     }
   
+    /**
+     * JUnit test to check if the record that must be updated throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testUpdateInvoiceFail() throws SQLException, IOException  
     {
@@ -539,6 +799,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record is deleted.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testDeleteExpense() throws SQLException, IOException  
     {        
@@ -551,6 +817,12 @@ public class RenomaxDBTests
         assertEquals("Expense shouldn't be found: ", -1, expense.getExpenseID());
     }
 
+    /**
+     * JUnit test to check if the record that must be deleted throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteExpenseFail() throws SQLException, IOException  
     {
@@ -562,6 +834,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record is deleted.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testDeleteClient() throws SQLException, IOException  
     {        
@@ -574,6 +852,12 @@ public class RenomaxDBTests
         assertEquals("Client shouldn't be found: ", -1, client.getClientID());
     }
 
+    /**
+     * JUnit test to check if the record that must be deleted throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteClientFail() throws SQLException, IOException  
     {
@@ -585,6 +869,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record is deleted.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testDeleteSupplier() throws SQLException, IOException  
     {        
@@ -597,6 +887,12 @@ public class RenomaxDBTests
         assertEquals("Supplier shouldn't be found: ", -1, supplier.getSupplierID());
     }
 
+    /**
+     * JUnit test to check if the record that must be deleted throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteSupplierFail() throws SQLException, IOException  
     {
@@ -608,6 +904,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record is deleted.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testDeleteMainDescription() throws SQLException, IOException  
     {        
@@ -620,6 +922,12 @@ public class RenomaxDBTests
         assertEquals("Main Description shouldn't be found: ", -1, mainDescription.getMainDescriptionID());
     }
 
+    /**
+     * JUnit test to check if the record that must be deleted throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteMainDescriptionFail() throws SQLException, IOException  
     {
@@ -631,6 +939,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record is deleted.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testDeleteSubDescription() throws SQLException, IOException  
     {        
@@ -643,6 +957,12 @@ public class RenomaxDBTests
         assertEquals("Sub Description shouldn't be found: ", -1, subDescription.getSubDescriptionID());
     }
 
+    /**
+     * JUnit test to check if the record that must be deleted throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteSubDescriptionFail() throws SQLException, IOException  
     {
@@ -654,6 +974,12 @@ public class RenomaxDBTests
         fail("The Object that was null did not throw an exception");
     }
     
+    /**
+     * JUnit test to check if the record is deleted.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000)
     public void testDeleteInvoice() throws SQLException, IOException  
     {        
@@ -665,7 +991,13 @@ public class RenomaxDBTests
 
         assertEquals("Invoice shouldn't be found: ", -1, invoice.getInvoiceID());
     }
-
+    
+    /**
+     * JUnit test to check if the record that must be deleted throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     @Test(timeout = 1000, expected = NullPointerException.class)
     public void testDeleteInvoiceFail() throws SQLException, IOException  
     {

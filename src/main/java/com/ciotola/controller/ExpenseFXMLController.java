@@ -18,6 +18,13 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller class which contains the methods used for creating/updating/deleting Expenses.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/15
+ * 
+ */
 public class ExpenseFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
@@ -86,6 +93,12 @@ public class ExpenseFXMLController
     @FXML // fx:id="expenseDateField"
     private DatePicker expenseDateField; // Value injected by FXMLLoader
 
+    
+    /**
+     * Method which will clear all of the fields.
+     * 
+     * @param event 
+     */
     @FXML
     void onClearExpense(ActionEvent event) 
     {
@@ -99,6 +112,12 @@ public class ExpenseFXMLController
         expenseTotalField.setText("");            
     }
 
+    /**
+     * Method which will delete the expense chosen.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onDeleteExpense(ActionEvent event) throws SQLException 
     {
@@ -115,6 +134,13 @@ public class ExpenseFXMLController
             expenseNumberField.setText("Please select a date, supplier, description, subtotal and total!");
     }
 
+    /**
+     * Method which will check if the expense already exists. If it does, call the
+     * update methods, else, call the add method.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onSaveExpense(ActionEvent event) throws SQLException 
     {
@@ -150,12 +176,23 @@ public class ExpenseFXMLController
             expenseNumberField.setText("Please enter the Date, Supplier name, main description, subtotal and total!!");            
     }
 
+    /**
+     * No parameter constructor which calls the super's constructor.
+     * 
+     */
     public ExpenseFXMLController()
     {
         super();
     }
     
-    @FXML // This method is called by the FXMLLoader when initialization is complete
+    /**
+     * This method is called by the FXMLLoader when initialization is complete.
+     * Will initialize the DAO object and display the table.
+     * 
+     * @throws IOException
+     * @throws SQLException 
+     */
+    @FXML 
     void initialize() throws IOException, SQLException 
     {
         assert expenseNumColumn != null : "fx:id=\"expenseNumColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
@@ -193,11 +230,21 @@ public class ExpenseFXMLController
         expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));
     }
     
+    /**
+     * Will display all expenses in the table.
+     * 
+     * @throws SQLException 
+     */
     public void displayTable() throws SQLException
     {
         expenseTable.setItems(accountDAO.findAllExpenses());
     }
     
+    /**
+     * Listener which will fill the fields with the selected expense.
+     * 
+     * @param expense 
+     */
     private void showExpenseDetails(Expense expense)
     {
         if(expense != null)

@@ -1,23 +1,19 @@
 package com.ciotola.controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * FXML Controller class
- *
- * @author shado
+ * Controller class which contains the methods used for handling the menu bar.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/15
+ * 
  */
 public class MainFXMLController 
 {
@@ -29,78 +25,22 @@ public class MainFXMLController
     @FXML // URL location of the FXML file that was given to the FXMLLoader
     private URL location;
 
+    /**
+     * Event handler which displays the About form.
+     * 
+     * @param event 
+     */
     @FXML
     void onMenuAbout(ActionEvent event) 
     {
 
     }
 
-    @FXML
-    void onMenuAddClient(ActionEvent event) throws IOException
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ClientFormFXML.fxml"));
-        Parent parent = (BorderPane) loader.load();
-        Stage stage = new Stage();
-        stage.setTitle("Add a new Client");
-        stage.setScene(new Scene(parent));  
-        stage.show();        
-    }
-
-    @FXML
-    void onMenuAddExpense(ActionEvent event) throws IOException
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ExpenseFormFXML.fxml"));
-        Parent parent = (BorderPane) loader.load();
-        Stage stage = new Stage();
-        stage.setTitle("Add a new Expense");
-        stage.setScene(new Scene(parent));  
-        stage.show(); 
-    }
-
-    @FXML
-    void onMenuAddInvoice(ActionEvent event) throws IOException
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/InvoiceFormFXML.fxml"));
-        Parent parent = (BorderPane) loader.load();
-        Stage stage = new Stage();
-        stage.setTitle("Add a new Invoice");
-        stage.setScene(new Scene(parent));  
-        stage.show(); 
-    }
-
-    @FXML
-    void onMenuAddMainDescription(ActionEvent event) throws IOException 
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainDescriptionFormFXML.fxml"));
-        Parent parent = (BorderPane) loader.load();
-        Stage stage = new Stage();
-        stage.setTitle("Add a new Main Description");
-        stage.setScene(new Scene(parent));  
-        stage.show(); 
-    }
-
-    @FXML
-    void onMenuAddSubDescription(ActionEvent event) throws IOException 
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SubDescriptionFormFXML.fxml"));
-        Parent parent = (BorderPane) loader.load();
-        Stage stage = new Stage();
-        stage.setTitle("Add a new Sub Description");
-        stage.setScene(new Scene(parent));  
-        stage.show(); 
-    }
-
-    @FXML
-    void onMenuAddSupplier(ActionEvent event) throws IOException 
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SupplierFormFXML.fxml"));
-        Parent parent = (BorderPane) loader.load();
-        Stage stage = new Stage();
-        stage.setTitle("Add a new Supplier");
-        stage.setScene(new Scene(parent));  
-        stage.show();    
-    }
-
+    /**
+     * Event handler which closes the application.
+     * 
+     * @param event 
+     */
     @FXML
     void onMenuClose(ActionEvent event) 
     {
@@ -108,38 +48,36 @@ public class MainFXMLController
         Platform.exit();
     }
 
+    /**
+     * Event handler which saves the work done to the current file.
+     * 
+     * @param event 
+     */
     @FXML
-    void onMenuSave(ActionEvent event) {
+    void onMenuSave(ActionEvent event) 
+    {
 
     }
 
+    /**
+     * Event handler which saves the work done to a new file.
+     * 
+     * @param event 
+     */
     @FXML
-    void onMenuSaveAs(ActionEvent event) {
+    void onMenuSaveAs(ActionEvent event) 
+    {
 
     }
 
-    @FXML
-    void onMenuViewClients(ActionEvent event) {
 
-    }
-
-    @FXML
-    void onMenuViewMainDescription(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onMenuViewSubDescription(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onMenuViewSuppliers(ActionEvent event) {
-
-    }
-
-    @FXML // This method is called by the FXMLLoader when initialization is complete
-    void initialize() {
+    /**
+     * This method is called by the FXMLLoader when initialization is complete
+     * 
+     */
+    @FXML 
+    void initialize() 
+    {
 
     }
 }

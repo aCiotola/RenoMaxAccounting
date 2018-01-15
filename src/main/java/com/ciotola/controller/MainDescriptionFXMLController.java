@@ -15,6 +15,13 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller class which contains the methods used for creating/updating/deleting Main Descriptions.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/15
+ * 
+ */
 public class MainDescriptionFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
@@ -39,6 +46,12 @@ public class MainDescriptionFXMLController
     @FXML // fx:id="mdNameField"
     private TableColumn<MainDescription, String> mdNameColumn; // Value injected by FXMLLoader
 
+    /**
+     * Method which will delete the Main Description chosen.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onDeleteMainDescription(ActionEvent event) throws SQLException 
     {
@@ -55,6 +68,13 @@ public class MainDescriptionFXMLController
             mdField.setText("Please select a Main Description!");
     }
 
+    /**
+     * Method which will check if the Main Description already exists. If it does, call the
+     * update methods, else, call the add method.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onSaveMainDescription(ActionEvent event) throws SQLException 
     {
@@ -77,12 +97,23 @@ public class MainDescriptionFXMLController
             mdField.setText("Please enter a description!");
     }
 
+    /**
+     * No parameter constructor which calls the super's constructor.
+     * 
+     */
     public MainDescriptionFXMLController()
     {
         super();
     }
     
-    @FXML // This method is called by the FXMLLoader when initialization is complete
+    /**
+     * This method is called by the FXMLLoader when initialization is complete.
+     * Will initialize the DAO object and display the table.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
+    @FXML
     void initialize() throws SQLException, IOException
     {
         assert mdField != null : "fx:id=\"mdField\" was not injected: check your FXML file 'MainDescriptionFXML.fxml'.";
@@ -98,11 +129,21 @@ public class MainDescriptionFXMLController
         mdTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showMainDescriptionDetails(newValue));
     }
     
+    /**
+     * Will display all Main Descriptions in the table.
+     * 
+     * @throws SQLException 
+     */
     public void displayTable() throws SQLException
     {
         mdTable.setItems(accountDAO.findAllMainDescriptions());
     }
     
+    /**
+     * Listener which will fill the fields with the selected Main Description.
+     * 
+     * @param md 
+     */
     private void showMainDescriptionDetails(MainDescription md) 
     {
         if(md != null) 

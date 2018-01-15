@@ -15,6 +15,13 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller class which contains the methods used for creating/updating/deleting Suppliers.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/15
+ * 
+ */
 public class SupplierFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
@@ -39,6 +46,12 @@ public class SupplierFXMLController
     @FXML // fx:id="supplierNameColumn"
     private TableColumn<Supplier, String> supplierNameColumn; // Value injected by FXMLLoader
 
+    /**
+     * Method which will delete the Supplier chosen.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onDeleteSupplier(ActionEvent event) throws SQLException
     {
@@ -55,6 +68,13 @@ public class SupplierFXMLController
             supplierNameField.setText("Please select a supplier!");
     }
 
+    /**
+     * Method which will check if the Supplier  already exists. If it does, call the
+     * update methods, else, call the add method.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onSaveSupplier(ActionEvent event) throws SQLException
     {
@@ -77,12 +97,23 @@ public class SupplierFXMLController
             supplierNameField.setText("Please enter a name!");
     }
     
+    /**
+     * No parameter constructor which calls the super's constructor.
+     * 
+     */
     public SupplierFXMLController()
     {
         super();
     }
 
-    @FXML // This method is called by the FXMLLoader when initialization is complete
+    /**
+     * This method is called by the FXMLLoader when initialization is complete.
+     * Will initialize the DAO object and display the table.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
+    @FXML
     void initialize() throws IOException, SQLException 
     {
         assert supplierNameField != null : "fx:id=\"supplierNameField\" was not injected: check your FXML file 'SupplierFXML.fxml'.";
@@ -98,11 +129,21 @@ public class SupplierFXMLController
         supplierTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showSupplierDetails(newValue));
     }
     
+    /**
+     * Will display all Suppliers in the table.
+     * 
+     * @throws SQLException 
+     */
     public void displayTable() throws SQLException
     {
         supplierTable.setItems(accountDAO.findAllSuppliers());
     }
     
+    /**
+     * Listener which will fill the fields with the selected Supplier.
+     * 
+     * @param supplier 
+     */
     private void showSupplierDetails(Supplier supplier) 
     {
         if(supplier != null)    

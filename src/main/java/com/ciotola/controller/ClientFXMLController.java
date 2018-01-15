@@ -15,6 +15,13 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller class which contains the methods used for creating/updating/searching/deleting clients.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/13
+ * 
+ */
 public class ClientFXMLController 
 {    
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
@@ -84,6 +91,13 @@ public class ClientFXMLController
     @FXML // fx:id="seachClientField"
     private TextField seachClientField; // Value injected by FXMLLoader
     
+    /**
+     * Method which will check if the client already exists. If it does, call the
+     * update methods, else, call the add method.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onSaveClient(ActionEvent event) throws SQLException 
     {
@@ -115,6 +129,11 @@ public class ClientFXMLController
         
     }
     
+    /**
+     * Method which will clear all of the fields
+     * 
+     * @param event 
+     */
     @FXML
     void onClearClient(ActionEvent event) 
     {
@@ -128,6 +147,13 @@ public class ClientFXMLController
         emailField.setText("");
     }
     
+    /**
+     * Method which will search the client table for names similar to the one given
+     * in the search field.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onSeachClient(ActionEvent event) throws SQLException 
     {
@@ -141,6 +167,12 @@ public class ClientFXMLController
             displayTable();
     }
     
+    /**
+     * Method which will delete the client chosen.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onDeleteClient(ActionEvent event) throws SQLException 
     {
@@ -157,12 +189,23 @@ public class ClientFXMLController
             clientNameField.setText("Please select a client that you wish to delete!");
     }
     
+    /**
+     * No parameter constructor which calls the super's constructor.
+     * 
+     */
     public ClientFXMLController()
     {
         super();
     }
 
-    @FXML // This method is called by the FXMLLoader when initialization is complete
+    /**
+     * This method is called by the FXMLLoader when initialization is complete.
+     * Will initialize the DAO object and display the table.
+     * 
+     * @throws IOException
+     * @throws SQLException 
+     */
+    @FXML 
     void initialize() throws IOException, SQLException 
     {
         assert clientNumberColumn != null : "fx:id=\"clientNumberColumn\" was not injected: check your FXML file 'MainFXML.fxml'.";
@@ -199,11 +242,21 @@ public class ClientFXMLController
         clientTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showClientDetails(newValue));
     }
     
+    /**
+     * Will display all clients in the table.
+     * 
+     * @throws SQLException 
+     */
     public void displayTable() throws SQLException
     {
         clientTable.setItems(accountDAO.findAllClients());
     }
     
+    /**
+     * Listener which will fill the fields with the selected client.
+     * 
+     * @param client 
+     */
     private void showClientDetails(Client client) 
     {
         if(client != null)

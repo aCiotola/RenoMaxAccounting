@@ -15,6 +15,13 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller class which contains the methods used for creating/updating/deleting Sub Descriptions.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/01/15
+ * 
+ */
 public class SubDescriptionFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
@@ -39,6 +46,12 @@ public class SubDescriptionFXMLController
     @FXML // fx:id="sdNameColumn"
     private TableColumn<SubDescription, String> sdNameColumn; // Value injected by FXMLLoader
 
+    /**
+     * Method which will delete the Sub Description chosen.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onDeleteSubDescription(ActionEvent event) throws SQLException
     {
@@ -55,6 +68,13 @@ public class SubDescriptionFXMLController
             sdNameField.setText("Please select a Sub Description!");
     }
 
+    /**
+     * Method which will check if the Sub Description already exists. If it does, call the
+     * update methods, else, call the add method.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void onSaveSubDescription(ActionEvent event) throws SQLException 
     {
@@ -77,12 +97,23 @@ public class SubDescriptionFXMLController
             sdNameField.setText("Please enter a description!");
     }
 
+    /**
+     * No parameter constructor which calls the super's constructor.
+     * 
+     */
     public SubDescriptionFXMLController()
     {
         super();
     }
     
-    @FXML // This method is called by the FXMLLoader when initialization is complete
+    /**
+     * This method is called by the FXMLLoader when initialization is complete.
+     * Will initialize the DAO object and display the table.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
+    @FXML
     void initialize() throws IOException, SQLException
     {
         assert sdNameField != null : "fx:id=\"sdNameField\" was not injected: check your FXML file 'SubDescriptionFXML.fxml'.";
@@ -98,11 +129,21 @@ public class SubDescriptionFXMLController
         sdTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showSubDescriptionDetails(newValue));
     }
     
+    /**
+     * Will display all Sub Descriptions in the table.
+     * 
+     * @throws SQLException 
+     */
     public void displayTable() throws SQLException
     {
         sdTable.setItems(accountDAO.findAllSubDescriptions());
     }
     
+    /**
+     * Listener which will fill the fields with the selected Sub Description.
+     * 
+     * @param sd 
+     */
     private void showSubDescriptionDetails(SubDescription sd) 
     {
         if(sd != null)        

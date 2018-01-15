@@ -1,6 +1,3 @@
-/**
- * Sample Skeleton for 'InvoiceFormFXML.fxml' Controller Class
- */
 
 package com.ciotola.controller;
 
@@ -10,7 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class InvoiceFormFXMLController {
+public class InvoiceFormFXMLController 
+{
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;

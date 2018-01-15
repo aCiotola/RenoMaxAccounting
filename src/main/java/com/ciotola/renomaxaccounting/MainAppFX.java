@@ -13,9 +13,11 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- *
- * @author shado
+/** 
+ * Main application which launches the Main Application along with the tabs.                                                
+ *                                                                             
+ * @author Alessandro Ciotola                                                   
+ * @version 2018/01/15
  */
 public class MainAppFX extends Application
 {
@@ -24,12 +26,23 @@ public class MainAppFX extends Application
     
     private final IAccountingDAO accountDAO;
     
+    /**
+     * Constructor which initializes the DAO object.    
+     * 
+     * @throws IOException 
+     */
     public MainAppFX() throws IOException
     {
         super();
         accountDAO = new AccountingDAOImp();
     }
     
+    /**
+     * Method which sets up the primary stage and shows the stage.
+     * 
+     * @param primaryStage
+     * @throws Exception 
+     */
     @Override
     public void start(Stage primaryStage) throws Exception 
     {
@@ -42,6 +55,12 @@ public class MainAppFX extends Application
         primaryStage.show();
     }
     
+    /**
+     * Method which gets the FXML file and creates the scene.
+     * 
+     * @throws IOException
+     * @throws SQLException 
+     */
     private void configureStage() throws IOException, SQLException
     {
         FXMLLoader loader = new FXMLLoader();
@@ -53,6 +72,11 @@ public class MainAppFX extends Application
         primaryStage.setScene(scene);
     }
     
+    /**
+     * Main method which begins the Program.
+     * 
+     * @param args 
+     */
     public static void main(String[] args)
     {
         launch(args);

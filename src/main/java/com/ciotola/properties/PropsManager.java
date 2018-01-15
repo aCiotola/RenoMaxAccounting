@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  * Class which contains methods to both create and read Properties
  * 
  * @author Alessandro Ciotola
- * @version 2017/10/30
+ * @version 2018/01/15
  * 
  */
 public class PropsManager 
