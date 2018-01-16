@@ -757,6 +757,42 @@ public class AccountingDAOImp implements IAccountingDAO
     }
     
     /**
+     * Method which will return an ObservableList containing every record in the Clients table
+     * which has a similar name to the given name.
+     * 
+     * @param name
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public ObservableList<Supplier> findSupplierLikeName(String name) throws SQLException
+    {
+        ObservableList<Supplier> supplierList = FXCollections.observableArrayList();
+        Supplier supplier;
+        String query = "SELECT * FROM SUPPLIERS WHERE SUPPLIERNAME LIKE ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setString(1, name + "%");
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                while(rs.next())
+                {                    
+                    supplier = createSupplier(rs);
+                    supplierList.add(supplier);
+                    log.debug("Found SUPPLIERS: " + supplier.getSupplierName());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING SUPPLIER LIKE NAME: " + ex.getMessage());
+            throw ex; 
+        }    
+        return supplierList;
+    }
+    
+    /**
      * Method which will return the record which contains the given name.
      * 
      * @param name

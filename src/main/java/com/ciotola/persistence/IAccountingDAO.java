@@ -43,6 +43,7 @@ public interface IAccountingDAO
     public Expense findExpenseByNumber(int expenseNum) throws SQLException;
     public Client findClientByName(String name) throws SQLException;
     public Supplier findSupplierByName(String name) throws SQLException;
+    public ObservableList<Supplier> findSupplierLikeName(String name) throws SQLException;
     public MainDescription findMainDescriptionByName(String name) throws SQLException;
     public SubDescription findSubDescriptionByName(String name) throws SQLException;
     

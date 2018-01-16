@@ -35,6 +35,7 @@ public class ExpenseFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IAccountingDAO accountDAO;
+    private ObservableList<String> elements;
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -236,7 +237,11 @@ public class ExpenseFXMLController
         expenseQSTColumn.setCellValueFactory(cellData -> cellData.getValue().getQstProperty());
         expenseTotalColumn.setCellValueFactory(cellData -> cellData.getValue().getTotalProperty());
                     
-        expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));        
+        expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));    
+        expenseSupplierCombo.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
+            try { showSupplierLikeName(newValue);} 
+            catch (SQLException ex) 
+            {log.debug("EXCEPTION IN SUPPLEIR LIKE NAME LISTENER: " + ex.getMessage());}});
     }
     
     /**
@@ -268,6 +273,23 @@ public class ExpenseFXMLController
             expenseQSTField.setText(expense.getQst().toString());
             expenseTotalField.setText(expense.getTotal().toString());
         }
+    }  
+    
+    private void showSupplierLikeName(String name) throws SQLException
+    {        
+        if(!expenseSupplierCombo.getEditor().getText().equals("") && !elements.contains(name))
+        {
+            ObservableList<Supplier> suppliers = accountDAO.findSupplierLikeName(name);   
+            ObservableList<String> likeElements = FXCollections.observableArrayList();
+            
+            for(int i = 0; i < suppliers.size(); i++)
+            {
+                likeElements.add(suppliers.get(i).getSupplierName());
+            }
+            expenseSupplierCombo.setItems(likeElements);
+        }
+        else
+            expenseSupplierCombo.setItems(elements);
     }
     
     /**
@@ -278,10 +300,10 @@ public class ExpenseFXMLController
     private void fillSupplierComboBox() throws SQLException
     {
         ObservableList<Supplier> suppliers = accountDAO.findAllSuppliers();
-        ObservableList<String> elements = FXCollections.observableArrayList();
-        for(int i = 0; i < suppliers.size() - 1; i++)
+        elements = FXCollections.observableArrayList();
+        for(int i = 0; i < suppliers.size(); i++)
             elements.add(suppliers.get(i).getSupplierName());
-        expenseSupplierCombo.getItems().addAll(elements);
+        expenseSupplierCombo.setItems(elements);
     }
     
     /**
