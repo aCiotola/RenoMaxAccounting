@@ -182,6 +182,26 @@ public class ExpenseFXMLController
         else        
             expenseNumberField.setText("Please enter the Date, Supplier name, main description, subtotal and total!!");            
     }
+    
+    /**
+     * When checked, no taxes are added to the total. The total is equal to the subtotal.
+     * 
+     * @param event 
+     */
+    @FXML
+    void onNoTaxes(ActionEvent event) 
+    {
+        if(expenseGSTField.isDisabled())
+        {
+            expenseGSTField.setDisable(false);
+            expenseQSTField.setDisable(false);
+        }
+        else
+        {
+            expenseGSTField.setDisable(true);
+            expenseQSTField.setDisable(true);
+        }
+    }
 
     /**
      * No parameter constructor which calls the super's constructor.
@@ -238,6 +258,8 @@ public class ExpenseFXMLController
         expenseTotalColumn.setCellValueFactory(cellData -> cellData.getValue().getTotalProperty());
                     
         expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));    
+        expenseSTField.textProperty().addListener((observable, oldValue, newValue) -> fillTotal(newValue));   
+        expenseTotalField.textProperty().addListener((observable, oldValue, newValue) -> fillSubTotal(newValue));  
         expenseSupplierCombo.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
             try { showSupplierLikeName(newValue);} 
             catch (SQLException ex) 
@@ -275,6 +297,13 @@ public class ExpenseFXMLController
         }
     }  
     
+    /**
+     * Method which will fill the Supplier Drop down list with all suppliers based on
+     * what is inputted in the editable field.
+     * 
+     * @param name
+     * @throws SQLException 
+     */
     private void showSupplierLikeName(String name) throws SQLException
     {        
         if(!expenseSupplierCombo.getEditor().getText().equals("") && !elements.contains(name))
@@ -290,6 +319,58 @@ public class ExpenseFXMLController
         }
         else
             expenseSupplierCombo.setItems(elements);
+    }
+    
+    private void fillTotal(String subTotal) 
+    {              
+        if(!expenseSTField.getText().equals(""))
+        {
+            if(expenseGSTField.isDisabled())
+                expenseTotalField.setText(subTotal);
+            else
+            {
+                BigDecimal sub = new BigDecimal(subTotal);
+                
+                BigDecimal gst = new BigDecimal(sub.doubleValue() * 0.05);
+                gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                BigDecimal qst = new BigDecimal(sub.doubleValue() * 0.09975);
+                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                BigDecimal total = new BigDecimal(sub.doubleValue() + gst.doubleValue() + qst.doubleValue());
+                total = total.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                expenseGSTField.setText(gst.toString());
+                expenseQSTField.setText(qst.toString());
+                expenseTotalField.setText(total.toString());
+            }
+        }
+    }
+    
+    private void fillSubTotal(String total) 
+    {      
+        if(!expenseTotalField.getText().equals(""))
+        {
+            if(expenseGSTField.isDisabled())
+                expenseSTField.setText(total);
+            else
+            {
+                BigDecimal tot = new BigDecimal(total);
+                
+                BigDecimal gst = new BigDecimal(tot.doubleValue() * 0.05);
+                gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                BigDecimal qst = new BigDecimal(tot.doubleValue() * 0.09975);
+                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                BigDecimal sub = new BigDecimal((tot.doubleValue() - gst.doubleValue()) - qst.doubleValue());
+                sub = sub.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                expenseGSTField.setText(gst.toString());
+                expenseQSTField.setText(qst.toString());
+                expenseSTField.setText(sub.toString());
+            }
+        }
     }
     
     /**

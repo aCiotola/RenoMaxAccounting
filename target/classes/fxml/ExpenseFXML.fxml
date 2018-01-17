@@ -120,7 +120,7 @@
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <CheckBox contentDisplay="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="454.0" text="No Tax" underline="true" GridPane.rowIndex="9">
+            <CheckBox contentDisplay="CENTER" minWidth="0.0" mnemonicParsing="false" onAction="#onNoTaxes" prefHeight="20.0" prefWidth="454.0" text="No Tax" underline="true" GridPane.rowIndex="9">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
