@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -285,7 +286,10 @@ public class ExpenseFXMLController
         if(expense != null)
         {
             expenseNumberField.setText(expense.getExpenseNumber() + "");
-            expenseDateField.setValue(expense.getDateTime().toLocalDate());
+            
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMMM dd");
+            expenseDateField.setPromptText(expense.getDateTime().toLocalDate().format(formatter));
+            
             expenseSupplierCombo.setValue(expense.getSupplier());
             expenseMDCombo.setValue(expense.getMainDescription());
             expenseSDCombo.setValue(expense.getSubDescription());

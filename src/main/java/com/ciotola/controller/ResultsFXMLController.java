@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.slf4j.Logger;
@@ -25,6 +26,19 @@ public class ResultsFXMLController
     @FXML // fx:id="expenseResults"
     private Label expenseResults; // Value injected by FXMLLoader
 
+    /**
+     * Method which will update all results on the page.
+     * 
+     * @param event
+     * @throws SQLException 
+     */
+    @FXML
+    void onRefreshData(ActionEvent event) throws SQLException 
+    {
+        log.debug("Refresh button pressed!");
+        calculateExpenseTotal();
+    }
+    
     /**
      * No parameter constructor which calls the super's constructor.
      * 
@@ -50,6 +64,12 @@ public class ResultsFXMLController
         calculateExpenseTotal();
     }
     
+    /**
+     * Method which will get the total amount of expenses and display it on the 
+     * application.
+     * 
+     * @throws SQLException 
+     */
     private void calculateExpenseTotal() throws SQLException
     {
         double total = accountDAO.calculateExpenseTotal();
