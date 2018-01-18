@@ -10,6 +10,7 @@ import com.ciotola.entities.Supplier;
 import com.ciotola.properties.PropsManager;
 import com.mysql.jdbc.Statement;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -289,6 +290,38 @@ public class AccountingDAOImp implements IAccountingDAO
             throw ex;
         }
         return records; 
+    }
+    
+    /**
+     * Method which will collect all of the totals in the Expense table and
+     * return the total amount of expenses.
+     * 
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public double calculateExpenseTotal() throws SQLException
+    {
+        double total = 0;
+        String query = "SELECT SUM(TOTAL) as rTotal FROM EXPENSES";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {             
+                    total = rs.getDouble("rTotal");
+                    log.debug("Calcluated TOTAL EXPENSE: " + total);
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception CALCULATING TOTAL EXPENSE: " + ex.getMessage());
+            throw ex; 
+        }    
+        return total;
     }
 
     /**

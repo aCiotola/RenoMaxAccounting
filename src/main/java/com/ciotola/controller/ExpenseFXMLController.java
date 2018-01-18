@@ -259,7 +259,6 @@ public class ExpenseFXMLController
                     
         expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));    
         expenseSTField.textProperty().addListener((observable, oldValue, newValue) -> fillTotal(newValue));   
-        expenseTotalField.textProperty().addListener((observable, oldValue, newValue) -> fillSubTotal(newValue));  
         expenseSupplierCombo.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
             try { showSupplierLikeName(newValue);} 
             catch (SQLException ex) 
@@ -345,33 +344,7 @@ public class ExpenseFXMLController
                 expenseTotalField.setText(total.toString());
             }
         }
-    }
-    
-    private void fillSubTotal(String total) 
-    {      
-        if(!expenseTotalField.getText().equals(""))
-        {
-            if(expenseGSTField.isDisabled())
-                expenseSTField.setText(total);
-            else
-            {
-                BigDecimal tot = new BigDecimal(total);
-                
-                BigDecimal gst = new BigDecimal(tot.doubleValue() * 0.05);
-                gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
-                BigDecimal qst = new BigDecimal(tot.doubleValue() * 0.09975);
-                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
-                BigDecimal sub = new BigDecimal((tot.doubleValue() - gst.doubleValue()) - qst.doubleValue());
-                sub = sub.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
-                expenseGSTField.setText(gst.toString());
-                expenseQSTField.setText(qst.toString());
-                expenseSTField.setText(sub.toString());
-            }
-        }
-    }
+    }   
     
     /**
      * Method which will fill the Supplier Drop down list with all suppliers.

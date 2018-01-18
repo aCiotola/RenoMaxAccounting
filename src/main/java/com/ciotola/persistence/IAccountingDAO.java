@@ -6,6 +6,7 @@ import com.ciotola.entities.Invoice;
 import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.SubDescription;
 import com.ciotola.entities.Supplier;
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import javafx.collections.ObservableList;
 
@@ -63,4 +64,7 @@ public interface IAccountingDAO
     public int deleteMainDescription(int id) throws SQLException;
     public int deleteSubDescription(int id) throws SQLException;
     public int deleteInvoice(int id) throws SQLException;
+    
+    //other methods
+    public double calculateExpenseTotal() throws SQLException;
 }

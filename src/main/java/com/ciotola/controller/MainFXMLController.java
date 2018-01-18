@@ -70,7 +70,6 @@ public class MainFXMLController
 
     }
 
-
     /**
      * This method is called by the FXMLLoader when initialization is complete
      * 
