@@ -73,6 +73,6 @@ public class ResultsFXMLController
     private void calculateExpenseTotal() throws SQLException
     {
         double total = accountDAO.calculateExpenseTotal();
-        expenseResults.setText(total + "");
+        expenseResults.setText("$" + total);
     }
 }

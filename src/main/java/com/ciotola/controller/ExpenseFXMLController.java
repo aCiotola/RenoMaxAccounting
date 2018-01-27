@@ -13,6 +13,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import java.util.stream.Stream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +23,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
+import javafx.scene.input.KeyCode;
+import static javafx.scene.input.KeyCode.T;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.Window;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -152,8 +158,10 @@ public class ExpenseFXMLController
     @FXML
     void onSaveExpense(ActionEvent event) throws SQLException 
     {
-        if(!expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("") && !expenseSupplierCombo.getValue().equals("") &&
-                !expenseTotalField.getText().equals("") && expenseDateField.getValue() != null)
+        if(expenseDateField.getValue() != null && expenseMDCombo != null && expenseSTField != null 
+                && expenseSupplierCombo != null && expenseTotalField != null && expenseDateField != null &&
+                expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("") && 
+                !expenseSupplierCombo.getValue().equals("") && !expenseTotalField.getText().equals(""))
         {             
             Expense expense = new Expense();            
             if(!expenseNumberField.getText().equals(""))
@@ -195,15 +203,38 @@ public class ExpenseFXMLController
         if(expenseGSTField.isDisabled())
         {
             expenseGSTField.setDisable(false);
-            expenseQSTField.setDisable(false);
+            expenseQSTField.setDisable(false);    
+            if(!expenseTotalField.equals(""))
+            {
+                BigDecimal sub = new BigDecimal(expenseSTField.getText());   
+                
+                BigDecimal gst = new BigDecimal(sub.doubleValue() * 0.05);
+                gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                BigDecimal qst = new BigDecimal(sub.doubleValue() * 0.09975);
+                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);       
+                
+                BigDecimal total = new BigDecimal(sub.doubleValue() + gst.doubleValue() + qst.doubleValue());
+                total = total.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                
+                expenseGSTField.setText(gst.toString());
+                expenseQSTField.setText(qst.toString());
+                expenseTotalField.setText(total.toString());
+            }
         }
         else
         {
             expenseGSTField.setDisable(true);
             expenseQSTField.setDisable(true);
+            if(!expenseGSTField.getText().equals(""))
+            {
+                expenseGSTField.setText("");
+                expenseQSTField.setText("");
+                expenseTotalField.setText(expenseSTField.getText());
+            }
         }
     }
-
+    
     /**
      * No parameter constructor which calls the super's constructor.
      * 
@@ -259,11 +290,7 @@ public class ExpenseFXMLController
         expenseTotalColumn.setCellValueFactory(cellData -> cellData.getValue().getTotalProperty());
                     
         expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));    
-        expenseSTField.textProperty().addListener((observable, oldValue, newValue) -> fillTotal(newValue));   
-        expenseSupplierCombo.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
-            try { showSupplierLikeName(newValue);} 
-            catch (SQLException ex) 
-            {log.debug("EXCEPTION IN SUPPLEIR LIKE NAME LISTENER: " + ex.getMessage());}});
+        expenseTotalField.textProperty().addListener((observable, oldValue, newValue) -> fillSubTotal(newValue));   
     }
     
     /**
@@ -300,52 +327,28 @@ public class ExpenseFXMLController
         }
     }  
     
-    /**
-     * Method which will fill the Supplier Drop down list with all suppliers based on
-     * what is inputted in the editable field.
-     * 
-     * @param name
-     * @throws SQLException 
-     */
-    private void showSupplierLikeName(String name) throws SQLException
-    {        
-        if(!expenseSupplierCombo.getEditor().getText().equals("") && !elements.contains(name))
-        {
-            ObservableList<Supplier> suppliers = accountDAO.findSupplierLikeName(name);   
-            ObservableList<String> likeElements = FXCollections.observableArrayList();
-            
-            for(int i = 0; i < suppliers.size(); i++)
-            {
-                likeElements.add(suppliers.get(i).getSupplierName());
-            }
-            expenseSupplierCombo.setItems(likeElements);
-        }
-        else
-            expenseSupplierCombo.setItems(elements);
-    }
-    
-    private void fillTotal(String subTotal) 
+    private void fillSubTotal(String total) 
     {              
-        if(!expenseSTField.getText().equals(""))
+        if(!expenseTotalField.getText().equals(""))
         {
             if(expenseGSTField.isDisabled())
-                expenseTotalField.setText(subTotal);
+                expenseSTField.setText(total);
             else
             {
-                BigDecimal sub = new BigDecimal(subTotal);
+                BigDecimal tot = new BigDecimal(total);                
+               
+                BigDecimal subTotal = new BigDecimal(tot.doubleValue()/1.14975);
+                subTotal = subTotal.setScale(2, BigDecimal.ROUND_HALF_EVEN);
                 
-                BigDecimal gst = new BigDecimal(sub.doubleValue() * 0.05);
+                 BigDecimal gst = new BigDecimal(subTotal.doubleValue() * 0.05);
                 gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
                 
-                BigDecimal qst = new BigDecimal(sub.doubleValue() * 0.09975);
-                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
-                BigDecimal total = new BigDecimal(sub.doubleValue() + gst.doubleValue() + qst.doubleValue());
-                total = total.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                BigDecimal qst = new BigDecimal(subTotal.doubleValue() * 0.09975);
+                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);               
                 
                 expenseGSTField.setText(gst.toString());
                 expenseQSTField.setText(qst.toString());
-                expenseTotalField.setText(total.toString());
+                expenseSTField.setText(subTotal.toString());
             }
         }
     }   
