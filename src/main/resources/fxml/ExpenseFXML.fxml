@@ -189,8 +189,8 @@
          </BorderPane.margin>
       </GridPane>
    </top>
-   <bottom>
-      <TableView fx:id="expenseTable" editable="true" prefHeight="502.0" prefWidth="984.0" BorderPane.alignment="CENTER">
+   <center>
+      <TableView fx:id="expenseTable" editable="true" prefHeight="460.0" prefWidth="984.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="expenseNumColumn" editable="false" maxWidth="2500.0" prefWidth="75.0" text="Expense #" />
           <TableColumn fx:id="expenseDateColumn" editable="false" prefWidth="75.0" text="Date" />
@@ -203,11 +203,54 @@
             <TableColumn fx:id="expenseTotalColumn" editable="false" prefWidth="75.0" text="Total" />
         </columns>
          <BorderPane.margin>
-            <Insets bottom="70.0" left="20.0" right="20.0" />
+            <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+   </center>
+   <bottom>
+      <GridPane gridLinesVisible="true" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="510.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="6.0" prefWidth="105.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="105.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="105.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="105.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="totalTotal" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
+            <Label fx:id="totalQst" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
+            <Label fx:id="totalGst" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
+            <Label fx:id="totalSubTotal" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
+            <Label text="Totals:">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="20.0" right="20.0" />
+         </BorderPane.margin>
+      </GridPane>
    </bottom>
 </BorderPane>

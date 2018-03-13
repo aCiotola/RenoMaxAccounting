@@ -12,22 +12,18 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Stream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
-import javafx.scene.input.KeyCode;
-import static javafx.scene.input.KeyCode.T;
-import javafx.scene.input.KeyEvent;
-import javafx.stage.Window;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -107,6 +103,17 @@ public class ExpenseFXMLController
     @FXML // fx:id="expenseDateField"
     private DatePicker expenseDateField; // Value injected by FXMLLoader
 
+    @FXML // fx:id="totalTotal"
+    private Label totalTotal; // Value injected by FXMLLoader
+
+    @FXML // fx:id="totalQst"
+    private Label totalQst; // Value injected by FXMLLoader
+
+    @FXML // fx:id="totalGst"
+    private Label totalGst; // Value injected by FXMLLoader
+
+    @FXML // fx:id="totalSubTotal"
+    private Label totalSubTotal; // Value injected by FXMLLoader
     
     /**
      * Method which will clear all of the fields.
@@ -160,7 +167,7 @@ public class ExpenseFXMLController
     {
         if(expenseDateField.getValue() != null && expenseMDCombo != null && expenseSTField != null 
                 && expenseSupplierCombo != null && expenseTotalField != null && expenseDateField != null &&
-                expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("") && 
+                !expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("") && 
                 !expenseSupplierCombo.getValue().equals("") && !expenseTotalField.getText().equals(""))
         {             
             Expense expense = new Expense();            
@@ -170,7 +177,11 @@ public class ExpenseFXMLController
             expense.setDateTime(Date.valueOf(expenseDateField.getValue()));
             expense.setSupplier(expenseSupplierCombo.getValue());
             expense.setMainDescription(expenseMDCombo.getValue());
+            
+            if(expenseSDCombo == null)
+                expenseSDCombo.setValue("");
             expense.setSubDescription(expenseSDCombo.getValue());
+            
             expense.setSubtotal(new BigDecimal(expenseSTField.getText()));            
             if(!expenseGSTField.getText().equals("") && !expenseQSTField.getText().equals(""))
             {
@@ -272,11 +283,16 @@ public class ExpenseFXMLController
         assert expenseGSTField != null : "fx:id=\"expenseGSTField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseQSTField != null : "fx:id=\"expenseQSTField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseTotalField != null : "fx:id=\"expenseTotalField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";        
+        assert totalTotal != null : "fx:id=\"totalTotal\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
+        assert totalQst != null : "fx:id=\"totalQst\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
+        assert totalGst != null : "fx:id=\"totalGst\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
+        assert totalSubTotal != null : "fx:id=\"totalSubTotal\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
+
             
         accountDAO = new AccountingDAOImp();
         fillSupplierComboBox();
         fillMainDescriptionComboBox();
-        fillSubDescriptionComboBox();        
+        fillSubDescriptionComboBox(); 
         displayTable();
             
         expenseNumColumn.setCellValueFactory(cellData -> cellData.getValue().getExpenseNumberProperty().asObject());
@@ -294,12 +310,46 @@ public class ExpenseFXMLController
     }
     
     /**
+     * Method responsible for setting the totals for the prices when an expense 
+     * is added or modified.
+     * 
+     * @throws SQLException 
+     */
+    private void setTotals() throws SQLException
+    {
+        List<Expense> expenseList = accountDAO.findAllExpenses();
+        double tSubtotal = 0.0;
+        double tGst = 0.0;
+        double tQst = 0.0;
+        double tTotal = 0.0;
+        
+        for(int i = 0; i < expenseList.size(); i++)
+        {
+            tSubtotal += expenseList.get(i).getSubtotal().doubleValue();
+            tGst += expenseList.get(i).getGst().doubleValue();
+            tQst += expenseList.get(i).getQst().doubleValue();
+            tTotal += expenseList.get(i).getTotal().doubleValue();
+        }        
+        
+        tSubtotal = Math.round(tSubtotal * 100.0) / 100.0;
+        tQst = Math.round(tQst * 100.0) / 100.0;
+        tGst = Math.round(tGst * 100.0) / 100.0;
+        tTotal = Math.round(tTotal * 100.0) / 100.0;
+        
+        totalTotal.setText("$"+tSubtotal);
+        totalQst.setText("$"+tQst);        
+        totalGst.setText("$"+tGst);        
+        totalSubTotal.setText("$"+tTotal);       
+    }
+    
+    /**
      * Will display all expenses in the table.
      * 
      * @throws SQLException 
      */
     public void displayTable() throws SQLException
     {
+        setTotals();
         expenseTable.setItems(accountDAO.findAllExpenses());
     }
     
@@ -315,18 +365,23 @@ public class ExpenseFXMLController
             expenseNumberField.setText(expense.getExpenseNumber() + "");
             
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMMM dd");
-            expenseDateField.setPromptText(expense.getDateTime().toLocalDate().format(formatter));
+            expenseDateField.setValue(expense.getDateTime().toLocalDate());
             
             expenseSupplierCombo.setValue(expense.getSupplier());
             expenseMDCombo.setValue(expense.getMainDescription());
             expenseSDCombo.setValue(expense.getSubDescription());
-            expenseSTField.setText(expense.getSubtotal().toString());
-            expenseGSTField.setText(expense.getGst().toString());
-            expenseQSTField.setText(expense.getQst().toString());
-            expenseTotalField.setText(expense.getTotal().toString());
+            expenseSTField.setText(expense.getSubtotal().doubleValue()+"");
+            expenseGSTField.setText(expense.getGst().doubleValue()+"");
+            expenseQSTField.setText(expense.getQst().doubleValue()+"");
+            expenseTotalField.setText(expense.getTotal().doubleValue()+"");
         }
     }  
     
+    /**
+     * Method which will set the subtotal, gst and qst when the total is entered.
+     * 
+     * @param total 
+     */
     private void fillSubTotal(String total) 
     {              
         if(!expenseTotalField.getText().equals(""))
@@ -346,9 +401,9 @@ public class ExpenseFXMLController
                 BigDecimal qst = new BigDecimal(subTotal.doubleValue() * 0.09975);
                 qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);               
                 
-                expenseGSTField.setText(gst.toString());
-                expenseQSTField.setText(qst.toString());
-                expenseSTField.setText(subTotal.toString());
+                expenseGSTField.setText(gst.doubleValue()+"");
+                expenseQSTField.setText(qst.doubleValue()+"");
+                expenseSTField.setText(subTotal.doubleValue()+"");
             }
         }
     }   

@@ -47,9 +47,6 @@
             <Tab fx:id="sDescrptionTab" closable="false" text="Sub Descriptions">
               <fx:include fx:id="sdTab" source="SubDescriptionFXML.fxml" />
             </Tab>
-            <Tab fx:id="resultsTab" closable="false" text="Results">
-                <fx:include fx:id="rTab" source="ResultsFXML.fxml" />
-            </Tab>
         </tabs>
       </TabPane>
    </center>
