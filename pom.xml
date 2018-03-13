@@ -133,7 +133,7 @@
                     NetBeans-Run Maven-Goals and set the property skipTests
                     to true or false -->
                     <!-- <skipTests>false</skipTests> -->
-                    <skipTests>false</skipTests>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
