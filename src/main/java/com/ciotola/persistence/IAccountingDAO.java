@@ -3,11 +3,13 @@ package com.ciotola.persistence;
 import com.ciotola.entities.Client;
 import com.ciotola.entities.Expense;
 import com.ciotola.entities.Invoice;
+import com.ciotola.entities.InvoiceDescription;
 import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.SubDescription;
 import com.ciotola.entities.Supplier;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.List;
 import javafx.collections.ObservableList;
 
 /**
@@ -26,6 +28,7 @@ public interface IAccountingDAO
     public int addMainDescription(MainDescription mainDescription) throws SQLException;
     public int addSubDescription(SubDescription subDescription) throws SQLException;
     public int addInvoice(Invoice invoice) throws SQLException;
+    public int addInvoiceDescription(InvoiceDescription invoiceDescription) throws SQLException;
     
     //read methods
     public Expense findExpenseById(int id) throws SQLException; 
@@ -47,7 +50,8 @@ public interface IAccountingDAO
     public ObservableList<Supplier> findSupplierLikeName(String name) throws SQLException;
     public MainDescription findMainDescriptionByName(String name) throws SQLException;
     public SubDescription findSubDescriptionByName(String name) throws SQLException;
-    
+    public InvoiceDescription findInvoiceDescriptionById(int id) throws SQLException;
+    public ObservableList<InvoiceDescription> findInvoiceDescriptionByInvoiceNumber(int invoiceNumber) throws SQLException;   
     
     //update methods
     public int updateExpense(Expense expense) throws SQLException;
@@ -56,6 +60,7 @@ public interface IAccountingDAO
     public int updateMainDescription(MainDescription mainDescription) throws SQLException;
     public int updateSubDescription(SubDescription subDescription) throws SQLException;
     public int updateInvoice(Invoice invoice) throws SQLException;
+    public int updateInvoiceDescription(InvoiceDescription invoiceDescription) throws SQLException;
     
     //delete methods
     public int deleteExpense(int id) throws SQLException;
@@ -64,7 +69,5 @@ public interface IAccountingDAO
     public int deleteMainDescription(int id) throws SQLException;
     public int deleteSubDescription(int id) throws SQLException;
     public int deleteInvoice(int id) throws SQLException;
-    
-    //other methods
-    public double calculateExpenseTotal() throws SQLException;
+    public int deleteInvoiceDescription(int id) throws SQLException;
 }

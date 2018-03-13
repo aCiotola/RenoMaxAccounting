@@ -3,6 +3,7 @@ package com.ciotola.persistence;
 import com.ciotola.entities.Client;
 import com.ciotola.entities.Expense;
 import com.ciotola.entities.Invoice;
+import com.ciotola.entities.InvoiceDescription;
 import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.PropertiesBean;
 import com.ciotola.entities.SubDescription;
@@ -10,7 +11,6 @@ import com.ciotola.entities.Supplier;
 import com.ciotola.properties.PropsManager;
 import com.mysql.jdbc.Statement;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -290,38 +290,42 @@ public class AccountingDAOImp implements IAccountingDAO
             throw ex;
         }
         return records; 
-    }
+    }   
     
     /**
-     * Method which will collect all of the totals in the Expense table and
-     * return the total amount of expenses.
+     * Method which will insert the Invoice Description data into the Invoice Description Table.
      * 
-     * @return
-     * @throws SQLException 
+     * @param invoiceDescription
+     * @return 
+     * @throws java.sql.SQLException 
      */
     @Override
-    public double calculateExpenseTotal() throws SQLException
+    public int addInvoiceDescription(InvoiceDescription invoiceDescription) throws SQLException
     {
-        double total = 0;
-        String query = "SELECT SUM(TOTAL) as rTotal FROM EXPENSES";
+        int records = -1;
+        int recordNum = -1;
+        String query = "INSERT INTO INVOICEDESCRIPTIONS(INVOICENUMBER, INVOICEDESCRIPTION) VALUES(?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
-            PreparedStatement pStmt = connection.prepareStatement(query);)          
+                PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
-            try (ResultSet rs = pStmt.executeQuery()) 
+            pStmt.setInt(1, invoiceDescription.getInvoiceNumber());
+            pStmt.setString(2, invoiceDescription.getInvoiceDescription());
+            
+            records = pStmt.executeUpdate();
+            try(ResultSet rs = pStmt.getGeneratedKeys();)
             {
-                if (rs.next())
-                {             
-                    total = rs.getDouble("rTotal");
-                    log.debug("Calcluated TOTAL EXPENSE: " + total);
-                }
+                if(rs.next())
+                    recordNum = rs.getInt(1);
+                invoiceDescription.setInvoiceDescriptionID(recordNum);
+                log.debug("New record added to INVOICEDESCRIPTION: " + invoiceDescription.toString());
             }
         }
         catch(SQLException ex)
         {
-            log.debug("Exception CALCULATING TOTAL EXPENSE: " + ex.getMessage());
-            throw ex; 
-        }    
-        return total;
+            log.error("Exception thrown ADDING INVOICEDESCRIPTION: " + ex.getMessage());
+            throw ex;
+        }
+        return records;
     }
 
     /**
@@ -718,6 +722,74 @@ public class AccountingDAOImp implements IAccountingDAO
             throw ex; 
         }    
         return invoiceList;
+    }
+    
+    /**
+     * Method which will return an Invoice Description found by ID.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
+    public InvoiceDescription findInvoiceDescriptionById(int id) throws SQLException
+    {
+        InvoiceDescription invoiceDescription = new InvoiceDescription();
+        String query = "SELECT * FROM INVOICEDESCRIPTIONS WHERE INVOICEDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    invoiceDescription = createInvoiceDescription(rs);                    
+                    log.debug("Found INVOICEDESCRIPTIONS: " + invoiceDescription.getInvoiceDescription());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING INVOICEDESCRIPTIONS BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return invoiceDescription;
+    }
+    
+    /**
+     * Method which will return an ObservableList containing every record in the
+     * Invoice Description table by Invoice number.
+     * 
+     * @param invoiceNumber
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public ObservableList<InvoiceDescription> findInvoiceDescriptionByInvoiceNumber(int invoiceNumber) throws SQLException 
+    {
+        ObservableList<InvoiceDescription> invoiceDescriptionList = FXCollections.observableArrayList();
+        InvoiceDescription invoiceDesction;
+        String query = "SELECT * FROM INVOICEDESCRIPTIONS WHERE INVOICENUMBER = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, invoiceNumber);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                while(rs.next())
+                {                    
+                    invoiceDesction = createInvoiceDescription(rs);
+                    invoiceDescriptionList.add(invoiceDesction);
+                    log.debug("Found INVOICEDESCRIPTIONS: " + invoiceDesction.getInvoiceNumber());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING ALL INVOICEDESCRIPTIONS: " + ex.getMessage());
+            throw ex; 
+        }    
+        return invoiceDescriptionList;
     }
     
     /**
@@ -1155,6 +1227,36 @@ public class AccountingDAOImp implements IAccountingDAO
         }   
         return records; 
     }
+    
+    /**
+     * Method which will update a record in the Invoice Description table.
+     * 
+     * @param invoiceDescription
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public int updateInvoiceDescription(InvoiceDescription invoiceDescription) throws SQLException 
+    {
+        int records;
+        String query = "UPDATE INVOICEDESCRIPTIONS SET INVOICENUMBER = ?, INVOICEDESCRIPTION = ? WHERE INVOICEDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {            
+            pStmt.setInt(1, invoiceDescription.getInvoiceNumber());
+            pStmt.setString(2, invoiceDescription.getInvoiceDescription());
+            pStmt.setInt(3, invoiceDescription.getInvoiceDescriptionID());
+            
+            records = pStmt.executeUpdate();
+            log.debug("Record updated from INVOICEDESCRIPTIONS is: " + invoiceDescription.toString());
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception UPDATING INVOICEDESCRIPTIONS: " + ex.getMessage());
+            throw ex;
+        }   
+        return records; 
+    }
 
     /**
      * Method which will delete a record in the Expenses table.
@@ -1319,6 +1421,33 @@ public class AccountingDAOImp implements IAccountingDAO
     }
     
     /**
+     * Method which will delete a record in the Invoice Description table.
+     * 
+     * @param id
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public int deleteInvoiceDescription(int id) throws SQLException 
+    {
+        int records;
+        String query = "DELETE FROM INVOICEDESCRIPTIONS WHERE INVOICEDESCRIPTIONID = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, id);
+            records = pStmt.executeUpdate();
+            log.debug("Records Deleted from INVOICEDESCRIPTIONS: " + records + " id: " + id);
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception DELETING INVOICEDESCRIPTIONS: " + ex.getMessage());
+            throw ex; 
+        }   
+        return records;
+    }
+    
+    /**
      * Method which will take data from the ResultSet and create an Expense object.
      * 
      * @param rs
@@ -1428,6 +1557,22 @@ public class AccountingDAOImp implements IAccountingDAO
         invoice.setTotal(rs.getBigDecimal("TOTAL"));
         invoice.setInvoiceSent(rs.getBoolean("INVOICESENT"));            
         return invoice;
+    }   
+    
+    /**
+     * Method which will take data from the ResultSet and create a Invoice Description object.
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
+    private InvoiceDescription createInvoiceDescription(ResultSet rs) throws SQLException
+    {
+        InvoiceDescription invoiceDescription = new InvoiceDescription();
+        invoiceDescription.setInvoiceDescriptionID(rs.getInt("INVOICEDESCRIPTIONID"));                    
+        invoiceDescription.setInvoiceNumber(rs.getInt("INVOICENUMBER"));
+        invoiceDescription.setInvoiceDescription(rs.getString("INVOICEDESCRIPTION"));             
+        return invoiceDescription;
     }   
     
     /**

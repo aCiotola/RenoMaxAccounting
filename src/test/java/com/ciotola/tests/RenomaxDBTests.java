@@ -3,6 +3,7 @@ package com.ciotola.tests;
 import com.ciotola.entities.Client;
 import com.ciotola.entities.Expense;
 import com.ciotola.entities.Invoice;
+import com.ciotola.entities.InvoiceDescription;
 import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.PropertiesBean;
 import com.ciotola.entities.SubDescription;
@@ -296,6 +297,43 @@ public class RenomaxDBTests
         Invoice invoice = null;  
         log.info("Expected Exception: Null Invoice");
         accountDAO.addInvoice(invoice);
+        
+        // If an exception was not thrown then the test failed
+        fail("The Object that was null did not throw an exception");
+    }
+    
+    /**
+     * JUnit test to check if the invoice description has been added.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
+    @Test(timeout = 1000)
+    public void testAddInvoiceDescription() throws SQLException, IOException 
+    {        
+        InvoiceDescription invoiceDescription = new InvoiceDescription();        
+        invoiceDescription.setInvoiceNumber(2017001);
+        invoiceDescription.setInvoiceDescription("Description Test");        
+        
+        int records = accountDAO.addInvoiceDescription(invoiceDescription);
+        log.info("Records created: " + records + " " + invoiceDescription.getInvoiceNumber());
+        InvoiceDescription invoiceDescription2 = accountDAO.findInvoiceDescriptionById(invoiceDescription.getInvoiceDescriptionID());
+        
+        assertEquals("The records are not equal!", invoiceDescription, invoiceDescription2);
+    }
+    
+    /**
+     * JUnit test to check if the invoice description throws an exception.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
+    @Test(timeout = 1000, expected = NullPointerException.class)
+    public void testAddInvoiceDescriptionFail() throws SQLException, IOException  
+    {
+        InvoiceDescription invoiceDescription = null;  
+        log.info("Expected Exception: Null Invoice Description");
+        accountDAO.addInvoiceDescription(invoiceDescription);
         
         // If an exception was not thrown then the test failed
         fail("The Object that was null did not throw an exception");
