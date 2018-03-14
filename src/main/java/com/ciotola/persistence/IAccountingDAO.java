@@ -7,9 +7,7 @@ import com.ciotola.entities.InvoiceDescription;
 import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.SubDescription;
 import com.ciotola.entities.Supplier;
-import java.math.BigDecimal;
 import java.sql.SQLException;
-import java.util.List;
 import javafx.collections.ObservableList;
 
 /**
@@ -51,6 +49,7 @@ public interface IAccountingDAO
     public MainDescription findMainDescriptionByName(String name) throws SQLException;
     public SubDescription findSubDescriptionByName(String name) throws SQLException;
     public InvoiceDescription findInvoiceDescriptionById(int id) throws SQLException;
+    public int findNewInvoiceNumber() throws SQLException;
     public ObservableList<InvoiceDescription> findInvoiceDescriptionByInvoiceNumber(int invoiceNumber) throws SQLException;   
     
     //update methods

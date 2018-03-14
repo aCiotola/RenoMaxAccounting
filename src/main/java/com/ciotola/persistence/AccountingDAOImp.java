@@ -16,6 +16,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.slf4j.Logger;
@@ -722,6 +723,45 @@ public class AccountingDAOImp implements IAccountingDAO
             throw ex; 
         }    
         return invoiceList;
+    }
+    
+    /**
+     * Method which will return the latest invoice number.
+     * 
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public int findNewInvoiceNumber() throws SQLException 
+    {
+        ObservableList<Invoice> invoiceList = FXCollections.observableArrayList();
+        int year = Calendar.YEAR;
+        String strInvoiceNum = year + "001";
+        int invoiceNumber = Integer.parseInt(strInvoiceNum);
+        Invoice invoice;
+        
+        String query = "SELECT * FROM INVOICES";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                while(rs.next())
+                {                    
+                    invoice = createInvoice(rs);
+                    invoiceList.add(invoice);
+                    log.debug("Found INVOICES: " + invoice.getInvoiceNumber());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.error("Exception FINDING ALL INVOICES: " + ex.getMessage());
+            throw ex; 
+        }    
+        if(invoiceList.isEmpty())
+            return invoiceNumber;
+        return invoiceList.size() + 1;
     }
     
     /**
