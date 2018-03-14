@@ -429,6 +429,39 @@ public class AccountingDAOImp implements IAccountingDAO
     }
     
     /**
+     * Method which will Search the Invoices table for a record with a certain invoiceNumber.
+     * 
+     * @param invoiceNumber
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public Invoice findInvoiceByInvoiceNumber(int invoiceNumber) throws SQLException
+    {
+        Invoice Invoice = new Invoice();
+        String query = "SELECT * FROM INVOICES WHERE INVOICENUMBER = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setInt(1, invoiceNumber);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    Invoice = createInvoice(rs);                    
+                    log.debug("Found INVOICE: " + Invoice.getInvoiceNumber());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING INVOICE BY NUMBER: " + ex.getMessage());
+            throw ex; 
+        }    
+        return Invoice;
+    }
+    
+    /**
      * Method which will Search the Main Descriptions table for a record with a certain mainDescriptionID.
      * 
      * @param id
@@ -791,6 +824,41 @@ public class AccountingDAOImp implements IAccountingDAO
         catch(SQLException ex)
         {
             log.debug("Exception FINDING INVOICEDESCRIPTIONS BY ID: " + ex.getMessage());
+            throw ex; 
+        }    
+        return invoiceDescription;
+    }
+    
+    /**
+     * Method responsible for returning the invoice description when searching by name.
+     * 
+     * @param name
+     * @param invoiceNumber
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public InvoiceDescription findInvoiceDescriptionByName(String name, int invoiceNumber) throws SQLException
+    {
+        InvoiceDescription invoiceDescription = new InvoiceDescription();
+        String query = "SELECT * FROM INVOICEDESCRIPTIONS WHERE INVOICEDESCRIPTION = ? AND INVOICENUMBER = ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);)          
+        {
+            pStmt.setString(1, name);
+            pStmt.setInt(2, invoiceNumber);
+            try (ResultSet rs = pStmt.executeQuery()) 
+            {
+                if (rs.next())
+                {                    
+                    invoiceDescription = createInvoiceDescription(rs);                    
+                    log.debug("Found INVOICEDESCRIPTION: " + invoiceDescription.getInvoiceDescription());
+                }
+            }
+        }
+        catch(SQLException ex)
+        {
+            log.debug("Exception FINDING INVOICEDESCRIPTION BY NAME: " + ex.getMessage());
             throw ex; 
         }    
         return invoiceDescription;

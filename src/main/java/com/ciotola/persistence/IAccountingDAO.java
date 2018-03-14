@@ -32,6 +32,7 @@ public interface IAccountingDAO
     public Expense findExpenseById(int id) throws SQLException; 
     public Client findClientById(int id) throws SQLException; 
     public Invoice findInvoiceById(int id) throws SQLException; 
+    public Invoice findInvoiceByInvoiceNumber(int invoiceNumber) throws SQLException; 
     public MainDescription findMainDescriptionById(int id) throws SQLException; 
     public SubDescription findSubDescriptionById(int id) throws SQLException; 
     public Supplier findSupplierById(int id) throws SQLException; 
@@ -49,6 +50,7 @@ public interface IAccountingDAO
     public MainDescription findMainDescriptionByName(String name) throws SQLException;
     public SubDescription findSubDescriptionByName(String name) throws SQLException;
     public InvoiceDescription findInvoiceDescriptionById(int id) throws SQLException;
+    public InvoiceDescription findInvoiceDescriptionByName(String name, int invoiceNumber) throws SQLException;
     public int findNewInvoiceNumber() throws SQLException;
     public ObservableList<InvoiceDescription> findInvoiceDescriptionByInvoiceNumber(int invoiceNumber) throws SQLException;   
     

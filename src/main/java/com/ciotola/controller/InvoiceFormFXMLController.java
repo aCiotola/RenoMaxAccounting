@@ -6,11 +6,15 @@ import com.ciotola.entities.InvoiceDescription;
 import com.ciotola.persistence.AccountingDAOImp;
 import com.ciotola.persistence.IAccountingDAO;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,7 +33,8 @@ public class InvoiceFormFXMLController
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IAccountingDAO accountDAO;
-    private int invoiceNumber;
+    private int invoiceNumber = -1;
+    private String invoiceDescriptionText = "";
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -77,37 +82,38 @@ public class InvoiceFormFXMLController
     private TableView<Invoice> clientTable; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceNumCol"
-    private TableColumn<Invoice, String> invoiceNumCol; // Value injected by FXMLLoader
+    private TableColumn<Invoice, Integer> invoiceNumCol; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceDateCol"
-    private TableColumn<Invoice, String> invoiceDateCol; // Value injected by FXMLLoader
+    private TableColumn<Invoice, Date> invoiceDateCol; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceClientCol"
     private TableColumn<Invoice, String> invoiceClientCol; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceSubTotalCol"
-    private TableColumn<Invoice, String> invoiceSubTotalCol; // Value injected by FXMLLoader
+    private TableColumn<Invoice, BigDecimal> invoiceSubTotalCol; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceGstCol"
-    private TableColumn<Invoice, String> invoiceGstCol; // Value injected by FXMLLoader
+    private TableColumn<Invoice, BigDecimal> invoiceGstCol; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceQstCol"
-    private TableColumn<Invoice, String> invoiceQstCol; // Value injected by FXMLLoader
+    private TableColumn<Invoice, BigDecimal> invoiceQstCol; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceTotalCol"
-    private TableColumn<Invoice, String> invoiceTotalCol; // Value injected by FXMLLoader
+    private TableColumn<Invoice, BigDecimal> invoiceTotalCol; // Value injected by FXMLLoader
 
     @FXML // fx:id="invoiceSentCol"
     private TableColumn<Invoice, String> invoiceSentCol; // Value injected by FXMLLoader
 
     @FXML
-    void onClearInvoice(ActionEvent event) throws SQLException {
+    void onClearInvoice(ActionEvent event) throws SQLException 
+    {
         clientComboBox.setValue("");
         descriptionField.setText("");
         
         List<InvoiceDescription> invoiceDescriptionList = accountDAO.findInvoiceDescriptionByInvoiceNumber(invoiceNumber);
         for(int i = 0; i < invoiceDescriptionList.size(); i++)
-            accountDAO.deleteInvoiceDescription(invoiceDescriptionList.get(i).getInvoiceDescriptionID());
+            accountDAO.deleteInvoiceDescription(invoiceDescriptionList.get(i).getInvoiceNumber());
         
         subtotalField.setText("");
         gstField.setText("");
@@ -115,7 +121,14 @@ public class InvoiceFormFXMLController
         totalField.setText("");
         sentCheckBox.setSelected(false);
         
-        displayTable(invoiceNumber);
+        int year = Calendar.getInstance().get(Calendar.YEAR) * 1000;
+        invoiceNumber = year + accountDAO.findNewInvoiceNumber();
+        LocalDate date = LocalDate.now();            
+        
+        invoiceNumberField.setText(invoiceNumber+"");
+        invoiceDateField.setValue(date); 
+        
+        displayDescriptionTable(invoiceNumber);
     }
 
     @FXML
@@ -124,32 +137,81 @@ public class InvoiceFormFXMLController
         {            
             InvoiceDescription invoiceDescription = new InvoiceDescription();
             invoiceDescription.setInvoiceDescription(descriptionField.getText());
-            invoiceNumber = accountDAO.findNewInvoiceNumber();
             invoiceDescription.setInvoiceNumber(invoiceNumber);
             
             accountDAO.addInvoiceDescription(invoiceDescription);
             
             log.debug("Invoice Description created!");            
             descriptionField.setText("");     
-            displayTable(invoiceNumber);
+            displayDescriptionTable(invoiceNumber);
         }
         else        
             descriptionField.setText("Please enter a description!");
     }
     
     @FXML
-    void onDeleteDescription(ActionEvent event) {
-
+    void onDeleteDescription(ActionEvent event) throws SQLException 
+    {
+        if(!descriptionField.getText().equals(""))
+        {                                  
+            InvoiceDescription invoiceDescription = accountDAO.findInvoiceDescriptionByName(descriptionField.getText(), invoiceNumber);
+            accountDAO.deleteInvoiceDescription(invoiceDescription.getInvoiceDescriptionID());
+            descriptionField.setText("");
+            
+            log.debug("Invoice Description deleted!");            
+            displayDescriptionTable(invoiceNumber);
+        }
+        else        
+            descriptionField.setText("Please select a description!");
     }
 
     @FXML
-    void onEditDescription(ActionEvent event) {
-
+    void onEditDescription(ActionEvent event) throws SQLException
+    {
+        if(!descriptionField.getText().equals(""))
+        {                                  
+            InvoiceDescription invoiceDescription = accountDAO.findInvoiceDescriptionByName(invoiceDescriptionText, invoiceNumber);
+            invoiceDescription.setInvoiceDescription(descriptionField.getText());
+            accountDAO.updateInvoiceDescription(invoiceDescription);
+            descriptionField.setText("");
+            
+            log.debug("Invoice Description updated!");            
+            displayDescriptionTable(invoiceNumber);
+        }
+        else        
+            descriptionField.setText("Please select a description!");
     }
     
     @FXML
-    void onSaveInvoice(ActionEvent event) {
-
+    void onSaveInvoice(ActionEvent event) throws SQLException 
+    {
+        if(!invoiceNumberField.getText().equals("") && invoiceDateField.getValue() != null && clientComboBox.getValue() != null
+                && !subtotalField.getText().equals("") && !gstField.getText().equals("") && !qstField.getText().equals("")
+                && !totalField.getText().equals(""))
+        {             
+            Invoice invoice = accountDAO.findInvoiceByInvoiceNumber(invoiceNumber);    
+                                    
+            invoice.setInvoiceNumber(invoiceNumber);
+            invoice.setInvoiceDate(Date.valueOf(invoiceDateField.getValue()));
+            invoice.setClient(clientComboBox.getValue());
+            invoice.setSubtotal(BigDecimal.valueOf(Double.parseDouble(subtotalField.getText())));
+            invoice.setGst(BigDecimal.valueOf(Double.parseDouble(gstField.getText())));
+            invoice.setQst(BigDecimal.valueOf(Double.parseDouble(qstField.getText())));
+            invoice.setTotal(BigDecimal.valueOf(Double.parseDouble(totalField.getText())));
+            invoice.setInvoiceSent(sentCheckBox.isSelected());
+            
+            if(invoice.getInvoiceID() != -1)            
+                accountDAO.updateInvoice(invoice);            
+            else
+                accountDAO.addInvoice(invoice);
+            
+            log.debug("Invoice created/Updated!");  
+            
+            onClearInvoice(new ActionEvent());     
+            displayClientTable();
+        }
+        else        
+            descriptionField.setText("Please enter the client name, subtotal, taxes and total!");  
     }
 
     @FXML
@@ -172,13 +234,40 @@ public class InvoiceFormFXMLController
         assert qstField != null : "fx:id=\"qstField\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert totalField != null : "fx:id=\"totalField\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert sentCheckBox != null : "fx:id=\"sentCheckBox\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert clientTable != null : "fx:id=\"clientTable\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceNumCol != null : "fx:id=\"invoiceNumCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceDateCol != null : "fx:id=\"invoiceDateCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceClientCol != null : "fx:id=\"invoiceClientCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceSubTotalCol != null : "fx:id=\"invoiceSubTotalCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceGstCol != null : "fx:id=\"invoiceGstCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceQstCol != null : "fx:id=\"invoiceQstCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceTotalCol != null : "fx:id=\"invoiceTotalCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoiceSentCol != null : "fx:id=\"invoiceSentCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+
         
         accountDAO = new AccountingDAOImp();    
         fillClientComboBox();
         setupInvoice();
 
         descriptionCol.setCellValueFactory(cellData -> cellData.getValue().getInvoiceDescriptionProperty());
+        invoiceNumCol.setCellValueFactory(cellData -> cellData.getValue().getInvoiceNumberProperty().asObject());
+        invoiceDateCol.setCellValueFactory(cellData -> cellData.getValue().getInvoiceDateProperty());
+        invoiceClientCol.setCellValueFactory(cellData -> cellData.getValue().getClientProperty());
+        invoiceSubTotalCol.setCellValueFactory(cellData -> cellData.getValue().getSubtotalProperty());
+        invoiceGstCol.setCellValueFactory(cellData -> cellData.getValue().getGstProperty());
+        invoiceQstCol.setCellValueFactory(cellData -> cellData.getValue().getQstProperty());
+        invoiceTotalCol.setCellValueFactory(cellData -> cellData.getValue().getTotalProperty());
+        invoiceSentCol.setCellValueFactory(cellData -> cellData.getValue().getInvoiceSentProperty().asString());
         
+        descriptionTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showDescriptionDetails(newValue));    
+        clientTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> 
+        {
+            try {
+                showInvoiceDetails(newValue);
+            } catch (SQLException ex) {
+                java.util.logging.Logger.getLogger(InvoiceFormFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }); 
     }
     
     /**
@@ -187,10 +276,56 @@ public class InvoiceFormFXMLController
      * @param invoiceNumber
      * @throws SQLException 
      */
-    public void displayTable(int invoiceNumber) throws SQLException
+    public void displayDescriptionTable(int invoiceNumber) throws SQLException
     {
         descriptionTable.setItems(accountDAO.findInvoiceDescriptionByInvoiceNumber(invoiceNumber));
     }
+    
+    /**
+     * Will display invoice clients in the table.
+     * 
+     * @throws SQLException 
+     */
+    public void displayClientTable() throws SQLException
+    {
+        clientTable.setItems(accountDAO.findAllInvoices());        
+    }
+    
+    /**
+     * Listener which will fill the field with the selected Invoice Description.
+     * 
+     * @param invoiceDescription 
+     */
+    private void showDescriptionDetails(InvoiceDescription invoiceDescription)
+    {
+        if(invoiceDescription != null)
+        {
+            descriptionField.setText(invoiceDescription.getInvoiceDescription());
+            invoiceDescriptionText = descriptionField.getText();
+        }
+    }  
+    
+    /**
+     * Listener which will fill the field with the selected Invoice.
+     * 
+     * @param invoice
+     */
+    private void showInvoiceDetails(Invoice invoice) throws SQLException
+    {
+        if(invoice != null)
+        {
+            invoiceNumber = invoice.getInvoiceNumber();
+            invoiceNumberField.setText(invoice.getInvoiceNumber()+"");
+            invoiceDateField.setValue(invoice.getInvoiceDate().toLocalDate());
+            clientComboBox.setValue(invoice.getClient());
+            displayDescriptionTable(invoiceNumber);
+            subtotalField.setText(invoice.getSubtotal().toString());
+            gstField.setText(invoice.getGst().toString());
+            qstField.setText(invoice.getQst().toString());
+            totalField.setText(invoice.getTotal().toString());
+            sentCheckBox.setSelected(invoice.getInvoiceSent());
+        }
+    } 
     
     /**
      * Method which will fill the Client Drop down list with all clients.
@@ -212,10 +347,14 @@ public class InvoiceFormFXMLController
      */
     private void setupInvoice() throws SQLException
     {
-        invoiceNumber = accountDAO.findNewInvoiceNumber();
+        int year = Calendar.getInstance().get(Calendar.YEAR) * 1000;
+        invoiceNumber = year + accountDAO.findNewInvoiceNumber();
         LocalDate date = LocalDate.now();            
         
         invoiceNumberField.setText(invoiceNumber+"");
         invoiceDateField.setValue(date);      
+        
+        displayClientTable();
+        displayDescriptionTable(invoiceNumber);
     }
 }
