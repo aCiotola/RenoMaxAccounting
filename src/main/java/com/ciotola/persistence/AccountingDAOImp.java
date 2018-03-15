@@ -262,8 +262,8 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO INVOICES(INVOICENUMBER, INVOICEDATE, CLIENT, SUBTOTAL, GST, QST, TOTAL, INVOICESENT) "
-                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO INVOICES(INVOICENUMBER, INVOICEDATE, CLIENT, SUBTOTAL, GST, QST, TOTAL, INVOICESENT, INVOICEPAID) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
@@ -275,6 +275,7 @@ public class AccountingDAOImp implements IAccountingDAO
             pStmt.setBigDecimal(6, invoice.getQst());
             pStmt.setBigDecimal(7, invoice.getTotal());
             pStmt.setBoolean(8, invoice.getInvoiceSent());
+            pStmt.setBoolean(9, invoice.getInvoicePaid());
             
             records = pStmt.executeUpdate();
             try(ResultSet rs = pStmt.getGeneratedKeys();)
@@ -1312,7 +1313,7 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records;
         String query = "UPDATE INVOICES SET INVOICENUMBER = ?, INVOICEDATE = ?, CLIENT = ?, SUBTOTAL = ?," +
-                "GST = ?, QST = ?, TOTAL = ?, INVOICESENT = ? WHERE INVOICEID = ?";
+                "GST = ?, QST = ?, TOTAL = ?, INVOICESENT = ?, INVOICEPAID = ? WHERE INVOICEID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
         {            
@@ -1324,7 +1325,8 @@ public class AccountingDAOImp implements IAccountingDAO
             pStmt.setBigDecimal(6, invoice.getQst());
             pStmt.setBigDecimal(7, invoice.getTotal());
             pStmt.setBoolean(8, invoice.getInvoiceSent());
-            pStmt.setInt(9, invoice.getInvoiceID());
+            pStmt.setBoolean(9, invoice.getInvoicePaid());
+            pStmt.setInt(10, invoice.getInvoiceID());
             
             records = pStmt.executeUpdate();
             log.debug("Record updated from INVOICE is: " + invoice.toString());
@@ -1665,7 +1667,8 @@ public class AccountingDAOImp implements IAccountingDAO
         invoice.setGst(rs.getBigDecimal("GST"));
         invoice.setQst(rs.getBigDecimal("QST"));
         invoice.setTotal(rs.getBigDecimal("TOTAL"));
-        invoice.setInvoiceSent(rs.getBoolean("INVOICESENT"));            
+        invoice.setInvoiceSent(rs.getBoolean("INVOICESENT"));   
+        invoice.setInvoicePaid(rs.getBoolean("INVOICEPAID")); 
         return invoice;
     }   
     

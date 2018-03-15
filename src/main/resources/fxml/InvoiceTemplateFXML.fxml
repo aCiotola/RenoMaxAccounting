@@ -45,7 +45,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
             </Label>
             <Label text="No. de Facture" GridPane.columnIndex="1" GridPane.halignment="CENTER">
@@ -61,7 +61,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
             </Label>
          </children>
@@ -85,12 +85,12 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="locationField" text="Location" GridPane.rowIndex="1">
+            <Label fx:id="locationField" alignment="TOP_LEFT" prefHeight="200.0" prefWidth="361.0" text="Location" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="30.0" left="10.0" />
+                  <Insets left="10.0" />
                </GridPane.margin>
             </Label>
          </children>
@@ -118,20 +118,20 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="descriptionField" text="description" GridPane.rowIndex="1">
+            <Label fx:id="descriptionField" alignment="TOP_LEFT" prefHeight="270.0" prefWidth="357.0" text="description" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="260.0" left="10.0" />
+                  <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="expenseField" text="expense" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="expenseField" alignment="TOP_RIGHT" prefHeight="270.0" prefWidth="111.0" text="expense" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="260.0" left="10.0" />
+                  <Insets left="10.0" />
                </GridPane.margin>
             </Label>
          </children>

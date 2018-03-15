@@ -1,5 +1,6 @@
 package com.ciotola.controller;
 
+import com.ciotola.entities.Client;
 import com.ciotola.entities.Invoice;
 import com.ciotola.entities.InvoiceDescription;
 import com.ciotola.persistence.AccountingDAOImp;
@@ -30,8 +31,7 @@ public class InvoiceTemplateFXMLController
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private int invoiceNumber = -1;
     private IAccountingDAO accountDAO;
-    private Invoice invoice;
-    private List<InvoiceDescription> invoiceDescriptions;
+    private Client client;
     
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -91,7 +91,7 @@ public class InvoiceTemplateFXMLController
         Parent parent = (AnchorPane)loader.load();
         
         InvoiceTemplateFXMLController controller = loader.getController();
-        controller.setInvoiceTemplateFXMLController(invoiceNumber);
+        controller.setInvoiceTemplateFXMLController(client, invoiceNumber);
         
         // Print the node
         log.info("Printing page!");
@@ -117,15 +117,44 @@ public class InvoiceTemplateFXMLController
         accountDAO = new AccountingDAOImp();
     }
     
-    public void setInvoiceTemplateFXMLController(int invoiceNum) throws IOException, SQLException
+    /**
+     * Method responsible for setting up the invoice template, ready for printing or sending.
+     * 
+     */
+    public void setInvoiceTemplateFXMLController(Client client, int invoiceNum) throws IOException, SQLException
     {
         if(invoiceNum != -1)
+        {
             this.invoiceNumber = invoiceNum;
+            this.client = client;
+        }
         
          Invoice invoice = accountDAO.findInvoiceByInvoiceNumber(invoiceNumber);
          List<InvoiceDescription> invoiceDescriptions = accountDAO.findInvoiceDescriptionByInvoiceNumber(invoiceNumber);
          
          dateField.setText(invoice.getInvoiceDate().toString());
          invoiceNumberField.setText(invoice.getInvoiceNumber()+"");
+         locationField.setText(client.getClientName() + "\n" + client.getStreet() + "\n" + client.getCity() + ", " + client.getProvince() + "\n" + client.getPostalCode());
+         
+         String descriptions = "";
+         String prices = "";
+         for(int i = 0; i < invoiceDescriptions.size(); i++)
+         {
+             descriptions += invoiceDescriptions.get(i).getInvoiceDescription() + "\n\n";
+             prices += invoiceDescriptions.get(i).getPrice().toString() + "\n\n";
+         }
+         
+         descriptionField.setText(descriptions);
+         expenseField.setText(prices);
+         
+         subtotalField.setText(invoice.getSubtotal().toString());
+         gstField.setText(invoice.getGst().toString());
+         tvqField.setText(invoice.getQst().toString());
+         totalField.setText(invoice.getTotal().toString());
+         
+         if(invoice.getInvoicePaid())
+             paidField.setText("Paid -");
+         else
+             paidField.setText("Not Paid -");
     }
 }

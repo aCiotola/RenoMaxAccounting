@@ -90,6 +90,9 @@ public class InvoiceFXMLController
     @FXML // fx:id="sentCheckBox"
     private CheckBox sentCheckBox; // Value injected by FXMLLoader
     
+    @FXML // fx:id="paidCheckBox"
+    private CheckBox paidCheckBox; // Value injected by FXMLLoader
+    
     @FXML // fx:id="clientTable"
     private TableView<Invoice> clientTable; // Value injected by FXMLLoader
 
@@ -116,6 +119,9 @@ public class InvoiceFXMLController
 
     @FXML // fx:id="invoiceSentCol"
     private TableColumn<Invoice, String> invoiceSentCol; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="invoicePaidCol"
+    private TableColumn<Invoice, String> invoicePaidCol; // Value injected by FXMLLoader
 
     @FXML
     void onClearInvoice(ActionEvent event) throws SQLException 
@@ -133,6 +139,7 @@ public class InvoiceFXMLController
         qstField.setText("");
         totalField.setText("");
         sentCheckBox.setSelected(false);
+        paidCheckBox.setSelected(false);
         
         LocalDate date = LocalDate.now();  
         int year = (date.getYear() - 1) * 1000;
@@ -217,6 +224,7 @@ public class InvoiceFXMLController
             invoice.setQst(BigDecimal.valueOf(Double.parseDouble(qstField.getText())));
             invoice.setTotal(BigDecimal.valueOf(Double.parseDouble(totalField.getText())));
             invoice.setInvoiceSent(sentCheckBox.isSelected());
+            invoice.setInvoicePaid(paidCheckBox.isSelected());
             
             if(invoice.getInvoiceID() != -1)            
                 accountDAO.updateInvoice(invoice);            
@@ -224,8 +232,7 @@ public class InvoiceFXMLController
                 accountDAO.addInvoice(invoice);
             
             log.debug("Invoice created/Updated!");  
-            
-            onClearInvoice(new ActionEvent());     
+             
             displayClientTable();
         }
         else        
@@ -271,7 +278,8 @@ public class InvoiceFXMLController
         invoiveStage.setScene(scene);
         
         InvoiceTemplateFXMLController controller = loader.getController();
-        controller.setInvoiceTemplateFXMLController(invoiceNumber);
+        Client client = accountDAO.findClientByName(clientComboBox.getValue());
+        controller.setInvoiceTemplateFXMLController(client, invoiceNumber);
         
         invoiveStage.show();
     }
@@ -293,6 +301,7 @@ public class InvoiceFXMLController
         assert qstField != null : "fx:id=\"qstField\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert totalField != null : "fx:id=\"totalField\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert sentCheckBox != null : "fx:id=\"sentCheckBox\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert paidCheckBox != null : "fx:id=\"paidCheckBox\" was not injected: check your FXML file 'InvoiceFXML.fxml'.";        
         assert clientTable != null : "fx:id=\"clientTable\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert invoiceNumCol != null : "fx:id=\"invoiceNumCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert invoiceDateCol != null : "fx:id=\"invoiceDateCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
@@ -302,6 +311,7 @@ public class InvoiceFXMLController
         assert invoiceQstCol != null : "fx:id=\"invoiceQstCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert invoiceTotalCol != null : "fx:id=\"invoiceTotalCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
         assert invoiceSentCol != null : "fx:id=\"invoiceSentCol\" was not injected: check your FXML file 'InvoiceFormFXML.fxml'.";
+        assert invoicePaidCol != null : "fx:id=\"invoicePaidCol\" was not injected: check your FXML file 'InvoiceFXML.fxml'.";
         
         accountDAO = new AccountingDAOImp();    
         fillClientComboBox();
@@ -317,6 +327,7 @@ public class InvoiceFXMLController
         invoiceQstCol.setCellValueFactory(cellData -> cellData.getValue().getQstProperty());
         invoiceTotalCol.setCellValueFactory(cellData -> cellData.getValue().getTotalProperty());
         invoiceSentCol.setCellValueFactory(cellData -> cellData.getValue().getInvoiceSentProperty().asString());
+        invoicePaidCol.setCellValueFactory(cellData -> cellData.getValue().getInvoicePaidProperty().asString());
         
         descriptionTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showDescriptionDetails(newValue));    
         clientTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> 
@@ -384,6 +395,7 @@ public class InvoiceFXMLController
             qstField.setText(invoice.getQst().toString());
             totalField.setText(invoice.getTotal().toString());
             sentCheckBox.setSelected(invoice.getInvoiceSent());
+            paidCheckBox.setSelected(invoice.getInvoicePaid());
         }
     } 
     

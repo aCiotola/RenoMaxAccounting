@@ -28,14 +28,15 @@ public class Invoice
     private ObjectProperty<BigDecimal> qst;
     private ObjectProperty<BigDecimal> total;
     private BooleanProperty invoiceSent;
+    private BooleanProperty invoicePaid;
     
     public Invoice()
     {
-        this(-1, -1, Date.valueOf(LocalDate.now()), "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, false);
+        this(-1, -1, Date.valueOf(LocalDate.now()), "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, false, false);
     }
     
     public Invoice(final int invoiceID, final int invoiceNumber, final Date invoiceDate, final String client,
-            final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total, final boolean invoiceSent)
+            final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total, final boolean invoiceSent, final boolean invoicePaid)
     {
         super();
         this.invoiceID = new SimpleIntegerProperty(invoiceID);
@@ -47,6 +48,7 @@ public class Invoice
         this.qst = new SimpleObjectProperty(qst);
         this.total = new SimpleObjectProperty(total);
         this.invoiceSent = new SimpleBooleanProperty(invoiceSent);
+        this.invoicePaid = new SimpleBooleanProperty(invoicePaid);
     }
     
     public int getInvoiceID()
@@ -184,6 +186,21 @@ public class Invoice
          this.invoiceSent.set(invoiceSent);
     }
     
+    public boolean getInvoicePaid()
+    {
+        return invoicePaid.get();
+    }
+    
+    public BooleanProperty getInvoicePaidProperty()
+    {
+        return invoicePaid;
+    }
+    
+    public void setInvoicePaid(final boolean invoicePaid)
+    {
+         this.invoicePaid.set(invoicePaid);
+    }
+    
     @Override
     public int hashCode() 
     {
@@ -197,6 +214,7 @@ public class Invoice
         hash = 37 * hash + Objects.hashCode(this.qst);
         hash = 37 * hash + Objects.hashCode(this.total);
         hash = 37 * hash + Objects.hashCode(this.invoiceSent);
+        hash = 37 * hash + Objects.hashCode(this.invoicePaid);
         return hash;
     }
 
@@ -240,6 +258,9 @@ public class Invoice
         if (invoiceSent.get() != other.invoiceSent.get()) {
             return false;
         }
+        if (invoicePaid.get() != other.invoicePaid.get()) {
+            return false;
+        }
         return true;
     }
     
@@ -247,6 +268,7 @@ public class Invoice
     public String toString()
     {
         return invoiceID.get() + " " + invoiceNumber.get() + " " + invoiceDate.get() + " " + client.get() + " " + 
-                subtotal.get() + " " + gst.get() + " " + qst.get() + " " + total.get() + " " + invoiceSent.get(); 
+                subtotal.get() + " " + gst.get() + " " + qst.get() + " " + total.get() + " " + invoiceSent.get() +
+                " " + invoicePaid.get(); 
     }
 }
