@@ -305,12 +305,13 @@ public class AccountingDAOImp implements IAccountingDAO
     {
         int records = -1;
         int recordNum = -1;
-        String query = "INSERT INTO INVOICEDESCRIPTIONS(INVOICENUMBER, INVOICEDESCRIPTION) VALUES(?, ?)";
+        String query = "INSERT INTO INVOICEDESCRIPTIONS(INVOICENUMBER, INVOICEDESCRIPTION, PRICE) VALUES(?, ?, ?)";
         try(Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement pStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);)
         {
             pStmt.setInt(1, invoiceDescription.getInvoiceNumber());
             pStmt.setString(2, invoiceDescription.getInvoiceDescription());
+            pStmt.setBigDecimal(3, invoiceDescription.getPrice());
             
             records = pStmt.executeUpdate();
             try(ResultSet rs = pStmt.getGeneratedKeys();)
@@ -1347,13 +1348,14 @@ public class AccountingDAOImp implements IAccountingDAO
     public int updateInvoiceDescription(InvoiceDescription invoiceDescription) throws SQLException 
     {
         int records;
-        String query = "UPDATE INVOICEDESCRIPTIONS SET INVOICENUMBER = ?, INVOICEDESCRIPTION = ? WHERE INVOICEDESCRIPTIONID = ?";
+        String query = "UPDATE INVOICEDESCRIPTIONS SET INVOICENUMBER = ?, INVOICEDESCRIPTION = ?, PRICE = ? WHERE INVOICEDESCRIPTIONID = ?";
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement pStmt = connection.prepareStatement(query);)          
         {            
             pStmt.setInt(1, invoiceDescription.getInvoiceNumber());
             pStmt.setString(2, invoiceDescription.getInvoiceDescription());
-            pStmt.setInt(3, invoiceDescription.getInvoiceDescriptionID());
+            pStmt.setBigDecimal(3, invoiceDescription.getPrice());
+            pStmt.setInt(4, invoiceDescription.getInvoiceDescriptionID());
             
             records = pStmt.executeUpdate();
             log.debug("Record updated from INVOICEDESCRIPTIONS is: " + invoiceDescription.toString());
@@ -1679,7 +1681,8 @@ public class AccountingDAOImp implements IAccountingDAO
         InvoiceDescription invoiceDescription = new InvoiceDescription();
         invoiceDescription.setInvoiceDescriptionID(rs.getInt("INVOICEDESCRIPTIONID"));                    
         invoiceDescription.setInvoiceNumber(rs.getInt("INVOICENUMBER"));
-        invoiceDescription.setInvoiceDescription(rs.getString("INVOICEDESCRIPTION"));             
+        invoiceDescription.setInvoiceDescription(rs.getString("INVOICEDESCRIPTION"));     
+        invoiceDescription.setPrice(rs.getBigDecimal("PRICE"));             
         return invoiceDescription;
     }   
     

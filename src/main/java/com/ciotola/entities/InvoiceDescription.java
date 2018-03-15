@@ -1,8 +1,11 @@
 package com.ciotola.entities;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -15,18 +18,20 @@ public class InvoiceDescription
     private IntegerProperty invoiceDescriptionID;
     private IntegerProperty invoiceNumber;
     private StringProperty invoiceDescription;
+    private ObjectProperty<BigDecimal> price;
     
     public InvoiceDescription()
     {
-        this(-1, -1, "");
+        this(-1, -1, "", BigDecimal.ZERO);
     }
     
-    public InvoiceDescription(final int invoiceDescriptionID, final int invoiceNumber, final String invoiceDescription)
+    public InvoiceDescription(final int invoiceDescriptionID, final int invoiceNumber, final String invoiceDescription, final BigDecimal price)
     {
         super();
         this.invoiceDescriptionID = new SimpleIntegerProperty(invoiceDescriptionID);
         this.invoiceNumber = new SimpleIntegerProperty(invoiceNumber);
         this.invoiceDescription = new SimpleStringProperty(invoiceDescription);
+        this.price = new SimpleObjectProperty<>(price);
     }
     
     public int getInvoiceDescriptionID()
@@ -74,6 +79,21 @@ public class InvoiceDescription
          this.invoiceDescription.set(invoiceDescription);
     }
     
+    public BigDecimal getPrice()
+    {
+        return price.get();
+    }
+    
+    public ObjectProperty<BigDecimal> getPriceProperty()
+    {
+        return price;
+    }
+    
+    public void setPrice(final BigDecimal price)
+    {
+         this.price.set(price);
+    }
+    
     @Override
     public int hashCode() 
     {
@@ -81,6 +101,7 @@ public class InvoiceDescription
         hash = 37 * hash + invoiceDescriptionID.get();
         hash = 37 * hash + invoiceNumber.get();
         hash = 37 * hash + Objects.hashCode(this.invoiceDescription);
+        hash = 37 * hash + Objects.hashCode(this.price);
         return hash;
     }
 
@@ -106,12 +127,15 @@ public class InvoiceDescription
         if (!invoiceDescription.get().equals(other.invoiceDescription.get())) {
             return false;
         }
+        if (!price.get().equals(other.price.get())) {
+            return false;
+        }
         return true;
     }
     
     @Override
     public String toString()
     {
-        return invoiceDescriptionID.get() + " " + invoiceNumber.get() + " " + invoiceDescription.get(); 
+        return invoiceDescriptionID.get() + " " + invoiceNumber.get() + " " + invoiceDescription.get() + " " + price.get(); 
     }
 }

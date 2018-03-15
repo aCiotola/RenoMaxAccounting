@@ -33,7 +33,7 @@
               <fx:include fx:id="eTab" source="ExpenseFXML.fxml" />
           </Tab>
           <Tab fx:id="invoiceTab" closable="false" text="Invoices">
-               <fx:include fx:id="iTab" source="InvoiceFormFXML.fxml" />
+               <fx:include fx:id="iTab" source="InvoiceFXML.fxml" />
           </Tab>
             <Tab fx:id="clientTab" closable="false" text="Clients">
               <fx:include fx:id="cTab" source="ClientFXML.fxml" />
