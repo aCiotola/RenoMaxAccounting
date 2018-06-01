@@ -24,7 +24,6 @@
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="885.0" minWidth="10.0" prefWidth="885.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,7 +35,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Date" GridPane.rowIndex="1">
+            <Label text="Date">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -44,7 +43,7 @@
                   <Insets left="20.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Supplier" GridPane.rowIndex="2">
+            <Label text="Supplier" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -52,7 +51,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label text="Main Description" GridPane.rowIndex="3">
+            <Label text="Main Description" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -60,7 +59,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label text="Sub Description" GridPane.rowIndex="4">
+            <Label text="Sub Description" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -68,7 +67,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label text="Sub-Total" GridPane.rowIndex="5">
+            <Label text="Sub-Total" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -76,7 +75,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label text="GST (TPS)" GridPane.rowIndex="6">
+            <Label text="GST (TPS)" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -84,7 +83,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label text="QST (TVQ)" GridPane.rowIndex="7">
+            <Label text="QST (TVQ)" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -92,7 +91,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label text="Total" GridPane.rowIndex="8">
+            <Label text="Total" GridPane.rowIndex="7">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -100,27 +99,27 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="expenseSTField" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="expenseSTField" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="expenseGSTField" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <TextField fx:id="expenseGSTField" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="expenseQSTField" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <TextField fx:id="expenseQSTField" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="expenseTotalField" GridPane.columnIndex="1" GridPane.rowIndex="8">
+            <TextField fx:id="expenseTotalField" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <GridPane.margin>
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <CheckBox contentDisplay="CENTER" minWidth="0.0" mnemonicParsing="false" onAction="#onNoTaxes" prefHeight="20.0" prefWidth="454.0" text="No Tax" underline="true" GridPane.rowIndex="9">
+            <CheckBox contentDisplay="CENTER" minWidth="0.0" mnemonicParsing="false" onAction="#onToggleTaxes" prefHeight="20.0" prefWidth="454.0" text="No Tax" underline="true" GridPane.rowIndex="8">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -128,7 +127,7 @@
                   <Insets left="20.0" />
                </GridPane.margin>
             </CheckBox>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
               <buttons>
                 <Button mnemonicParsing="false" onAction="#onSaveExpense" text="Save Expense">
                      <font>
@@ -150,35 +149,25 @@
                   <Insets right="270.0" top="15.0" />
                </GridPane.margin>
             </ButtonBar>
-            <DatePicker fx:id="expenseDateField" prefHeight="25.0" prefWidth="863.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <DatePicker fx:id="expenseDateField" prefHeight="25.0" prefWidth="863.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
+               <padding>
+                  <Insets right="700.0" />
+               </padding>
             </DatePicker>
-            <Label text="Expense Number">
-               <GridPane.margin>
-                  <Insets left="20.0" />
-               </GridPane.margin>
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="expenseNumberField" disable="true" editable="false" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets left="10.0" right="20.0" />
-               </GridPane.margin>
-            </TextField>
-            <ComboBox fx:id="expenseSupplierCombo" editable="true" prefHeight="25.0" prefWidth="855.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="expenseSupplierCombo" editable="true" prefHeight="25.0" prefWidth="855.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </ComboBox>
-            <ComboBox fx:id="expenseMDCombo" editable="true" prefHeight="25.0" prefWidth="855.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ComboBox fx:id="expenseMDCombo" editable="true" prefHeight="25.0" prefWidth="855.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </ComboBox>
-            <ComboBox fx:id="expenseSDCombo" editable="true" prefHeight="25.0" prefWidth="855.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ComboBox fx:id="expenseSDCombo" editable="true" prefHeight="25.0" prefWidth="855.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
@@ -241,7 +230,7 @@
                </GridPane.margin></Label>
             <Label text="Totals:">
                <GridPane.margin>
-                  <Insets />
+                  <Insets left="10.0" />
                </GridPane.margin>
                <font>
                   <Font name="System Bold" size="12.0" />

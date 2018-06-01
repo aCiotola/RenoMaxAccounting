@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.ciotola.controller.GSTReportFXMLController">
+    <stylesheets>
+        <URL value="@/styles/gstreportfxml.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="320.0" fitWidth="753.0" layoutX="136.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/gstreport.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="453.0" layoutY="53.0" text="First Quarter" underline="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstDateFrom" layoutX="367.0" layoutY="95.0" text="firstDateFrom">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstDateTo" layoutX="603.0" layoutY="95.0" text="firstDateTo">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstSupplies" layoutX="205.0" layoutY="167.0" text="firstSupplies">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstMoney105" layoutX="461.0" layoutY="142.0" text="money105">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstMoney205" layoutX="672.0" layoutY="142.0" text="money205">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstMoney108" layoutX="461.0" layoutY="204.0" text="money108">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstMoney208" layoutX="672.0" layoutY="204.0" text="money208">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstMoney113" layoutX="461.0" layoutY="269.0" text="money113">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstMoney213" layoutX="672.0" layoutY="269.0" text="money213">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstNetRef" layoutX="794.0" layoutY="204.0" text="firstNetRef">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="790.0" layoutY="269.0" text="firstAmount">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

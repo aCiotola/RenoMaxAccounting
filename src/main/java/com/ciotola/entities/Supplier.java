@@ -7,59 +7,52 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
- * @author shado
+ * Supplier class which contains the methods used for getting and setting Supplier data.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/05/19
+ * 
  */
-public class Supplier
-{
+public class Supplier{
     private IntegerProperty supplierID;
     private StringProperty supplierName;
     
-    public Supplier()
-    {
+    public Supplier(){
         this(-1, "");
     }
     
-    public Supplier(final int supplierID, final String supplierName)
-    {
+    public Supplier(final int supplierID, final String supplierName){
         super();
         this.supplierID = new SimpleIntegerProperty(supplierID);
         this.supplierName = new SimpleStringProperty(supplierName);
     }
     
-    public int getSupplierID()
-    {
+    public int getSupplierID(){
         return supplierID.get();
     }
     
-    public IntegerProperty getSupplierIDProperty()
-    {
+    public IntegerProperty getSupplierIDProperty(){
         return supplierID;
     }
     
-    public void setSupplierID(final int supplierID)
-    {
+    public void setSupplierID(final int supplierID){
          this.supplierID.set(supplierID);
     }
     
-    public String getSupplierName()
-    {
+    public String getSupplierName(){
         return supplierName.get();
     }
     
-    public StringProperty getSupplierNameProperty()
-    {
+    public StringProperty getSupplierNameProperty(){
         return supplierName;
     }
     
-    public void setSupplierName(final String supplierName)
-    {
+    public void setSupplierName(final String supplierName){
          this.supplierName.set(supplierName);
     }
     
     @Override
-    public int hashCode() 
-    {
+    public int hashCode(){
         int hash = 7;
         hash = 37 * hash + supplierID.get();
         hash = 37 * hash + Objects.hashCode(this.supplierName);
@@ -67,8 +60,7 @@ public class Supplier
     }
 
     @Override
-    public boolean equals(Object obj)
-    {        
+    public boolean equals(Object obj){        
         if (this == obj) {
             return true;
         }
@@ -89,8 +81,7 @@ public class Supplier
     }
     
     @Override
-    public String toString()
-    {
+    public String toString(){
         return supplierID.get() + " " + supplierName.get(); 
     }
 }

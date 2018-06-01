@@ -1,5 +1,6 @@
 package com.ciotola.entities;
 
+import com.ciotola.utils.CustomDate;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -14,15 +15,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
- * @author shado
+ * Entity class which contains the methods used for getting and setting Expense data.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/05/19
+ * 
  */
-public class Expense 
-{
+public class Expense {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IntegerProperty expenseID;
-    private IntegerProperty expenseNumber;
-    private ObjectProperty<Date> dateTime;
+    private ObjectProperty<CustomDate> dateTime;
     private StringProperty supplier;
     private StringProperty mainDescription;
     private StringProperty subDescription;
@@ -31,17 +33,14 @@ public class Expense
     private ObjectProperty<BigDecimal> qst;
     private ObjectProperty<BigDecimal> total;
     
-    public Expense()
-    {
-        this(-1, -1, Date.valueOf(LocalDate.now()), "", "", "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
+    public Expense(){
+        this(-1, new CustomDate(Date.valueOf(LocalDate.now()).getTime()), "", "", "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
     }
     
-    public Expense(final int expenseID, final int expenseNumber, final Date dateTime, final String supplier, final String mainDescription, 
-            final String subDescription, final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total)
-    {
+    public Expense(final int expenseID, final CustomDate dateTime, final String supplier, final String mainDescription, 
+            final String subDescription, final BigDecimal subtotal, final BigDecimal gst, final BigDecimal qst, final BigDecimal total) {
         super();
         this.expenseID = new SimpleIntegerProperty(expenseID);
-        this.expenseNumber = new SimpleIntegerProperty(expenseNumber);
         this.dateTime = new SimpleObjectProperty(dateTime);
         this.supplier = new SimpleStringProperty(supplier);
         this.mainDescription = new SimpleStringProperty(mainDescription);
@@ -52,162 +51,118 @@ public class Expense
         this.total = new SimpleObjectProperty(total);
     }
     
-    public int getExpenseID()
-    {
+    public int getExpenseID(){
         return expenseID.get();
     }
     
-    public IntegerProperty getExpenseIDProperty()
-    {
+    public IntegerProperty getExpenseIDProperty(){
         return expenseID;
     }
     
-    public void setExpenseID(final int expenseID)
-    {
+    public void setExpenseID(final int expenseID){
          this.expenseID.set(expenseID);
     }
-    
-    public int getExpenseNumber()
-    {
-        return expenseNumber.get();
-    }
-    
-    public IntegerProperty getExpenseNumberProperty()
-    {
-        return expenseNumber;
-    }
-    
-    public void setExpenseNumber(final int expenseNumber)
-    {
-         this.expenseNumber.set(expenseNumber);
-    }
 
-    public Date getDateTime()
-    {
+    public CustomDate getDateTime(){
         return dateTime.get();
     }
     
-    public ObjectProperty<Date> getDateTimeProperty()
-    {
+    public ObjectProperty<CustomDate> getDateTimeProperty(){
         return dateTime;
     }
     
-    public void setDateTime(final Date dateTime)
-    {
+    public void setDateTime(final CustomDate dateTime){
          this.dateTime.set(dateTime);
     }
     
-    public String getSupplier()
-    {
+    public String getSupplier(){
         return supplier.get();
     }
     
-    public StringProperty getSupplierProperty()
-    {
+    public StringProperty getSupplierProperty(){
         return supplier;
     }
     
-    public void setSupplier(final String supplier)
-    {
+    public void setSupplier(final String supplier){
          this.supplier.set(supplier);
     }
     
-    public String getMainDescription()
-    {
+    public String getMainDescription(){
         return mainDescription.get();
     }
     
-    public StringProperty getMainDescriptionProperty()
-    {
+    public StringProperty getMainDescriptionProperty(){
         return mainDescription;
     }
     
-    public void setMainDescription(final String mainDescription)
-    {
+    public void setMainDescription(final String mainDescription){
          this.mainDescription.set(mainDescription);
     }
     
-    public String getSubDescription()
-    {
+    public String getSubDescription(){
         return subDescription.get();
     }
     
-    public StringProperty getSubDescriptionProperty()
-    {
+    public StringProperty getSubDescriptionProperty(){
         return subDescription;
     }
     
-    public void setSubDescription(final String subDescription)
-    {
+    public void setSubDescription(final String subDescription){
          this.subDescription.set(subDescription);
     }
     
-    public BigDecimal getSubtotal()
-    {
+    public BigDecimal getSubtotal(){
         return subtotal.get();
     }
     
-    public ObjectProperty<BigDecimal> getSubtotalProperty()
-    {
+    public ObjectProperty<BigDecimal> getSubtotalProperty(){
         return subtotal;
     }
     
-    public void setSubtotal(final BigDecimal subtotal)
-    {
+    public void setSubtotal(final BigDecimal subtotal){
          this.subtotal.set(subtotal);
     }
     
-    public BigDecimal getGst()
-    {
+    public BigDecimal getGst(){
         return gst.get();
     }
     
-    public ObjectProperty<BigDecimal> getGstProperty()
-    {
+    public ObjectProperty<BigDecimal> getGstProperty(){
         return gst;
     }
     
-    public void setGst(final BigDecimal gst)
-    {
+    public void setGst(final BigDecimal gst){
          this.gst.set(gst);
     }
     
-    public BigDecimal getQst()
-    {
+    public BigDecimal getQst(){
         return qst.get();
     }
     
-    public ObjectProperty<BigDecimal> getQstProperty()
-    {
+    public ObjectProperty<BigDecimal> getQstProperty(){
         return qst;
     }
     
-    public void setQst(final BigDecimal qst)
-    {
+    public void setQst(final BigDecimal qst){
          this.qst.set(qst);
     }
     
-    public BigDecimal getTotal()
-    {
+    public BigDecimal getTotal(){
         return total.get();
     }
     
-    public ObjectProperty<BigDecimal> getTotalProperty()
-    {
+    public ObjectProperty<BigDecimal> getTotalProperty(){
         return total;
     }
     
-    public void setTotal(final BigDecimal total)
-    {
+    public void setTotal(final BigDecimal total){
          this.total.set(total);
     }
     
     @Override
-    public int hashCode() 
-    {
+    public int hashCode(){
         int hash = 7;
         hash = 37 * hash + expenseID.get();
-        hash = 37 * hash + expenseNumber.get();
         hash = 37 * hash + Objects.hashCode(this.dateTime);
         hash = 37 * hash + Objects.hashCode(this.supplier);
         hash = 37 * hash + Objects.hashCode(this.mainDescription);
@@ -220,8 +175,7 @@ public class Expense
     }
 
     @Override
-    public boolean equals(Object obj)
-    {        
+    public boolean equals(Object obj){        
         if (this == obj) {
             return true;
         }
@@ -233,9 +187,6 @@ public class Expense
         }
         final Expense other = (Expense) obj;
         if (expenseID.get() != other.expenseID.get()) {
-            return false;
-        }
-        if (expenseNumber.get() != other.expenseNumber.get()) {
             return false;
         }
         if (!dateTime.get().equals(other.dateTime.get())) {
@@ -266,10 +217,8 @@ public class Expense
     }
     
     @Override
-    public String toString()
-    {
-        return expenseID.get() + " " + expenseNumber.get() + " " + dateTime.get() + " " + supplier.get() + " " + 
-                mainDescription.get() + " " + subDescription.get() + " " + subtotal.get() + " " + gst.get() 
-                + " " + qst.get() + " " + total.get(); 
+    public String toString(){
+        return expenseID.get() + " " + dateTime.get() + " " + supplier.get() + " " + mainDescription.get() + " " + 
+                subDescription.get() + " " + subtotal.get() + " " + gst.get() + " " + qst.get() + " " + total.get(); 
     }
 }

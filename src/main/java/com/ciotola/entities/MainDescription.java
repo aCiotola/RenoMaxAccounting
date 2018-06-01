@@ -7,59 +7,52 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
- * @author shado
+ * MainDescripion class which contains the methods used for getting and setting MainDescription data.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/05/19
+ * 
  */
-public class MainDescription 
-{
+public class MainDescription{
     private IntegerProperty mainDescriptionID;
     private StringProperty mainDescriptionName;
     
-    public MainDescription()
-    {
+    public MainDescription(){
         this(-1, "");
     }
     
-    public MainDescription(final int mainDescriptionID, final String mainDescriptionName)
-    {
+    public MainDescription(final int mainDescriptionID, final String mainDescriptionName){
         super();
         this.mainDescriptionID = new SimpleIntegerProperty(mainDescriptionID);
         this.mainDescriptionName = new SimpleStringProperty(mainDescriptionName);
     }
     
-    public int getMainDescriptionID()
-    {
+    public int getMainDescriptionID(){
         return mainDescriptionID.get();
     }
     
-    public IntegerProperty getMainDescriptionIDProperty()
-    {
+    public IntegerProperty getMainDescriptionIDProperty(){
         return mainDescriptionID;
     }
     
-    public void setMainDescriptionID(final int mainDescriptionID)
-    {
+    public void setMainDescriptionID(final int mainDescriptionID){
          this.mainDescriptionID.set(mainDescriptionID);
     }
     
-    public String getMainDescriptionName()
-    {
+    public String getMainDescriptionName(){
         return mainDescriptionName.get();
     }
     
-    public StringProperty getMainDescriptionNameProperty()
-    {
+    public StringProperty getMainDescriptionNameProperty(){
         return mainDescriptionName;
     }
     
-    public void setMainDescriptionName(final String mainDescriptionName)
-    {
+    public void setMainDescriptionName(final String mainDescriptionName){
          this.mainDescriptionName.set(mainDescriptionName);
     }
     
     @Override
-    public int hashCode() 
-    {
+    public int hashCode(){
         int hash = 7;
         hash = 37 * hash + mainDescriptionID.get();
         hash = 37 * hash + Objects.hashCode(this.mainDescriptionName);
@@ -67,8 +60,7 @@ public class MainDescription
     }
 
     @Override
-    public boolean equals(Object obj)
-    {        
+    public boolean equals(Object obj){        
         if (this == obj) {
             return true;
         }
@@ -89,8 +81,7 @@ public class MainDescription
     }
     
     @Override
-    public String toString()
-    {
+    public String toString(){
         return mainDescriptionID.get() + " " + mainDescriptionName.get(); 
     }
 }

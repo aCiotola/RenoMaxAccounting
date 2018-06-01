@@ -3,14 +3,14 @@ package com.ciotola.controller;
 import com.ciotola.entities.Client;
 import com.ciotola.entities.Invoice;
 import com.ciotola.entities.InvoiceDescription;
-import com.ciotola.persistence.AccountingDAOImp;
-import com.ciotola.persistence.IAccountingDAO;
+import com.ciotola.persistence.Implementations.AccountingInvoiceDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingInvoiceDAO;
+import com.ciotola.persistence.Implementations.AccountingInvoiceDescriptionDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingInvoiceDescriptionDAO;
 import com.ciotola.renomaxaccounting.MainAppFX;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,18 +26,19 @@ import javafx.scene.layout.AnchorPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class InvoiceTemplateFXMLController 
-{
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
-    private int invoiceNumber = -1;
-    private IAccountingDAO accountDAO;
+/**
+ * Controller class which contains the methods used for displaying the Invoice Template.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/05/20
+ * 
+ */
+public class InvoiceTemplateFXMLController {
+    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());
+    private IAccountingInvoiceDAO iDAO;
+    private IAccountingInvoiceDescriptionDAO idDAO;
+    private int id = -1;
     private Client client;
-    
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
 
     @FXML // fx:id="dateField"
     private Label dateField; // Value injected by FXMLLoader
@@ -70,35 +71,34 @@ public class InvoiceTemplateFXMLController
     private Label totalField; // Value injected by FXMLLoader
 
     @FXML
-    void onPrintPage(ActionEvent event) throws IOException, SQLException
-    {
+    void onPrintPage(ActionEvent event) throws IOException, SQLException {
         // Create the Printer Job
         PrinterJob job = PrinterJob.createPrinterJob();
-         
-        // Get The Printer Job Settings
         JobSettings jobSettings = job.getJobSettings();
-        
-        // Get The Printer
         Printer printer = job.getPrinter();
-        
+
         // Create the Page Layout of the Printer
         PageLayout pageLayout = printer.createPageLayout(Paper.NA_LETTER, PageOrientation.PORTRAIT, Printer.MarginType.HARDWARE_MINIMUM);
         jobSettings.setPageLayout(pageLayout);
-        
-        //Create the Node
+
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainAppFX.class.getResource("/fxml/InvoiceTemplateFXML.fxml"));        
-        Parent parent = (AnchorPane)loader.load();
-        
+        loader.setLocation(MainAppFX.class.getResource("/fxml/InvoiceTemplateFXML.fxml"));
+        Parent parent = (AnchorPane) loader.load();
+
         InvoiceTemplateFXMLController controller = loader.getController();
-        controller.setInvoiceTemplateFXMLController(client, invoiceNumber);
-        
+        controller.setInvoiceTemplateFXMLController(client, id);
+
         // Print the node
         log.info("Printing page!");
         job.printPage(parent);
 
         // End the printer job
         job.endJob();
+    }
+
+    @FXML
+    void onSendEmail(ActionEvent event) {
+
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -114,47 +114,46 @@ public class InvoiceTemplateFXMLController
         assert tvqField != null : "fx:id=\"tvqField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
         assert totalField != null : "fx:id=\"totalField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
 
-        accountDAO = new AccountingDAOImp();
+        iDAO = new AccountingInvoiceDAOImp();
+        idDAO = new AccountingInvoiceDescriptionDAOImp();
     }
-    
+
     /**
-     * Method responsible for setting up the invoice template, ready for printing or sending.
-     * 
+     * Method responsible for setting up the invoice template, ready for
+     * printing or sending.
+     *
+     * @param client
+     * @param id
+     * @throws java.io.IOException
+     * @throws java.sql.SQLException
      */
-    public void setInvoiceTemplateFXMLController(Client client, int invoiceNum) throws IOException, SQLException
-    {
-        if(invoiceNum != -1)
-        {
-            this.invoiceNumber = invoiceNum;
+    public void setInvoiceTemplateFXMLController(Client client, int id) throws IOException, SQLException {
+        if (id != -1) {
+            this.id = id;
             this.client = client;
         }
-        
-         Invoice invoice = accountDAO.findInvoiceByInvoiceNumber(invoiceNumber);
-         List<InvoiceDescription> invoiceDescriptions = accountDAO.findInvoiceDescriptionByInvoiceNumber(invoiceNumber);
-         
-         dateField.setText(invoice.getInvoiceDate().toString());
-         invoiceNumberField.setText(invoice.getInvoiceNumber()+"");
-         locationField.setText(client.getClientName() + "\n" + client.getStreet() + "\n" + client.getCity() + ", " + client.getProvince() + "\n" + client.getPostalCode());
-         
-         String descriptions = "";
-         String prices = "";
-         for(int i = 0; i < invoiceDescriptions.size(); i++)
-         {
-             descriptions += invoiceDescriptions.get(i).getInvoiceDescription() + "\n\n";
-             prices += invoiceDescriptions.get(i).getPrice().toString() + "\n\n";
-         }
-         
-         descriptionField.setText(descriptions);
-         expenseField.setText(prices);
-         
-         subtotalField.setText(invoice.getSubtotal().toString());
-         gstField.setText(invoice.getGst().toString());
-         tvqField.setText(invoice.getQst().toString());
-         totalField.setText(invoice.getTotal().toString());
-         
-         if(invoice.getInvoicePaid())
-             paidField.setText("Paid -");
-         else
-             paidField.setText("Not Paid -");
+
+        Invoice invoice = iDAO.findInvoiceById(id);
+        List<InvoiceDescription> invoiceDescriptions = idDAO.findInvoiceDescriptionByInvoiceNumber(id);
+
+        dateField.setText(invoice.getInvoiceDate().toString());
+        invoiceNumberField.setText(invoice.getInvoiceID()+ "");
+        locationField.setText(client.getClientName() + "\n" + client.getStreet() + "\n" + client.getCity() + ", " + client.getProvince() + "\n" + client.getPostalCode());
+
+        String descriptions = "";
+        String prices = "";
+        for (int i = 0; i < invoiceDescriptions.size(); i++) {
+            descriptions += invoiceDescriptions.get(i).getInvoiceDescription() + "\n\n";
+            prices += invoiceDescriptions.get(i).getPrice().toString() + "\n\n";
+        }
+
+        descriptionField.setText(descriptions);
+        expenseField.setText(prices);
+
+        subtotalField.setText(invoice.getSubtotal().toString());
+        gstField.setText(invoice.getGst().toString());
+        tvqField.setText(invoice.getQst().toString());
+        totalField.setText(invoice.getTotal().toString());
+        paidField.setText(invoice.getInvoicePaid());
     }
 }

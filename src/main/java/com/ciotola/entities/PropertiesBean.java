@@ -1,24 +1,24 @@
 package com.ciotola.entities;
 
 /**
- *
- * @author shado
+ * PropertiesBean class which contains the methods used for getting and setting PropertyBean data.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/05/19
+ * 
  */
-public class PropertiesBean
-{
+public class PropertiesBean{
     private String dbPassword;
     private int dbPort;
     private String mySqlDBUrl;
     private String dbUserName;
     private String dbName;
 
-    public PropertiesBean()
-    {
+    public PropertiesBean(){
         this("", -1, "", "", "");
     }
     
-    public PropertiesBean(final String dbPassword, final int dbPort, final String mySqlDBUrl, final String dbUserName, final String dbName)
-    {
+    public PropertiesBean(final String dbPassword, final int dbPort, final String mySqlDBUrl, final String dbUserName, final String dbName){
         this.dbPassword = dbPassword;
         this.dbPort = dbPort;
         this.mySqlDBUrl = mySqlDBUrl;
@@ -67,8 +67,7 @@ public class PropertiesBean
     }
     
     @Override
-    public int hashCode()
-    {
+    public int hashCode(){
         final int prime = 31;
         int result = 1;
         result = prime * result + ((dbPassword == null) ? 0 : dbPassword.hashCode());
@@ -80,8 +79,7 @@ public class PropertiesBean
     }
 
     @Override
-    public boolean equals(Object obj) 
-    {
+    public boolean equals(Object obj){
         if (this == obj) {
             return true;
         }
@@ -128,8 +126,7 @@ public class PropertiesBean
     }
 
     @Override
-    public String toString() 
-    {
+    public String toString() {
         return "PropertiesBean{" + "dbPassword=" + dbPassword + ", dbPort=" + dbPort + ", mySqlDBUrl=" + mySqlDBUrl + 
                 "dbUserName=" + dbUserName + "dbName=" + dbName +'}';
     }

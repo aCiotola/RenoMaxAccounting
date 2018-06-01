@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.MainFXMLController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuSave" text="Save" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuSaveAs" text="Save As" />
-              <MenuItem mnemonicParsing="false" onAction="#onMenuClose" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-   <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-        <tabs>
-          <Tab fx:id="expenseTab" closable="false" text="Expenses">
-              <fx:include fx:id="eTab" source="ExpenseFXML.fxml" />
-          </Tab>
-          <Tab fx:id="invoiceTab" closable="false" text="Invoices">
-               <fx:include fx:id="iTab" source="InvoiceFXML.fxml" />
-          </Tab>
-            <Tab fx:id="clientTab" closable="false" text="Clients">
-              <fx:include fx:id="cTab" source="ClientFXML.fxml" />
-            </Tab>
-            <Tab fx:id="supplierTab" closable="false" text="Suppliers">
-              <fx:include fx:id="sTab" source="SupplierFXML.fxml" />
-            </Tab>
-            <Tab fx:id="mDescriptionTab" closable="false" text="Main Descriptions">
-              <fx:include fx:id="mdTab" source="MainDescriptionFXML.fxml" />
-            </Tab>
-            <Tab fx:id="sDescrptionTab" closable="false" text="Sub Descriptions">
-              <fx:include fx:id="sdTab" source="SubDescriptionFXML.fxml" />
-            </Tab>
-        </tabs>
-      </TabPane>
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ciotola.controller.MainFXMLController">
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="expenseTab" closable="false" text="Expenses">
+                    <fx:include fx:id="eTab" source="ExpenseFXML.fxml" />
+                </Tab>
+                <Tab fx:id="invoiceTab" closable="false" text="Invoices">
+                    <fx:include fx:id="iTab" source="InvoiceFXML.fxml" />
+                </Tab>
+                <Tab fx:id="gstReportTab" closable="false" text="GST Report">
+                    <fx:include fx:id="gstTab" source="GSTReportFXML.fxml" />
+                </Tab>
+                <Tab fx:id="reportsTab" closable="false" text="Reports">
+                    <fx:include fx:id="reportTab" source="ReportsFXML.fxml" />
+                </Tab>  
+                <Tab fx:id="clientTab" closable="false" text="Clients">
+                    <fx:include fx:id="cTab" source="ClientFXML.fxml" />
+                </Tab>
+                <Tab fx:id="supplierTab" closable="false" text="Suppliers">
+                    <fx:include fx:id="sTab" source="SupplierFXML.fxml" />
+                </Tab>
+                <Tab fx:id="mDescriptionTab" closable="false" text="Main Descriptions">
+                    <fx:include fx:id="mdTab" source="MainDescriptionFXML.fxml" />
+                </Tab>
+                <Tab fx:id="sDescrptionTab" closable="false" text="Sub Descriptions">
+                    <fx:include fx:id="sdTab" source="SubDescriptionFXML.fxml" />
+                </Tab>            
+            </tabs>
+        </TabPane>
+    </center>
 </BorderPane>

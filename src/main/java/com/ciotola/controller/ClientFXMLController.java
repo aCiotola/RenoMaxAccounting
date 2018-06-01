@@ -1,39 +1,28 @@
 package com.ciotola.controller;
 
 import com.ciotola.entities.Client;
-import com.ciotola.persistence.AccountingDAOImp;
-import com.ciotola.persistence.IAccountingDAO;
+import com.ciotola.persistence.Implementations.AccountingClientDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingClientDAO;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
- * Controller class which contains the methods used for creating/updating/searching/deleting clients.
+ * Controller class which contains the methods used for creating/reading/updating/deleting clients.
  * 
  * @author Alessandro Ciotola
- * @version 2018/01/13
+ * @version 2018/05/20
  * 
  */
-public class ClientFXMLController 
-{    
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
-    private IAccountingDAO accountDAO;
-    private String clientName = "";
-    
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
+public class ClientFXMLController {    
+    private IAccountingClientDAO cDAO;
+    private int cID = -1;
 
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
-    
     @FXML // fx:id="clientTable"
     private TableView<Client> clientTable; // Value injected by FXMLLoader
 
@@ -99,11 +88,9 @@ public class ClientFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onSaveClient(ActionEvent event) throws SQLException 
-    {
-        if(!clientNameField.getText().equals(""))
-        {            
-            Client client = accountDAO.findClientByName(clientName);
+    void onSaveClient(ActionEvent event) throws SQLException {
+        if(!clientNameField.getText().equals("")){            
+            Client client = cDAO.findClientById(cID);
             client.setClientName(clientNameField.getText());
             client.setClientName(clientNameField.getText());
             client.setStreet(streetField.getText());
@@ -115,17 +102,15 @@ public class ClientFXMLController
             client.setEmail(emailField.getText());
             
             if(client.getClientID() != -1)
-                accountDAO.updateClient(client);
+                cDAO.updateClient(client);
             else
-                accountDAO.addClient(client);
-            
-            log.debug("Client created/updated!");            
+                cDAO.addClient(client);
+                   
             onClearClient(new ActionEvent());       
-            clientName = "";
             displayTable();
         }
         else        
-            clientNameField.setText("Please enter a name!");
+            displayAlert("Please enter a name!");
         
     }
     
@@ -135,8 +120,7 @@ public class ClientFXMLController
      * @param event 
      */
     @FXML
-    void onClearClient(ActionEvent event) 
-    {
+    void onClearClient(ActionEvent event) {
         clientNameField.setText("");
         streetField.setText("");
         cityField.setText("");
@@ -155,13 +139,10 @@ public class ClientFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onSeachClient(ActionEvent event) throws SQLException 
-    {
+    void onSeachClient(ActionEvent event) throws SQLException {
         onClearClient(new ActionEvent());
-        if(!seachClientField.getText().equals(""))
-        {                   
-            log.debug("Search Client!");            
-            clientTable.setItems(accountDAO.findClientLikeName(seachClientField.getText()));
+        if(!seachClientField.getText().equals("")){          
+            clientTable.setItems(cDAO.findClientLikeName(seachClientField.getText()));
         }
         else        
             displayTable();
@@ -174,27 +155,22 @@ public class ClientFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onDeleteClient(ActionEvent event) throws SQLException 
-    {
-        if(!clientNameField.getText().equals(""))
-        {            
-            Client client = accountDAO.findClientByName(clientNameField.getText());            
-            onClearClient(new ActionEvent());
-            accountDAO.deleteClient(client.getClientID());
-            
-            log.debug("Client deleted!");                
+    void onDeleteClient(ActionEvent event) throws SQLException {
+        if(!clientNameField.getText().equals("")){            
+            Client client = cDAO.findClientById(cID);            
+            cDAO.deleteClient(client.getClientID());
+            onClearClient(new ActionEvent());                   
             displayTable();
         }
         else        
-            clientNameField.setText("Please select a client that you wish to delete!");
+            displayAlert("Please select a client that you wish to delete!");
     }
     
     /**
      * No parameter constructor which calls the super's constructor.
      * 
      */
-    public ClientFXMLController()
-    {
+    public ClientFXMLController(){
         super();
     }
 
@@ -206,8 +182,7 @@ public class ClientFXMLController
      * @throws SQLException 
      */
     @FXML 
-    void initialize() throws IOException, SQLException 
-    {
+    void initialize() throws IOException, SQLException {
         assert clientNumberColumn != null : "fx:id=\"clientNumberColumn\" was not injected: check your FXML file 'MainFXML.fxml'.";
         assert clientNameColumn != null : "fx:id=\"clientNameColumn\" was not injected: check your FXML file 'MainFXML.fxml'.";
         assert streetColumn != null : "fx:id=\"streetColumn\" was not injected: check your FXML file 'MainFXML.fxml'.";
@@ -226,7 +201,7 @@ public class ClientFXMLController
         assert cPhoneField != null : "fx:id=\"cPhoneField\" was not injected: check your FXML file 'MainFXML.fxml'.";
         assert emailField != null : "fx:id=\"emailField\" was not injected: check your FXML file 'MainFXML.fxml'.";
         
-        accountDAO = new AccountingDAOImp();
+        cDAO = new AccountingClientDAOImp();
         displayTable();
 
         clientNumberColumn.setCellValueFactory(cellData -> cellData.getValue().getClientIDProperty().asObject());
@@ -247,9 +222,9 @@ public class ClientFXMLController
      * 
      * @throws SQLException 
      */
-    public void displayTable() throws SQLException
-    {
-        clientTable.setItems(accountDAO.findAllClients());
+    public void displayTable() throws SQLException{
+        cID = -1;
+        clientTable.setItems(cDAO.findAllClients());
     }
     
     /**
@@ -257,10 +232,8 @@ public class ClientFXMLController
      * 
      * @param client 
      */
-    private void showClientDetails(Client client) 
-    {
-        if(client != null)
-        {
+    private void showClientDetails(Client client) {
+        if(client != null){
             clientNameField.setText(client.getClientName());
             streetField.setText(client.getStreet());
             cityField.setText(client.getCity());
@@ -270,7 +243,21 @@ public class ClientFXMLController
             cPhoneField.setText(client.getCellPhone());
             emailField.setText(client.getEmail());
             
-            clientName = client.getClientName();
+            cID = client.getClientID();
         }
+    }
+    
+    /**
+     * Method responsible for displaying an alert when an error occurs.
+     * 
+     * @param msg 
+     */
+    private void displayAlert(String msg){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        alert.showAndWait();
     }
 }

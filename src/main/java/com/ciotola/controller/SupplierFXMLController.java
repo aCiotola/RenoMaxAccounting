@@ -1,38 +1,27 @@
 package com.ciotola.controller;
 
 import com.ciotola.entities.Supplier;
-import com.ciotola.persistence.AccountingDAOImp;
-import com.ciotola.persistence.IAccountingDAO;
+import com.ciotola.persistence.Implementations.AccountingSupplierDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingSupplierDAO;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
- * Controller class which contains the methods used for creating/updating/deleting Suppliers.
+ * Controller class which contains the methods used for creating/reading/updating/deleting Suppliers.
  * 
  * @author Alessandro Ciotola
- * @version 2018/01/15
+ * @version 2018/05/20
  * 
  */
-public class SupplierFXMLController
-{
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
-    private IAccountingDAO accountDAO;
-    private String sdName = "";
-    
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
+public class SupplierFXMLController{
+    private IAccountingSupplierDAO sDAO;
+    private int sID = -1;
 
     @FXML // fx:id="supplierNameField"
     private TextField supplierNameField; // Value injected by FXMLLoader
@@ -53,19 +42,14 @@ public class SupplierFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onDeleteSupplier(ActionEvent event) throws SQLException
-    {
-        if(!supplierNameField.getText().equals(""))
-        {     
-            int id = accountDAO.findSupplierByName(supplierNameField.getText()).getSupplierID();
-            accountDAO.deleteSupplier(id);
-            supplierNameField.setText("");
-            
-            log.debug("Supplier deleted!");            
+    void onDeleteSupplier(ActionEvent event) throws SQLException {
+        if(!supplierNameField.getText().equals("")) {     
+            sDAO.deleteSupplier(sID);
+            supplierNameField.setText("");                      
             displayTable();
         }
         else        
-            supplierNameField.setText("Please select a supplier!");
+            displayAlert("Please select a supplier!");
     }
 
     /**
@@ -76,33 +60,28 @@ public class SupplierFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onSaveSupplier(ActionEvent event) throws SQLException
-    {
-        if(!supplierNameField.getText().equals(""))
-        {            
-            Supplier supplier = accountDAO.findSupplierByName(sdName);
+    void onSaveSupplier(ActionEvent event) throws SQLException {
+        if(!supplierNameField.getText().equals("")) {            
+            Supplier supplier = sDAO.findSupplierById(sID);
             supplier.setSupplierName(supplierNameField.getText());
             
             if(supplier.getSupplierID() != -1)            
-                accountDAO.updateSupplier(supplier);            
+                sDAO.updateSupplier(supplier);            
             else
-                 accountDAO.addSupplier(supplier);
-            
-            log.debug("Supplier created/updated!");            
-            supplierNameField.setText("");     
-            sdName = "";
+                 sDAO.addSupplier(supplier);
+                    
+            supplierNameField.setText("");   
             displayTable();
         }
         else        
-            supplierNameField.setText("Please enter a name!");
+            displayAlert("Please enter a name!");
     }
     
     /**
      * No parameter constructor which calls the super's constructor.
      * 
      */
-    public SupplierFXMLController()
-    {
+    public SupplierFXMLController(){
         super();
     }
 
@@ -114,14 +93,13 @@ public class SupplierFXMLController
      * @throws IOException 
      */
     @FXML
-    void initialize() throws IOException, SQLException 
-    {
+    void initialize() throws IOException, SQLException {
         assert supplierNameField != null : "fx:id=\"supplierNameField\" was not injected: check your FXML file 'SupplierFXML.fxml'.";
         assert supplierTable != null : "fx:id=\"supplierTable\" was not injected: check your FXML file 'SupplierFXML.fxml'.";
         assert supplierNumColumn != null : "fx:id=\"supplierNumColumn\" was not injected: check your FXML file 'SupplierFXML.fxml'.";
         assert supplierNameColumn != null : "fx:id=\"supplierNameColumn\" was not injected: check your FXML file 'SupplierFXML.fxml'.";
 
-        accountDAO = new AccountingDAOImp();
+        sDAO = new AccountingSupplierDAOImp();
         displayTable();
         
         supplierNumColumn.setCellValueFactory(cellData -> cellData.getValue().getSupplierIDProperty().asObject());
@@ -134,9 +112,9 @@ public class SupplierFXMLController
      * 
      * @throws SQLException 
      */
-    public void displayTable() throws SQLException
-    {
-        supplierTable.setItems(accountDAO.findAllSuppliers());
+    public void displayTable() throws SQLException {
+        sID = -1;
+        supplierTable.setItems(sDAO.findAllSuppliers());
     }
     
     /**
@@ -144,12 +122,24 @@ public class SupplierFXMLController
      * 
      * @param supplier 
      */
-    private void showSupplierDetails(Supplier supplier) 
-    {
-        if(supplier != null)    
-        {
+    private void showSupplierDetails(Supplier supplier) {
+        if(supplier != null){
             supplierNameField.setText(supplier.getSupplierName());
-            sdName = supplier.getSupplierName();
+            sID = supplier.getSupplierID();
         }
+    }
+    
+    /**
+     * Method responsible for displaying an alert when an error occurs.
+     * 
+     * @param msg 
+     */
+    private void displayAlert(String msg){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        alert.showAndWait();
     }
 }

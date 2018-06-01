@@ -41,21 +41,16 @@
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
               <buttons>
                 <Button mnemonicParsing="false" onAction="#onSaveMainDescription" text="Save Main Description">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#onDeleteMainDescription" text="Delete Main Description">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
               </buttons>
                <GridPane.margin>
-                  <Insets right="290.0" top="20.0" />
+                  <Insets right="400.0" top="20.0" />
                </GridPane.margin>
             </ButtonBar>
          </children>

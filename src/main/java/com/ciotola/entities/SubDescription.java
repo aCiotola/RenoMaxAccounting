@@ -7,59 +7,52 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
- * @author shado
+ * SubDescription class which contains the methods used for getting and setting SubDescription data.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/05/19
+ * 
  */
-public class SubDescription 
-{
+public class SubDescription{
     private IntegerProperty subDescriptionID;
     private StringProperty subDescriptionName;
     
-    public SubDescription()
-    {
+    public SubDescription(){
         this(-1, "");
     }
     
-    public SubDescription(final int subDescriptionID, final String subDescriptionName)
-    {
+    public SubDescription(final int subDescriptionID, final String subDescriptionName){
         super();
         this.subDescriptionID = new SimpleIntegerProperty(subDescriptionID);
         this.subDescriptionName = new SimpleStringProperty(subDescriptionName);
     }
     
-    public int getSubDescriptionID()
-    {
+    public int getSubDescriptionID(){
         return subDescriptionID.get();
     }
     
-    public IntegerProperty getSubDescriptionIDProperty()
-    {
+    public IntegerProperty getSubDescriptionIDProperty(){
         return subDescriptionID;
     }
     
-    public void setSubDescriptionID(final int subDescriptionID)
-    {
+    public void setSubDescriptionID(final int subDescriptionID){
          this.subDescriptionID.set(subDescriptionID);
     }
     
-    public String getSubDescriptionName()
-    {
+    public String getSubDescriptionName(){
         return subDescriptionName.get();
     }
     
-    public StringProperty getSubDescriptionNameProperty()
-    {
+    public StringProperty getSubDescriptionNameProperty(){
         return subDescriptionName;
     }
     
-    public void setSubDescriptionName(final String subDescriptionName)
-    {
+    public void setSubDescriptionName(final String subDescriptionName){
          this.subDescriptionName.set(subDescriptionName);
     }
     
     @Override
-    public int hashCode() 
-    {
+    public int hashCode(){
         int hash = 7;
         hash = 37 * hash + subDescriptionID.get();
         hash = 37 * hash + Objects.hashCode(this.subDescriptionName);
@@ -67,8 +60,7 @@ public class SubDescription
     }
 
     @Override
-    public boolean equals(Object obj)
-    {        
+    public boolean equals(Object obj){        
         if (this == obj) {
             return true;
         }
@@ -89,8 +81,7 @@ public class SubDescription
     }
     
     @Override
-    public String toString()
-    {
+    public String toString(){
         return subDescriptionID.get() + " " + subDescriptionName.get(); 
     }
 }

@@ -1,38 +1,27 @@
 package com.ciotola.controller;
 
 import com.ciotola.entities.SubDescription;
-import com.ciotola.persistence.AccountingDAOImp;
-import com.ciotola.persistence.IAccountingDAO;
+import com.ciotola.persistence.Implementations.AccountingSubDescriptionDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingSubDescriptionDAO;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
- * Controller class which contains the methods used for creating/updating/deleting Sub Descriptions.
+ * Controller class which contains the methods used for creating/reading/updating/deleting SubDescriptions.
  * 
  * @author Alessandro Ciotola
- * @version 2018/01/15
+ * @version 2018/05/20
  * 
  */
-public class SubDescriptionFXMLController
-{
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
-    private IAccountingDAO accountDAO;
-    private String sdName = "";
-    
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
+public class SubDescriptionFXMLController{
+    private IAccountingSubDescriptionDAO sdDAO;
+    private int sdID = -1;
 
     @FXML // fx:id="sdNameField"
     private TextField sdNameField; // Value injected by FXMLLoader
@@ -53,19 +42,14 @@ public class SubDescriptionFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onDeleteSubDescription(ActionEvent event) throws SQLException
-    {
-        if(!sdNameField.getText().equals(""))
-        {     
-            int id = accountDAO.findSubDescriptionByName(sdNameField.getText()).getSubDescriptionID();
-            accountDAO.deleteSubDescription(id);
-            sdNameField.setText("");
-            
-            log.debug("Sub Description deleted!");            
+    void onDeleteSubDescription(ActionEvent event) throws SQLException {
+        if(!sdNameField.getText().equals("")){    
+            sdDAO.deleteSubDescription(sdID);
+            sdNameField.setText("");                 
             displayTable();
         }
         else        
-            sdNameField.setText("Please select a Sub Description!");
+            displayAlert("Please select a Sub Description!");
     }
 
     /**
@@ -76,33 +60,28 @@ public class SubDescriptionFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onSaveSubDescription(ActionEvent event) throws SQLException 
-    {
-        if(!sdNameField.getText().equals(""))
-        {            
-            SubDescription subDescription = accountDAO.findSubDescriptionByName(sdName);
+    void onSaveSubDescription(ActionEvent event) throws SQLException {
+        if(!sdNameField.getText().equals("")){            
+            SubDescription subDescription = sdDAO.findSubDescriptionById(sdID);
             subDescription.setSubDescriptionName(sdNameField.getText());
             
             if(subDescription.getSubDescriptionID() != -1)
-                accountDAO.updateSubDescription(subDescription);
+                sdDAO.updateSubDescription(subDescription);
             else
-                accountDAO.addSubDescription(subDescription);
-            
-            log.debug("Sub Description created/updated!");            
-            sdNameField.setText("");     
-            sdName = "";
+                sdDAO.addSubDescription(subDescription);
+                 
+            sdNameField.setText("");    
             displayTable();
         }
         else        
-            sdNameField.setText("Please enter a description!");
+            displayAlert("Please select a Sub Description!");
     }
 
     /**
      * No parameter constructor which calls the super's constructor.
      * 
      */
-    public SubDescriptionFXMLController()
-    {
+    public SubDescriptionFXMLController(){
         super();
     }
     
@@ -114,14 +93,13 @@ public class SubDescriptionFXMLController
      * @throws IOException 
      */
     @FXML
-    void initialize() throws IOException, SQLException
-    {
+    void initialize() throws IOException, SQLException{
         assert sdNameField != null : "fx:id=\"sdNameField\" was not injected: check your FXML file 'SubDescriptionFXML.fxml'.";
         assert sdTable != null : "fx:id=\"sdTable\" was not injected: check your FXML file 'SubDescriptionFXML.fxml'.";
         assert sdNumColumn != null : "fx:id=\"sdNumColumn\" was not injected: check your FXML file 'SubDescriptionFXML.fxml'.";
         assert sdNameColumn != null : "fx:id=\"sdNameColumn\" was not injected: check your FXML file 'SubDescriptionFXML.fxml'.";
 
-        accountDAO = new AccountingDAOImp();
+        sdDAO = new AccountingSubDescriptionDAOImp();
         displayTable();
         
         sdNumColumn.setCellValueFactory(cellData -> cellData.getValue().getSubDescriptionIDProperty().asObject());
@@ -134,9 +112,9 @@ public class SubDescriptionFXMLController
      * 
      * @throws SQLException 
      */
-    public void displayTable() throws SQLException
-    {
-        sdTable.setItems(accountDAO.findAllSubDescriptions());
+    public void displayTable() throws SQLException{
+        sdID = -1;
+        sdTable.setItems(sdDAO.findAllSubDescriptions());
     }
     
     /**
@@ -144,12 +122,24 @@ public class SubDescriptionFXMLController
      * 
      * @param sd 
      */
-    private void showSubDescriptionDetails(SubDescription sd) 
-    {
-        if(sd != null)        
-        {
+    private void showSubDescriptionDetails(SubDescription sd) {
+        if(sd != null) {
             sdNameField.setText(sd.getSubDescriptionName());
-            sdName = sd.getSubDescriptionName();
+            sdID = sd.getSubDescriptionID();
         }
+    }
+    
+    /**
+     * Method responsible for displaying an alert when an error occurs.
+     * 
+     * @param msg 
+     */
+    private void displayAlert(String msg){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        alert.showAndWait();
     }
 }

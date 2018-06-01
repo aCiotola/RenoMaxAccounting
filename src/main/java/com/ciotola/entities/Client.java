@@ -7,11 +7,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
- * @author shado
+ * Client class which contains the methods used for getting and setting Client data.
+ * 
+ * @author Alessandro Ciotola
+ * @version 2018/05/19
+ * 
  */
-public class Client
-{
+public class Client{
     private IntegerProperty clientID; 
     private StringProperty clientName; 
     private StringProperty street; 
@@ -22,14 +24,12 @@ public class Client
     private StringProperty cellPhone; 
     private StringProperty email;
     
-    public Client()
-    {
+    public Client(){
         this(-1, "", "", "", "", "", "", "", "");
     }
     
     public Client(final int clientID, final String clientName, final String street, final String city, 
-            final String province, final String postalCode, final String homePhone, final String cellPhone, final String email)
-    {
+            final String province, final String postalCode, final String homePhone, final String cellPhone, final String email){
         super();
         this.clientID = new SimpleIntegerProperty(clientID);
         this.clientName = new SimpleStringProperty(clientName);
@@ -42,144 +42,116 @@ public class Client
         this.email = new SimpleStringProperty(email);
     }
     
-    public int getClientID()
-    {
+    public int getClientID(){
         return clientID.get();
     }
     
-    public IntegerProperty getClientIDProperty()
-    {
+    public IntegerProperty getClientIDProperty(){
         return clientID;
     }
     
-    public void setClientID(final int clientID)
-    {
+    public void setClientID(final int clientID){
          this.clientID.set(clientID);
     }
 
-    public String getClientName()
-    {
+    public String getClientName(){
         return clientName.get();
     }
     
-    public StringProperty getClientNameProperty()
-    {
+    public StringProperty getClientNameProperty(){
         return clientName;
     }
     
-    public void setClientName(final String clientName)
-    {
+    public void setClientName(final String clientName){
          this.clientName.set(clientName);
     }
     
-    public String getStreet()
-    {
+    public String getStreet(){
         return street.get();
     }
     
-    public StringProperty getStreetProperty()
-    {
+    public StringProperty getStreetProperty(){
         return street;
     }
     
-    public void setStreet(final String street)
-    {
+    public void setStreet(final String street){
          this.street.set(street);
     }
     
-    public String getCity()
-    {
+    public String getCity(){
         return city.get();
     }
     
-    public StringProperty getCityProperty()
-    {
+    public StringProperty getCityProperty(){
         return city;
     }
     
-    public void setCity(final String city)
-    {
+    public void setCity(final String city){
          this.city.set(city);
     }
     
-    public String getProvince()
-    {
+    public String getProvince(){
         return province.get();
     }
     
-    public StringProperty getProvinceProperty()
-    {
+    public StringProperty getProvinceProperty(){
         return province;
     }
     
-    public void setProvince(final String province)
-    {
+    public void setProvince(final String province){
          this.province.set(province);
     }
     
-    public String getPostalCode()
-    {
+    public String getPostalCode(){
         return postalCode.get();
     }
     
-    public StringProperty getPostalCodeProperty()
-    {
+    public StringProperty getPostalCodeProperty(){
         return postalCode;
     }
     
-    public void setPostalCode(final String postalCode)
-    {
+    public void setPostalCode(final String postalCode){
          this.postalCode.set(postalCode);
     }
     
-    public String getHomePhone()
-    {
+    public String getHomePhone(){
         return homePhone.get();
     }
     
-    public StringProperty getHomePhoneProperty()
-    {
+    public StringProperty getHomePhoneProperty(){
         return homePhone;
     }
     
-    public void setHomePhone(final String homePhone)
-    {
+    public void setHomePhone(final String homePhone){
          this.homePhone.set(homePhone);
     }
     
-    public String getCellPhone()
-    {
+    public String getCellPhone(){
         return cellPhone.get();
     }
     
-    public StringProperty getCellPhoneProperty()
-    {
+    public StringProperty getCellPhoneProperty(){
         return cellPhone;
     }
     
-    public void setCellPhone(final String cellPhone)
-    {
+    public void setCellPhone(final String cellPhone){
          this.cellPhone.set(cellPhone);
     }
     
-    public String getEmail()
-    {
+    public String getEmail(){
         return email.get();
     }
     
-    public StringProperty getEmailProperty()
-    {
+    public StringProperty getEmailProperty(){
         return email;
     }
     
-    public void setEmail(final String email)
-    {
+    public void setEmail(final String email){
          this.email.set(email);
     }
     
     @Override
-    public int hashCode() 
-    {
+    public int hashCode(){
         int hash = 7;
         hash = 37 * hash + clientID.get();
         hash = 37 * hash + Objects.hashCode(this.clientName);
@@ -194,8 +166,7 @@ public class Client
     }
 
     @Override
-    public boolean equals(Object obj)
-    {        
+    public boolean equals(Object obj){   
         if (this == obj) {
             return true;
         }
@@ -237,8 +208,7 @@ public class Client
     }
     
     @Override
-    public String toString()
-    {
+    public String toString() {
         return clientID.get() + " " + clientName.get() + " " + street.get() + " " + city.get() + " " + province.get() +
                 " " + postalCode.get() + " " + homePhone.get() + " " + cellPhone.get() + " " + email.get(); 
     }

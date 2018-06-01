@@ -1,7 +1,5 @@
 package com.ciotola.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,24 +13,16 @@ import org.slf4j.LoggerFactory;
  * @version 2018/01/15
  * 
  */
-public class MainFXMLController 
-{
+public class MainFXMLController {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
-
     /**
      * Event handler which displays the About form.
      * 
      * @param event 
      */
     @FXML
-    void onMenuAbout(ActionEvent event) 
-    {
+    void onMenuAbout(ActionEvent event) {
 
     }
 
@@ -42,8 +32,7 @@ public class MainFXMLController
      * @param event 
      */
     @FXML
-    void onMenuClose(ActionEvent event) 
-    {
+    void onMenuClose(ActionEvent event) {
         log.debug("Program Terminated!");
         Platform.exit();
     }
@@ -54,8 +43,7 @@ public class MainFXMLController
      * @param event 
      */
     @FXML
-    void onMenuSave(ActionEvent event) 
-    {
+    void onMenuSave(ActionEvent event) {
 
     }
 
@@ -65,8 +53,7 @@ public class MainFXMLController
      * @param event 
      */
     @FXML
-    void onMenuSaveAs(ActionEvent event) 
-    {
+    void onMenuSaveAs(ActionEvent event) {
 
     }
 
@@ -75,8 +62,7 @@ public class MainFXMLController
      * 
      */
     @FXML 
-    void initialize() 
-    {
+    void initialize() {
 
     }
 }

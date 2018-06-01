@@ -1,38 +1,26 @@
 package com.ciotola.controller;
 
 import com.ciotola.entities.MainDescription;
-import com.ciotola.persistence.AccountingDAOImp;
-import com.ciotola.persistence.IAccountingDAO;
+import com.ciotola.persistence.Implementations.AccountingMainDescriptionDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingMainDescriptionDAO;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
- * Controller class which contains the methods used for creating/updating/deleting Main Descriptions.
+ * Controller class which contains the methods used for creating/reading Main Descriptions.
  * 
  * @author Alessandro Ciotola
- * @version 2018/01/15
+ * @version 2018/05/20
  * 
  */
-public class MainDescriptionFXMLController
-{
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
-    private IAccountingDAO accountDAO;
-    private String mdName = "";
-    
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
+public class MainDescriptionFXMLController {
+    private IAccountingMainDescriptionDAO mDAO;
 
     @FXML // fx:id="mdField"
     private TextField mdField; // Value injected by FXMLLoader
@@ -47,28 +35,6 @@ public class MainDescriptionFXMLController
     private TableColumn<MainDescription, String> mdNameColumn; // Value injected by FXMLLoader
 
     /**
-     * Method which will delete the Main Description chosen.
-     * 
-     * @param event
-     * @throws SQLException 
-     */
-    @FXML
-    void onDeleteMainDescription(ActionEvent event) throws SQLException 
-    {
-        if(!mdField.getText().equals(""))
-        {     
-            int id = accountDAO.findMainDescriptionByName(mdField.getText()).getMainDescriptionID();
-            accountDAO.deleteMainDescription(id);
-            mdField.setText("");
-            
-            log.debug("Main Description deleted!");            
-            displayTable();
-        }
-        else        
-            mdField.setText("Please select a Main Description!");
-    }
-
-    /**
      * Method which will check if the Main Description already exists. If it does, call the
      * update methods, else, call the add method.
      * 
@@ -76,33 +42,27 @@ public class MainDescriptionFXMLController
      * @throws SQLException 
      */
     @FXML
-    void onSaveMainDescription(ActionEvent event) throws SQLException 
-    {
-        if(!mdField.getText().equals(""))
-        {            
-            MainDescription mainDescription = accountDAO.findMainDescriptionByName(mdName);     
-            mainDescription.setMainDescriptionName(mdField.getText());
+    void onSaveMainDescription(ActionEvent event) throws SQLException {
+        if(!mdField.getText().equals("")) {                        
+            MainDescription mainDescription = mDAO.findMainDescriptionByName(mdField.getText());   
             
-            if(mainDescription.getMainDescriptionID() != -1)
-                accountDAO.updateMainDescription(mainDescription);
-            else
-                accountDAO.addMainDescription(mainDescription);
-            
-            log.debug("Main Description created/updated!");            
-            mdField.setText("");
-            mdName = "";
-            displayTable();
+            if(mainDescription.getMainDescriptionID() == -1) {
+                mainDescription.setMainDescriptionName(mdField.getText());
+
+                mDAO.addMainDescription(mainDescription);                
+                mdField.setText("");
+                displayTable();
+            }
         }
         else        
-            mdField.setText("Please enter a description!");
+            displayAlert("Please enter a description!");
     }
 
     /**
-     * No parameter constructor which calls the super's constructor.
+     * No parameter constructor which calls the supers' constructor.
      * 
      */
-    public MainDescriptionFXMLController()
-    {
+    public MainDescriptionFXMLController(){
         super();
     }
     
@@ -114,14 +74,13 @@ public class MainDescriptionFXMLController
      * @throws IOException 
      */
     @FXML
-    void initialize() throws SQLException, IOException
-    {
+    void initialize() throws SQLException, IOException{
         assert mdField != null : "fx:id=\"mdField\" was not injected: check your FXML file 'MainDescriptionFXML.fxml'.";
         assert mdTable != null : "fx:id=\"mdTable\" was not injected: check your FXML file 'MainDescriptionFXML.fxml'.";
         assert mdNumColumn != null : "fx:id=\"mdNumField\" was not injected: check your FXML file 'MainDescriptionFXML.fxml'.";
         assert mdNameColumn != null : "fx:id=\"mdNameField\" was not injected: check your FXML file 'MainDescriptionFXML.fxml'.";
 
-        accountDAO = new AccountingDAOImp();
+        mDAO = new AccountingMainDescriptionDAOImp();
         displayTable();
         
         mdNumColumn.setCellValueFactory(cellData -> cellData.getValue().getMainDescriptionIDProperty().asObject());
@@ -134,9 +93,8 @@ public class MainDescriptionFXMLController
      * 
      * @throws SQLException 
      */
-    public void displayTable() throws SQLException
-    {
-        mdTable.setItems(accountDAO.findAllMainDescriptions());
+    public void displayTable() throws SQLException{
+        mdTable.setItems(mDAO.findAllMainDescriptions());
     }
     
     /**
@@ -144,12 +102,22 @@ public class MainDescriptionFXMLController
      * 
      * @param md 
      */
-    private void showMainDescriptionDetails(MainDescription md) 
-    {
-        if(md != null) 
-        {
-            mdField.setText(md.getMainDescriptionName());
-            mdName = md.getMainDescriptionName();
-        }
+    private void showMainDescriptionDetails(MainDescription md) {
+        if(md != null)
+            mdField.setText(md.getMainDescriptionName());        
+    }
+    
+    /**
+     * Method responsible for displaying an alert when an error occurs.
+     * 
+     * @param msg 
+     */
+    private void displayAlert(String msg){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        alert.showAndWait();
     }
 }

@@ -239,5 +239,6 @@
          </children>
       </GridPane>
       <Button layoutX="35.0" layoutY="769.0" mnemonicParsing="false" onAction="#onPrintPage" text="Print" />
+      <Button layoutX="85.0" layoutY="769.0" mnemonicParsing="false" onAction="#onSendEmail" text="Email" />
    </children>
 </AnchorPane>

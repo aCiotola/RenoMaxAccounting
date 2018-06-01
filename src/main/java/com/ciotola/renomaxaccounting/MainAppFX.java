@@ -1,7 +1,5 @@
 package com.ciotola.renomaxaccounting;
 
-import com.ciotola.persistence.AccountingDAOImp;
-import com.ciotola.persistence.IAccountingDAO;
 import java.io.IOException;
 import java.sql.SQLException;
 import javafx.application.Application;
@@ -17,24 +15,20 @@ import org.slf4j.LoggerFactory;
  * Main application which launches the Main Application along with the tabs.                                                
  *                                                                             
  * @author Alessandro Ciotola                                                   
- * @version 2018/01/15
+ * @version 2018/05/20
  */
 public class MainAppFX extends Application
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private Stage primaryStage;
     
-    private final IAccountingDAO accountDAO;
-    
     /**
      * Constructor which initializes the DAO object.    
      * 
      * @throws IOException 
      */
-    public MainAppFX() throws IOException
-    {
+    public MainAppFX() throws IOException{
         super();
-        accountDAO = new AccountingDAOImp();
     }
     
     /**

@@ -10,23 +10,23 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
+ * InvoiceDescription class which contains the methods used for getting and setting InvoiceDescription data.
+ * 
  * @author Alessandro Ciotola
+ * @version 2018/05/19
+ * 
  */
-public class InvoiceDescription 
-{
+public class InvoiceDescription{
     private IntegerProperty invoiceDescriptionID;
     private IntegerProperty invoiceNumber;
     private StringProperty invoiceDescription;
     private ObjectProperty<BigDecimal> price;
     
-    public InvoiceDescription()
-    {
+    public InvoiceDescription(){
         this(-1, -1, "", BigDecimal.ZERO);
     }
     
-    public InvoiceDescription(final int invoiceDescriptionID, final int invoiceNumber, final String invoiceDescription, final BigDecimal price)
-    {
+    public InvoiceDescription(final int invoiceDescriptionID, final int invoiceNumber, final String invoiceDescription, final BigDecimal price){
         super();
         this.invoiceDescriptionID = new SimpleIntegerProperty(invoiceDescriptionID);
         this.invoiceNumber = new SimpleIntegerProperty(invoiceNumber);
@@ -34,69 +34,56 @@ public class InvoiceDescription
         this.price = new SimpleObjectProperty<>(price);
     }
     
-    public int getInvoiceDescriptionID()
-    {
+    public int getInvoiceDescriptionID(){
         return invoiceDescriptionID.get();
     }
     
-    public IntegerProperty getInvoiceDescriptionIDProperty()
-    {
+    public IntegerProperty getInvoiceDescriptionIDProperty(){
         return invoiceDescriptionID;
     }
     
-    public void setInvoiceDescriptionID(final int invoiceDescriptionID)
-    {
+    public void setInvoiceDescriptionID(final int invoiceDescriptionID){
          this.invoiceDescriptionID.set(invoiceDescriptionID);
     }
     
-    public int getInvoiceNumber()
-    {
+    public int getInvoiceNumber(){
         return invoiceNumber.get();
     }
     
-    public IntegerProperty getInvoiceNumberProperty()
-    {
+    public IntegerProperty getInvoiceNumberProperty(){
         return invoiceNumber;
     }
     
-    public void setInvoiceNumber(final int invoiceNumber)
-    {
+    public void setInvoiceNumber(final int invoiceNumber){
          this.invoiceNumber.set(invoiceNumber);
     }
     
-    public String getInvoiceDescription()
-    {
+    public String getInvoiceDescription(){
         return invoiceDescription.get();
     }
     
-    public StringProperty getInvoiceDescriptionProperty()
-    {
+    public StringProperty getInvoiceDescriptionProperty(){
         return invoiceDescription;
     }
     
-    public void setInvoiceDescription(final String invoiceDescription)
-    {
+    public void setInvoiceDescription(final String invoiceDescription){
          this.invoiceDescription.set(invoiceDescription);
     }
     
-    public BigDecimal getPrice()
-    {
+    public BigDecimal getPrice(){
         return price.get();
     }
     
-    public ObjectProperty<BigDecimal> getPriceProperty()
-    {
+    public ObjectProperty<BigDecimal> getPriceProperty(){
         return price;
     }
     
-    public void setPrice(final BigDecimal price)
-    {
+    public void setPrice(final BigDecimal price){
          this.price.set(price);
     }
     
     @Override
-    public int hashCode() 
-    {
+    public int hashCode(){
         int hash = 7;
         hash = 37 * hash + invoiceDescriptionID.get();
         hash = 37 * hash + invoiceNumber.get();
@@ -106,8 +93,7 @@ public class InvoiceDescription
     }
 
     @Override
-    public boolean equals(Object obj)
-    {        
+    public boolean equals(Object obj){        
         if (this == obj) {
             return true;
         }
@@ -134,8 +120,7 @@ public class InvoiceDescription
     }
     
     @Override
-    public String toString()
-    {
+    public String toString(){
         return invoiceDescriptionID.get() + " " + invoiceNumber.get() + " " + invoiceDescription.get() + " " + price.get(); 
     }
 }

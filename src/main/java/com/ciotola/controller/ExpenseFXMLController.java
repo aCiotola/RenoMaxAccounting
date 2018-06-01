@@ -4,56 +4,54 @@ import com.ciotola.entities.Expense;
 import com.ciotola.entities.MainDescription;
 import com.ciotola.entities.SubDescription;
 import com.ciotola.entities.Supplier;
-import com.ciotola.persistence.AccountingDAOImp;
-import com.ciotola.persistence.IAccountingDAO;
+import com.ciotola.persistence.Implementations.AccountingExpenseDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingExpenseDAO;
+import com.ciotola.persistence.Implementations.AccountingSupplierDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingSupplierDAO;
+import com.ciotola.persistence.Implementations.AccountingMainDescriptionDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingMainDescriptionDAO;
+import com.ciotola.persistence.Implementations.AccountingSubDescriptionDAOImp;
+import com.ciotola.persistence.Interfaces.IAccountingSubDescriptionDAO;
+import com.ciotola.utils.CustomDate;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
- * Controller class which contains the methods used for creating/updating/deleting Expenses.
- * 
+ * Controller class which contains the methods used for creating/reading/updating/deleting Expenses.
+ *
  * @author Alessandro Ciotola
- * @version 2018/01/15
- * 
+ * @version 2018/05/20
+ *
  */
-public class ExpenseFXMLController
-{
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
-    private IAccountingDAO accountDAO;
-    private ObservableList<String> elements;
-    
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
+public class ExpenseFXMLController {
+    private IAccountingExpenseDAO eDAO;
+    private IAccountingSupplierDAO sDAO;
+    private IAccountingMainDescriptionDAO mdDAO;
+    private IAccountingSubDescriptionDAO sdDAO;
+    private int eID = -1;
 
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
+    @FXML // fx:id="expenseTable"
+    private TableView<Expense> expenseTable; // Value injected by FXMLLoader    
 
-    @FXML
-    private TableView<Expense> expenseTable;
-    
     @FXML // fx:id="expenseNumColumn"
     private TableColumn<Expense, Integer> expenseNumColumn; // Value injected by FXMLLoader
-
+    
     @FXML // fx:id="expenseDateColumn"
-    private TableColumn<Expense, Date> expenseDateColumn; // Value injected by FXMLLoader
+    private TableColumn<Expense, CustomDate> expenseDateColumn; // Value injected by FXMLLoader
 
     @FXML // fx:id="expenseSupplierColumn"
     private TableColumn<Expense, String> expenseSupplierColumn; // Value injected by FXMLLoader
@@ -75,9 +73,6 @@ public class ExpenseFXMLController
 
     @FXML // fx:id="expenseTotalColumn"
     private TableColumn<Expense, BigDecimal> expenseTotalColumn; // Value injected by FXMLLoader
-    
-    @FXML // fx:id="expenseNumberField"
-    private TextField expenseNumberField; // Value injected by FXMLLoader
 
     @FXML // fx:id="expenseSupplierCombo"
     private ComboBox<String> expenseSupplierCombo; // Value injected by FXMLLoader
@@ -114,158 +109,149 @@ public class ExpenseFXMLController
 
     @FXML // fx:id="totalSubTotal"
     private Label totalSubTotal; // Value injected by FXMLLoader
-    
+
     /**
      * Method which will clear all of the fields.
-     * 
-     * @param event 
+     *
+     * @param event
      */
     @FXML
-    void onClearExpense(ActionEvent event) 
-    {
-        expenseNumberField.setText("");
+    void onClearExpense(ActionEvent event) {
         expenseSupplierCombo.setValue("");
         expenseMDCombo.setValue("");
         expenseSDCombo.setValue("");
         expenseSTField.setText("");
         expenseGSTField.setText("");
         expenseQSTField.setText("");
-        expenseTotalField.setText("");            
+        expenseTotalField.setText("");
     }
 
     /**
      * Method which will delete the expense chosen.
-     * 
+     *
      * @param event
-     * @throws SQLException 
+     * @throws SQLException
      */
     @FXML
-    void onDeleteExpense(ActionEvent event) throws SQLException 
-    {
-        if(!expenseNumberField.getText().equals(""))
-        {                                  
-            int id = accountDAO.findExpenseByNumber(Integer.parseInt(expenseNumberField.getText())).getExpenseID();
-            accountDAO.deleteExpense(id);
-            onClearExpense(new ActionEvent());  
-            
-            log.debug("Expense deleted!");            
+    void onDeleteExpense(ActionEvent event) throws SQLException {
+        if (eID != -1) {
+            eDAO.deleteExpense(eID);
+            onClearExpense(new ActionEvent());
             displayTable();
+        } else {
+            displayAlert("Please select a date, supplier, description, subtotal and total!");
         }
-        else        
-            expenseNumberField.setText("Please select a date, supplier, description, subtotal and total!");
     }
 
     /**
-     * Method which will check if the expense already exists. If it does, call the
-     * update methods, else, call the add method.
-     * 
+     * Method which will check if the expense already exists. If it does, call
+     * the update methods, else, call the add method.
+     *
      * @param event
-     * @throws SQLException 
+     * @throws SQLException
      */
     @FXML
-    void onSaveExpense(ActionEvent event) throws SQLException 
-    {
-        if(expenseDateField.getValue() != null && expenseMDCombo != null && expenseSTField != null 
-                && expenseSupplierCombo != null && expenseTotalField != null && expenseDateField != null &&
-                !expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("") && 
-                !expenseSupplierCombo.getValue().equals("") && !expenseTotalField.getText().equals(""))
-        {             
-            Expense expense = new Expense();            
-            if(!expenseNumberField.getText().equals(""))
-                expense = accountDAO.findExpenseByNumber(Integer.parseInt(expenseNumberField.getText()));                         
-            
-            expense.setDateTime(Date.valueOf(expenseDateField.getValue()));
+    void onSaveExpense(ActionEvent event) throws SQLException {
+        if (expenseDateField.getValue() != null && expenseMDCombo != null && expenseSTField != null
+                && expenseSupplierCombo != null && expenseTotalField != null && expenseDateField != null
+                && !expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("")
+                && !expenseSupplierCombo.getValue().equals("") && !expenseTotalField.getText().equals("")) {
+            Expense expense = new Expense();
+            if (eID != -1)
+                expense = eDAO.findExpenseById(eID);            
+
+            expense.setDateTime(new CustomDate(Date.valueOf(expenseDateField.getValue()).getTime()));
             expense.setSupplier(expenseSupplierCombo.getValue());
             expense.setMainDescription(expenseMDCombo.getValue());
-            
-            if(expenseSDCombo == null)
+
+            if (expenseSDCombo == null)
                 expenseSDCombo.setValue("");
-            expense.setSubDescription(expenseSDCombo.getValue());
             
-            expense.setSubtotal(new BigDecimal(expenseSTField.getText()));            
-            if(!expenseGSTField.getText().equals("") && !expenseQSTField.getText().equals(""))
-            {
+            expense.setSubDescription(expenseSDCombo.getValue());
+
+            expense.setSubtotal(new BigDecimal(expenseSTField.getText()));
+            if (!expenseGSTField.getText().equals("") && !expenseQSTField.getText().equals("")) {
                 expense.setGst(new BigDecimal(expenseGSTField.getText()));
                 expense.setQst(new BigDecimal(expenseQSTField.getText()));
-            }            
+            }
             expense.setTotal(new BigDecimal(expenseTotalField.getText()));
-            
-            if(expense.getExpenseID() != -1)            
-                accountDAO.updateExpense(expense);            
-            else
-                accountDAO.addExpense(expense);
-            
-            log.debug("Expense created!");            
-            onClearExpense(new ActionEvent());            
+
+            //Check if supplier exists, if not add to supplier list            
+            if (supplierExists(expense.getSupplier()) == false) {
+                Supplier supplier = new Supplier();
+                supplier.setSupplierName(expense.getSupplier());
+                sDAO.addSupplier(supplier);
+                fillSupplierComboBox();
+            }
+
+            if (expense.getExpenseID() != -1) {
+                eDAO.updateExpense(expense);
+            } else {
+                eDAO.addExpense(expense);
+            }
+
+            onClearExpense(new ActionEvent());
             displayTable();
+        } else {
+            displayAlert("Please enter the Date, Supplier name, main description, subtotal and total!!");
         }
-        else        
-            expenseNumberField.setText("Please enter the Date, Supplier name, main description, subtotal and total!!");            
     }
-    
+
     /**
-     * When checked, no taxes are added to the total. The total is equal to the subtotal.
-     * 
-     * @param event 
+     * When checked, no taxes are added to the total. The total is equal to the
+     * subtotal.
+     *
+     * @param event
      */
     @FXML
-    void onNoTaxes(ActionEvent event) 
-    {
-        if(expenseGSTField.isDisabled())
-        {
+    void onToggleTaxes(ActionEvent event) {
+        if (expenseGSTField.isDisabled()) {
             expenseGSTField.setDisable(false);
-            expenseQSTField.setDisable(false);    
-            if(!expenseTotalField.equals(""))
-            {
-                BigDecimal sub = new BigDecimal(expenseSTField.getText());   
-                
+            expenseQSTField.setDisable(false);
+
+            if (!expenseTotalField.equals("")) {
+                BigDecimal sub = new BigDecimal(expenseSTField.getText());
+
                 BigDecimal gst = new BigDecimal(sub.doubleValue() * 0.05);
                 gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
+
                 BigDecimal qst = new BigDecimal(sub.doubleValue() * 0.09975);
-                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);       
-                
+                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+
                 BigDecimal total = new BigDecimal(sub.doubleValue() + gst.doubleValue() + qst.doubleValue());
                 total = total.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
+
                 expenseGSTField.setText(gst.toString());
                 expenseQSTField.setText(qst.toString());
                 expenseTotalField.setText(total.toString());
             }
-        }
-        else
-        {
+        } else {
             expenseGSTField.setDisable(true);
             expenseQSTField.setDisable(true);
-            if(!expenseGSTField.getText().equals(""))
-            {
-                expenseGSTField.setText("");
-                expenseQSTField.setText("");
-                expenseTotalField.setText(expenseSTField.getText());
-            }
+
+            expenseGSTField.setText("");
+            expenseQSTField.setText("");
+            expenseTotalField.setText(expenseSTField.getText());
         }
     }
-    
+
     /**
      * No parameter constructor which calls the super's constructor.
-     * 
+     *
      */
-    public ExpenseFXMLController()
-    {
+    public ExpenseFXMLController() {
         super();
     }
-    
+
     /**
      * This method is called by the FXMLLoader when initialization is complete.
      * Will initialize the DAO object and display the table.
-     * 
+     *
      * @throws IOException
-     * @throws SQLException 
+     * @throws SQLException
      */
-    @FXML 
-    void initialize() throws IOException, SQLException 
-    {
-        assert expenseNumColumn != null : "fx:id=\"expenseNumColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
+    @FXML
+    void initialize() throws IOException, SQLException {
         assert expenseDateColumn != null : "fx:id=\"expenseDateColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseSupplierColumn != null : "fx:id=\"expenseSupplierColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseMDColumn != null : "fx:id=\"expenseMDColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
@@ -274,7 +260,6 @@ public class ExpenseFXMLController
         assert expenseGSTColumn != null : "fx:id=\"expenseGSTColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseQSTColumn != null : "fx:id=\"expenseQSTColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseTotalColumn != null : "fx:id=\"expenseTotalColumn\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
-        assert expenseNumberField != null : "fx:id=\"expenseNumberField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseDateField != null : "fx:id=\"expenseDateField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseSupplierCombo != null : "fx:id=\"expenseSupplierCombo\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseMDCombo != null : "fx:id=\"expenseMDField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
@@ -282,20 +267,23 @@ public class ExpenseFXMLController
         assert expenseSTField != null : "fx:id=\"expenseSTField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseGSTField != null : "fx:id=\"expenseGSTField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert expenseQSTField != null : "fx:id=\"expenseQSTField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
-        assert expenseTotalField != null : "fx:id=\"expenseTotalField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";        
+        assert expenseTotalField != null : "fx:id=\"expenseTotalField\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert totalTotal != null : "fx:id=\"totalTotal\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert totalQst != null : "fx:id=\"totalQst\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert totalGst != null : "fx:id=\"totalGst\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
         assert totalSubTotal != null : "fx:id=\"totalSubTotal\" was not injected: check your FXML file 'ExpenseFXML.fxml'.";
 
-            
-        accountDAO = new AccountingDAOImp();
+        eDAO = new AccountingExpenseDAOImp();
+        sDAO = new AccountingSupplierDAOImp();
+        mdDAO = new AccountingMainDescriptionDAOImp();
+        sdDAO = new AccountingSubDescriptionDAOImp();
+
         fillSupplierComboBox();
         fillMainDescriptionComboBox();
-        fillSubDescriptionComboBox(); 
+        fillSubDescriptionComboBox();
         displayTable();
-            
-        expenseNumColumn.setCellValueFactory(cellData -> cellData.getValue().getExpenseNumberProperty().asObject());
+
+        expenseNumColumn.setCellValueFactory(cellData -> cellData.getValue().getExpenseIDProperty().asObject());
         expenseDateColumn.setCellValueFactory(cellData -> cellData.getValue().getDateTimeProperty());
         expenseSupplierColumn.setCellValueFactory(cellData -> cellData.getValue().getSupplierProperty());
         expenseMDColumn.setCellValueFactory(cellData -> cellData.getValue().getMainDescriptionProperty());
@@ -304,149 +292,175 @@ public class ExpenseFXMLController
         expenseGSTColumn.setCellValueFactory(cellData -> cellData.getValue().getGstProperty());
         expenseQSTColumn.setCellValueFactory(cellData -> cellData.getValue().getQstProperty());
         expenseTotalColumn.setCellValueFactory(cellData -> cellData.getValue().getTotalProperty());
-                    
-        expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));    
-        expenseTotalField.textProperty().addListener((observable, oldValue, newValue) -> fillSubTotal(newValue));   
+
+        expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));
+        expenseTotalField.textProperty().addListener((observable, oldValue, newValue) -> fillSubTotal(newValue));
     }
-    
+
     /**
-     * Method responsible for setting the totals for the prices when an expense 
+     * Method responsible for setting the totals for the prices when an expense
      * is added or modified.
-     * 
-     * @throws SQLException 
+     *
+     * @throws SQLException
      */
-    private void setTotals() throws SQLException
-    {
-        List<Expense> expenseList = accountDAO.findAllExpenses();
+    private void setTotals() throws SQLException {
+        List<Expense> expenseList = eDAO.findAllExpenses();
         double tSubtotal = 0.0;
         double tGst = 0.0;
         double tQst = 0.0;
         double tTotal = 0.0;
-        
-        for(int i = 0; i < expenseList.size(); i++)
-        {
+
+        for (int i = 0; i < expenseList.size(); i++) {
             tSubtotal += expenseList.get(i).getSubtotal().doubleValue();
             tGst += expenseList.get(i).getGst().doubleValue();
             tQst += expenseList.get(i).getQst().doubleValue();
             tTotal += expenseList.get(i).getTotal().doubleValue();
-        }        
-        
+        }
+
         tSubtotal = Math.round(tSubtotal * 100.0) / 100.0;
         tQst = Math.round(tQst * 100.0) / 100.0;
         tGst = Math.round(tGst * 100.0) / 100.0;
         tTotal = Math.round(tTotal * 100.0) / 100.0;
-        
-        totalTotal.setText("$"+tSubtotal);
-        totalQst.setText("$"+tQst);        
-        totalGst.setText("$"+tGst);        
-        totalSubTotal.setText("$"+tTotal);       
+
+        totalTotal.setText("$" + tTotal);
+        totalQst.setText("$" + tQst);
+        totalGst.setText("$" + tGst);
+        totalSubTotal.setText("$" + tSubtotal);
     }
-    
+
     /**
      * Will display all expenses in the table.
-     * 
-     * @throws SQLException 
+     *
+     * @throws SQLException
      */
-    public void displayTable() throws SQLException
-    {
+    public void displayTable() throws SQLException {
         setTotals();
-        expenseTable.setItems(accountDAO.findAllExpenses());
+        expenseTable.setItems(eDAO.findAllExpenses());
+        eID = -1;
     }
-    
+
     /**
      * Listener which will fill the fields with the selected expense.
-     * 
-     * @param expense 
+     *
+     * @param expense
      */
-    private void showExpenseDetails(Expense expense)
-    {
-        if(expense != null)
-        {
-            expenseNumberField.setText(expense.getExpenseNumber() + "");
-            
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMMM dd");
+    private void showExpenseDetails(Expense expense) {
+        if (expense != null) {            
             expenseDateField.setValue(expense.getDateTime().toLocalDate());
-            
+
             expenseSupplierCombo.setValue(expense.getSupplier());
             expenseMDCombo.setValue(expense.getMainDescription());
             expenseSDCombo.setValue(expense.getSubDescription());
-            expenseSTField.setText(expense.getSubtotal().doubleValue()+"");
-            expenseGSTField.setText(expense.getGst().doubleValue()+"");
-            expenseQSTField.setText(expense.getQst().doubleValue()+"");
-            expenseTotalField.setText(expense.getTotal().doubleValue()+"");
+            expenseSTField.setText(expense.getSubtotal().doubleValue() + "");
+            expenseGSTField.setText(expense.getGst().doubleValue() + "");
+            expenseQSTField.setText(expense.getQst().doubleValue() + "");
+            expenseTotalField.setText(expense.getTotal().doubleValue() + "");
+            
+            eID = expense.getExpenseID();
         }
-    }  
-    
+    }
+
     /**
-     * Method which will set the subtotal, gst and qst when the total is entered.
-     * 
-     * @param total 
+     * Method which will set the subtotal, gst and qst when the total is
+     * entered.
+     *
+     * @param total
      */
-    private void fillSubTotal(String total) 
-    {              
-        if(!expenseTotalField.getText().equals(""))
-        {
-            if(expenseGSTField.isDisabled())
+    private void fillSubTotal(String total) {
+        if (!expenseTotalField.getText().equals("")) {
+            if (expenseGSTField.isDisabled()) {
                 expenseSTField.setText(total);
-            else
-            {
-                BigDecimal tot = new BigDecimal(total);                
-               
-                BigDecimal subTotal = new BigDecimal(tot.doubleValue()/1.14975);
+            } else {
+                BigDecimal tot = new BigDecimal(total);
+
+                BigDecimal subTotal = new BigDecimal(tot.doubleValue() / 1.14975);
                 subTotal = subTotal.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
-                 BigDecimal gst = new BigDecimal(subTotal.doubleValue() * 0.05);
+
+                BigDecimal gst = new BigDecimal(subTotal.doubleValue() * 0.05);
                 gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-                
+
                 BigDecimal qst = new BigDecimal(subTotal.doubleValue() * 0.09975);
-                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);               
-                
-                expenseGSTField.setText(gst.doubleValue()+"");
-                expenseQSTField.setText(qst.doubleValue()+"");
-                expenseSTField.setText(subTotal.doubleValue()+"");
+                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+
+                expenseGSTField.setText(gst.doubleValue() + "");
+                expenseQSTField.setText(qst.doubleValue() + "");
+                expenseSTField.setText(subTotal.doubleValue() + "");
             }
         }
-    }   
-    
+    }
+
     /**
      * Method which will fill the Supplier Drop down list with all suppliers.
-     * 
-     * @throws SQLException 
+     *
+     * @throws SQLException
      */
-    private void fillSupplierComboBox() throws SQLException
-    {
-        ObservableList<Supplier> suppliers = accountDAO.findAllSuppliers();
-        elements = FXCollections.observableArrayList();
-        for(int i = 0; i < suppliers.size(); i++)
-            elements.add(suppliers.get(i).getSupplierName());
-        expenseSupplierCombo.setItems(elements);
+    private void fillSupplierComboBox() throws SQLException {
+        ObservableList<Supplier> suppliers = sDAO.findAllSuppliers();
+        ObservableList<String> sElements = FXCollections.observableArrayList();
+        for (int i = 0; i < suppliers.size(); i++) {
+            sElements.add(suppliers.get(i).getSupplierName());
+        }
+        expenseSupplierCombo.setItems(sElements);
+    }
+
+    /**
+     * Method which will fill the Main Description Drop down list with all
+     * suppliers.
+     *
+     * @throws SQLException
+     */
+    private void fillMainDescriptionComboBox() throws SQLException {
+        ObservableList<MainDescription> mainDescriptions = mdDAO.findAllMainDescriptions();
+        ObservableList<String> mdElements = FXCollections.observableArrayList();
+        for (int i = 0; i < mainDescriptions.size() - 1; i++) {
+            mdElements.add(mainDescriptions.get(i).getMainDescriptionName());
+        }
+        expenseMDCombo.getItems().addAll(mdElements);
+    }
+
+    /**
+     * Method which will fill the Sub Description Drop down list with all
+     * suppliers.
+     *
+     * @throws SQLException
+     */
+    private void fillSubDescriptionComboBox() throws SQLException {
+        ObservableList<SubDescription> subDescriptions = sdDAO.findAllSubDescriptions();
+        ObservableList<String> sdElements = FXCollections.observableArrayList();
+        for (int i = 0; i < subDescriptions.size() - 1; i++) {
+            sdElements.add(subDescriptions.get(i).getSubDescriptionName());
+        }
+        expenseSDCombo.getItems().addAll(sdElements);
     }
     
     /**
-     * Method which will fill the Main Description Drop down list with all suppliers.
+     * Method responsible for checking if the supplier exists in the database or not.
      * 
-     * @throws SQLException 
+     * @param supplier
+     * @param suppliers
+     * @return 
      */
-    private void fillMainDescriptionComboBox() throws SQLException
-    {
-        ObservableList<MainDescription> suppliers = accountDAO.findAllMainDescriptions();
-        ObservableList<String> elements = FXCollections.observableArrayList();
-        for(int i = 0; i < suppliers.size() - 1; i++)
-            elements.add(suppliers.get(i).getMainDescriptionName());
-        expenseMDCombo.getItems().addAll(elements);
+    private boolean supplierExists(String supplier) throws SQLException {
+        List<Supplier> suppliers = sDAO.findAllSuppliers();
+        for (int i = 0; i < suppliers.size(); i++) {
+            if (supplier.equalsIgnoreCase(suppliers.get(i).getSupplierName())) {
+                return true;
+            }
+        }
+        return false;
     }
     
     /**
-     * Method which will fill the Sub Description Drop down list with all suppliers.
+     * Method responsible for displaying an alert when an error occurs.
      * 
-     * @throws SQLException 
+     * @param msg 
      */
-    private void fillSubDescriptionComboBox() throws SQLException
-    {
-        ObservableList<SubDescription> suppliers = accountDAO.findAllSubDescriptions();
-        ObservableList<String> elements = FXCollections.observableArrayList();
-        for(int i = 0; i < suppliers.size() - 1; i++)
-            elements.add(suppliers.get(i).getSubDescriptionName());
-        expenseSDCombo.getItems().addAll(elements);
+    private void displayAlert(String msg){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        alert.showAndWait();
     }
 }
