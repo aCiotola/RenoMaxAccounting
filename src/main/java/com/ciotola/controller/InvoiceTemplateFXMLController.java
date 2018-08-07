@@ -8,9 +8,15 @@ import com.ciotola.persistence.Interfaces.IAccountingInvoiceDAO;
 import com.ciotola.persistence.Implementations.AccountingInvoiceDescriptionDAOImp;
 import com.ciotola.persistence.Interfaces.IAccountingInvoiceDescriptionDAO;
 import com.ciotola.renomaxaccounting.MainAppFX;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +27,16 @@ import javafx.print.Paper;
 import javafx.print.Printer;
 import javafx.print.PrinterJob;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javax.imageio.ImageIO;
+import jodd.mail.Email;
+import jodd.mail.EmailAttachment;
+import jodd.mail.MailServer;
+import jodd.mail.SendMailSession;
+import jodd.mail.SmtpServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,7 +52,9 @@ public class InvoiceTemplateFXMLController {
     private IAccountingInvoiceDAO iDAO;
     private IAccountingInvoiceDescriptionDAO idDAO;
     private int id = -1;
+    private String date;
     private Client client;
+    private Stage iStage;
 
     @FXML // fx:id="dateField"
     private Label dateField; // Value injected by FXMLLoader
@@ -86,34 +102,43 @@ public class InvoiceTemplateFXMLController {
         Parent parent = (AnchorPane) loader.load();
 
         InvoiceTemplateFXMLController controller = loader.getController();
-        controller.setInvoiceTemplateFXMLController(client, id);
-
-        // Print the node
-        log.info("Printing page!");
-        job.printPage(parent);
-
-        // End the printer job
-        job.endJob();
+        controller.setInvoiceTemplateFXMLController(client, id, iStage);
+        
+        job.showPrintDialog(iStage); 
+        job.endJob();   
     }
 
     @FXML
-    void onSendEmail(ActionEvent event) {
-
+    void onSaveInvoice(ActionEvent event) throws IOException, SQLException {
+        saveInvoiceAsImage();   
+    }
+    
+    @FXML
+    void onSendEmail(ActionEvent event) throws IOException, SQLException {        
+        saveInvoiceAsImage();
+    
+        Email email = Email.create()
+        .from("shadowman2100000@gmail.com")
+        .to("alessandromciotola@gmail.com")
+        .subject("Email test")
+        .textMessage("Hello!")
+        .attachment(EmailAttachment.with()
+            .content("Invoices/" + client.getClientName() + " - " + date + ".jpg"));
+        
+        SmtpServer smtpServer = MailServer.create()
+            .ssl(true)
+            .host("smtp.gmail.com")
+            .auth("shadowman2100000@gmail.com", "shadowx15")
+            .buildSmtpMailServer();
+        
+        try (SendMailSession session = smtpServer.createSession()) {
+            session.open();
+            session.sendMail(email);
+        }
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() throws IOException {
-        assert dateField != null : "fx:id=\"dateField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert invoiceNumberField != null : "fx:id=\"invoiceNumberField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert locationField != null : "fx:id=\"locationField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert descriptionField != null : "fx:id=\"descriptionField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert expenseField != null : "fx:id=\"expenseField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert paidField != null : "fx:id=\"paidField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert subtotalField != null : "fx:id=\"subtotalField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert gstField != null : "fx:id=\"gstField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert tvqField != null : "fx:id=\"tvqField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-        assert totalField != null : "fx:id=\"totalField\" was not injected: check your FXML file 'InvoiceTemplateFXML.fxml'.";
-
         iDAO = new AccountingInvoiceDAOImp();
         idDAO = new AccountingInvoiceDescriptionDAOImp();
     }
@@ -124,19 +149,22 @@ public class InvoiceTemplateFXMLController {
      *
      * @param client
      * @param id
+     * @param iStage
      * @throws java.io.IOException
      * @throws java.sql.SQLException
      */
-    public void setInvoiceTemplateFXMLController(Client client, int id) throws IOException, SQLException {
+    public void setInvoiceTemplateFXMLController(Client client, int id, Stage iStage) throws IOException, SQLException {
         if (id != -1) {
             this.id = id;
             this.client = client;
+            this.iStage = iStage;
         }
 
         Invoice invoice = iDAO.findInvoiceById(id);
         List<InvoiceDescription> invoiceDescriptions = idDAO.findInvoiceDescriptionByInvoiceNumber(id);
 
         dateField.setText(invoice.getInvoiceDate().toString());
+        date = invoice.getInvoiceDate().toString();
         invoiceNumberField.setText(invoice.getInvoiceID()+ "");
         locationField.setText(client.getClientName() + "\n" + client.getStreet() + "\n" + client.getCity() + ", " + client.getProvince() + "\n" + client.getPostalCode());
 
@@ -156,4 +184,34 @@ public class InvoiceTemplateFXMLController {
         totalField.setText(invoice.getTotal().toString());
         paidField.setText(invoice.getInvoicePaid());
     }
+    
+    /**
+     * Method responsible for saving the invoice as an image in order to be used for 
+     * sending emails or saving the image.
+     * 
+     * @throws IOException
+     * @throws SQLException 
+     */
+    private void saveInvoiceAsImage() throws IOException, SQLException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainAppFX.class.getResource("/fxml/InvoiceTemplateFXML.fxml"));
+        Parent parent = (AnchorPane) loader.load();
+
+        InvoiceTemplateFXMLController controller = loader.getController();
+        controller.setInvoiceTemplateFXMLController(client, id, iStage);
+        
+        Image fxmlImage = new Scene(parent).snapshot(null);
+        
+        BufferedImage image = SwingFXUtils.fromFXImage(fxmlImage, null);
+        BufferedImage imageRGB = new BufferedImage(image.getWidth(), image.getHeight() - 100, BufferedImage.OPAQUE);
+        Graphics2D graphics = imageRGB.createGraphics();
+        graphics.drawImage(image, 0, 0, null);
+        
+        File dir = new File("Invoices");
+        if (!dir.exists())
+            dir.mkdirs();
+        
+        ImageIO.write(imageRGB, "jpg", new File("Invoices/" + client.getClientName() + " - " + date + ".jpg"));
+        graphics.dispose();  
+    }            
 }

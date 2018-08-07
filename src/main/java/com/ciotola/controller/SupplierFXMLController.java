@@ -5,9 +5,11 @@ import com.ciotola.persistence.Implementations.AccountingSupplierDAOImp;
 import com.ciotola.persistence.Interfaces.IAccountingSupplierDAO;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -43,10 +45,8 @@ public class SupplierFXMLController{
      */
     @FXML
     void onDeleteSupplier(ActionEvent event) throws SQLException {
-        if(!supplierNameField.getText().equals("")) {     
-            sDAO.deleteSupplier(sID);
-            supplierNameField.setText("");                      
-            displayTable();
+        if(!supplierNameField.getText().equals("")) {  
+            displayConfirmation("Are you sure you to delete this supplier?");            
         }
         else        
             displayAlert("Please select a supplier!");
@@ -141,5 +141,25 @@ public class SupplierFXMLController{
         alert.setContentText(msg);
 
         alert.showAndWait();
+    }
+    
+    /**
+     * Method responsible for displaying a confirmation message when the user attempts 
+     * to delete a supplier.
+     * 
+     * @param msg 
+     */
+    private void displayConfirmation(String msg) throws SQLException{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Supplier");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            sDAO.deleteSupplier(sID);
+            supplierNameField.setText("");                      
+            displayTable();
+        }
     }
 }

@@ -6,6 +6,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -57,13 +59,9 @@ public class MainAppFX extends Application
      */
     private void configureStage() throws IOException, SQLException
     {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainAppFX.class.getResource("/fxml/MainFXML.fxml"));
-        
-        Parent parent = (BorderPane)loader.load();
-        Scene scene = new Scene(parent);
-        
-        primaryStage.setScene(scene);
+        BorderPane root = FXMLLoader.load(MainAppFX.class.getResource("/fxml/MainAppFXML.fxml"));
+        primaryStage.setScene(new Scene(root, 1024, 890));
+        primaryStage.show();
     }
     
     /**

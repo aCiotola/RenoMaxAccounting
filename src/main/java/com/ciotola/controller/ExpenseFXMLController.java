@@ -18,17 +18,20 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.textfield.TextFields;
 
 /**
  * Controller class which contains the methods used for creating/reading/updating/deleting Expenses.
@@ -42,6 +45,13 @@ public class ExpenseFXMLController {
     private IAccountingSupplierDAO sDAO;
     private IAccountingMainDescriptionDAO mdDAO;
     private IAccountingSubDescriptionDAO sdDAO;
+    @FXML private SupplierFXMLController supController;
+    @FXML private MainDescriptionFXMLController mdController;
+    @FXML private SubDescriptionFXMLController sdController;
+    @FXML private GSTReportFXMLController gstController;
+    @FXML private ReportsFXMLController reportController;
+    private boolean totalChosen = false;
+    private boolean subTotalChosen = false;
     private int eID = -1;
 
     @FXML // fx:id="expenseTable"
@@ -124,6 +134,7 @@ public class ExpenseFXMLController {
         expenseGSTField.setText("");
         expenseQSTField.setText("");
         expenseTotalField.setText("");
+        eID = -1;
     }
 
     /**
@@ -135,11 +146,9 @@ public class ExpenseFXMLController {
     @FXML
     void onDeleteExpense(ActionEvent event) throws SQLException {
         if (eID != -1) {
-            eDAO.deleteExpense(eID);
-            onClearExpense(new ActionEvent());
-            displayTable();
+            displayConfirmation("Are you sure you want to delete this expense?");            
         } else {
-            displayAlert("Please select a date, supplier, description, subtotal and total!");
+            displayAlert("Please select an expense!");
         }
     }
 
@@ -152,11 +161,11 @@ public class ExpenseFXMLController {
      */
     @FXML
     void onSaveExpense(ActionEvent event) throws SQLException {
-        if (expenseDateField.getValue() != null && expenseMDCombo != null && expenseSTField != null
-                && expenseSupplierCombo != null && expenseTotalField != null && expenseDateField != null
-                && !expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("")
-                && !expenseSupplierCombo.getValue().equals("") && !expenseTotalField.getText().equals("")) {
-            Expense expense = new Expense();
+        if (expenseDateField != null && expenseDateField.getValue() != null && expenseSupplierCombo != null && expenseMDCombo != null && expenseSTField != null
+                && expenseTotalField != null && expenseSupplierCombo.getValue() != null && !expenseSupplierCombo.getValue().equals("") 
+                && expenseMDCombo.getValue() != null && !expenseMDCombo.getValue().equals("") && !expenseSTField.getText().equals("")
+                && !expenseTotalField.getText().equals("") && expenseTotalField.getText().length() < 11 && expenseSTField.getText().length() < 11){
+            Expense expense = new Expense(); 
             if (eID != -1)
                 expense = eDAO.findExpenseById(eID);            
 
@@ -164,10 +173,8 @@ public class ExpenseFXMLController {
             expense.setSupplier(expenseSupplierCombo.getValue());
             expense.setMainDescription(expenseMDCombo.getValue());
 
-            if (expenseSDCombo == null)
-                expenseSDCombo.setValue("");
-            
-            expense.setSubDescription(expenseSDCombo.getValue());
+            if (expenseSDCombo != null && expenseSDCombo.getValue() != null && !expenseSDCombo.getValue().equals(""))
+                expense.setSubDescription(expenseSDCombo.getValue());
 
             expense.setSubtotal(new BigDecimal(expenseSTField.getText()));
             if (!expenseGSTField.getText().equals("") && !expenseQSTField.getText().equals("")) {
@@ -181,7 +188,29 @@ public class ExpenseFXMLController {
                 Supplier supplier = new Supplier();
                 supplier.setSupplierName(expense.getSupplier());
                 sDAO.addSupplier(supplier);
+                
                 fillSupplierComboBox();
+                supController.displayTable();
+            }
+            
+            //Check if main description exists, if not add to main description list            
+            if (mainDescriptionExists(expense.getMainDescription()) == false) {
+                MainDescription md = new MainDescription();
+                md.setMainDescriptionName(expense.getMainDescription());
+                mdDAO.addMainDescription(md);
+                
+                fillMainDescriptionComboBox();
+                mdController.displayTable();
+            }
+            
+            //Check if sub description exists, if not add to sub description list            
+            if (subDescriptionExists(expense.getSubDescription()) == false) {
+                SubDescription sd = new SubDescription();
+                sd.setSubDescriptionName(expense.getSubDescription());
+                sdDAO.addSubDescription(sd);
+                
+                fillSubDescriptionComboBox();
+                sdController.displayTable();
             }
 
             if (expense.getExpenseID() != -1) {
@@ -191,9 +220,11 @@ public class ExpenseFXMLController {
             }
 
             onClearExpense(new ActionEvent());
+            gstController.setupGST();
+            reportController.setExpenses();
             displayTable();
         } else {
-            displayAlert("Please enter the Date, Supplier name, main description, subtotal and total!!");
+            displayAlert(checkMissing());
         }
     }
 
@@ -209,7 +240,7 @@ public class ExpenseFXMLController {
             expenseGSTField.setDisable(false);
             expenseQSTField.setDisable(false);
 
-            if (!expenseTotalField.equals("")) {
+            if (!expenseTotalField.getText().equals("") && !expenseSTField.getText().equals("")) {
                 BigDecimal sub = new BigDecimal(expenseSTField.getText());
 
                 BigDecimal gst = new BigDecimal(sub.doubleValue() * 0.05);
@@ -295,6 +326,10 @@ public class ExpenseFXMLController {
 
         expenseTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showExpenseDetails(newValue));
         expenseTotalField.textProperty().addListener((observable, oldValue, newValue) -> fillSubTotal(newValue));
+        expenseSTField.textProperty().addListener((observable, oldValue, newValue) -> fillTotal(newValue));
+        TextFields.bindAutoCompletion(expenseSupplierCombo.getEditor(), expenseSupplierCombo.getItems());    
+        TextFields.bindAutoCompletion(expenseMDCombo.getEditor(), expenseMDCombo.getItems());    
+        TextFields.bindAutoCompletion(expenseSDCombo.getEditor(), expenseSDCombo.getItems());    
     }
 
     /**
@@ -367,26 +402,68 @@ public class ExpenseFXMLController {
      * @param total
      */
     private void fillSubTotal(String total) {
-        if (!expenseTotalField.getText().equals("")) {
-            if (expenseGSTField.isDisabled()) {
-                expenseSTField.setText(total);
-            } else {
-                BigDecimal tot = new BigDecimal(total);
+        totalChosen = true;
+        if(subTotalChosen)
+            totalChosen = false;
+        
+        if(total.matches("[0-9.]*")){
+            if (!expenseTotalField.getText().equals("") && totalChosen && subTotalChosen == false) {
+                if (expenseGSTField.isDisabled()) {
+                    expenseSTField.setText(total);
+                } else {
+                    BigDecimal tot = new BigDecimal(total);
 
-                BigDecimal subTotal = new BigDecimal(tot.doubleValue() / 1.14975);
-                subTotal = subTotal.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                    BigDecimal subTotal = new BigDecimal(tot.doubleValue() / 1.14975);
+                    subTotal = subTotal.setScale(2, BigDecimal.ROUND_HALF_EVEN);
 
-                BigDecimal gst = new BigDecimal(subTotal.doubleValue() * 0.05);
-                gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                    BigDecimal gst = new BigDecimal(subTotal.doubleValue() * 0.05);
+                    gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
 
-                BigDecimal qst = new BigDecimal(subTotal.doubleValue() * 0.09975);
-                qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                    BigDecimal qst = new BigDecimal(subTotal.doubleValue() * 0.09975);
+                    qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
 
-                expenseGSTField.setText(gst.doubleValue() + "");
-                expenseQSTField.setText(qst.doubleValue() + "");
-                expenseSTField.setText(subTotal.doubleValue() + "");
+                    expenseGSTField.setText(gst.doubleValue() + "");
+                    expenseQSTField.setText(qst.doubleValue() + "");
+                    expenseSTField.setText(subTotal.doubleValue() + "");      
+                }
             }
-        }
+        }   
+        totalChosen = false;
+    }
+    
+    /**
+     * Method which will set the total, gst and qst when the subtotal is
+     * entered.
+     *
+     * @param total
+     */
+    private void fillTotal(String subtotal) {
+        subTotalChosen = true;
+        if(totalChosen)
+            subTotalChosen = false;
+        if(subtotal.matches("[0-9.]*")){
+            if (!expenseSTField.getText().equals("") && totalChosen == false && subTotalChosen) {
+                if (expenseGSTField.isDisabled()) {
+                    expenseTotalField.setText(subtotal);
+                } else {
+                    BigDecimal st = new BigDecimal(subtotal);
+
+                    BigDecimal total = new BigDecimal(st.doubleValue() * 1.14975);
+                    total = total.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+
+                    BigDecimal gst = new BigDecimal(st.doubleValue() * 0.05);
+                    gst = gst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+
+                    BigDecimal qst = new BigDecimal(st.doubleValue() * 0.09975);
+                    qst = qst.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+
+                    expenseGSTField.setText(gst.doubleValue() + "");
+                    expenseQSTField.setText(qst.doubleValue() + "");
+                    expenseTotalField.setText(total.doubleValue() + "");
+                }
+            }
+        }       
+        subTotalChosen = false;
     }
 
     /**
@@ -415,7 +492,7 @@ public class ExpenseFXMLController {
         for (int i = 0; i < mainDescriptions.size() - 1; i++) {
             mdElements.add(mainDescriptions.get(i).getMainDescriptionName());
         }
-        expenseMDCombo.getItems().addAll(mdElements);
+        expenseMDCombo.setItems(mdElements);
     }
 
     /**
@@ -430,14 +507,13 @@ public class ExpenseFXMLController {
         for (int i = 0; i < subDescriptions.size() - 1; i++) {
             sdElements.add(subDescriptions.get(i).getSubDescriptionName());
         }
-        expenseSDCombo.getItems().addAll(sdElements);
+        expenseSDCombo.setItems(sdElements);
     }
     
     /**
      * Method responsible for checking if the supplier exists in the database or not.
      * 
      * @param supplier
-     * @param suppliers
      * @return 
      */
     private boolean supplierExists(String supplier) throws SQLException {
@@ -451,16 +527,111 @@ public class ExpenseFXMLController {
     }
     
     /**
+     * Method responsible for checking if the main description exists in the database or not.
+     * 
+     * @param md
+     * @return 
+     */
+    private boolean mainDescriptionExists(String md) throws SQLException {
+        List<MainDescription> mds = mdDAO.findAllMainDescriptions();
+        for (int i = 0; i < mds.size(); i++) {
+            if (md.equalsIgnoreCase(mds.get(i).getMainDescriptionName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * Method responsible for checking if the sub description exists in the database or not.
+     * 
+     * @param sd
+     * @return 
+     */
+    private boolean subDescriptionExists(String sd) throws SQLException {
+        List<SubDescription> sds = sdDAO.findAllSubDescriptions();
+        for (int i = 0; i < sds.size(); i++) {
+            if (sd.equalsIgnoreCase(sds.get(i).getSubDescriptionName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * Method responsible for setting the controllers
+     * 
+     * @param supController
+     * @param mdController
+     * @param sdController
+     * @param gstController
+     * @param reportController 
+     */
+    public void setControllers(SupplierFXMLController supController, MainDescriptionFXMLController mdController, SubDescriptionFXMLController sdController, 
+            GSTReportFXMLController gstController, ReportsFXMLController reportController){
+        this.supController = supController;
+        this.mdController = mdController;
+        this.sdController = sdController;
+        this.gstController = gstController;
+        this.reportController = reportController;
+    }
+    
+    /***
+     * Method responsible for checking if any required field values are missing
+     * 
+     * @return 
+     */
+    private String checkMissing(){
+        String msg = "Please enter the following information:\n";
+        if (expenseDateField.getValue() == null)
+            msg += "- Date\n";
+        if (expenseSupplierCombo.getValue() == null || expenseSupplierCombo.getValue().equals(""))
+            msg += "- Supplier\n";
+        if (expenseMDCombo.getValue() == null || expenseMDCombo.getValue().equals(""))
+            msg += "- Main Description\n";
+        if (expenseSTField.getText().equals(""))
+            msg += "- Sub Total\n";
+        if (!expenseSTField.getText().equals("") && expenseSTField.getText().length() >= 11)
+            msg += "- Sub Total is too large\n";
+        if (expenseTotalField.getText().equals(""))
+            msg += "- Total\n";
+        if (!expenseTotalField.getText().equals("") && expenseTotalField.getText().length() >= 11)
+            msg += "- Total is too large\n";
+        
+        return msg;
+    }
+    
+    /**
      * Method responsible for displaying an alert when an error occurs.
      * 
      * @param msg 
      */
     private void displayAlert(String msg){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Error Dialog");
+        alert.setTitle("Missing Information");
         alert.setHeaderText(null);
         alert.setContentText(msg);
 
         alert.showAndWait();
+    }
+    
+    /**
+     * Method responsible for displaying a confirmation message when the user attempts 
+     * to delete an expense.
+     * 
+     * @param msg 
+     */
+    private void displayConfirmation(String msg) throws SQLException{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Expense");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            eDAO.deleteExpense(eID);
+            onClearExpense(new ActionEvent());
+            displayTable();
+        }
     }
 }

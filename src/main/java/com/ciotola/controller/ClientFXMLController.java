@@ -5,9 +5,11 @@ import com.ciotola.persistence.Implementations.AccountingClientDAOImp;
 import com.ciotola.persistence.Interfaces.IAccountingClientDAO;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -129,6 +131,7 @@ public class ClientFXMLController {
         hPhoneField.setText("");
         cPhoneField.setText("");
         emailField.setText("");
+        cID = -1;
     }
     
     /**
@@ -156,11 +159,8 @@ public class ClientFXMLController {
      */
     @FXML
     void onDeleteClient(ActionEvent event) throws SQLException {
-        if(!clientNameField.getText().equals("")){            
-            Client client = cDAO.findClientById(cID);            
-            cDAO.deleteClient(client.getClientID());
-            onClearClient(new ActionEvent());                   
-            displayTable();
+        if(!clientNameField.getText().equals("")){    
+            displayConfirmation("Are you sure you want to delete this client?");
         }
         else        
             displayAlert("Please select a client that you wish to delete!");
@@ -248,6 +248,15 @@ public class ClientFXMLController {
     }
     
     /**
+     * Method responsible for setting the client name when the invoice has a new client
+     * 
+     * @param cName 
+     */
+    public void setClientName(String cName){
+        clientNameField.setText(cName);
+    }
+    
+    /**
      * Method responsible for displaying an alert when an error occurs.
      * 
      * @param msg 
@@ -259,5 +268,26 @@ public class ClientFXMLController {
         alert.setContentText(msg);
 
         alert.showAndWait();
+    }
+    
+    /**
+     * Method responsible for displaying a confirmation message when the user attempts 
+     * to delete an Client.
+     * 
+     * @param msg 
+     */
+    private void displayConfirmation(String msg) throws SQLException{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Client");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            Client client = cDAO.findClientById(cID);            
+            cDAO.deleteClient(client.getClientID());
+            onClearClient(new ActionEvent());                   
+            displayTable();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.ciotola.persistence.Interfaces;
 
 import com.ciotola.entities.Invoice;
+import java.sql.Date;
 import java.sql.SQLException;
 import javafx.collections.ObservableList;
 
@@ -17,6 +18,7 @@ public interface IAccountingInvoiceDAO {
     //Read Methods
     public Invoice findInvoiceById(int id) throws SQLException; 
     public ObservableList<Invoice> findAllInvoices() throws SQLException;
+    public ObservableList<Invoice> findInvoicesBetweenDate(Date from, Date to) throws SQLException;
     
     //Update Methods
     public int updateInvoice(Invoice invoice) throws SQLException;

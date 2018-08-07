@@ -11,8 +11,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Entity class which contains the methods used for getting and setting Expense data.
@@ -22,7 +20,6 @@ import org.slf4j.LoggerFactory;
  * 
  */
 public class Expense {
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());  
     private IntegerProperty expenseID;
     private ObjectProperty<CustomDate> dateTime;
     private StringProperty supplier;

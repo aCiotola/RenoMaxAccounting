@@ -138,6 +138,36 @@ public class AccountingInvoiceDAOImp implements IAccountingInvoiceDAO{
         }    
         return invoiceList;
     }
+    
+    /**
+     * Method which will return an ObservableList containing invoices between dates in the Invoices table.
+     * 
+     * @param from
+     * @param to
+     * @return
+     * @throws SQLException 
+     */
+    @Override
+    public ObservableList<Invoice> findInvoicesBetweenDate(Date from, Date to) throws SQLException {
+        ObservableList<Invoice> invoiceList = FXCollections.observableArrayList();
+        String query = "SELECT * FROM INVOICES WHERE INVOICEDATE BETWEEN ? AND ?";
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            PreparedStatement pStmt = connection.prepareStatement(query);){
+            pStmt.setDate(1, from);
+            pStmt.setDate(2, to);
+            try (ResultSet rs = pStmt.executeQuery()){
+                while(rs.next()){                    
+                    Invoice invoice = createInvoice(rs);
+                    invoiceList.add(invoice);                    
+                }
+                log.debug("Found INVOICES: " + invoiceList.size());
+            }
+        }catch(SQLException ex){
+            log.error("Exception FINDING ALL INVOICES: " + ex.getMessage());
+            throw ex; 
+        }    
+        return invoiceList;
+    }
 
     /**
      * Method which will update a record in the Invoices table.
